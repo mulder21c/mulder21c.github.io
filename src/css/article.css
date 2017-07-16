@@ -6,9 +6,15 @@
   overflow: hidden;
   max-width: var(--content-width);
   margin: auto;
+  font-size:1.2em;
 
   @media (--mobile) {
     padding-top: 0;
+  }
+
+  .article__title {
+    line-height: 1.2em;
+    font-size:2em;
   }
 
   /* Article common styles */
@@ -30,12 +36,34 @@
       }
     }
 
-    & h1,
-    & h2,
-    & h3,
-    & h4,
-    & h5,
-    & h6 {
+    img.left-flow{
+      float:left;
+      margin-right:$base-margin;
+    }
+
+    img.right-flow{
+      float:right;
+      margin-left:$base-margin;
+    }
+
+    .inline-flow {
+      display:inline-block;
+      margin:0 .25rem 0 0;
+    }
+
+    h3{
+      font-size:1.5em
+    }
+
+    h4{
+      font-size:1.33em
+    }
+
+    h5{
+      font-size:1.17em
+    }
+
+    h1, h2, h3, h4, h5, h6 {
       color: var(--bold-black);
       margin-top: 3rem;
     }
@@ -54,7 +82,14 @@
       & code {
         background-color: transparent;
         padding: 0;
-        font-style: italic;
+        font-style: italic
+      }
+      code[class*="language-"]{
+        background-color: #2a2a2a;
+      }
+      footer{
+        margin-top:1.11em;
+        font-size:.9em;
       }
       &.pullquote.left {
         float: left;
@@ -73,10 +108,8 @@
 
     & code {
       font-family: consolas, monospace;
-      background-color: var(--semi-white);
-      color: var(--secondary-yellow);
       padding: 0.125rem 0.25rem;
-      border-radius: 2px;
+      border-radius: .25em;
       margin-left: 0;
       margin-right: 0;
     }
@@ -86,9 +119,25 @@
       margin-left: -1rem;
       margin-right: -1rem;
 
-      & * {
-        font-family: consolas, monospace;
-      }
+    pre[class*="language-"],
+    code[class*="language-"]{
+      font-size:inherit
+    }
+
+    :not(pre)>code[class*="language-"]{
+      display:inline-block;
+      margin:0 .25em;
+      padding:0 .5em;
+      border:0;
+      font-size:inherit;
+      vertical-align:text-bottom;
+    }
+
+    figure.highlight {
+      padding: 0 $base-margin;
+      margin-left: 0;
+      margin-right: 0;
+
       & figcaption {
         margin-top: 1rem;
         & span {
@@ -118,22 +167,24 @@
       }
     }
 
-    & table {
+    table {
       border-top: 1px solid var(--gray);
+      border-bottom: 1px solid var(--gray);
       width: 100%;
       text-align: left;
       border-collapse: collapse;
-      & thead tr th{
-        border-bottom: 2px solid var(--semi-white);
-        padding: 0.25rem 0;
+      thead tr th{
+        border-bottom: 2px solid var(--lighted-gray);
+        padding: 0.25rem .5em;
       }
-      & tbody tr {
-        & td {
-          border-bottom: 1px solid var(--semi-white);
-          padding: 0.25rem 0;
+      tbody tr {
+        td {
+          border-top: 1px solid var(--lighted-gray);
+          padding: 0.25rem .5em;
         }
-        &:last-child td {
-          border-color: var(--gray);
+        &:first-child td,        
+        &:first-child th{
+          border-width: 0
         }
       }
     }
@@ -162,7 +213,7 @@
       }
     }
 
-    & ul, & ol {
+    ol {
       list-style: none;
       & li {
         position: relative;
@@ -172,11 +223,19 @@
       }
     }
 
-    & ul {
-      padding-left: 1.5rem;
-      & li:before {
-        content: '•';
-        left: -1.5rem;
+    ul{
+      list-style: circle;
+      ul{
+        list-style: disc;
+        ul{
+          list-style: square;
+          ul{
+            list-style: circle;
+            ul{
+              list-style: disc;
+            }
+          }
+        }
       }
     }
 
@@ -193,19 +252,21 @@
       }
     }
 
-    /*
-    * Footnote escape
-    * For hexo-footnotes
-    * https://github.com/LouisBarranqueiro/hexo-footnotes
-    */
-    & #footnotelist ol {
-      padding-left: 2rem !important;
-      & li {
-        & span:first-child {
-          display: none !important;
-        }
-        & span:nth-child(2) {
-          display: inline !important;
+    .horizon-overflow{
+      overflow-x:auto;
+      @media #{$desktop} {
+        padding-bottom:6px;
+      }
+      @media #{$mobile} {
+        padding-bottom:3px;
+      }
+      & > table{
+        max-width: $content-width;
+        width:220%;
+        & caption{
+          @media #{$mobile} {
+            text-align:left
+          }
         }
       }
     }
@@ -224,12 +285,79 @@
         margin-left: -1.5rem;
       }
     }
+
+    /*
+    * Footnote escape
+    * For hexo-footnotes
+    * https://github.com/LouisBarranqueiro/hexo-footnotes
+    */
+    #footnotes{
+      font-size: .85em
+    }
+    #footnotes hr{
+      position:relative;
+      width:80%;
+      &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        width: 50%;
+        border-top: 1px solid #aaa;
+        margin-top: 1rem;
+        margin-left: 0;
+      }
+    }
+
+    #footnotelist ol {
+      padding-left: 2rem !important;
+      li {
+        span:first-child {
+          display: none !important;
+        }
+        span:nth-child(2) {
+          display: inline !important;
+        }
+      }
+    }
+
+    h2[id], h3[id], h4[id], h5[id], h6[id]{
+      &:before{
+        display: block;
+        content: " "; 
+        margin-top: -4rem; 
+        height: 4rem; 
+        visibility: hidden; 
+      }
+      .headerlink{
+        position:relative;
+        &:before{
+          position:absolute;
+          width:1.5em;
+          height:2em;
+          top:.4em;
+          left:-1.5em;
+          content: "§";
+          font-size:.6em;
+          text-align:center;
+          @media #{$mobile} {
+            content:none
+          }
+        }
+      }
+    }
+
+    sup[id^=fnref]:before{
+      position:relative;
+      content: " "; 
+      top:-5rem;
+      height: 5rem; 
+      visibility: hidden; 
+    }
   }
 }
 
-.article__title {
-  line-height: 1.2em;
-}
 
 .article__image {
   display: block;

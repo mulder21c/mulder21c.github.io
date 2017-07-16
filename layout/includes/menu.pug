@@ -5,18 +5,19 @@
     return _target === _current;
   }
 
-nav#menu.menu
+div#menu.menu
   .menu-inner
     .menu__left-area
       .menu__item
-        a.menu__item__link.menu__item__link--brand(
+        h1.menu__item__link.menu__item__link--brand
+          a(
           href="/"
           title="Home"
           rel="home")
-          img.menu__item__link--brand__image(
-            src=theme.favicon
-            alt=config.title)
-          span.menu__item__link--brand__label= config.title
+            img.menu__item__link--brand__image(
+              src=theme.favicon
+              alt=config.title)
+            span.menu__item__link--brand__label= config.title
     .menu__right-area
       each url, label in theme.menu
         .menu__item(class=equalPath(url, page.path) ? 'menu__item--active' : '')

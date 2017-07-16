@@ -11,7 +11,7 @@ hexo.extend.helper.register('bannerOf', function (post) {
       if (base_url.charAt(base_url.length - 1) !== '/') base_url += '/';
       post.banner.url = base_url + post.path + post.banner.url;
     }
-    var url = post.banner ? post.banner.url : (post.photos && post.photos.length ? post.photos[0] : '');
+    var url = post.banner ? post.banner.url : (post.thumbnail ? post.thumbnail : (post.photos && post.photos.length ? post.photos[0] : ''));
     var imgRegex = /\<img\s.*?\s?src\s*=\s*['|"]?([^\s'"]+).*?\>/ig;
     if (!url) {
         var result = imgRegex.exec(post.content);

@@ -1,0 +1,85 @@
+# main menu navigation
+menu:
+  Home: /
+#  About: /about
+  Archives: /archives
+  Resume : /resume
+
+# Images
+favicon: /images/profile.jpg
+## Post default banner image
+## Please specify width and height for google's structured data (Schema.org SEO)
+default:
+  url: /images/profile.jpg
+  width: 250
+  height: 250
+ccl:
+  url: /images/license.png
+  width: 88
+  height: 31
+
+# Font
+## availableFontList: [
+##   'noto-sans-kr',
+##   'spoqa-han-sans-kr',
+##   'spoqa-han-sans-jp'
+## ]
+## If you don't want font, you shouldn't specify the font.
+font: 'spoqa-han-sans-kr'
+
+# Dynamic menu with scrolling
+dynamic_menu: false
+
+# Highlight theme
+## You can also use various themes in `css/highlights`
+#highlight: dracula
+
+# Related posts
+## If you don't want `related posts` feature, you should specify the value as 0.
+## If you want more related posts, you can do it too.
+## But I don't recommend to specify over than 3.
+related_posts: 3 # default enabled as 3
+
+# Profile
+profile:
+  image: /images/profile.jpg
+  gravatar:
+  link:
+  description:
+  social:
+    github: https://www.github.com/mulder21c
+    facebook: https://www.facebook.com/mulder21c
+    linkedin: 
+    instagram: https://www.instagram.com/mulder21c
+    twitter: https://twitter.com/mulder21c
+    rss: /atom.xml
+
+# Footer widgets
+## Don't use over than 3 widgets.
+## availableWidgetList: [
+##   'archives',
+##   'categories',
+##   'recent-posts',
+##   'tag-cloud',
+##   'tags'
+## ]
+## If you don't want widget, you shouldn't specify widgets.
+widgets:
+  - recent-posts
+  - archives
+  - categories
+
+# Other Services
+google_analytics: UA-55718543-7
+google_site_verification: cNXUGP2JbfDQYO1PIpkuHsivBfDI6Q_AFBBZzsNaUKs
+naver_site_verification: 859a6966704edf251c82579243d7dda7a8a87799
+
+# Open graph
+facebook: 128857157743897
+fb_admin: 100002516975024
+twitter: mulder21c
+google_plus: 
+
+#liveRe
+liveRe:
+  uid: MTAyMC8zMDYzOC83MTkz

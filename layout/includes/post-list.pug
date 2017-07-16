@@ -1,4 +1,5 @@
 - var truncOptions = { length: 150, separator: ' ' };
+- var truncOptionsSubtitle = { length: 120, separator: ' ' };
 -
   function getPostList() {
     var perPage = page.per_page || config.per_page;
@@ -37,6 +38,9 @@ section.post-list
       else if is_category()
         h2 Category: #{page.category}
     hr
+  
+  else
+    h2.accessible-hidden 게시글 목록
       
   each post in getPostList()
     article.post-list__item
@@ -68,4 +72,7 @@ section.post-list
               href=url_for(post.path)
               title=post.title || 'Untitled'
             )= post.title || 'Untitled'
-        p.post-list__item__description= truncate(strip_html(decodeHtmlEntity(post.excerpt || post.content)), truncOptions)
+        
+        if post.subtitle
+          p.post-list__item__title= "부제 : " + post.subtitle
+        p.post-list__item__description= truncate(strip_html(decodeHtmlEntity(post.excerpt || post.content)), post.subtitle ? truncOptionsSubtitle : truncOptions)

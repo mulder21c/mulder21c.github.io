@@ -1,5 +1,9 @@
 article#article.article(itemscope itemtype="https://schema.org/BlogPosting")
-  h1.article__title(itemprop="headline")= page.title || 'Untitled'
+  h2.article__title(itemprop="headline")
+    = page.title || 'Untitled'
+  if page.subtitle
+    p= "부제 : " + page.subtitle
+
   .article__meta
     time.article__meta__time(
       datetime=date_xml(page.date)

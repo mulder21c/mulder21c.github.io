@@ -1,0 +1,100 @@
+@import "bourbon";
+@import "variables";
+
+// Global common styles
+html {
+  height:100%;
+  font-size: 14px;
+  @media #{$desktop} {
+    font-size: $em-base;
+  }
+}
+
+body {
+  display:table;
+  width:100%;
+  height:100%;
+  margin: 0;
+  color: $black;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  table-layout:fixed
+}
+
+a {
+  text-decoration: none;
+  color: $primary-sky;
+  @include transition(color 0.3s ease);
+  &:hover {
+    color: $darked-sky;
+  }
+}
+
+b, strong{
+  font-weight:bold
+}
+
+hr {
+  margin: $base-margin 0;
+  border: 0;
+  border-bottom: 1px solid $lighted-gray;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: $bold-font;
+}
+
+.accessible-hidden{
+  position : absolute;
+  clip : rect(1px, 1px, 1px, 1px);
+  padding : 0;
+  border : 0;
+  width : 1px;
+  height : 1px;
+  overflow : hidden
+}
+
+.accessible-hidden-inline{
+  clip : rect(1px, 1px, 1px, 1px);
+  display: inline-block;
+  margin-left:-.25em;
+  padding : 0;
+  border : 0;
+  width : 1px;
+  height : 1px;
+  overflow : hidden
+}
+
+.dimed{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  z-index:100;
+  background-color:rgba(135,135,135, .75);
+}
+
+::-webkit-scrollbar{
+  @media #{$desktop} {
+    width:10px;
+    height:8px
+  }
+  @media #{$mobile} {
+    width:5px;
+    height:5px
+  }
+}
+::-webkit-scrollbar-track{
+  -webkit-border-radius:5px;
+  border-radius:5px
+}
+::-webkit-scrollbar-thumb{
+  height: 1px;
+  border: 2px solid transparent;
+  -webkit-border-radius:6px;
+  border-radius:6px;
+  background-clip: padding-box;
+  background:rgba(153, 153, 153, .5)
+}

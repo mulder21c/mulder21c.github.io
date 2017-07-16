@@ -7,7 +7,7 @@ block content
   
   if relatedPosts.length
     section.related-posts
-      h3 Related posts
+      h2 Related posts
       each post in relatedPosts
         .related-posts__item__wrapper
           a.related-posts__item(href=url_for(post.path))

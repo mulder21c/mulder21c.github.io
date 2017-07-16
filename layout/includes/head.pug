@@ -33,6 +33,11 @@ meta(name="viewport" content="width=device-width, initial-scale=1")
 
 title= pageTitle
 
+| !{ canonical(config, page) }
+| !{ openGraph }
+if is_post()
+  meta(property="article:author" content=theme.profile.social.facebook || config.author)
+
 if theme.font === 'spoqa-han-sans-kr'
   link(rel="stylesheet" href="/libs/spoqa-han-sans-kr/css/SpoqaHanSans-kr.css")
 else if theme.font === 'spoqa-han-sans-jp'
@@ -62,6 +67,7 @@ if theme.google_site_verification
   meta(name="google-site-verification" content=theme.google_site_verification)
 if theme.naver_site_verification
   meta(name="naver-site-verification" content=theme.naver_site_verification)
+
 if theme.google_analytics
   script.
     (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
