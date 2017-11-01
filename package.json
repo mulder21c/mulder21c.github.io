@@ -4,7 +4,6 @@
   "description": "The theme which you must be overdosed.",
   "private": true,
   "scripts": {
-<<<<<<< HEAD
     "precommit": "npm build",
     "build-dynamicMenu": "node_modules/.bin/uglifyjs ./source/js/dynamicMenu.js -m -o ./source/js/dynamicMenu.min.js",
     "clone": "git clone https://github.com/spoqa/spoqa-han-sans ./source/libs/spoqa-han-sans;git clone https://github.com/hyunseob/noto-sans-kr ./source/libs/noto-sans-kr",

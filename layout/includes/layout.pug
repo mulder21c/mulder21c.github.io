@@ -18,3 +18,31 @@ html(lang=config.language)
       script(src="/js/index.min.js")
     else
       script(src="/js/main.min.js")
+
+    if page.viewer360
+      script(src="//storage.googleapis.com/vrview/2.0/build/vrview.min.js")
+      script.
+        function onVrViewLoad() {
+          var j = document.getElementsByClassName('viewer360');
+          for(var i = -1, item = null, vr = []; item = j[++i];){
+            item.setAttribute("id", "vrview" + i);
+
+            vr[i] = new VRView.Player("#vrview" + i, {
+              image: item.getAttribute("data-src"),
+              width: item.getAttribute("data-width"),
+              height: item.getAttribute("data-height")
+            });
+          }
+        }
+        window.addEventListener('load', onVrViewLoad);
+
+    if theme.liveRe.uid
+      script.
+        (function(d, s) {
+           var j, e = d.getElementsByTagName(s)[0];
+           if (typeof LivereTower === 'function') { return; }
+           j = d.createElement(s);
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+           e.parentNode.insertBefore(j, e);
+        })(document, 'script');
