@@ -197,8 +197,8 @@
 
     & .video-container {
       position: relative;
-      padding-top: 56.25%;
       overflow: hidden;
+      text-align:center;
       @media (--mobile) {
         margin: 0 -1rem;
         width: calc(100% + 2rem);
@@ -210,6 +210,10 @@
         width: 100%;
         height: 100%;
         margin: 0;
+      }
+      video{
+        width: 100%;
+        height: auto;
       }
     }
 
