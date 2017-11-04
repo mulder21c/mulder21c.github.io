@@ -24,13 +24,15 @@ html(lang=config.language)
       script.
         function onVrViewLoad() {
           var j = document.getElementsByClassName('viewer360');
-          for(var i = -1, item = null, vr = []; item = j[++i];){
+          for(var i = -1, item = null; item = j[++i];){
             item.setAttribute("id", "vrview" + i);
 
-            vr[i] = new VRView.Player("#vrview" + i, {
+            new VRView.Player("#vrview" + i, {
               image: item.getAttribute("data-src"),
-              width: item.getAttribute("data-width"),
-              height: item.getAttribute("data-height")
+              width: item.getAttribute("data-width") || 800,
+              height: item.getAttribute("data-height") || 400,
+              is_stereo: !!(item.getAttribute("data-stereo") === "true"),
+              default_yaw: item.getAttribute("data-yaw") || 0
             });
           }
         }
