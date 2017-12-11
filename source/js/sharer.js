@@ -95,47 +95,77 @@ function prevSiblings(target) {
       _set : function(bool){
         state = bool;
       },
-      dialogToggle : function(){
+      dialogOpen : function(event){
+        try{
+          event.preventDefault ? event.preventDefault() : event.returnValue = false;
+          if(window.clipboardData){
+            window.clipboardData.clearData();
+          }else if(event.clipboardData){
+            event.clipboardData.clearData();
+          }
+        }catch(err){}
+
+        for( var i = -1, item = null, nodes = prevSiblings(lisence) ; item = nodes[++i];){
+          item.setAttribute("aria-hidden", "true");
+        }
+
+        focuslock.set_popup(lisence);
+        focuslock.set_firstBtn(lisence.querySelector("a"));
+        focuslock.set_lastBtn(lisence.querySelector("input"));
+
+        lisence.addEventListener("keydown", focuslock.focuslockKeyDown, false);
+        lisence.addEventListener("keyup", focuslock.focuslockKeyUp, false);
+        lisence.setAttribute("tabindex", "-1");
+        lisence.setAttribute("aria-hidden", "false");
+        dimed.style.display = "block";
+        document.documentElement.style.overflow = "hidden";
+        lisence.classList.add("show");
+        lisence.focus();
+        
+        document.addEventListener("keydown", agree.dialogClose, false);
+        document.addEventListener("mousedown", agree.dialogClose, false);
+      },
+      dialogClose : function(event){
+        event = event || window.event;
+        if(event.type === 'keydown' && event.keyCode !== 27) return;
+        if(event.type === 'mousedown' && (event.target || event.srcElement) !== dimed) return;
+        for( var i = -1, item = null, nodes = prevSiblings(lisence) ; item = nodes[++i];){
+          item.removeAttribute("aria-hidden");
+        }
+
+        lisence.removeEventListener("keydown", focuslock.focuslockKeyDown, false);
+        lisence.removeEventListener("keyup", focuslock.focuslockKeyUp, false);
+
+        lisence.removeAttribute("tabindex");
+        lisence.setAttribute("aria-hidden", "true");
+        dimed.removeAttribute("style");
+        document.documentElement.removeAttribute("style");
+        lisence.classList.remove("show");
+
+        document.removeEventListener("keydown", agree.dialogClose, false);
+        document.removeEventListener("mousedown", agree.dialogClose, false);
+      },
+      dialogToggle : function(event){
+        event = event || window.event;
+
         if(state === false){
-          lisence.classList.add("show");
-          for( var i = -1, item = null, nodes = prevSiblings(lisence) ; item = nodes[++i];){
-            item.setAttribute("aria-hidden", "true");
-          }
-
-          focuslock.set_popup(lisence);
-          focuslock.set_firstBtn(lisence.querySelector("a"));
-          focuslock.set_lastBtn(lisence.querySelector("input"));
-
-          lisence.addEventListener("keydown", focuslock.focuslockKeyDown, false);
-          lisence.addEventListener("keyup", focuslock.focuslockKeyUp, false);
-          lisence.setAttribute("tabindex", "-1");
-          lisence.setAttribute("aria-hidden", "false");
-          dimed.style.display = "block";
-          document.documentElement.style.overflow = "hidden";
-          lisence.focus();
-        }else{
-          for( var i = -1, item = null, nodes = prevSiblings(lisence) ; item = nodes[++i];){
-            item.removeAttribute("aria-hidden");
-          }
-
-          lisence.removeEventListener("keydown", focuslock.focuslockKeyDown, false);
-          lisence.removeEventListener("keyup", focuslock.focuslockKeyUp, false);
-
-          lisence.removeAttribute("tabindex");
-          lisence.setAttribute("aria-hidden", "true");
-		      dimed.removeAttribute("style");
-          document.documentElement.removeAttribute("style");
-          lisence.classList.remove("show");
+          agree.dialogOpen(event);
         }
       }
     }
   })();
+
   function agreeLisence(event){
+    event = event || window.event;
+    event.preventDefault ? event.preventDefault() : event.returnValue = false;
+    event.stopPropagation();
     if(this.checked === true){
       agree._set(true);
-      agree.dialogToggle();
+      document.execCommand("copy");
+      agree.dialogClose();
     }
   }
+
   document.addEventListener("copy", agree.dialogToggle, false);
   document.getElementById("agree-lisence").addEventListener("click", agreeLisence, false);
 }());

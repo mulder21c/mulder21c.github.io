@@ -41,6 +41,7 @@ html(lang=config.language)
     if theme.liveRe.uid
       script.
         (function(d, s) {
+           if(!document.getElementById('lv-container')) return;
            var j, e = d.getElementsByTagName(s)[0];
            if (typeof LivereTower === 'function') { return; }
            j = d.createElement(s);
