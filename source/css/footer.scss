@@ -9,38 +9,46 @@
 
 #lisence{
   background-color: $lighted-gray;
-  position:fixed;
-  top:0;
-  left:0;
-  z-index:110;
-  width:$content-width / 1.5;
-  height:0;
-  -webkit-transform:translate(-$content-width / 3 - 1, -160px);
-  -ms-transform:translate(-$content-width / 3 - 1, -160px);
-  transform:translate(-$content-width / 3 - 1, -160px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 110;
+  width: $content-width / 1.5;
+  height: 0;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   outline: 2px solid #181818;
-  -webkit-transition:.7s;
-  transition:.7s;
-  opacity:0;
+  -webkit-transition: .7s;
+  transition: .7s;
+  opacity: 0;
+
   & img{
-	float:left;
-	margin-top:1.5rem;
-	margin-right:1rem;
+    float: left;
+    margin-top: 1.5rem;
+    margin-right: 1rem;
   }
 
   & .agree{
-	text-align:right;
-	& label{
-	  margin-left:.25em;
-	}
+    text-align:right;
+    & label{
+      margin-left:.25em;
+    }
+  }
+
+  &:after{
+    content: '';
+    clear: both;
+    display: table;
   }
 }
+
 #lisence.show{
   top:50%;
   left:50%;
   margin:.5rem;
   padding:1rem;
-  height:160px;
+  height:auto;
   -webkit-transition:.7s;
   transition:.7s;
   opacity:1;
