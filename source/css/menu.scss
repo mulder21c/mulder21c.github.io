@@ -127,13 +127,12 @@ $icon-margin: ($menu-height - $icon-size) / 2;
   height: $icon-size;
   margin: $icon-margin 1rem $icon-margin 0;
   display: inline-block;
-  float: left;
+  vertical-align: middle;
 }
 
 .menu__item__link--brand__label {
   height: $menu-height;
   line-height: $menu-height;
   display: inline-block;
-  float: left;
   font-weight: $bold-font;
 }

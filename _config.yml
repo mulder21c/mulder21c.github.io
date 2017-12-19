@@ -1,8 +1,8 @@
 # main menu navigation
 menu:
   Home: /
-#  About: /about
-  Archives: /archives
+  #About: /about
+  #Archives: /archives
   Resume : /resume
 
 # Images

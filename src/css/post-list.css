@@ -32,7 +32,7 @@
   box-sizing: border-box;
 }
 
-.post-list__item__link {
+.post-list__item__thumb {
   display: block;
   overflow: hidden;
   position: relative;

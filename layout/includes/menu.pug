@@ -16,9 +16,10 @@ div#menu.menu
           rel="home")
             img.menu__item__link--brand__image(
               src=theme.favicon
-              alt=config.title)
+              alt="")
             span.menu__item__link--brand__label= config.title
-    .menu__right-area
+    nav.menu__right-area
+      h2.accessible-hidden site navigation
       each url, label in theme.menu
         .menu__item(class=equalPath(url, page.path) ? 'menu__item--active' : '')
           a.menu__item__link(href=url)= label

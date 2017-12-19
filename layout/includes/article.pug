@@ -55,10 +55,9 @@ article#article.article(itemscope itemtype="https://schema.org/BlogPosting")
 
   include sharer
 
-  if theme.liveRe && theme.liveRe.uid
+  if theme.liveRe && theme.liveRe.uid && page.layout !== 'page'
     #lv-container(data-id="city", data-uid=theme.liveRe.uid)
 
-  
   // Disqus Code
   if config.disqus_shortname
     #disqus_thread
