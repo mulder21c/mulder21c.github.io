@@ -38,43 +38,29 @@ function prevSiblings(target) {
 
 (function(){
   var focuslock = (function(){
-    var shiftPressed = false,
-        firstBtn,
-        lastBtn,
+    var firstElem,
+        lastElem,
         popup;
 
     return {
       set_popup : function(el){
         popup = el;
       },
-      set_firstBtn : function(el){
-        firstBtn = el;
+      set_firstElem : function(el){
+        firstElem = el;
       },
-      set_lastBtn : function(el){
-        lastBtn = el;
-      },
-      focuslockKeyUp  : function(event){
-        event = event || window.event;
-        var keycode = event.which || event.keyCode;
-        if( event.shiftKey ){
-          shiftPressed = false;
-        }
+      set_lastElem : function(el){
+        lastElem = el;
       },
       focuslockKeyDown : function(event){
         event = event || window.event;
         var keycode = event.which || event.keyCode;
-        if(event.shiftKey){
-          shiftPressed = true;
-        }
-        if(shiftPressed && keycode === 9 && event.target === popup){
+        if(event.shiftKey && keycode === 9 && event.target === firstElem){
           event.preventDefault ? event.preventDefault() : event.returnValue = false;
-          lastBtn.focus();
-        }else if(shiftPressed && keycode === 9 && event.target === firstBtn){
+          lastElem.focus();
+        }else if(!event.shiftKey && keycode === 9 && event.target === lastElem){
           event.preventDefault ? event.preventDefault() : event.returnValue = false;
-          popup.focus();
-        }else if(!shiftPressed && keycode === 9 && event.target === lastBtn){
-          event.preventDefault ? event.preventDefault() : event.returnValue = false;
-          popup.focus();
+          firstElem.focus();
         }
       }
     };
@@ -109,18 +95,20 @@ function prevSiblings(target) {
           item.setAttribute("aria-hidden", "true");
         }
 
-        focuslock.set_popup(lisence);
-        focuslock.set_firstBtn(lisence.querySelector("a"));
-        focuslock.set_lastBtn(lisence.querySelector("input"));
+		var placeholder = lisence.querySelector(".placeholder")
+		var firstTabbable = lisence.querySelector("a[href]");
+		var lastTabbable = lisence.querySelector("input");
 
-        lisence.addEventListener("keydown", focuslock.focuslockKeyDown, false);
-        lisence.addEventListener("keyup", focuslock.focuslockKeyUp, false);
+        focuslock.set_popup(lisence);
+        focuslock.set_firstElem(firstTabbable);
+        focuslock.set_lastElem(lastTabbable);
         lisence.setAttribute("tabindex", "-1");
         lisence.setAttribute("aria-hidden", "false");
         dimed.style.display = "block";
         document.documentElement.style.overflow = "hidden";
         lisence.classList.add("show");
-        lisence.focus();
+        lisence.addEventListener("keydown", focuslock.focuslockKeyDown, false);
+        lastTabbable.focus();
         
         document.addEventListener("keydown", agree.dialogClose, false);
         document.addEventListener("mousedown", agree.dialogClose, false);
