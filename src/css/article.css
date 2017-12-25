@@ -134,6 +134,13 @@
       vertical-align:text-bottom;
     }
 
+    :not(pre)>code[class*="language-"].transparent{
+      background-color: transparent;
+      margin: 0;
+      padding: 0 .25em;
+      box-shadow: none
+    }
+
     figure.highlight {
       padding: 0 $base-margin;
       margin-left: 0;
