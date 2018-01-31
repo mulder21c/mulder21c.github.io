@@ -188,13 +188,19 @@
         padding: 0.25rem .5em;
       }
       tbody tr {
-        td {
+        th, td {
           border-top: 1px solid var(--lighted-gray);
           padding: 0.25rem .5em;
         }
         &:first-child td,        
         &:first-child th{
           border-width: 0
+        }
+      }
+      tfoot tr {
+        th, td{
+          border-top: 1px solid $gray;
+          padding: 0.25rem .5em;
         }
       }
     }
