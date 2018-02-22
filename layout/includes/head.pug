@@ -76,3 +76,11 @@ if theme.google_analytics
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
     ga('create', '#{theme.google_analytics}', 'auto');
     ga('send', 'pageview');
+
+if(is_post())
+  script(async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js")
+  script.
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-5055523791773672",
+      enable_page_level_ads: true
+    });
