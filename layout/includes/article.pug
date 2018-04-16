@@ -1,4 +1,9 @@
-article#article.article(itemscope itemtype="https://schema.org/BlogPosting")
+article#article(
+  itemscope 
+  itemtype="https://schema.org/BlogPosting"
+  class=page.pagename ? page.pagename + " article" : "article"
+  )
+
   h2.article__title(itemprop="headline")
     = page.title || 'Untitled'
   if page.subtitle
@@ -60,7 +65,7 @@ article#article.article(itemscope itemtype="https://schema.org/BlogPosting")
             href=url
             title=label
             target="_blank")
-            i(class=`fa fa-${label}`)
+            i(class=label == "rss" ? `fas fa-${label}` : `fab fa-${label}`)
     meta(itemprop="name" content=config.author)
 
   include sharer

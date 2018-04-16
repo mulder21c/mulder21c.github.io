@@ -1,6 +1,6 @@
 @page{
 	size: A4;
-	margin: 1.5cm 1cm;
+	margin: 2cm 1.5cm ;
   size: auto
 }
 @media print{
@@ -15,7 +15,8 @@
   .sharer,
   #lv-container,
   .related-posts,
-  .widgets{
+  .widgets,
+  .footer{
     display: none
   }
   .content-outer{
@@ -33,8 +34,55 @@
     margin: 0;
     filter: none
   }
+  
+  .article__contents a[href]:not([href^="#"]),
+  .article__contents a[href]:not([href^="tel"]),
+  .article__contents a[href]:not([href^="mailto"]){
+    color: inherit;
+  }
   .article__contents a[href]:not([href^="#"]):after{
     content: " ( " attr(href) " ) "; 
     font-size: .65em
+  }
+  .article__contents a[href^="#"]:after,
+  .article__contents a[href^="tel"]:after,
+  .article__contents a[href^="mailto"]:after{
+    content: none !important
+  }
+  .article.resume{
+    .article__title,
+    .article__meta,
+    .resume-status,
+    .article__meta + hr{
+      display:none
+    }
+
+    .profile-img img{
+      display:block;
+      margin: 10% auto;
+      max-width: 100%;
+      width: 100%;
+      filter: sepia(100%)
+    }
+    
+    .profile-img:after{
+      display: block;
+      content: "지성봉 (Seongbong Ji), Web Publisher";
+      margin-bottom: 1em;
+      font-weight: 900;
+      font-size: 3rem;
+    }
+    .resume-introduce{
+      font-size: 1.25rem;
+      page-break-after: always
+    }
+
+    h3 ~ h3{
+      margin-top: 5rem
+    }
+
+    li, p{
+      page-break-inside: avoid
+    }
   }
 }
