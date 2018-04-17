@@ -58,6 +58,7 @@
     }
 
     .profile-img img{
+      content: url(//farm1.staticflickr.com/863/41108552022_a2190bf6eb_o.jpg);
       display:block;
       margin: 10% auto;
       max-width: 100%;
@@ -81,7 +82,7 @@
       margin-top: 4rem
     }
 
-    li, p{
+    li li, p{
       page-break-inside: avoid
     }
   }

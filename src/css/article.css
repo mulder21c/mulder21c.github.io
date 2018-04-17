@@ -107,7 +107,15 @@
       margin: 0 0.5rem;
     }
 
-    & code {
+    .caree-description{
+      font-size: .8em
+    }
+    .resume-introduce .profile-img:before{
+      content: url(//farm1.staticflickr.com/863/41108552022_a2190bf6eb_o.jpg);
+      display:none;
+    }
+
+    code {
       font-family: consolas, monospace;
       padding: 0.125rem 0.25rem;
       border-radius: .25em;
