@@ -1,13 +1,13 @@
 @page{
 	size: A4;
-	margin: 2cm 1.5cm ;
+	margin: 1.5cm ;
   size: auto
 }
 @media print{
   html, body{
     width: 210mm;
     height: 297mm;
-    font-size: 9pt;
+    font-size: 10pt;
     background-color: transparent
   }
   .menu,  
@@ -78,7 +78,7 @@
     }
 
     h3 ~ h3{
-      margin-top: 5rem
+      margin-top: 4rem
     }
 
     li, p{
