@@ -85,5 +85,9 @@
     li li, p{
       page-break-inside: avoid
     }
+
+    #career-description{
+      page-break-before: always
+    }
   }
 }

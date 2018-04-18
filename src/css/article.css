@@ -110,6 +110,14 @@
     .caree-description{
       font-size: .8em
     }
+    .caree-description-result{
+      padding-left: 1.5em;
+      &:before{
+        content: "▷";
+        margin-left: -1em;
+        margin-right: .5em;
+      }
+    }
     .resume-introduce .profile-img:before{
       content: url(//farm1.staticflickr.com/863/41108552022_a2190bf6eb_o.jpg);
       display:none;
