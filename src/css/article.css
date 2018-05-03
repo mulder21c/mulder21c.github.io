@@ -226,6 +226,21 @@
       margin: 1rem -1rem;
       width: calc(100% + 2rem);
     }
+    
+    .adsbygoogle {
+      margin: 1rem auto;
+      
+      &:before{
+        content: 'google ads';
+        display: block;
+        margin: .5em auto;
+        font-size: .9rem;
+      }
+
+      iframe{
+        margin: 0;
+      }
+    }
 
     & .video-container {
       position: relative;

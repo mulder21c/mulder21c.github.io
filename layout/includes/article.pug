@@ -34,16 +34,6 @@ article#article(
          a.article__tags__item(href=url_for(tag.path))= tag.name
      - })
 
-  
-  ins(
-    class="adsbygoogle"
-    style="display:block"
-    data-ad-client="ca-pub-4706349523979998"
-    data-ad-slot="3534644852"
-    data-ad-format="auto"
-    aria-label="구글 애드센스 광고"
-  )
-
   - var profileImageSrc = theme.profile.image || gravatar(theme.profile.gravatar || '');
   .article__author(
     itemscope
