@@ -98,3 +98,18 @@ h1, h2, h3, h4, h5, h6 {
   background-clip: padding-box;
   background:rgba(153, 153, 153, .5)
 }
+
+.adsbygoogle {
+  margin: 1rem auto;
+  
+  &:before{
+    content: 'google ads';
+    display: block;
+    margin: .5em auto;
+    font-size: .9rem;
+  }
+
+  iframe{
+    margin: 0;
+  }
+}
