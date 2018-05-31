@@ -15,7 +15,7 @@ body {
   height: 100%;
   margin: 0;
   color: var(--black);
-  line-height: 1.5em;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   table-layout: fixed;
 }
@@ -37,4 +37,74 @@ hr {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: var(--bold-font);
+}
+
+.accessible-hidden{
+  position : absolute;
+  clip : rect(1px, 1px, 1px, 1px);
+  padding : 0;
+  border : 0;
+  width : 1px;
+  height : 1px;
+  overflow : hidden
+}
+
+.accessible-hidden-inline{
+  clip : rect(1px, 1px, 1px, 1px);
+  display: inline-block;
+  margin-left:-.25em;
+  padding : 0;
+  border : 0;
+  width : 1px;
+  height : 1px;
+  overflow : hidden
+}
+
+.dimed{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  z-index:100;
+  background-color:rgba(135,135,135, .75);
+}
+
+::-webkit-scrollbar{
+  @media (--desktop) {
+    width:10px;
+    height:8px
+  }
+  @media (--mobile) {
+    width:5px;
+    height:5px
+  }
+}
+::-webkit-scrollbar-track{
+  -webkit-border-radius:5px;
+  border-radius:5px
+}
+::-webkit-scrollbar-thumb{
+  height: 1px;
+  border: 2px solid transparent;
+  -webkit-border-radius:6px;
+  border-radius:6px;
+  background-clip: padding-box;
+  background:rgba(153, 153, 153, .5)
+}
+
+.adsbygoogle {
+  margin: 1rem auto;
+  
+  &:before{
+    content: 'google ads';
+    display: block;
+    margin: .5em auto;
+    font-size: .9rem;
+  }
+
+  & iframe{
+    margin: 0;
+  }
 }

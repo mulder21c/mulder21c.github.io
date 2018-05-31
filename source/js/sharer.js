@@ -76,28 +76,23 @@ function prevSiblings(target) {
 		dimed = lisence.nextSibling;
     return {
       _get : function(){
-        return state;
+        return sessionStorage ? Boolean(JSON.parse(sessionStorage.getItem("lisence-agreed"))) : state;
       },
       _set : function(bool){
-        state = bool;
+        if(sessionStorage){
+          sessionStorage.setItem("lisence-agreed", bool);
+        }else{
+          state = bool;
+        }
       },
       dialogOpen : function(event){
-        try{
-          event.preventDefault ? event.preventDefault() : event.returnValue = false;
-          if(window.clipboardData){
-            window.clipboardData.clearData();
-          }else if(event.clipboardData){
-            event.clipboardData.clearData();
-          }
-        }catch(err){}
-
         for( var i = -1, item = null, nodes = prevSiblings(lisence) ; item = nodes[++i];){
           item.setAttribute("aria-hidden", "true");
         }
 
-		var placeholder = lisence.querySelector(".placeholder")
-		var firstTabbable = lisence.querySelector("a[href]");
-		var lastTabbable = lisence.querySelector("input");
+        var placeholder = lisence.querySelector(".placeholder")
+        var firstTabbable = lisence.querySelector("a[href]");
+        var lastTabbable = lisence.querySelector("input");
 
         focuslock.set_popup(lisence);
         focuslock.set_firstElem(firstTabbable);
@@ -115,8 +110,10 @@ function prevSiblings(target) {
       },
       dialogClose : function(event){
         event = event || window.event;
-        if(event.type === 'keydown' && event.keyCode !== 27) return;
-        if(event.type === 'mousedown' && (event.target || event.srcElement) !== dimed) return;
+        if(event){
+          if(event.type === 'keydown' && event.keyCode !== 27) return;
+          if(event.type === 'mousedown' && (event.target || event.srcElement) !== dimed) return;
+        }
         for( var i = -1, item = null, nodes = prevSiblings(lisence) ; item = nodes[++i];){
           item.removeAttribute("aria-hidden");
         }
@@ -129,6 +126,7 @@ function prevSiblings(target) {
         dimed.removeAttribute("style");
         document.documentElement.removeAttribute("style");
         lisence.classList.remove("show");
+        document.getElementById("agree-lisence").checked = false;
 
         document.removeEventListener("keydown", agree.dialogClose, false);
         document.removeEventListener("mousedown", agree.dialogClose, false);
@@ -136,7 +134,7 @@ function prevSiblings(target) {
       dialogToggle : function(event){
         event = event || window.event;
 
-        if(state === false){
+        if(agree._get() === false){
           agree.dialogOpen(event);
         }
       }
@@ -145,7 +143,6 @@ function prevSiblings(target) {
 
   function agreeLisence(event){
     event = event || window.event;
-    event.preventDefault ? event.preventDefault() : event.returnValue = false;
     event.stopPropagation();
     if(this.checked === true){
       agree._set(true);
@@ -155,5 +152,5 @@ function prevSiblings(target) {
   }
 
   document.addEventListener("copy", agree.dialogToggle, false);
-  document.getElementById("agree-lisence").addEventListener("click", agreeLisence, false);
+  document.getElementById("agree-lisence").addEventListener("change", agreeLisence, false);
 }());

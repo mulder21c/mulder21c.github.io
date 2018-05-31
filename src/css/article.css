@@ -12,7 +12,7 @@
     padding-top: 0;
   }
 
-  .article__title {
+  & .article__title {
     line-height: 1.2em;
     font-size:2em;
   }
@@ -25,9 +25,7 @@
       filter:drop-shadow(2px 2px 5px #ccc);
 
       @media (--mobile) {
-        width: calc(100% + 2rem);
-        margin-left: -1rem;
-        margin-right: -1rem;
+        max-width: calc(100% - 2rem);
       }
 
       @media (--desktop) {
@@ -37,34 +35,34 @@
       }
     }
 
-    img.left-flow{
+    & img.left-flow{
       float:left;
-      margin-right:$base-margin;
+      margin-right:var(--base-margin);
     }
 
-    img.right-flow{
+    & img.right-flow{
       float:right;
-      margin-left:$base-margin;
+      margin-left:var(--base-margin);
     }
 
-    .inline-flow {
+    & .inline-flow {
       display:inline-block;
       margin:0 .25rem 0 0;
     }
 
-    h3{
+    & h3{
       font-size:1.5em
     }
 
-    h4{
+    & h4{
       font-size:1.33em
     }
 
-    h5{
+    & h5{
       font-size:1.17em
     }
 
-    h1, h2, h3, h4, h5, h6 {
+    & h1, & h2, & h3, & h4, & h5, & h6 {
       color: var(--bold-black);
       margin-top: 3rem;
     }
@@ -85,10 +83,10 @@
         padding: 0;
         font-style: italic
       }
-      code[class*="language-"]{
+      & code[class*="language-"]{
         background-color: #2a2a2a;
       }
-      footer{
+      & footer{
         margin-top:1.11em;
         font-size:.9em;
       }
@@ -107,10 +105,10 @@
       margin: 0 0.5rem;
     }
 
-    .caree-description{
+    & .caree-description{
       font-size: .8em
     }
-    .caree-description-result{
+    & .caree-description-result{
       padding-left: 1.5em;
       &:before{
         content: "▷";
@@ -118,12 +116,12 @@
         margin-right: .5em;
       }
     }
-    .resume-introduce .profile-img:before{
+    & .resume-introduce .profile-img:before{
       content: url(//farm1.staticflickr.com/863/41108552022_a2190bf6eb_o.jpg);
       display:none;
     }
 
-    code {
+    & code {
       font-family: consolas, monospace;
       padding: 0.125rem 0.25rem;
       border-radius: .25em;
@@ -131,18 +129,13 @@
       margin-right: 0;
     }
 
-    & figure.highlight {
-      padding: 0 1rem;
-      margin-left: -1rem;
-      margin-right: -1rem;
-
-    pre[class*="language-"],
-    code[class*="language-"]{
+    & pre[class*="language-"],
+    & code[class*="language-"]{
       font-size: inherit;
       white-space: pre;
     }
 
-    :not(pre)>code[class*="language-"]{
+    & :not(pre)>code[class*="language-"]{
       display: inline-block;
       margin: 0 .25em;
       padding: 0 .5em;
@@ -151,7 +144,7 @@
       vertical-align: text-bottom;
     }
 
-    :not(pre)>code[class*="language-"].transparent{
+    & :not(pre)>code[class*="language-"].transparent{
       background-color: transparent;
       margin: 0;
       padding: 0 .25em;
@@ -159,8 +152,8 @@
       vertical-align: baseline;
     }
 
-    figure.highlight {
-      padding: 0 $base-margin;
+    & figure.highlight {
+      padding: 0 var(--base-margin);
       margin-left: 0;
       margin-right: 0;
 
@@ -193,18 +186,18 @@
       }
     }
 
-    table {
+    & table {
       border-top: 1px solid var(--gray);
       border-bottom: 1px solid var(--gray);
       width: 100%;
       text-align: left;
       border-collapse: collapse;
-      thead tr th{
+      & thead tr th{
         border-bottom: 2px solid var(--lighted-gray);
         padding: 0.25rem .5em;
       }
-      tbody tr {
-        th, td {
+      & tbody tr {
+        & th, & td {
           border-top: 1px solid var(--lighted-gray);
           padding: 0.25rem .5em;
         }
@@ -213,9 +206,9 @@
           border-width: 0
         }
       }
-      tfoot tr {
-        th, td{
-          border-top: 1px solid $gray;
+      & tfoot tr {
+        & th, & td{
+          border-top: 1px solid var(--gray);
           padding: 0.25rem .5em;
         }
       }
@@ -223,8 +216,8 @@
 
     & iframe {
       display: block;
-      margin: 1rem -1rem;
-      width: calc(100% + 2rem);
+      margin: 1rem 0;
+      width: 100%;
     }
 
     & .video-container {
@@ -243,13 +236,13 @@
         height: 100%;
         margin: 0;
       }
-      video{
+      & video{
         width: 100%;
         height: auto;
       }
     }
 
-    ol {
+    & ol {
       list-style: none;
       & li {
         position: relative;
@@ -259,15 +252,15 @@
       }
     }
 
-    ul{
+    & ul{
       list-style: circle;
-      ul{
+      & ul{
         list-style: disc;
-        ul{
+        & ul{
           list-style: square;
-          ul{
+          & ul{
             list-style: circle;
-            ul{
+            & ul{
               list-style: disc;
             }
           }
@@ -288,19 +281,19 @@
       }
     }
 
-    .horizon-overflow{
+    & .horizon-overflow{
       overflow-x:auto;
-      @media #{$desktop} {
+      @media (--desktop) {
         padding-bottom:6px;
       }
-      @media #{$mobile} {
+      @media (--mobile) {
         padding-bottom:3px;
       }
       & > table{
-        max-width: $content-width;
+        max-width: var(--content-width);
         width:220%;
         & caption{
-          @media #{$mobile} {
+          @media (--mobile) {
             text-align:left
           }
         }
@@ -327,10 +320,10 @@
     * For hexo-footnotes
     * https://github.com/LouisBarranqueiro/hexo-footnotes
     */
-    #footnotes{
+    & #footnotes{
       font-size: .85em
     }
-    #footnotes hr{
+    & #footnotes hr{
       position:relative;
       width:80%;
       &:after {
@@ -346,19 +339,20 @@
       }
     }
 
-    #footnotelist ol {
+    & #footnotelist ol {
       padding-left: 2rem !important;
-      li {
-        span:first-child {
+      & li {
+        & span:first-child {
           display: none !important;
         }
-        span:nth-child(2) {
+        & span:nth-child(2) {
           display: inline !important;
         }
       }
     }
 
-    h2[id], h3[id], h4[id], h5[id], h6[id]{
+    & h2[id], & h3[id], & h4[id], & h5[id], & h6[id]{
+
       &:before{
         display: block;
         content: " "; 
@@ -366,7 +360,7 @@
         height: 4rem; 
         visibility: hidden; 
       }
-      .headerlink{
+      & .headerlink{
         position:relative;
         &:before{
           position:absolute;
@@ -377,14 +371,14 @@
           content: "§";
           font-size:.6em;
           text-align:center;
-          @media #{$mobile} {
+          @media (--mobile) {
             content:none
           }
         }
       }
     }
 
-    sup[id^=fnref]:before{
+    & sup[id^=fnref]:before{
       position:relative;
       content: " "; 
       top:-5rem;
