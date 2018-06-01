@@ -58,12 +58,11 @@
     }
 
     & .profile-img img{
-      content: url(//farm1.staticflickr.com/863/41108552022_a2190bf6eb_o.jpg);
+      content: url(//farm1.staticflickr.com/863/41108552022_61413423d5_b.jpg);
       display:block;
       margin: 10% auto;
       max-width: 100%;
       width: 100%;
-      filter: sepia(100%)
     }
     
     & .profile-img:after{
