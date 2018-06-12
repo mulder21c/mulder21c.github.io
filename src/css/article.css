@@ -342,8 +342,18 @@
     & #footnotelist ol {
       padding-left: 2rem !important;
       & li {
+        position: static;
+        &:before{
+          content: "";
+          position: static;
+          display: block;
+          width: 0;
+          height: 5rem;
+          margin-top: -5rem;
+          visibility: hidden;
+        }
         & span:first-child {
-          display: none !important;
+          margin-left: -1.5em
         }
         & span:nth-child(2) {
           display: inline !important;
@@ -355,7 +365,7 @@
 
       &:before{
         display: block;
-        content: " "; 
+        content: ""; 
         margin-top: -4rem; 
         height: 4rem; 
         visibility: hidden; 
@@ -379,10 +389,11 @@
     }
 
     & sup[id^=fnref]:before{
-      position:relative;
-      content: " "; 
-      top:-5rem;
-      height: 5rem; 
+      content: ""; 
+      display: inline-block;
+      margin-top: -6rem;
+      width: 0;
+      height: 6rem; 
       visibility: hidden; 
     }
   }
