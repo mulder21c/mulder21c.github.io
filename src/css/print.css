@@ -10,7 +10,7 @@
     font-size: 10pt;
     background-color: transparent
   }
-  .menu,  
+  .menu,
   .article__author,
   .sharer,
   #lv-container,
@@ -34,14 +34,14 @@
     margin: 0;
     filter: none
   }
-  
+
   .article__contents a[href]:not([href^="#"]),
   .article__contents a[href]:not([href^="tel"]),
   .article__contents a[href]:not([href^="mailto"]){
     color: inherit;
   }
   .article__contents a[href]:not([href^="#"]):after{
-    content: " ( " attr(href) " ) "; 
+    content: " ( " attr(href) " ) ";
     font-size: .65em
   }
   .article__contents a[href^="#"]:after,
@@ -64,7 +64,7 @@
       max-width: 100%;
       width: 100%;
     }
-    
+
     & .profile-img:after{
       display: block;
       content: "지성봉 (Seongbong Ji), Web Publisher";
@@ -82,7 +82,10 @@
     & li li, & p{
       page-break-inside: avoid
     }
-    & #Career-Description{
+
+    & #Work-Experience,
+    & #Work-Style-amp-Strengths,
+    & #Extracurricular-Activities {
       page-break-before: always
     }
   }
