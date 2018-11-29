@@ -122,7 +122,7 @@
     }
 
     & code {
-      font-family: consolas, monospace;
+      font-family: 'Hack', consolas, monospace;
       padding: 0.125rem 0.25rem;
       border-radius: .25em;
       margin-left: 0;
@@ -201,7 +201,7 @@
           border-top: 1px solid var(--lighted-gray);
           padding: 0.25rem .5em;
         }
-        &:first-child td,        
+        &:first-child td,
         &:first-child th{
           border-width: 0
         }
@@ -365,10 +365,10 @@
 
       &:before{
         display: block;
-        content: ""; 
-        margin-top: -4rem; 
-        height: 4rem; 
-        visibility: hidden; 
+        content: "";
+        margin-top: -4rem;
+        height: 4rem;
+        visibility: hidden;
       }
       & .headerlink{
         position:relative;
@@ -389,12 +389,12 @@
     }
 
     & sup[id^=fnref]:before{
-      content: ""; 
+      content: "";
       display: inline-block;
       margin-top: -6rem;
       width: 0;
-      height: 6rem; 
-      visibility: hidden; 
+      height: 6rem;
+      visibility: hidden;
     }
   }
 }
