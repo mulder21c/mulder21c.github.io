@@ -1,0 +1,298 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>웹팩 4 마이그레이션 삽질기 - The Tracks of mulder21c</title><!-- Links--><link rel="canonical" href="https://mulder21c.github.io/2020/02/13/webpack-4-migration-from-3"><!-- preload--><link rel="preload" as="image" href="/images/favicon.png" crossorigin="anonymous"><link rel="preload" as="image" href="/upload/2020/webpack-alpine-marmot.jpg" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/iropke/IropkeBatangM.woff" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/spoqahansans/SpoqaHanSansRegular.woff2" crossorigin="anonymous"><!-- Icons--><link rel="shortcut icon" sizes="196x196" href="/images/favicon.png"><!-- open graph--><meta name="description" content="Webpack 3를 기반으로 구축된 서비스를 Webpack 4로 마이그레이션 작업을 진행했는데 꽤나  많은 삽질이 동원 되어 차후에 이런 일이 또 있을까 하여 기록으로 남겨둔다.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="웹팩 4 마이그레이션 삽질기">
+<meta property="og:url" content="https://mulder21c.github.io/2020/02/13/webpack-4-migration-from-3/">
+<meta property="og:site_name" content="The Tracks of mulder21c">
+<meta property="og:description" content="Webpack 3를 기반으로 구축된 서비스를 Webpack 4로 마이그레이션 작업을 진행했는데 꽤나  많은 삽질이 동원 되어 차후에 이런 일이 또 있을까 하여 기록으로 남겨둔다.">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://mulder21c.github.io/upload/2020/webpack-alpine-marmot.jpg">
+<meta property="og:image" content="https://farm1.staticflickr.com/863/41108552022_61413423d5_b.jpg">
+<meta property="article:published_time" content="2020-02-12T15:24:11.000Z">
+<meta property="article:modified_time" content="2020-06-13T10:44:08.685Z">
+<meta property="article:author" content="멀더끙">
+<meta property="article:tag" content="webpack 4">
+<meta property="article:tag" content="migration">
+<meta property="article:tag" content="삽질기">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://mulder21c.github.io/upload/2020/webpack-alpine-marmot.jpg"><!-- verify website ownership--><meta name="google-site-verification" content="cNXUGP2JbfDQYO1PIpkuHsivBfDI6Q_AFBBZzsNaUKs"><meta name="naver-site-verification" content="859a6966704edf251c82579243d7dda7a8a87799"><!-- styles--><link rel="stylesheet" href="/css/style.css"><style>.strike{text-decoration:line-through}
+
+</style><link rel="stylesheet" href="/fonts/iropke/iropke.css"><link rel="stylesheet" href="/fonts/notosanskr/NotoSansKR.css"><!-- JSON LD for SEO--><script type="application/ld+json">{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "웹팩 4 마이그레이션 삽질기",
+  "alternativeHeadline": null,
+  "image": {
+    "@type": "imageObject",
+    "url": "https://mulder21c.github.io/upload/2020/webpack-alpine-marmot.jpg",
+    "width": "900",
+    "height": "506"
+  },
+  "genre": null,
+  "keywords": "webpack 4,migration,삽질기",
+  "editor": {
+    "@type": "Person",
+    "name": "멀더끙"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "멀더끙",
+    "logo": {
+      "@type": "imageObject",
+      "url": "https://mulder21c.github.io/images/favicon.png"
+    }
+  },
+  "author": {
+    "@type": "Person",
+    "name": "멀더끙"
+  },
+  "url": "https://mulder21c.github.io/2020/02/13/webpack-4-migration-from-3/",
+  "dateCreated": "2020-02-13",
+  "datePublished": "2020-02-13",
+  "articleBody": "Webpack 3를 기반으로 구축된 서비스를 Webpack 4로 마이그레이션 작업을 진행했는데 꽤나  많은 삽질이 동원 되어 차후에 이런 일이 또 있을까 하여 기록으로 남겨둔다."
+}</script><!--scripts--><script>(function(i,s,o,g,r,a,m) {i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,"script","//www.google-analytics.com/analytics.js","ga");
+ga("create", "UA-55718543-7", "auto");
+ga("send", "pageview");
+</script><meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/rss.xml" title="The Tracks of mulder21c" type="application/rss+xml">
+<link rel="stylesheet" href="/css/prism-xonokai.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><script src="/js/prism.js"></script>
+<script src="/js/prism-line-numbers.min.js"></script></head><body class="post"><header class="header hero hero--has-image"><div class="hero-wrapper"><div class="gnb"><a href="/">The Tracks of mulder21c</a><button class="nav-toggle" type="button" aria-haspopup="true" aria-controls="navigation"><span></span><span></span><span></span>menu</button></div><h1 class="header__title">웹팩 4 마이그레이션 삽질기</h1><div class="hero__image" style="background-image: url(/upload/2020/webpack-alpine-marmot.jpg);background-position: left 40%;"></div></div></header><div class="contents--container" role="main"><article class="article"><div class="article__meta"><div class="gravatar"><img src="/images/favicon.png" alt="authored by 멀더끙"></div><time class="article__meta__time" datetime="2020-02-12T15:24:11.000Z"><span aria-label="posted"><span class="fas fa-calendar-day" aria-hidden="true"></span></span>2020-02-13 00:24:11</time><div class="article__meta__category"><span aria-label="category"><span class="fas fa-archive" aria-hidden="true"></span></span><a class="article__meta__category__item" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/">개발노트</a><a class="article__meta__category__item" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/javascript/">JavaScript</a></div></div><div class="article__content"><p>Webpack 3를 기반으로 구축된 서비스를 Webpack 4로 마이그레이션 작업을 진행했는데 꽤나 많은 
+삽질이 동원 되어 차후에 이런 일이 또 있을까 하여 기록으로 남겨둔다.</p>
+<p>일단, 최초의 패키지 상태를 보면 (스압 주의...),</p>
+<pre class="line-numbers language-json"><code class="language-json"><span class="token property">"dependencies"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  ...<span class="token punctuation">,</span>
+  <span class="token property">"babel-runtime"</span><span class="token operator">:</span> <span class="token string">"^6.26.0"</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token property">"devDependencies"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  ...<span class="token punctuation">,</span>
+  <span class="token property">"@kazupon/vue-i18n-loader"</span><span class="token operator">:</span> <span class="token string">"^0.1.1"</span><span class="token punctuation">,</span>
+  <span class="token property">"autoprefixer"</span><span class="token operator">:</span> <span class="token string">"^6.7.7"</span><span class="token punctuation">,</span>
+  <span class="token property">"babel-cli"</span><span class="token operator">:</span> <span class="token string">"^6.26.0"</span><span class="token punctuation">,</span>
+  <span class="token property">"babel-core"</span><span class="token operator">:</span> <span class="token string">"^6.26.3"</span><span class="token punctuation">,</span>
+  <span class="token property">"babel-eslint"</span><span class="token operator">:</span> <span class="token string">"^7.2.3"</span><span class="token punctuation">,</span>
+  <span class="token property">"babel-loader"</span><span class="token operator">:</span> <span class="token string">"^7.1.5"</span><span class="token punctuation">,</span>
+  <span class="token property">"babel-plugin-lodash"</span><span class="token operator">:</span> <span class="token string">"^3.3.4"</span><span class="token punctuation">,</span>
+  <span class="token property">"babel-plugin-syntax-dynamic-import"</span><span class="token operator">:</span> <span class="token string">"^6.18.0"</span><span class="token punctuation">,</span>
+  <span class="token property">"babel-plugin-transform-object-rest-spread"</span><span class="token operator">:</span> <span class="token string">"^6.26.0"</span><span class="token punctuation">,</span>
+  <span class="token property">"babel-plugin-transform-runtime"</span><span class="token operator">:</span> <span class="token string">"^6.23.0"</span><span class="token punctuation">,</span>
+  <span class="token property">"babel-polyfill"</span><span class="token operator">:</span> <span class="token string">"^6.23.0"</span><span class="token punctuation">,</span>
+  <span class="token property">"babel-preset-env"</span><span class="token operator">:</span> <span class="token string">"^1.7.0"</span><span class="token punctuation">,</span>
+  <span class="token property">"babel-register"</span><span class="token operator">:</span> <span class="token string">"^6.24.1"</span><span class="token punctuation">,</span>
+  <span class="token property">"copy-webpack-plugin"</span><span class="token operator">:</span> <span class="token string">"^4.5.1"</span><span class="token punctuation">,</span>
+  <span class="token property">"css-loader"</span><span class="token operator">:</span> <span class="token string">"^0.28.11"</span><span class="token punctuation">,</span>
+  <span class="token property">"extract-text-webpack-plugin"</span><span class="token operator">:</span> <span class="token string">"^3.0.2"</span><span class="token punctuation">,</span>
+  <span class="token property">"file-loader"</span><span class="token operator">:</span> <span class="token string">"^0.11.1"</span><span class="token punctuation">,</span>
+  <span class="token property">"friendly-errors-webpack-plugin"</span><span class="token operator">:</span> <span class="token string">"^1.7.0"</span><span class="token punctuation">,</span>
+  <span class="token property">"html-webpack-plugin"</span><span class="token operator">:</span> <span class="token string">"^3.2.0"</span><span class="token punctuation">,</span>
+  <span class="token property">"iconfont-plugin-webpack"</span><span class="token operator">:</span> <span class="token string">"^1.1.0"</span><span class="token punctuation">,</span>
+  <span class="token property">"lodash-webpack-plugin"</span><span class="token operator">:</span> <span class="token string">"^0.11.5"</span><span class="token punctuation">,</span>
+  <span class="token property">"node-sass"</span><span class="token operator">:</span> <span class="token string">"4.13.0"</span><span class="token punctuation">,</span>
+  <span class="token property">"postcss-loader"</span><span class="token operator">:</span> <span class="token string">"^2.1.5"</span><span class="token punctuation">,</span>
+  <span class="token property">"sass-loader"</span><span class="token operator">:</span> <span class="token string">"^6.0.6"</span><span class="token punctuation">,</span>
+  <span class="token property">"sass-resources-loader"</span><span class="token operator">:</span> <span class="token string">"^1.3.3"</span><span class="token punctuation">,</span>
+  <span class="token property">"style-loader"</span><span class="token operator">:</span> <span class="token string">"^0.20.3"</span><span class="token punctuation">,</span>
+  <span class="token property">"sw-precache-webpack-plugin"</span><span class="token operator">:</span> <span class="token string">"^0.10.1"</span><span class="token punctuation">,</span>
+  <span class="token property">"url-loader"</span><span class="token operator">:</span> <span class="token string">"^1.0.1"</span><span class="token punctuation">,</span>
+  <span class="token property">"vue-loader"</span><span class="token operator">:</span> <span class="token string">"^13.7.3"</span><span class="token punctuation">,</span>
+  <span class="token property">"vue-ssr-webpack-plugin"</span><span class="token operator">:</span> <span class="token string">"^1.0.2"</span><span class="token punctuation">,</span>
+  <span class="token property">"vue-style-loader"</span><span class="token operator">:</span> <span class="token string">"^3.0.0"</span><span class="token punctuation">,</span>
+  <span class="token property">"vue-template-compiler"</span><span class="token operator">:</span> <span class="token string">"^2.5.21"</span><span class="token punctuation">,</span>
+  <span class="token property">"webfonts-loader"</span><span class="token operator">:</span> <span class="token string">"^4.1.0"</span><span class="token punctuation">,</span>
+  <span class="token property">"webpack"</span><span class="token operator">:</span> <span class="token string">"^3.12.0"</span><span class="token punctuation">,</span>
+  <span class="token property">"webpack-dev-middleware"</span><span class="token operator">:</span> <span class="token string">"^1.10.1"</span><span class="token punctuation">,</span>
+  <span class="token property">"webpack-hot-middleware"</span><span class="token operator">:</span> <span class="token string">"^2.22.2"</span><span class="token punctuation">,</span>
+  <span class="token property">"webpack-manifest-plugin"</span><span class="token operator">:</span> <span class="token string">"^2.0.2"</span><span class="token punctuation">,</span>
+  <span class="token property">"webpack-merge"</span><span class="token operator">:</span> <span class="token string">"^4.1.4"</span><span class="token punctuation">,</span>
+  <span class="token property">"webpack-node-externals"</span><span class="token operator">:</span> <span class="token string">"^1.7.2"</span><span class="token punctuation">,</span>
+  <span class="token property">"webpackbar"</span><span class="token operator">:</span> <span class="token string">"^2.6.1"</span><span class="token punctuation">,</span>
+  <span class="token property">"yaml-loader"</span><span class="token operator">:</span> <span class="token string">"^0.5.0"</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="마이그레이션-가이드는-가이드가-아니더라"><a href="#마이그레이션-가이드는-가이드가-아니더라" class="headerlink" title="마이그레이션 가이드는 가이드가 아니더라..."></a>마이그레이션 가이드는 가이드가 아니더라...</h2><p>최초 작업이 들어갈 때 웹팩 공식 문서에 <a href="https://webpack.js.org/migrate/4/" target="_blank" rel="noopener">To v4 from v3</a>라고 
+이미 문서화 되어 있는 것이 있기에...  </p>
+<p>이 문서의 내용을 따라서</p>
+<ol>
+<li>webpack에 관련된 플러그인들을 최신 버전으로 업데이트 하고</li>
+<li><code class="language-javascript">mode</code>를 설정하고</li>
+<li>deprecated 된 플러그인을 </li>
+<li>코드상 에서 제거하고 <code>CommonsChunkPlugin</code>을 
+<code>optimization.splitChunks</code>로 돌리고, </li>
+<li><code>yaml-loader</code>의 <code>type</code>을 <code>javascript/auto</code>로 
+변경하고, <code>json-loader</code>를 삭제하고.</li>
+</ol>
+<p>시키는 대로 착실하게(?) 따라하고 호기롭게 <code class="language-bash">npm run dev</code> 
+명령을 호기롭게 딱! 쳤는데...</p>
+<p><img src="/upload/2020/no-run.jpg" alt="안돼 안돌려줘 돌려줄 생각없어 빨리 되돌려놔 패러디"></p>
+<p>당연히 오류가 쫘아아아악... 돌아갈리가 없다... <span class="strike">왜지? 난 시키는 대로 했을 뿐인데</span></p>
+<p>마이그레이션 문서는 불친절했고 온갖 정보들을 찾아다니며 해결 해야만 했다.</p>
+<h2 id="바보야-문제는-Webpack만이-아니야"><a href="#바보야-문제는-Webpack만이-아니야" class="headerlink" title="바보야 문제는 Webpack만이 아니야"></a>바보야 문제는 Webpack만이 아니야</h2><p>오류는 다방면(?)으로 발생했다. 하나를 고치면 또 다른 오류를 내 뱉고 또 하나를 손보면 또 다른 
+오류를 내뱉고...</p>
+<p>처음에는 오류 하나 하나를 살펴보고 해결해 가면 되겠지 했으나 그건 <span class="strike">순진한</span>
+멍충한 생각이었다.<br>오류를 해결해 가려면 해결해 갈 수록 의존성 패키지들의 끈끈한 의리가 도무지 해결이 되고 있는 
+건지 아닌지를 판단하기 어렵게 만들었...</p>
+<p>이걸 땐 가뿐히... 변경 사항을 폐기하고 처음부터 다시.<br>일단 Webpack 버전을 올리지 않아도 문제가 없는 loader와 플러그인들부터 최신 버전으로 업데이트를 
+시도하기 시작했다.</p>
+<p>그 첫 번째가 babel 6에서 7으로 업데이트.<br>이것 조차도 쉽지 않았는데 해당 부분은 
+<a href="/2020/01/30/migration-to-babel-7-from-babel-6">babel 7 업데이트 후 node_modules 패키지가 변환되지 않는다면?</a> 
+여기에 포스팅 했으니까 이건 넘어가고...</p>
+<h3 id="webpack-버전-안타는-loader와-plugins-업데이트하기"><a href="#webpack-버전-안타는-loader와-plugins-업데이트하기" class="headerlink" title="webpack 버전 안타는(?) loader와 plugins 업데이트하기"></a>webpack 버전 안타는(?) loader와 plugins 업데이트하기</h3><p>다음으로 시도한게 일단 Webpack 3에서도 문제가 없는 loader와 plugins들의 최신 버전을 설치 
+하는 거였다. </p>
+<p>처음에는 모든 loader의 최신 버전 문서를 확인하고 문제가 없어 보이는 것들만 모아서 한 번에
+업데이트 하고 개발 서버를 실행시켰는데... 또 다시 오류가... 허허...<br>(이제 각 loader들의 문서도 믿지 않기로했다... 특별히 언급되어 있지 않으면 일단 오류를 낼 
+잠재적 범인으로 간주하기로...)</p>
+<p>심지어 왜 이 눔의 <code>path</code> 패키지는 자꾸 패키지 내부에 git repository를 만드는지...</p>
+<pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">npm</span> <span class="token function">install</span> -D package@latest <span class="token operator">&amp;&amp;</span> <span class="token function">npm</span> run dev <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>과</p>
+<pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">rm</span> node_modules/ -rf <span class="token operator">&amp;&amp;</span> <span class="token function">npm</span> <span class="token function">install</span> <span class="token operator">&amp;&amp;</span> <span class="token function">rm</span> node_modules/*/.git -rf<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>를 계속 반복해가면서 무식하게 업데이트를 진행하기 시작했다...</p>
+<p>이렇게 해서 1차적로 안정적으로 몇 개 패키지를 올려놓고 나니 남은 패지키들이 </p>
+<pre class="line-numbers language-json"><code class="language-json"><span class="token property">"css-loader"</span><span class="token operator">:</span> <span class="token string">"^0.28.11"</span><span class="token punctuation">,</span>
+<span class="token property">"extract-text-webpack-plugin"</span><span class="token operator">:</span> <span class="token string">"^3.0.2"</span><span class="token punctuation">,</span>
+<span class="token property">"postcss-loader"</span><span class="token operator">:</span> <span class="token string">"^2.1.5"</span><span class="token punctuation">,</span>
+<span class="token property">"sass-loader"</span><span class="token operator">:</span> <span class="token string">"^6.0.6"</span><span class="token punctuation">,</span>
+<span class="token property">"sass-resources-loader"</span><span class="token operator">:</span> <span class="token string">"^1.3.3"</span><span class="token punctuation">,</span>
+<span class="token property">"sw-precache-webpack-plugin"</span><span class="token operator">:</span> <span class="token string">"^0.10.1"</span><span class="token punctuation">,</span>
+<span class="token property">"vue-loader"</span><span class="token operator">:</span> <span class="token string">"^13.7.3"</span><span class="token punctuation">,</span>
+<span class="token property">"vue-ssr-webpack-plugin"</span><span class="token operator">:</span> <span class="token string">"^1.0.2"</span><span class="token punctuation">,</span>
+<span class="token property">"vue-style-loader"</span><span class="token operator">:</span> <span class="token string">"^3.0.0"</span><span class="token punctuation">,</span>
+<span class="token property">"webpack"</span><span class="token operator">:</span> <span class="token string">"^3.12.0"</span><span class="token punctuation">,</span>
+<span class="token property">"webpack-dev-middleware"</span><span class="token operator">:</span> <span class="token string">"^1.10.1"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>요것들 이더라. (반대로 이야기 하면 이것 외의 다른 패키지들은 바로 업데이트 쳐도 괜찮다는 것이니 
+혹 최초 패키지 상태의 것들 중 언급되지 않은 것은 고민하지 않고 업데이트 쳐도 된다는 얘기)</p>
+<p>저 몇 개의 loader들은 webpack 4를 요구하는 통에 webapck과 동시에 버전업이 되어야 했고, 
+그 말 인즉슨... 이제부터 나오는 오류는 어쩔 수 없이 동시 다발적으로 봐야 한다는 말이었다.</p>
+<h3 id="본격적으로-webpack-4-update"><a href="#본격적으로-webpack-4-update" class="headerlink" title="본격적으로 webpack 4 update"></a>본격적으로 webpack 4 update</h3><p>이제 마음의 준비는 끝났고, <span class="strike">(오류를 만나도 당연히 여길테다)</span> </p>
+<ol>
+<li><p>이제 나머지 패키지들을 최신 버전으로 업데이트 하고 </p>
+</li>
+<li><p>문서를 따라 deprecated 된 플러그인들을 제거하고</p>
+<p><a href="https://dev.to/flexdinesh/upgrade-to-webpack-4---5bc5" target="_blank" rel="noopener">Upgrade to Webpack 4</a>
+문서를 보면 deprecated 된 플러그인을 어떻게 <code>optimization</code> 옵션으로 
+변경해야 하는지 나와있더라...</p>
+<p>Webpack 공식 문서에서는 deprecated 되어 optimization의 설정으로 옮겨 갔다는 설명이 
+되어 있지 않더라. 아니... 이런건 마이그레이션 가이드에 있어야 하는거 아니냐구요...</p>
+</li>
+<li><p><code>CommonsChunkPlugin</code>을 <code>optimization.splitChunks</code> 옵션으로 
+옮겨 놓고</p>
+</li>
+</ol>
+<p>개발 서버를 실행하니...</p>
+<p><img src="/upload/2020/nobless.jpg" alt="나는 아직 빌드를 허락하지 않았다 노블레스 웹툰 패러디"></p>
+<p><span class="strike">그럼 그렇지 될리가 없지... ㅋㅋㅋ</span></p>
+<p>당장 <code>extract-text-webpack-plugin</code>는 더 이상 안 쓰인다며 오류가...<br><code>mini-css-extract-plugin</code>로 대체 되었다고 하여 일단 추출하지 않도록 하고 
+다시 개발 서버 런...</p>
+<p><img src="/upload/2020/nobless.jpg" alt="나는 아직 빌드를 허락하지 않았다 노블레스 웹툰 패러디"></p>
+<p>우쒸... 또 오류다. 분명 하란 대로 다 했는데 이상하게 SCSS에서 오류가 발생한다.<br>수정된 설정을 다시 차근차근 뒤져봤지만 아무리 봐도 오류를 모르겠더라.</p>
+<p>일단 SCSS는 번들링 하지 않도록 임시로 빼놓고 돌려도 오류가 난다. 오류 메세지를 읽어봐도 
+대체 왜 여기서 오류가 나는지를 모르겠더라.</p>
+<p>webpack migration 가이드 중에 <code>json-loader</code>는 이제 제거 될 수 있다라는 
+것이 있어서 제거 했었는데, 아무래도 <code>ymal-loader</code>의 loader 설정에서 </p>
+<pre class="line-numbers language-json"><code class="language-json"><span class="token punctuation">{</span>
+  test<span class="token operator">:</span> /\.yml$/<span class="token punctuation">,</span>
+  loader<span class="token operator">:</span> <span class="token string">"json-loader!yaml-loader"</span><span class="token punctuation">,</span>
+  type<span class="token operator">:</span> <span class="token string">"javascript/auto"</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>앞에 붙어 있는 json-loader가 영 신경쓰였다. 혹시나 하는 마음에 json-loader를 다시 설치 했다.</p>
+<p><img src="/upload/2020/matrix-code.jpg" alt="영화 매트릭스 코드들이 떨어지는 화면"></p>
+<p>어??? 어?!! 된다!!! 떴드아....  </p>
+<p>SCSS를 제외한걸 다시 번들링하도록 풀어줬다. </p>
+<p><img src="/upload/2020/matrix-code.jpg" alt="영화 매트릭스 코드들이 떨어지는 화면"></p>
+<p>어??? 된다고?????!!! 왜??!!!! json-loader 설치한건데????<br>이해할 수 없으나... json-loader를 설치한 후에 SCSS 오류는 발생하지 않았다.<br>(webpack 공식문서 이 놈... 부들부들...)</p>
+<p>하지만 아직 mini-css-extract-plugin이 남았다.<br>일단 설치하고 무작정 적용하고 런...</p>
+<p><img src="/upload/2020/nobless.jpg" alt="나는 아직 빌드를 허락하지 않았다 노블레스 웹툰 패러디"></p>
+<p><span class="strike">아 또 왜!!!!</span> 이번에도 SCSS 오류다. 단지 추출을 하도록 설정 
+했을 뿐인데 어째서 SCSS 오류가 발생하는것인지...</p>
+<p>vue-loader의 문제인가 하여 다시 vue-loader의 문서를 확인해봤다. vue-loader v15부터는 
+vue component에 포함된 <code>&lt;style lang="scss"></code>도 순수 scss 파일처럼 
+다룬다는 내용을 찾았고, 기존 것이 dependency의 것을 추출하도록 사용되었었기 때문에 
+node_modules의 것과 src의 것을 분리하여 처리할 필요가 생겼다.</p>
+<p>처음에는 <code>exclude</code>를 이용하여 한 쪽에는 <code>node_modules</code>를 
+제외하게 하고, 한 쪽에서는 <code>src</code>를 제외하게 해서 설정해 봤으나 또 다시 오류...</p>
+<p>몇 번의 삽질을 진행하고 나서야 </p>
+<pre class="line-numbers language-json"><code class="language-json"><span class="token punctuation">{</span>
+  test<span class="token operator">:</span> /(node_modules<span class="token punctuation">)</span>.+\.(css|scss<span class="token punctuation">)</span>/<span class="token punctuation">,</span>
+  use<span class="token operator">:</span> <span class="token punctuation">[</span>
+    MiniCssExtractPlugin.loader<span class="token punctuation">,</span>
+    'css-loader'<span class="token punctuation">,</span>
+    'postcss-loader'<span class="token punctuation">,</span>
+    'sass-loader'<span class="token punctuation">,</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">{</span>
+  test<span class="token operator">:</span> /\.(css|scss<span class="token punctuation">)</span>/<span class="token punctuation">,</span>
+  exclude<span class="token operator">:</span> <span class="token punctuation">[</span>path.resolve(
+    __dirname<span class="token punctuation">,</span>
+      <span class="token string">"../node_modules/"</span>
+    <span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  use<span class="token operator">:</span> <span class="token punctuation">[</span>
+    'vue-style-loader'<span class="token punctuation">,</span>
+    'css-loader'<span class="token punctuation">,</span>
+    'postcss-loader'
+    'sass-loader'<span class="token punctuation">,</span>
+    ...
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>로 분리시켜 성공했다.</p>
+<p>정말이지 문서화의 중요성을 새삼 느끼는 작업이었다.
+<span><span aria-hidden="true">= _=a</span><span class="sr-only">긁적긁적</span></span></p>
+<hr>
+<h2 id="적용-결과"><a href="#적용-결과" class="headerlink" title="적용 결과"></a>적용 결과</h2><p>기존에 40분 남짓이 걸리던 빌드 시간이 11분 정도로 단축 된 것을 확인했다.<br>이후로 몇 번 더 빌드해보고 평균을 좀 더 확인해 봐야 알 수 있겠지만 그건 이제 불가능할거고...<br>폐업 전에 그래도 하나 또 해보고 빌드 시간 개선에 대한 의도는 거두었다는데 의의를 두어야겠다.</p>
+</div><div class="article__tags"><div class="article__tags__title">tags:</div><a class="article__tag__item" href="/tags/webpack-4/"><span class="fas fa-tag" aria-hidden="true"></span>webpack 4</a><a class="article__tag__item" href="/tags/migration/"><span class="fas fa-tag" aria-hidden="true"></span>migration</a><a class="article__tag__item" href="/tags/%EC%82%BD%EC%A7%88%EA%B8%B0/"><span class="fas fa-tag" aria-hidden="true"></span>삽질기</a></div></article><div class="comment__container" role="region" aria-label="comments"><div id="lv-container" data-id="city" data-uid="MTAyMC8zMDYzOC83MTkz"></div></div></div><footer class="footer"><p class="copyright">&copy; 2012 ~ 2019 mulder21c <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" target="_blank" rel="license">(CCL-BY-NC-ND)</a></p><p class="credit">Powered by  <a href="https://hexo.io/" rel="external noreferrer" target="_blank">Hexo</a>. Theme by  <a href="https://github.com/mulder21c" rel="external noreferrer" target="_blank">mulder21c</a></p></footer><div class="nav" aria-hidden="true"><nav class="nav--container" id="navigation" aria-labelledby="nav__heading"><h2 class="nav__heading" id="nav__heading">Navigation</h2><hr class="nav__seperator"><ul class="menu-list">
+    <li class="menu-item" >
+      <a href="/" >
+        home
+      </a>
+    </li>
+    <li class="menu-item" >
+      <a href="/archives" >
+        archives
+      </a>
+    </li>
+    <li class="menu-item" >
+      <a href="/copyright" >
+        copyright
+      </a>
+    </li>
+    <li class="menu-item" >
+      <a href="/resume" >
+        about me
+      </a>
+    </li></ul><hr class="nav__seperator"><h3 class="nav__heading--sub">Categories</h3><ul class="category-list"><li class="category-list-item"><a class="category-list-link current" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/">개발노트</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/a11y/">A11Y</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/html-css/">HTML/CSS</a></li><li class="category-list-item"><a class="category-list-link current" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/javascript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/etc/">etc..</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%83%9D%EA%B0%81%EB%85%B8%ED%8A%B8/">생각노트</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%83%9D%EA%B0%81%EB%85%B8%ED%8A%B8/in-christ/">in christ</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%83%9D%EA%B0%81%EB%85%B8%ED%8A%B8/in-dailylife/">in dailylife</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%83%9D%EA%B0%81%EB%85%B8%ED%8A%B8/in-occupation/">in occupation</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%BC%EC%83%81%EB%85%B8%ED%8A%B8/">일상노트</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%BC%EC%83%81%EB%85%B8%ED%8A%B8/miscellaneous/">miscellaneous</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%BC%EC%83%81%EB%85%B8%ED%8A%B8/%EC%97%AC%ED%96%89-%EC%82%AC%EC%A7%84/">여행 & 사진</a></li></ul></li></ul><hr class="nav__seperator"><h3 class="nav__heading--sub">External links</h3><ul class="link-list">
+      <li>
+        <a href="https://mulder21c.github.io/aria-practices" target="_blank" class="link-item">WAI-ARIA Authoring Practice 1.2 (진행중)</a>
+      </li>
+    
+      <li>
+        <a href="https://mulder21c.github.io/jest/docs/en/next/getting-started.html" target="_blank" class="link-item">Jest 공식 문서 개인 번역 (진행중)</a>
+      </li>
+    
+      <li>
+        <a href="https://mulder21c.github.io/seminar" target="_blank" class="link-item">세미나 발표 자료</a>
+      </li>
+    
+      <li>
+        <a href="https://mulder21c.github.io/html" target="_blank" class="link-item">HTML 5.1 명세 개인 번역 (중단)</a>
+      </li>
+    </ul><hr class="nav__seperator"><div class="nav__sns__icon-wrapper"><a class="nav__sns__icon" href="https://www.github.com/mulder21c" target="_blank" aria-label="github"><span class="fab fa-github-square" aria-hidden="true"></span></a><a class="nav__sns__icon" href="https://www.facebook.com/mulder21c" target="_blank" aria-label="facebook"><span class="fab fa-facebook-square" aria-hidden="true"></span></a><a class="nav__sns__icon" href="https://www.instagram.com/mulder21c/" target="_blank" aria-label="instagram"><span class="fab fa-instagram" aria-hidden="true"></span></a><a class="nav__sns__icon" href="https://twitter.com/mulder21c" target="_blank" aria-label="twitter"><span class="fab fa-twitter-square" aria-hidden="true"></span></a><a class="nav__sns__icon" href="https://www.linkedin.com/in/mulder21c/" target="_blank" aria-label="linkedin"><span class="fab fa-linkedin" aria-hidden="true"></span></a><a class="nav__sns__icon" href="http://flickr.com/photos/mulder21c" target="_blank" aria-label="flickr"><span class="fab fa-flickr" aria-hidden="true"></span></a><a class="nav__sns__icon" href="/rss.xml" target="_blank" aria-label="rss"><span class="fas fa-rss-square" aria-hidden="true"></span></a></div></nav></div><div class="license-notation dialog" role="dialog" aria-describedby="license-notation" aria-modal="true" aria-hidden="true" hidden><div class="dialog__content" id="license-notation"><p><img class="icon" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" alt="크리에이티브 커먼즈 라이선스">본 블로그의 모든 저작물은 <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">크리에이티브 커먼즈 저작자표시-비영리-변경금지 4.0 국제 라이선스</a>에 따라 이용할 수 있습니다.</p><p>저작권 위반시 저작권의 보호를 위해 법적인 조치를 취할 수 있으며,
+퍼가실 때에는 반드시 출처를 명시해 주시고, 사용처를 덧글로 남겨주시면 감사합니다.</p><p>저작권에 관련한 기타 자세한 내용은 <a rel="help" href="/copyright">저작권에 관한 경고</a>를 참고해주세요.</p><p class="dialog__footer"><input type="checkbox" name="license-agree" id="license-agree"><label for="license-agree">내용을 확인 했습니다.</label><br><button class="btn-close" type="button">닫기</button></p></div><div class="dialog__diemed"></div></div><script src="/js/webfontloader.js"></script><script>WebFont.load({
+  custom: {
+    families: ["Spoqa Han Sans", "Hack", "Font Awesome"],
+    urls: ["/fonts/spoqahansans/SpoqaHanSans-kr.css", "/fonts/hack/hack.css", "/fonts/fontawesome/fontawesome.css"]
+  }
+});</script><script>(function(d, s) {
+  if(!document.getElementById("lv-container")) return;
+  var j, e = d.getElementsByTagName(s)[0];
+  if (typeof LivereTower === "function") { return; }
+  j = d.createElement(s);
+  j.src = "https://cdn-city.livere.com/js/embed.dist.js";
+  j.async = true;
+  e.parentNode.insertBefore(j, e);
+})(document, "script");
+</script><script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(adsbygoogle = window.adsbygoogle || []).push({
+  google_ad_client: "ca-pub-5055523791773672",
+  enable_page_level_ads: true
+});</script><script src="/js/script.js"></script></body></html>

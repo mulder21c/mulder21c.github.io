@@ -1,0 +1,447 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>접근 가능한 탭 UI 만들기 - The Tracks of mulder21c</title><!-- Links--><link rel="canonical" href="https://mulder21c.github.io/2018/06/04/how-to-make-accessible-tab-content"><!-- preload--><link rel="preload" as="image" href="/images/favicon.png" crossorigin="anonymous"><link rel="preload" as="image" href="/upload/2018/tab-ui.jpg" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/iropke/IropkeBatangM.woff" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/spoqahansans/SpoqaHanSansRegular.woff2" crossorigin="anonymous"><!-- Icons--><link rel="shortcut icon" sizes="196x196" href="/images/favicon.png"><!-- open graph--><meta name="description" content="ARIA를 적용함으로서 스크린리더 사용자는 이것이 탭 UI의 형태를 가진 콘텐츠임을 인식할 수 있고, 따라서 현재 어떤 콘텐츠를 탐색 중인지를 그려볼 수 가 있다.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="접근 가능한 탭 UI 만들기">
+<meta property="og:url" content="https://mulder21c.github.io/2018/06/04/how-to-make-accessible-tab-content/">
+<meta property="og:site_name" content="The Tracks of mulder21c">
+<meta property="og:description" content="ARIA를 적용함으로서 스크린리더 사용자는 이것이 탭 UI의 형태를 가진 콘텐츠임을 인식할 수 있고, 따라서 현재 어떤 콘텐츠를 탐색 중인지를 그려볼 수 가 있다.">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://mulder21c.github.io/upload/2018/tab-ui.jpg">
+<meta property="og:image" content="https://farm1.staticflickr.com/863/41108552022_61413423d5_b.jpg">
+<meta property="article:published_time" content="2018-06-04T10:46:43.000Z">
+<meta property="article:modified_time" content="2020-06-13T10:44:08.675Z">
+<meta property="article:author" content="멀더끙">
+<meta property="article:tag" content="웹 접근성">
+<meta property="article:tag" content="a11y">
+<meta property="article:tag" content="WAI-ARIA">
+<meta property="article:tag" content="tab UI">
+<meta property="article:tag" content="탭 콘텐츠">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://mulder21c.github.io/upload/2018/tab-ui.jpg"><!-- verify website ownership--><meta name="google-site-verification" content="cNXUGP2JbfDQYO1PIpkuHsivBfDI6Q_AFBBZzsNaUKs"><meta name="naver-site-verification" content="859a6966704edf251c82579243d7dda7a8a87799"><!-- styles--><link rel="stylesheet" href="/css/style.css"><style>
+</style><link rel="stylesheet" href="/fonts/iropke/iropke.css"><link rel="stylesheet" href="/fonts/notosanskr/NotoSansKR.css"><!-- JSON LD for SEO--><script type="application/ld+json">{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "접근 가능한 탭 UI 만들기",
+  "alternativeHeadline": null,
+  "image": {
+    "@type": "imageObject",
+    "url": "https://mulder21c.github.io/upload/2018/tab-ui.jpg",
+    "width": null,
+    "height": null
+  },
+  "genre": null,
+  "keywords": "웹 접근성,a11y,WAI-ARIA,tab UI,탭 콘텐츠",
+  "editor": {
+    "@type": "Person",
+    "name": "멀더끙"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "멀더끙",
+    "logo": {
+      "@type": "imageObject",
+      "url": "https://mulder21c.github.io/images/favicon.png"
+    }
+  },
+  "author": {
+    "@type": "Person",
+    "name": "멀더끙"
+  },
+  "url": "https://mulder21c.github.io/2018/06/04/how-to-make-accessible-tab-content/",
+  "dateCreated": "2018-06-04",
+  "datePublished": "2018-06-04",
+  "articleBody": "ARIA를 적용함으로서 스크린리더 사용자는 이것이 탭 UI의 형태를 가진 콘텐츠임을 인식할 수 있고, 따라서 현재 어떤 콘텐츠를 탐색 중인지를 그려볼 수 가 있다."
+}</script><!--scripts--><script>(function(i,s,o,g,r,a,m) {i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,"script","//www.google-analytics.com/analytics.js","ga");
+ga("create", "UA-55718543-7", "auto");
+ga("send", "pageview");
+</script><meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/rss.xml" title="The Tracks of mulder21c" type="application/rss+xml">
+<link rel="stylesheet" href="/css/prism-xonokai.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><script src="/js/prism.js"></script>
+<script src="/js/prism-line-numbers.min.js"></script></head><body class="post"><header class="header hero hero--has-image"><div class="hero-wrapper"><div class="gnb"><a href="/">The Tracks of mulder21c</a><button class="nav-toggle" type="button" aria-haspopup="true" aria-controls="navigation"><span></span><span></span><span></span>menu</button></div><h1 class="header__title">접근 가능한 탭 UI 만들기</h1><div class="hero__image" style="background-image: url(/upload/2018/tab-ui.jpg);"></div></div></header><div class="contents--container" role="main"><article class="article"><div class="article__meta"><div class="gravatar"><img src="/images/favicon.png" alt="authored by 멀더끙"></div><time class="article__meta__time" datetime="2018-06-04T10:46:43.000Z"><span aria-label="posted"><span class="fas fa-calendar-day" aria-hidden="true"></span></span>2018-06-04 19:46:43</time><div class="article__meta__category"><span aria-label="category"><span class="fas fa-archive" aria-hidden="true"></span></span><a class="article__meta__category__item" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/">개발노트</a><a class="article__meta__category__item" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/a11y/">A11Y</a></div></div><div class="article__content"><h2 id="기존-방식의-문제점"><a href="#기존-방식의-문제점" class="headerlink" title="기존 방식의 문제점"></a>기존 방식의 문제점</h2><p>과거, WAI-ARIA가 본격적으로 도입되기 이전에는 탭 콘텐츠에 대한 접근성을 제공할 방법 자체가 제한이 많았기 때문에 웹 콘텐츠
+접근성 지침(이하 KWCAG)의 기준을 최대한 벗어나지 않는 대체 방안들로 제공이 되었다.</p>
+<p>그 중 대표적인 것이,</p>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#tab1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>tab 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#tab2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>tab 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#tab3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>tab 3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tab1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">></span></span>tab 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">></span></span>
+    ...
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tab2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">></span></span>tab 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">></span></span>
+    ...
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tab3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">></span></span>tab 3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">></span></span>
+    ...
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>이러한 형태의 마크업을 사용하거나,</p>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#tab1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>tab 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tab1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    ...
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#tab2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>tab 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tab2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    ...
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#tab3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>tab 3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tab3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    ...
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>의 형태를 마크업을 사용하고 CSS로 tab 메뉴에 해당하는 anchor들을 배치시키는 방식들이 주로 사용되었다.</p>
+<p>전자의 경우는 사실 탭 목록을 먼저 마크업 하고 이후 탭 패널에 해당하는 부분들이 각각 어떤 탭에 대한 내용인지를 알 수 없으면
+접근성에 문제가 될 수 있다는 문제로 인해 탭 패널 내에 각각의 탭 메뉴에 해당하는 내용을 제목으로 두어 해결하는 방식이었고,</p>
+<p>후자의 경우는 전자의 방법대로 하자면 탭 메뉴와 탭 패널의 제목이 다시 중복되어 제공되는 문제나, 시선의 흐름상 탭 메뉴 1 → 탭
+패널 1 → 탭 메뉴 2 → 탭 패널 2 → 탭 메뉴 3 → 탭 패널 3으로 읽히는 것이 논리적 흐름에 맞다는 이유에서 나타난 방식 이었던
+것으로 기억한다.</p>
+<p>하지만 이것은 어디까지나 과거 탭 콘텐츠를 인식하게 할 수 있는 기술 기반이 미비했기 때문에 당시에 최대한 가능한 방법을 찾고 찾아서
+나타나게 된 방식인 것이지, 이 방식이 탭 콘텐츠에 대한 접근성을 해소해 줄 수 있는 정답이 아니다. (헌데 일부는 이 방법들을
+정답으로 알고 있거나, 전자의 코드나 후자의 코드만이 옳다고 딱잘라 말하는 이들이 더러 보인다.)</p>
+<p>두 경우 모두 여전히 해결이 불가능한 문제들이 남아있게 된다. &mdash; 탭 UI의 형태를 가지고 있다는 정보 제공의 어려움, 기본으로
+어느 탭이 활성화 되어 있지는지 인식이 어려운 문제, 불필요한 heading 사용(그리고 그로 인한 문서 개요 문제), 디자인에 따라 적용하기
+어려운 경우가 발생될 수 있는 문제나 다음 탭을 인식하기 위해서는 이전 탭 패널의 내용을 거쳐지나가야만 하는 문제 (탭 패널의 내용이 너무
+길 경우에는 최악의 상황이 된다)등등.</p>
+<h2 id="Use-ARIA"><a href="#Use-ARIA" class="headerlink" title="Use ARIA"></a>Use ARIA</h2><p>ARIA<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>를 사용하게 되면 이러한 문제들을 해결할 수 있게 된다. ARIA를 적용함으로서 스크린리더 사용자는 이것이 탭 UI의 형태를 가진
+콘텐츠임을 인식할 수 있고, 따라서 현재 어떤 콘텐츠를 탐색 중인지를 그려볼 수 가 있다.</p>
+<p>WAI-ARIA의 Authoring Practice 문서에는 어떻게 작성해야 하는지에 대한 설명이 나와 있고, 그 설명에 따라서 HTML, CSS,
+JavaScript를 작성하기만 하면 된다.</p>
+<p>때문에 ARIA의 적용에 있어 문제가 될 수 있는 부분이 있다면, JavaScript를 다룰 줄 알아야 한다는 것. ARIA가 Rich Internet
+Application에 대한 기술이므로 어쩌면 당연한 부분이다.</p>
+<h3 id="탭-UI의-기본-동작"><a href="#탭-UI의-기본-동작" class="headerlink" title="탭 UI의 기본 동작"></a>탭 UI의 기본 동작</h3><ul>
+<li>탭 UI가 초기화 되면, 한 개 탭 패널을 노출시키고 이 탭 패널과 연관된 탭을 활성화 되었다고 표시</li>
+<li>사용자가 다른 탭을 선택하면, 선택된 탭을 활성화 표시하고, 이전 탭 패널을 숨기고 활성화 된 탭과 연관된 탭 패널을 노출</li>
+</ul>
+<h3 id="탭-UI의-키보드-인터랙션"><a href="#탭-UI의-키보드-인터랙션" class="headerlink" title="탭 UI의 키보드 인터랙션"></a>탭 UI의 키보드 인터랙션</h3><ul>
+<li><kbd>Tab</kbd>: 탭 목록<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup> 내부로 초점이 이동할 때, 활성화 되어 있는 탭으로 초점 이동. 탭 목록이 초점을 포함하고 있을 경우,
+탭 패널이나 탭 패널 내부의 첫 번째 초점을 얻을 수 있는 요소로 초점 이동</li>
+<li>초점이 탭 요소에 있을 때<ul>
+<li><kbd>Left Arrow</kbd>: 이전 탭으로 초점 이동. 초점이 첫 번째 요소에 있었다면 마지막 탭으로 초점 이동.</li>
+<li><kbd>Right Arrow</kbd>: 다음 탭으로 초점 이동. 초점이 마지막 요소에 있었다면 첫 번째 탭으로 초점 이동.</li>
+</ul>
+</li>
+<li>탭 목록 내부에 초점이 있을 때<ul>
+<li><kbd>Space</kbd>, <kbd>Enter</kbd>: 탭 활성화</li>
+<li><kbd>Home</kbd>: (선택적 제공) 첫 번째 탭으로 초점 이동</li>
+<li><kbd>End</kbd>: (선택적 제공) 마지막 탭으로 초점 이동</li>
+<li><kbd>Shift</kbd> + <kbd>F10</kbd>: 탭이 연관된 팝업 메뉴를 가질 경우 메뉴 노출</li>
+<li><kbd>Delete</kbd>: (선택적 제공) 탭이 삭제 가능하다면, 탭과 연관된 탭 패널을 모두 삭제하고, 나머지 탭이 존재한다면
+삭제된 다음 탭으로 초점을 이동시키고 활성화.</li>
+</ul>
+</li>
+</ul>
+<p>대다수 탭 UI를 만든다고 하면 마우스로 클릭하는 경우만 생각을 하고 만드는 경우가 허다한데, 실제로 키보드 인터랙션이 제공되지 않으면
+포인팅 디바이스를 사용할 수 없는 사용자의 경우에는 전혀 사용할 수 없는 UI를 만드는 셈이 된다.</p>
+<p>따라서, 탭 목록에서 마우스의 이동에 대응하는 방향키, 탭을 선택하는 행위로서 마우스 클릭에 대응하는 <kbd>Space</kbd>와
+<kbd>Enter</kbd>는 최소한으로 제공되어야 한다.</p>
+<p>혹자는 첫 번째 탭에서 두 번째 탭으로 이동하는 것에 <kbd>Tab</kbd>을 사용하면 되지 굳이 방향키로 대응해야 하느냐 한다면, 방향키로
+하는 것이 더 적절하다 할 수 있다.</p>
+<p>이유는, 탭 콘텐츠를 이용하는 사람의 논리적 흐름인데 첫 번째 탭의 것을 보고 싶은 사람은 다른 탭 메뉴를 확인 할 것 없이 바로 탭 패널로
+시선을 이동시키면 된다. 또, 첫 번째 탭 레이블을 인식하고 나니 관심이 없는 콘텐츠라서 다음 탭이 무엇이 있는지를 확인하기 원하는 사람도
+있을 수 있다. 이 경우라면 첫 번째 탭 이후 다음 탭으로 시선이 이동시키게 된다.</p>
+<p>이를 <kbd>Tab</kbd> 키를 이용한 초점 이동만을 사용하게 되면 둘 중 하나를 포기해야 하는 상황이 되기 때문에, 탭 탐색과 탭 패널로의
+탐색을 모두 만족시켜주는 키보드 인터랙션이 필요한 것이다.</p>
+<h3 id="WAI-ARIA-Roles-Properties-States"><a href="#WAI-ARIA-Roles-Properties-States" class="headerlink" title="WAI-ARIA Roles, Properties, States"></a>WAI-ARIA Roles, Properties, States</h3><ul>
+<li>탭 목록에 해당하는 요소(element)에 tablist role 부여<ul>
+<li>AT<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>가 &quot;탭 목록&quot;을 인식.</li>
+</ul>
+</li>
+<li>탭에 해당하는 요소(element)에 tab role 부여<ul>
+<li>AT가 해당 탭에 접근 시 &quot;탭&quot; 콘텐츠임을 알려주며, 인식 된 tablist role을 통해 총 몇 개의 탭 중 현재 몇 번째 탭을 탐색
+중인지를 알려줌. ex) &quot;bar 탭 2/3&quot;</li>
+</ul>
+</li>
+<li>탭에 대한 콘텐츠 패널에 해당하는 요소(element)에 tabpanel role 부여<ul>
+<li>AT가 해당 패널에 접근 시, &quot;탭 패널&quot; 콘텐츠임을 알려줌.<sup id="fnref:4"><a href="#fn:4" rel="footnote">4</a></sup></li>
+</ul>
+</li>
+<li>각 탭에 탭과 연관된 탭 패널을 참조하는 aria-controls property 부여<ul>
+<li>AT가 해당 탭 접근 시, 연관된 탭 패널 정보를 인식. <sup id="fnref:5"><a href="#fn:5" rel="footnote">5</a></sup></li>
+</ul>
+</li>
+<li>활성화 된 탭에 aria-selected state를 부여하고 true 값 설정, 나머지 탭들에는 false로 설정된 aria-selected state를 부여<ul>
+<li>AT가 aria-selected 상태에 따라 선택된 상태인지 미선택된 상태인지를 인식하고 사용자에게 알려줌. ex) &quot;foo 탭 1/3 선택됨&quot;</li>
+</ul>
+</li>
+<li>각 탭 패널에 이 패널과 연관된 탭 요소를 참조하는 aria-labelledby property 부여<ul>
+<li>AT가 접근한 &quot;탭 패널&quot; 콘텐츠의 label을 참조 인식하여 어떤 탭의 패널인지 사용자에게 알려줌. ex) &quot;foo 속성 페이지&quot;</li>
+</ul>
+</li>
+</ul>
+<h2 id="How-to-Make"><a href="#How-to-Make" class="headerlink" title="How to Make"></a>How to Make</h2><p>그럼 이제 어떻게 만들어 가는지 과정을 차근차근 진행해보자.</p>
+<h3 id="마크업-구조-작성"><a href="#마크업-구조-작성" class="headerlink" title="마크업 구조 작성"></a>마크업 구조 작성</h3><p>마크업 구조를 잡는데에는 여러 가지 방법이 있다. 아래는 여러 방식 중의 한 가지일 뿐이니 마치 이렇게 하는 것만이 가능한 방법으로 오해하지
+말자. 맹점은 ARIA 적용에 있다.</p>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tablist<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tab<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>foo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tab<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>bar<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tab<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>baz<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tabpanel<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  ...
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tabpanel<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  ...
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tabpanel<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  ...
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>일단 탭 목록에 해당하는 <code>ul.tablist</code>, 탭으로 사용되는 <code>li.tab</code>, 탭 패널에 해당하는 <code>div.tabpanel</code>을 마크업 해둔다.</p>
+<h3 id="ARIA-roles-적용"><a href="#ARIA-roles-적용" class="headerlink" title="ARIA roles 적용"></a>ARIA roles 적용</h3><p>탭 목록, 탭, 탭 패널에 각각 <code>tablist</code>, <code>tab</code>, <code>tabpanel</code>을 적용한다.</p>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tablist<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tablist<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tab<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tab<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>boo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tab<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tab<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>far<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tab<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tab<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>baz<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tabpanel<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tabpanel<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  ...
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tabpanel<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tabpanel<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  ...
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tabpanel<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tabpanel<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  ...
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="ARIA-Properties-적용"><a href="#ARIA-Properties-적용" class="headerlink" title="ARIA Properties 적용"></a>ARIA Properties 적용</h3><ol>
+<li>탭에 연관된 탭 패널을 참조하는 aria-controls property 부여하기 위해 탭 패널에 id 값을 추가로 작성하여 연결<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tablist<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tablist<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tab<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tab<span class="token punctuation">"</span></span> <span class="token attr-name">aria-controls</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tab-panel1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>boo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tab<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tab<span class="token punctuation">"</span></span> <span class="token attr-name">aria-controls</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tab-panel2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>far<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tab<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tab<span class="token punctuation">"</span></span> <span class="token attr-name">aria-controls</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tab-panel3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>baz<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tab-panel1<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tabpanel<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tabpanel<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+ ...
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tab-panel2<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tabpanel<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tabpanel<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+ ...
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tab-panel3<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tabpanel<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tabpanel<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+ ...
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li>각 탭 패널에 이 패널과 연관된 탭 요소를 참조하는 aria-labelledby property 부여하기 위해 탭에 id 값을 추가로 작성하여 연결<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tablist<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tablist<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tab1<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tab<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tab<span class="token punctuation">"</span></span> <span class="token attr-name">aria-controls</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tab-panel1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>boo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tab2<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tab<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tab<span class="token punctuation">"</span></span> <span class="token attr-name">aria-controls</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tab-panel2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>far<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tab3<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tab<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tab<span class="token punctuation">"</span></span> <span class="token attr-name">aria-controls</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tab-panel3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>baz<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tab-panel1<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tabpanel<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tabpanel<span class="token punctuation">"</span></span> <span class="token attr-name">aria-labelledby</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tab1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+ ...
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tab-panel2<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tabpanel<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tabpanel<span class="token punctuation">"</span></span> <span class="token attr-name">aria-labelledby</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tab2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+ ...
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tab-panel3<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tabpanel<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tabpanel<span class="token punctuation">"</span></span> <span class="token attr-name">aria-labelledby</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tab3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+ ...
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ol>
+<p>앞서 <a href="#WAI-ARIA-Roles-Properties-States">WAI-ARIA Roles, Properties, States</a>에 기술 된 내용 중 State는
+마크업에 포함시켜두지 않았는데, 이는 State의 값은 JavaScript에 의해 변경되어야 하기 때문에 탭 UI가 초기화 될 때 JavaScript에
+의해 설정되게 하는 것이 더 적절할 것이기 때문이다.</p>
+<h3 id="JavaScript-작성"><a href="#JavaScript-작성" class="headerlink" title="JavaScript 작성"></a>JavaScript 작성</h3><p>JavaScript 작성에 대해서는 ARIA 적용과 키보드 인터랙션을 반영하는 방법을 설명하기 위해 플러그인이나 라이브러리 형태로 작성하지 않고,
+절차적으로만 작성할 것이다. (실제 프로덕트에 사용될 코드는 이렇게 짜여지지 않는다는 말이다.) 또한, 쉬운 이해를 돕기 위해 jQuery로
+작성한다. (jQuery가 좋기 때문이 아니라 jQuery의 메서드들 자체가 직관적으로 되어 있어서다.)</p>
+<ol>
+<li><p>초기화 &mdash; 첫 번째 탭과 첫 번째 탭에 연관된 탭 패널 활성화</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// 시각적으로 활성화 표기를 위한 클래스 추가</span>
+<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">".tab:first-of-type, .tabpanel:first-of-type"</span><span class="token punctuation">)</span>
+ <span class="token punctuation">.</span><span class="token function">addClass</span><span class="token punctuation">(</span><span class="token string">"active"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// 의미적으로 활성화 표기를 위해 true로 설정된 aria-selected 속성 추가</span>
+<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">".tab:first-of-type"</span><span class="token punctuation">)</span>
+ <span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">"aria-selected"</span><span class="token punctuation">,</span> <span class="token string">"true"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>초기화 &mdash; 탭 목록 접근시 첫 번째 요소(활성화 되어 있는 요소)가 초점을 얻을 수 있도록, 첫 번째 탭 패널로 이동시 패널이
+초점을 얻을 수 있도록 <code>tabindex</code> 속성(attribute) 추가</p>
+<pre class="line-numbers language-javascript|data-line=&quot;3&quot;"><code class="language-javascript|data-line=&quot;3&quot;">$(".tab:first-of-type, .tabpanel:first-of-type")
+ .addClass("active")
+ .attr("tabindex", "0");<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>탭 초점 이동(방향키)</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">".tab"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"keydown"</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>event<span class="token punctuation">)</span><span class="token punctuation">{</span>
+ event <span class="token operator">=</span> event <span class="token operator">||</span> window<span class="token punctuation">.</span>event<span class="token punctuation">;</span>
+ event<span class="token punctuation">.</span>preventDefault <span class="token operator">?</span> event<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">:</span> event<span class="token punctuation">.</span>returnValue <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+ <span class="token keyword">var</span> keycode <span class="token operator">=</span> event<span class="token punctuation">.</span>keyCode <span class="token operator">||</span> event<span class="token punctuation">.</span>which<span class="token punctuation">;</span>
+
+ <span class="token keyword">switch</span><span class="token punctuation">(</span>keycode<span class="token punctuation">)</span><span class="token punctuation">{</span>
+   <span class="token keyword">case</span> <span class="token number">37</span><span class="token punctuation">:</span>  <span class="token comment" spellcheck="true">// left arrow</span>
+     <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>previousElementSibling<span class="token punctuation">)</span><span class="token punctuation">{</span>
+       <span class="token function">$</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
+         <span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">"tabindex"</span><span class="token punctuation">,</span> <span class="token string">"-1"</span><span class="token punctuation">)</span>
+       <span class="token punctuation">.</span><span class="token function">prev</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+         <span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">"tabindex"</span><span class="token punctuation">,</span> <span class="token string">"0"</span><span class="token punctuation">)</span>
+         <span class="token punctuation">.</span><span class="token function">focus</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+       <span class="token comment" spellcheck="true">// 초점이 첫 번째 요소에 있었다면, 마지막 탭으로 초점 이동</span>
+       <span class="token function">$</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
+         <span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">"tabindex"</span><span class="token punctuation">,</span> <span class="token string">"-1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">".tab:last-of-type"</span><span class="token punctuation">)</span>
+         <span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">"tabindex"</span><span class="token punctuation">,</span> <span class="token string">"0"</span><span class="token punctuation">)</span>
+         <span class="token punctuation">.</span><span class="token function">focus</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token punctuation">}</span>
+     <span class="token keyword">break</span><span class="token punctuation">;</span>
+   <span class="token keyword">case</span> <span class="token number">39</span><span class="token punctuation">:</span>  <span class="token comment" spellcheck="true">// right arrow</span>
+     <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>nextElementSibling<span class="token punctuation">)</span><span class="token punctuation">{</span>
+       <span class="token function">$</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
+         <span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">"tabindex"</span><span class="token punctuation">,</span> <span class="token string">"-1"</span><span class="token punctuation">)</span>
+       <span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+         <span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">"tabindex"</span><span class="token punctuation">,</span> <span class="token string">"0"</span><span class="token punctuation">)</span>
+         <span class="token punctuation">.</span><span class="token function">focus</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+       <span class="token comment" spellcheck="true">// 초점이 마지막 요소에 있었다면, 첫 번째 탭으로 초점 이동</span>
+       <span class="token function">$</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
+         <span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">"tabindex"</span><span class="token punctuation">,</span> <span class="token string">"-1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">".tab:first-of-type"</span><span class="token punctuation">)</span>
+         <span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">"tabindex"</span><span class="token punctuation">,</span> <span class="token string">"0"</span><span class="token punctuation">)</span>
+         <span class="token punctuation">.</span><span class="token function">focus</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token punctuation">}</span>
+     <span class="token keyword">break</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>탭 활성화 (Space / Enter 키)</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">".tab"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"keydown"</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>event<span class="token punctuation">)</span><span class="token punctuation">{</span>
+ <span class="token operator">...</span>
+
+ <span class="token keyword">switch</span><span class="token punctuation">(</span>keycode<span class="token punctuation">)</span><span class="token punctuation">{</span>
+   <span class="token operator">...</span>
+   <span class="token keyword">case</span> <span class="token number">32</span><span class="token punctuation">:</span>    <span class="token comment" spellcheck="true">// Space</span>
+   <span class="token keyword">case</span> <span class="token number">13</span><span class="token punctuation">:</span>    <span class="token comment" spellcheck="true">// Enter</span>
+     <span class="token comment" spellcheck="true">// 선택된 탭 활성화</span>
+     <span class="token function">$</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
+       <span class="token punctuation">.</span><span class="token function">addClass</span><span class="token punctuation">(</span><span class="token string">"active"</span><span class="token punctuation">)</span>
+       <span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">"aria-selected"</span><span class="token punctuation">,</span> <span class="token string">"true"</span><span class="token punctuation">)</span>
+     <span class="token comment" spellcheck="true">// 기존 탭 비활성화</span>
+     <span class="token punctuation">.</span><span class="token function">siblings</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+       <span class="token punctuation">.</span><span class="token function">removeClass</span><span class="token punctuation">(</span><span class="token string">"active"</span><span class="token punctuation">)</span>
+       <span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">"aria-selected"</span><span class="token punctuation">,</span> <span class="token string">"false"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token comment" spellcheck="true">// 연관된 탭 패널 활성화</span>
+     <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#"</span> <span class="token operator">+</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">"aria-controls"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+       <span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">"tabindex"</span><span class="token punctuation">,</span> <span class="token string">"0"</span><span class="token punctuation">)</span>
+       <span class="token punctuation">.</span><span class="token function">addClass</span><span class="token punctuation">(</span><span class="token string">"active"</span><span class="token punctuation">)</span>
+     <span class="token comment" spellcheck="true">// 기존 탭 패널 비활성화</span>
+     <span class="token punctuation">.</span><span class="token function">siblings</span><span class="token punctuation">(</span><span class="token string">".tabpanel"</span><span class="token punctuation">)</span>
+       <span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">"tabindex"</span><span class="token punctuation">,</span> <span class="token string">"-1"</span><span class="token punctuation">)</span>
+       <span class="token punctuation">.</span><span class="token function">removeClass</span><span class="token punctuation">(</span><span class="token string">"active"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token keyword">break</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>탭 패널 이동 &mdash; 활성화 된 탭에서 <kbd>Tab</kbd>키 누를 경우 연관된 탭 패널로 이동</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">".tablist"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"keydown"</span><span class="token punctuation">,</span> <span class="token string">".active"</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>event<span class="token punctuation">)</span><span class="token punctuation">{</span>
+ event <span class="token operator">=</span> event <span class="token operator">||</span> window<span class="token punctuation">.</span>event<span class="token punctuation">;</span>
+ <span class="token keyword">var</span> keycode <span class="token operator">=</span> event<span class="token punctuation">.</span>keyCode <span class="token operator">||</span> event<span class="token punctuation">.</span>which<span class="token punctuation">;</span>
+
+ <span class="token comment" spellcheck="true">// tab 키 눌렀을 때 (shift + tab은 제외)</span>
+ <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>event<span class="token punctuation">.</span>shiftKey <span class="token operator">&amp;&amp;</span> keycode <span class="token operator">===</span> <span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+   event<span class="token punctuation">.</span>preventDefault <span class="token operator">?</span> event<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">:</span> event<span class="token punctuation">.</span>returnValue <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+   <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#"</span> <span class="token operator">+</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">"aria-controls"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+     <span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">"tabindex"</span><span class="token punctuation">,</span> <span class="token string">"0"</span><span class="token punctuation">)</span>
+     <span class="token punctuation">.</span><span class="token function">addClass</span><span class="token punctuation">(</span><span class="token string">"active"</span><span class="token punctuation">)</span>
+     <span class="token punctuation">.</span><span class="token function">focus</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+   <span class="token punctuation">.</span><span class="token function">siblings</span><span class="token punctuation">(</span><span class="token string">".tabpanel"</span><span class="token punctuation">)</span>
+     <span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">"tabindex"</span><span class="token punctuation">,</span> <span class="token string">"-1"</span><span class="token punctuation">)</span>
+     <span class="token punctuation">.</span><span class="token function">removeClass</span><span class="token punctuation">(</span><span class="token string">"active"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>마우스 클릭에 대한 이벤트 핸들링</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">".tab"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"mousedown"</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+ <span class="token comment" spellcheck="true">// 선택된 탭 활성화</span>
+ <span class="token function">$</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
+   <span class="token punctuation">.</span><span class="token function">addClass</span><span class="token punctuation">(</span><span class="token string">"active"</span><span class="token punctuation">)</span>
+   <span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+     <span class="token string">"tabindex"</span><span class="token punctuation">:</span> <span class="token string">"0"</span><span class="token punctuation">,</span>
+     <span class="token string">"aria-selected"</span><span class="token punctuation">:</span> <span class="token string">"true"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">)</span>
+   <span class="token punctuation">.</span><span class="token function">focus</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+ <span class="token comment" spellcheck="true">// 기존 탭 비활성화</span>
+ <span class="token punctuation">.</span><span class="token function">siblings</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+   <span class="token punctuation">.</span><span class="token function">removeClass</span><span class="token punctuation">(</span><span class="token string">"active"</span><span class="token punctuation">)</span>
+   <span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+     <span class="token string">"tabindex"</span><span class="token punctuation">:</span> <span class="token string">"-1"</span><span class="token punctuation">,</span>
+     <span class="token string">"aria-selected"</span><span class="token punctuation">:</span> <span class="token string">"false"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token comment" spellcheck="true">// 연관된 탭 패널 활성화</span>
+ <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#"</span> <span class="token operator">+</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">"aria-controls"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+   <span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">"tabindex"</span><span class="token punctuation">,</span> <span class="token string">"0"</span><span class="token punctuation">)</span>
+   <span class="token punctuation">.</span><span class="token function">addClass</span><span class="token punctuation">(</span><span class="token string">"active"</span><span class="token punctuation">)</span>
+ <span class="token comment" spellcheck="true">// 기존 탭 패널 비활성화</span>
+ <span class="token punctuation">.</span><span class="token function">siblings</span><span class="token punctuation">(</span><span class="token string">".tabpanel"</span><span class="token punctuation">)</span>
+   <span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">"tabindex"</span><span class="token punctuation">,</span> <span class="token string">"-1"</span><span class="token punctuation">)</span>
+   <span class="token punctuation">.</span><span class="token function">removeClass</span><span class="token punctuation">(</span><span class="token string">"active"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ol>
+<p>이렇게 하면 가장 기본적인 탭 기능에 대해서는 적용이 끝난다.</p>
+<p>이후 NVDA 등의 스크린리더로 접근해보면 ARIA를 적용하기 이전과 적용 후의 접근되는 내용은 사뭇 차이가 크다.
+단순히 순서 없는 목록 링크의 나열과 텍스트들만 인식하는 것과 탭이라고 명시된 콘텐츠를 인식하는 것은 당연히 차이가 클 수 밖에 없다.</p>
+<p>이미 적용 가능한 기술이 있고 최소한의 기능만을 제공하는데에는 그다지 어려움이 없음에도 불구하고 탭이라고 명시된 콘텐츠가 아니라 목록과
+텍스트의 나열을 제공하는 것은 어찌보면 생산자로서 매우 게으른 행위일 수도 있다고 생각한다. &quot;accessible tab ui&quot;라는 키워드로
+검색해서 지난 1년간의 자료만 찾아도 WAI-ARIA를 소개한 사례는 이제 너무 쉽게 찾아볼 수 있다.</p>
+<p>JavaScript를 잘 못해서 어려울 수는 있다. 하지만, 앞선 것들을 처리하자면 결국 Markup을 다루는 이가 JavaScript를 다룰 줄은
+알아야한다. JavaScript는 (Server-Side) 개발자가 해야 하는 것이다라는 되도 않는 이야기는 집어 넣으시라. JavaScript를
+Client 담당자가 해야 할 이유는 차고 넘친다. 가장 기저에 존재하는 어려운건 하기 싫다는 이유는 JavaScript는 개발자가 해야 하는
+것이다라는 이유가 결코 될 수 없다.</p>
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style:none; padding-left: 0;"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">1.</span><span style="display: inline-block; vertical-align: top;">접근 가능한 리치 인터넷 어플리케이션(Accessible Rich Internet Application). <a href="https://www.w3.org/TR/wai-aria" target="_blank" rel="noopener">WAI-ARIA</a> 참고</span><a href="#fnref:1" rev="footnote"> ↩</a></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">2.</span><span style="display: inline-block; vertical-align: top;">탭 요소(element)들을 포함하고 있는 컨테이너</span><a href="#fnref:2" rev="footnote"> ↩</a></li><li id="fn:3"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">3.</span><span style="display: inline-block; vertical-align: top;">보조 기술(Assistive Technology). 본 포스팅에서는 주로 screen reader로 사용</span><a href="#fnref:3" rev="footnote"> ↩</a></li><li id="fn:4"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">4.</span><span style="display: inline-block; vertical-align: top;">Screen Reader와 Web Browser의 조합에 따라 낭독 여부나 낭독 이름에 차이가 있음. FireFox + NVDA 환경에서는 &quot;속성
+페이지&quot;로 낭독. Chrome + NVDA에서는 낭독하지 않음. (글을 쓰는 시점에서 NVDA는 2018.1.1 버전)</span><a href="#fnref:4" rev="footnote"> ↩</a></li><li id="fn:5"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">5.</span><span style="display: inline-block; vertical-align: top;">JAWS + NVDA에서는 해당 속성을 통해 단축키로 연관된 탭 패널로 바로 이동하는 기능을 제공하지만, 그 외 Screen Reader의
+경우는 지원하지 않는 것으로 알려져 있음. (<a href="http://www.heydonworks.com/article/aria-controls-is-poop" target="_blank" rel="noopener">aria-controls is poop</a> 참고)</span><a href="#fnref:5" rev="footnote"> ↩</a></li></ol></div></div></div><div class="article__tags"><div class="article__tags__title">tags:</div><a class="article__tag__item" href="/tags/%EC%9B%B9-%EC%A0%91%EA%B7%BC%EC%84%B1/"><span class="fas fa-tag" aria-hidden="true"></span>웹 접근성</a><a class="article__tag__item" href="/tags/a11y/"><span class="fas fa-tag" aria-hidden="true"></span>a11y</a><a class="article__tag__item" href="/tags/wai-aria/"><span class="fas fa-tag" aria-hidden="true"></span>WAI-ARIA</a><a class="article__tag__item" href="/tags/tab-ui/"><span class="fas fa-tag" aria-hidden="true"></span>tab UI</a><a class="article__tag__item" href="/tags/%ED%83%AD-%EC%BD%98%ED%85%90%EC%B8%A0/"><span class="fas fa-tag" aria-hidden="true"></span>탭 콘텐츠</a></div></article><div class="comment__container" role="region" aria-label="comments"><div id="lv-container" data-id="city" data-uid="MTAyMC8zMDYzOC83MTkz"></div></div></div><footer class="footer"><p class="copyright">&copy; 2012 ~ 2019 mulder21c <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" target="_blank" rel="license">(CCL-BY-NC-ND)</a></p><p class="credit">Powered by  <a href="https://hexo.io/" rel="external noreferrer" target="_blank">Hexo</a>. Theme by  <a href="https://github.com/mulder21c" rel="external noreferrer" target="_blank">mulder21c</a></p></footer><div class="nav" aria-hidden="true"><nav class="nav--container" id="navigation" aria-labelledby="nav__heading"><h2 class="nav__heading" id="nav__heading">Navigation</h2><hr class="nav__seperator"><ul class="menu-list">
+    <li class="menu-item" >
+      <a href="/" >
+        home
+      </a>
+    </li>
+    <li class="menu-item" >
+      <a href="/archives" >
+        archives
+      </a>
+    </li>
+    <li class="menu-item" >
+      <a href="/copyright" >
+        copyright
+      </a>
+    </li>
+    <li class="menu-item" >
+      <a href="/resume" >
+        about me
+      </a>
+    </li></ul><hr class="nav__seperator"><h3 class="nav__heading--sub">Categories</h3><ul class="category-list"><li class="category-list-item"><a class="category-list-link current" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/">개발노트</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link current" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/a11y/">A11Y</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/html-css/">HTML/CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/javascript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/etc/">etc..</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%83%9D%EA%B0%81%EB%85%B8%ED%8A%B8/">생각노트</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%83%9D%EA%B0%81%EB%85%B8%ED%8A%B8/in-christ/">in christ</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%83%9D%EA%B0%81%EB%85%B8%ED%8A%B8/in-dailylife/">in dailylife</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%83%9D%EA%B0%81%EB%85%B8%ED%8A%B8/in-occupation/">in occupation</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%BC%EC%83%81%EB%85%B8%ED%8A%B8/">일상노트</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%BC%EC%83%81%EB%85%B8%ED%8A%B8/miscellaneous/">miscellaneous</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%BC%EC%83%81%EB%85%B8%ED%8A%B8/%EC%97%AC%ED%96%89-%EC%82%AC%EC%A7%84/">여행 & 사진</a></li></ul></li></ul><hr class="nav__seperator"><h3 class="nav__heading--sub">External links</h3><ul class="link-list">
+      <li>
+        <a href="https://mulder21c.github.io/aria-practices" target="_blank" class="link-item">WAI-ARIA Authoring Practice 1.2 (진행중)</a>
+      </li>
+    
+      <li>
+        <a href="https://mulder21c.github.io/jest/docs/en/next/getting-started.html" target="_blank" class="link-item">Jest 공식 문서 개인 번역 (진행중)</a>
+      </li>
+    
+      <li>
+        <a href="https://mulder21c.github.io/seminar" target="_blank" class="link-item">세미나 발표 자료</a>
+      </li>
+    
+      <li>
+        <a href="https://mulder21c.github.io/html" target="_blank" class="link-item">HTML 5.1 명세 개인 번역 (중단)</a>
+      </li>
+    </ul><hr class="nav__seperator"><div class="nav__sns__icon-wrapper"><a class="nav__sns__icon" href="https://www.github.com/mulder21c" target="_blank" aria-label="github"><span class="fab fa-github-square" aria-hidden="true"></span></a><a class="nav__sns__icon" href="https://www.facebook.com/mulder21c" target="_blank" aria-label="facebook"><span class="fab fa-facebook-square" aria-hidden="true"></span></a><a class="nav__sns__icon" href="https://www.instagram.com/mulder21c/" target="_blank" aria-label="instagram"><span class="fab fa-instagram" aria-hidden="true"></span></a><a class="nav__sns__icon" href="https://twitter.com/mulder21c" target="_blank" aria-label="twitter"><span class="fab fa-twitter-square" aria-hidden="true"></span></a><a class="nav__sns__icon" href="https://www.linkedin.com/in/mulder21c/" target="_blank" aria-label="linkedin"><span class="fab fa-linkedin" aria-hidden="true"></span></a><a class="nav__sns__icon" href="http://flickr.com/photos/mulder21c" target="_blank" aria-label="flickr"><span class="fab fa-flickr" aria-hidden="true"></span></a><a class="nav__sns__icon" href="/rss.xml" target="_blank" aria-label="rss"><span class="fas fa-rss-square" aria-hidden="true"></span></a></div></nav></div><div class="license-notation dialog" role="dialog" aria-describedby="license-notation" aria-modal="true" aria-hidden="true" hidden><div class="dialog__content" id="license-notation"><p><img class="icon" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" alt="크리에이티브 커먼즈 라이선스">본 블로그의 모든 저작물은 <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">크리에이티브 커먼즈 저작자표시-비영리-변경금지 4.0 국제 라이선스</a>에 따라 이용할 수 있습니다.</p><p>저작권 위반시 저작권의 보호를 위해 법적인 조치를 취할 수 있으며,
+퍼가실 때에는 반드시 출처를 명시해 주시고, 사용처를 덧글로 남겨주시면 감사합니다.</p><p>저작권에 관련한 기타 자세한 내용은 <a rel="help" href="/copyright">저작권에 관한 경고</a>를 참고해주세요.</p><p class="dialog__footer"><input type="checkbox" name="license-agree" id="license-agree"><label for="license-agree">내용을 확인 했습니다.</label><br><button class="btn-close" type="button">닫기</button></p></div><div class="dialog__diemed"></div></div><script src="/js/webfontloader.js"></script><script>WebFont.load({
+  custom: {
+    families: ["Spoqa Han Sans", "Hack", "Font Awesome"],
+    urls: ["/fonts/spoqahansans/SpoqaHanSans-kr.css", "/fonts/hack/hack.css", "/fonts/fontawesome/fontawesome.css"]
+  }
+});</script><script>(function(d, s) {
+  if(!document.getElementById("lv-container")) return;
+  var j, e = d.getElementsByTagName(s)[0];
+  if (typeof LivereTower === "function") { return; }
+  j = d.createElement(s);
+  j.src = "https://cdn-city.livere.com/js/embed.dist.js";
+  j.async = true;
+  e.parentNode.insertBefore(j, e);
+})(document, "script");
+</script><script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(adsbygoogle = window.adsbygoogle || []).push({
+  google_ad_client: "ca-pub-5055523791773672",
+  enable_page_level_ads: true
+});</script><script src="/js/script.js"></script></body></html>

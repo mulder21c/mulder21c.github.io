@@ -1,0 +1,145 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>알고리즘 연습을 다시 시작했다. - The Tracks of mulder21c</title><!-- Links--><link rel="canonical" href="https://mulder21c.github.io/2019/09/14/beginning-to-practice-algorithms"><!-- preload--><link rel="preload" as="image" href="/images/favicon.png" crossorigin="anonymous"><link rel="preload" as="image" href="/upload/2019/algorithms.png" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/iropke/IropkeBatangM.woff" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/spoqahansans/SpoqaHanSansRegular.woff2" crossorigin="anonymous"><!-- Icons--><link rel="shortcut icon" sizes="196x196" href="/images/favicon.png"><!-- open graph--><meta name="description" content="Array에 어떤 메서드가 있었는지, 어떻게 사용했었는지 기억을 계속 더듬어야만 했고 정규표현식의 특수 문자를 어떻게 작성했었는지 문서를 보지 않고 작성하려니 여간 어려운게  아니더라.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="알고리즘 연습을 다시 시작했다.">
+<meta property="og:url" content="https://mulder21c.github.io/2019/09/14/beginning-to-practice-algorithms/">
+<meta property="og:site_name" content="The Tracks of mulder21c">
+<meta property="og:description" content="Array에 어떤 메서드가 있었는지, 어떻게 사용했었는지 기억을 계속 더듬어야만 했고 정규표현식의 특수 문자를 어떻게 작성했었는지 문서를 보지 않고 작성하려니 여간 어려운게  아니더라.">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://mulder21c.github.io/upload/2019/algorithms.png">
+<meta property="og:image" content="https://farm1.staticflickr.com/863/41108552022_61413423d5_b.jpg">
+<meta property="article:published_time" content="2019-09-14T10:41:36.000Z">
+<meta property="article:modified_time" content="2020-06-13T10:44:08.681Z">
+<meta property="article:author" content="멀더끙">
+<meta property="article:tag" content="algorithm">
+<meta property="article:tag" content="codility">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://mulder21c.github.io/upload/2019/algorithms.png"><!-- verify website ownership--><meta name="google-site-verification" content="cNXUGP2JbfDQYO1PIpkuHsivBfDI6Q_AFBBZzsNaUKs"><meta name="naver-site-verification" content="859a6966704edf251c82579243d7dda7a8a87799"><!-- styles--><link rel="stylesheet" href="/css/style.css"><style>.silence{text-decoration:line-through}
+
+</style><link rel="stylesheet" href="/fonts/iropke/iropke.css"><link rel="stylesheet" href="/fonts/notosanskr/NotoSansKR.css"><!-- JSON LD for SEO--><script type="application/ld+json">{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "알고리즘 연습을 다시 시작했다.",
+  "alternativeHeadline": null,
+  "image": {
+    "@type": "imageObject",
+    "url": "https://mulder21c.github.io/upload/2019/algorithms.png",
+    "width": "750",
+    "height": "422"
+  },
+  "genre": null,
+  "keywords": "algorithm,codility",
+  "editor": {
+    "@type": "Person",
+    "name": "멀더끙"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "멀더끙",
+    "logo": {
+      "@type": "imageObject",
+      "url": "https://mulder21c.github.io/images/favicon.png"
+    }
+  },
+  "author": {
+    "@type": "Person",
+    "name": "멀더끙"
+  },
+  "url": "https://mulder21c.github.io/2019/09/14/beginning-to-practice-algorithms/",
+  "dateCreated": "2019-09-14",
+  "datePublished": "2019-09-14",
+  "articleBody": "Array에 어떤 메서드가 있었는지, 어떻게 사용했었는지 기억을 계속 더듬어야만 했고 정규표현식의 특수 문자를 어떻게 작성했었는지 문서를 보지 않고 작성하려니 여간 어려운게  아니더라."
+}</script><!--scripts--><script>(function(i,s,o,g,r,a,m) {i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,"script","//www.google-analytics.com/analytics.js","ga");
+ga("create", "UA-55718543-7", "auto");
+ga("send", "pageview");
+</script><meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/rss.xml" title="The Tracks of mulder21c" type="application/rss+xml">
+<link rel="stylesheet" href="/css/prism-xonokai.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><script src="/js/prism.js"></script>
+<script src="/js/prism-line-numbers.min.js"></script></head><body class="post"><header class="header hero hero--has-image"><div class="hero-wrapper"><div class="gnb"><a href="/">The Tracks of mulder21c</a><button class="nav-toggle" type="button" aria-haspopup="true" aria-controls="navigation"><span></span><span></span><span></span>menu</button></div><h1 class="header__title">알고리즘 연습을 다시 시작했다.</h1><div class="hero__image" style="background-image: url(/upload/2019/algorithms.png);"></div></div></header><div class="contents--container" role="main"><article class="article"><div class="article__meta"><div class="gravatar"><img src="/images/favicon.png" alt="authored by 멀더끙"></div><time class="article__meta__time" datetime="2019-09-14T10:41:36.000Z"><span aria-label="posted"><span class="fas fa-calendar-day" aria-hidden="true"></span></span>2019-09-14 19:41:36</time><div class="article__meta__category"><span aria-label="category"><span class="fas fa-archive" aria-hidden="true"></span></span><a class="article__meta__category__item" href="/categories/%EC%83%9D%EA%B0%81%EB%85%B8%ED%8A%B8/">생각노트</a><a class="article__meta__category__item" href="/categories/%EC%83%9D%EA%B0%81%EB%85%B8%ED%8A%B8/in-occupation/">in occupation</a></div></div><div class="article__content"><p>최근 <a href="https://codility.com" target="_blank" rel="noopener">Codility</a>를 통해 알고리즘 문제를 다시 풀어보기 시작했다. 
+<small class="silence">(알고리즘을 다시 들여다보게 된 계기는 쉿...)</small></p>
+<p>Codility 문제를 풀어보다보니 내가 그 동안 얼마나 레퍼런스 문서에 의존해 왔는지를 뼈저리게
+체감하고 생각하는 계기가 된 듯하다.</p>
+<p>Array에 어떤 메서드가 있었는지, 어떻게 사용했었는지 기억을 계속 더듬어야만 했고 정규 
+표현식의 특수 문자를 (특히 &#39;?&#39; 라던가... &#39;?=&#39; 같은 것들) 어떻게 작성했었었는지 문서를 보지 
+않고 작성하려니 여간 어려운게 아니더라.</p>
+<p>물론 문서를 참고해서 문제를 해결하는게 잘못된 것도 아니고, knowledge, know-how보다는 
+know-where의 시대라고는 하지만 뭐랄까... 개발자로서 멍청해진 느낌이랄까...?</p>
+<p>대학 학부 시절에 겸임교수(? 기억이 정확치는...)로 오셨던 어떤 회사 CEO 분이 계셨는데, 
+당시 클래스에서 이런 이야기를 한 적이 있다. (물론 정확한 워딩은 아닐거다)</p>
+<blockquote>
+<p>Visual studio 쓰면서 Visual assist 쓰는 사람들 많은텐데, assist에 의존하지마라
+그건 개발자들을 멍청하게 만드는 방법이다. </p>
+</blockquote>
+<p>정확하게는 학습의 단계에 있다면 툴에 의존하지 말고 직접 다 타이핑하고 손에 익히도록 하라는게 
+골자였던 것으로 기억한다. </p>
+<p>여담이지만, 하코사에서 이러한 이야기를 하면 난리가 난다. 학습단계에 있는 이들에게 emmet이나 
+자동 완성 기능을 쓰지 말라고 했다가는 무식한 소리이고 역적 수준의 취급을 받는다. (이건 
+실제로 경험한 일이다.)</p>
+<p>무튼 이 이야기에 대해 나는 전적으로 동의해 왔고, 이 생각은 지금도 변함이 없으며 알고리즘 
+훈련을 하면서 다시금 뼈저리게 내가 이를 간과하고 있었다라는 것을 느끼게 되었다. assist가 단지 
+레퍼런스 문서로 바뀌었을 뿐인 상황이었다.</p>
+<p>레퍼런스 문서가 없으면 기억에서 꺼내어 쓸 수 없거나 개발이 어려워 진다는 것은 레퍼런스를 
+치트처럼 사용하고 있다는 것일 거고 이는 분명 조금씩 조금씩 개발자로서의 능력을 저하시키고 
+있었을 거다. </p>
+<p>그리고 그것이 알고리즘 훈련을 하면서 문서를 참고하지 않고 순수하게 내가 가지고 있는 지식 
+속에서 해결하려고 하는 순간 그 동안 내가 너무 무분별하게(?) 지식을 취하고 있었음이 고스란히 
+드러나버렸다.</p>
+<p>레퍼런스 문서는 레퍼런스 문서로서 사용해야 한다. 영어 회화를 하자고 매 번 영사전을 들춰야 
+한다면 그건 밥벌이(?) 할 수준이 안된다는 말일거다. 적어도 밥벌이(?) 할 수준은 되어야지...</p>
+</div><div class="article__tags"><div class="article__tags__title">tags:</div><a class="article__tag__item" href="/tags/algorithm/"><span class="fas fa-tag" aria-hidden="true"></span>algorithm</a><a class="article__tag__item" href="/tags/codility/"><span class="fas fa-tag" aria-hidden="true"></span>codility</a></div></article><div class="comment__container" role="region" aria-label="comments"><div id="lv-container" data-id="city" data-uid="MTAyMC8zMDYzOC83MTkz"></div></div></div><footer class="footer"><p class="copyright">&copy; 2012 ~ 2019 mulder21c <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" target="_blank" rel="license">(CCL-BY-NC-ND)</a></p><p class="credit">Powered by  <a href="https://hexo.io/" rel="external noreferrer" target="_blank">Hexo</a>. Theme by  <a href="https://github.com/mulder21c" rel="external noreferrer" target="_blank">mulder21c</a></p></footer><div class="nav" aria-hidden="true"><nav class="nav--container" id="navigation" aria-labelledby="nav__heading"><h2 class="nav__heading" id="nav__heading">Navigation</h2><hr class="nav__seperator"><ul class="menu-list">
+    <li class="menu-item" >
+      <a href="/" >
+        home
+      </a>
+    </li>
+    <li class="menu-item" >
+      <a href="/archives" >
+        archives
+      </a>
+    </li>
+    <li class="menu-item" >
+      <a href="/copyright" >
+        copyright
+      </a>
+    </li>
+    <li class="menu-item" >
+      <a href="/resume" >
+        about me
+      </a>
+    </li></ul><hr class="nav__seperator"><h3 class="nav__heading--sub">Categories</h3><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/">개발노트</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/a11y/">A11Y</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/html-css/">HTML/CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/javascript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/etc/">etc..</a></li></ul></li><li class="category-list-item"><a class="category-list-link current" href="/categories/%EC%83%9D%EA%B0%81%EB%85%B8%ED%8A%B8/">생각노트</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%83%9D%EA%B0%81%EB%85%B8%ED%8A%B8/in-christ/">in christ</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%83%9D%EA%B0%81%EB%85%B8%ED%8A%B8/in-dailylife/">in dailylife</a></li><li class="category-list-item"><a class="category-list-link current" href="/categories/%EC%83%9D%EA%B0%81%EB%85%B8%ED%8A%B8/in-occupation/">in occupation</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%BC%EC%83%81%EB%85%B8%ED%8A%B8/">일상노트</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%BC%EC%83%81%EB%85%B8%ED%8A%B8/miscellaneous/">miscellaneous</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%BC%EC%83%81%EB%85%B8%ED%8A%B8/%EC%97%AC%ED%96%89-%EC%82%AC%EC%A7%84/">여행 & 사진</a></li></ul></li></ul><hr class="nav__seperator"><h3 class="nav__heading--sub">External links</h3><ul class="link-list">
+      <li>
+        <a href="https://mulder21c.github.io/aria-practices" target="_blank" class="link-item">WAI-ARIA Authoring Practice 1.2 (진행중)</a>
+      </li>
+    
+      <li>
+        <a href="https://mulder21c.github.io/jest/docs/en/next/getting-started.html" target="_blank" class="link-item">Jest 공식 문서 개인 번역 (진행중)</a>
+      </li>
+    
+      <li>
+        <a href="https://mulder21c.github.io/seminar" target="_blank" class="link-item">세미나 발표 자료</a>
+      </li>
+    
+      <li>
+        <a href="https://mulder21c.github.io/html" target="_blank" class="link-item">HTML 5.1 명세 개인 번역 (중단)</a>
+      </li>
+    </ul><hr class="nav__seperator"><div class="nav__sns__icon-wrapper"><a class="nav__sns__icon" href="https://www.github.com/mulder21c" target="_blank" aria-label="github"><span class="fab fa-github-square" aria-hidden="true"></span></a><a class="nav__sns__icon" href="https://www.facebook.com/mulder21c" target="_blank" aria-label="facebook"><span class="fab fa-facebook-square" aria-hidden="true"></span></a><a class="nav__sns__icon" href="https://www.instagram.com/mulder21c/" target="_blank" aria-label="instagram"><span class="fab fa-instagram" aria-hidden="true"></span></a><a class="nav__sns__icon" href="https://twitter.com/mulder21c" target="_blank" aria-label="twitter"><span class="fab fa-twitter-square" aria-hidden="true"></span></a><a class="nav__sns__icon" href="https://www.linkedin.com/in/mulder21c/" target="_blank" aria-label="linkedin"><span class="fab fa-linkedin" aria-hidden="true"></span></a><a class="nav__sns__icon" href="http://flickr.com/photos/mulder21c" target="_blank" aria-label="flickr"><span class="fab fa-flickr" aria-hidden="true"></span></a><a class="nav__sns__icon" href="/rss.xml" target="_blank" aria-label="rss"><span class="fas fa-rss-square" aria-hidden="true"></span></a></div></nav></div><div class="license-notation dialog" role="dialog" aria-describedby="license-notation" aria-modal="true" aria-hidden="true" hidden><div class="dialog__content" id="license-notation"><p><img class="icon" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" alt="크리에이티브 커먼즈 라이선스">본 블로그의 모든 저작물은 <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">크리에이티브 커먼즈 저작자표시-비영리-변경금지 4.0 국제 라이선스</a>에 따라 이용할 수 있습니다.</p><p>저작권 위반시 저작권의 보호를 위해 법적인 조치를 취할 수 있으며,
+퍼가실 때에는 반드시 출처를 명시해 주시고, 사용처를 덧글로 남겨주시면 감사합니다.</p><p>저작권에 관련한 기타 자세한 내용은 <a rel="help" href="/copyright">저작권에 관한 경고</a>를 참고해주세요.</p><p class="dialog__footer"><input type="checkbox" name="license-agree" id="license-agree"><label for="license-agree">내용을 확인 했습니다.</label><br><button class="btn-close" type="button">닫기</button></p></div><div class="dialog__diemed"></div></div><script src="/js/webfontloader.js"></script><script>WebFont.load({
+  custom: {
+    families: ["Spoqa Han Sans", "Hack", "Font Awesome"],
+    urls: ["/fonts/spoqahansans/SpoqaHanSans-kr.css", "/fonts/hack/hack.css", "/fonts/fontawesome/fontawesome.css"]
+  }
+});</script><script>(function(d, s) {
+  if(!document.getElementById("lv-container")) return;
+  var j, e = d.getElementsByTagName(s)[0];
+  if (typeof LivereTower === "function") { return; }
+  j = d.createElement(s);
+  j.src = "https://cdn-city.livere.com/js/embed.dist.js";
+  j.async = true;
+  e.parentNode.insertBefore(j, e);
+})(document, "script");
+</script><script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(adsbygoogle = window.adsbygoogle || []).push({
+  google_ad_client: "ca-pub-5055523791773672",
+  enable_page_level_ads: true
+});</script><script src="/js/script.js"></script></body></html>

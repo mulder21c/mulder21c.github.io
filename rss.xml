@@ -1,0 +1,987 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>The Tracks of mulder21c</title>
+    <link>https://mulder21c.github.io/</link>
+    
+    <atom:link href="/rss.xml" rel="self" type="application/rss+xml"/>
+    
+    <description>멀더끙의 개인 블로그 — 접근성에 관심이 많은 Front-End Developer, 커피 애호가, 사진 찍기 좋아하는 트래블 러버, 아직도 블로그 뭘 쓸지 모르겠는 초보 블로거, 그냥 이것 저것 개인의 생각을 끄적끄적이는 멀더끙의 블러그입니다.</description>
+    <pubDate>Sat, 13 Jun 2020 10:44:08 GMT</pubDate>
+    <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>2020 이직 이야기</title>
+      <link>https://mulder21c.github.io/2020/05/16/turnover-2/</link>
+      <guid>https://mulder21c.github.io/2020/05/16/turnover-2/</guid>
+      <pubDate>Sat, 16 May 2020 10:30:14 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;h2 id=&quot;기술-부채&quot;&gt;&lt;a href=&quot;#기술-부채&quot; class=&quot;headerlink&quot; title=&quot;기술 부채&quot;&gt;&lt;/a&gt;기술 부채&lt;/h2&gt;&lt;p&gt;부끄러운 이야기지만, 나는 기술 부채가 꽤 많은 사람이다. 나는 나에 대해서 제법(?) 객관적으로 
+평가
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2020/05/16/turnover-2/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>2020 이직 이야기</title>
+      <link>https://mulder21c.github.io/2020/04/30/turnover-1st/</link>
+      <guid>https://mulder21c.github.io/2020/04/30/turnover-1st/</guid>
+      <pubDate>Thu, 30 Apr 2020 08:31:06 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;바야흐로 이직의 계절(?)이다. 예년 같았으면 이제 중후반 즈음에 접어들기 시작할 때 이겠지만 
+corona-19 덕분(?)에 조금은 시기가 늦춰진 듯하다. &lt;/p&gt;
+&lt;p&gt;나는 지난 2월에 전 회사를 퇴사하고 한 달 동안의 기간을 거쳐 4월 초 
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2020/04/30/turnover-1st/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Windows에서 PM2 실행 오류 해결</title>
+      <link>https://mulder21c.github.io/2020/04/10/pm2-does-not-work-on-windows/</link>
+      <guid>https://mulder21c.github.io/2020/04/10/pm2-does-not-work-on-windows/</guid>
+      <pubDate>Fri, 10 Apr 2020 12:08:58 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;지난 주부터 합류한 회사에서 첫 번째 미션... 또 노드 서버가 죽고 있다. 
+&lt;span aria-hidden=&quot;true&quot;&gt;/=ㅁ=/&lt;/span&gt;&lt;span class=&quot;hidden&quot;&gt;맙소사&lt;/span&gt; &lt;br&gt;&lt;/p&gt;
+&lt;p&gt;정확하게는 시간이 지나
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2020/04/10/pm2-does-not-work-on-windows/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>오픈톡 정지에 대한 카카오톡 고객센터 후기</title>
+      <link>https://mulder21c.github.io/2020/03/31/do-not-use-kakao-talk-for-livelihood/</link>
+      <guid>https://mulder21c.github.io/2020/03/31/do-not-use-kakao-talk-for-livelihood/</guid>
+      <pubDate>Tue, 31 Mar 2020 05:24:19 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;지난달 중순즈음 카카오톡 이용 제한을 당하고 무려 14일 동안 오픈 채팅을 전혀 할 수 없는 
+상황에 빠져봤다.&lt;/p&gt;
+&lt;p&gt;익히 여러 게시글들을 통해 카카오톡 고객센터가 얼마나 속된 말로 쓰레기인지를 알고 있기는 
+했지만 막상 당하고보니 카카오
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2020/03/31/do-not-use-kakao-talk-for-livelihood/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>배려에 대한 단상</title>
+      <link>https://mulder21c.github.io/2020/03/15/fragmentary-thought-for-consideration/</link>
+      <guid>https://mulder21c.github.io/2020/03/15/fragmentary-thought-for-consideration/</guid>
+      <pubDate>Sat, 14 Mar 2020 16:38:13 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;작년 말에 블라인드 앱에서 &amp;quot;어쩌다가 애기가 환영받지 못하는 사회가 되었을까&amp;quot;라는 게시글을 
+하나 보게 되었고, 그 글에 대한 덧글에서 &lt;b&gt;배려&lt;/b&gt;라고 언급했던 내용이 생각나서 몇 자 
+끄적여본다. &lt;/p&gt;
+&lt;p&gt;일단 해당
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2020/03/15/fragmentary-thought-for-consideration/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>학습이 잘 되지 않는 이유</title>
+      <link>https://mulder21c.github.io/2020/02/29/reason-for-not-doing-well-in-learning/</link>
+      <guid>https://mulder21c.github.io/2020/02/29/reason-for-not-doing-well-in-learning/</guid>
+      <pubDate>Sat, 29 Feb 2020 07:06:45 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;간만에 뻘글하나 남겨본다 = _=a&lt;/p&gt;
+&lt;p&gt;다른 사람들이 이야기 하는 학습이 이루어지 않는 이유는 다 접어두고, 학습 한다고 학습은 
+하는데 도무지 머리 속에 남지 않는 경우가 있다. 나도 겪어봤던 문제이고 지금도 종종 
+겪는 문제이기도 한
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2020/02/29/reason-for-not-doing-well-in-learning/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>웹팩 4 마이그레이션 삽질기</title>
+      <link>https://mulder21c.github.io/2020/02/13/webpack-4-migration-from-3/</link>
+      <guid>https://mulder21c.github.io/2020/02/13/webpack-4-migration-from-3/</guid>
+      <pubDate>Wed, 12 Feb 2020 15:24:11 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;Webpack 3를 기반으로 구축된 서비스를 Webpack 4로 마이그레이션 작업을 진행했는데 꽤나 많은 
+삽질이 동원 되어 차후에 이런 일이 또 있을까 하여 기록으로 남겨둔다.&lt;/p&gt;
+&lt;p&gt;일단, 최초의 패키지 상태를 보면 (스압 주의...),
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2020/02/13/webpack-4-migration-from-3/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>babel 7 업데이트 후 node_modules 패키지가 변환되지 않는다면?</title>
+      <link>https://mulder21c.github.io/2020/01/30/migration-to-babel-7-from-babel-6/</link>
+      <guid>https://mulder21c.github.io/2020/01/30/migration-to-babel-7-from-babel-6/</guid>
+      <pubDate>Wed, 29 Jan 2020 15:05:48 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;기존에 개발 된 프로덕트가 빌드하는데만 한 시간을 훌쩍 넘어가는 상황이 지속적으로 발생되어 
+빌드 속도 개선을 위한 일환으로 기존의 webpack 3.x를 4.x로 마이그레이션 작업을 진행하기로 
+했다. 헌데... webpack 4로 올리자니 기
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2020/01/30/migration-to-babel-7-from-babel-6/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>white space는 4px이다? 정말?</title>
+      <link>https://mulder21c.github.io/2020/01/28/is-whitespace-really-4px/</link>
+      <guid>https://mulder21c.github.io/2020/01/28/is-whitespace-really-4px/</guid>
+      <pubDate>Mon, 27 Jan 2020 15:05:57 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;묵혀있던 글 감 하나를 꺼냈다.&lt;br&gt;&amp;quot;요소(element) 간 공백, 즉 white space를 제거하려면 어떻게 해야 하는가?&amp;quot; 에 대한 해결 
+방법에서 흔히 발견 할 수 있는 네거티브 마진을 주는 방식에서 소개 되는 것이 
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2020/01/28/is-whitespace-really-4px/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>2020년 시간 관리를 위해서 도입 한 툴들</title>
+      <link>https://mulder21c.github.io/2020/01/13/self-management-tools-i-introduced-for-2020/</link>
+      <guid>https://mulder21c.github.io/2020/01/13/self-management-tools-i-introduced-for-2020/</guid>
+      <pubDate>Mon, 13 Jan 2020 10:51:41 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;h2 id=&quot;시간-관리&quot;&gt;&lt;a href=&quot;#시간-관리&quot; class=&quot;headerlink&quot; title=&quot;시간 관리&quot;&gt;&lt;/a&gt;시간 관리&lt;/h2&gt;&lt;p&gt;최근 대략 2년 정도 시간 관리를 손 놓고 있다가 작년 중반 즈음부터 재개하면서 상세 목표 설정 
+등을 
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2020/01/13/self-management-tools-i-introduced-for-2020/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Codility Lesson 5 — PassingCars</title>
+      <link>https://mulder21c.github.io/2019/12/22/codility-lesson-5-passing-cars/</link>
+      <guid>https://mulder21c.github.io/2019/12/22/codility-lesson-5-passing-cars/</guid>
+      <pubDate>Sun, 22 Dec 2019 13:47:44 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;h2 id=&quot;Task-description&quot;&gt;&lt;a href=&quot;#Task-description&quot; class=&quot;headerlink&quot; title=&quot;Task description&quot;&gt;&lt;/a&gt;Task description&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;연이은 차량 배
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2019/12/22/codility-lesson-5-passing-cars/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>2019년 회고</title>
+      <link>https://mulder21c.github.io/2019/12/17/2019-retrospective/</link>
+      <guid>https://mulder21c.github.io/2019/12/17/2019-retrospective/</guid>
+      <pubDate>Tue, 17 Dec 2019 13:54:22 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;어느덧 12월 중반을 넘어섰다. 시간이 정말 순식간에 훅훅 지나가는 게 나이 듦을 실감 나게 
+한다. ㅠ &lt;/p&gt;
+&lt;p&gt;12월이 또 훅 지나가버리기 전에 2019년에 대한 회고를 작성해보고, 2020년을 어떻게 
+꾸려갈지를 정리해보려고 한다.&lt;/
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2019/12/17/2019-retrospective/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Codility Lesson 4 — MissingInteger</title>
+      <link>https://mulder21c.github.io/2019/12/15/codility-lesson-4-missing-integer/</link>
+      <guid>https://mulder21c.github.io/2019/12/15/codility-lesson-4-missing-integer/</guid>
+      <pubDate>Sun, 15 Dec 2019 08:28:23 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;h2 id=&quot;Task-description&quot;&gt;&lt;a href=&quot;#Task-description&quot; class=&quot;headerlink&quot; title=&quot;Task description&quot;&gt;&lt;/a&gt;Task description&lt;/h2&gt;&lt;p&gt;주어진 수열에서 누락된 가
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2019/12/15/codility-lesson-4-missing-integer/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Codility Lesson 4 — MaxCounters</title>
+      <link>https://mulder21c.github.io/2019/12/08/codility-lesson-4-max-counter/</link>
+      <guid>https://mulder21c.github.io/2019/12/08/codility-lesson-4-max-counter/</guid>
+      <pubDate>Sun, 08 Dec 2019 10:08:01 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;h2 id=&quot;Task-description&quot;&gt;&lt;a href=&quot;#Task-description&quot; class=&quot;headerlink&quot; title=&quot;Task description&quot;&gt;&lt;/a&gt;Task description&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;정수 N과 1 
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2019/12/08/codility-lesson-4-max-counter/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Codility Lesson 4 — FrogRiverOne</title>
+      <link>https://mulder21c.github.io/2019/10/05/codility-lesson-4-frog-river-one/</link>
+      <guid>https://mulder21c.github.io/2019/10/05/codility-lesson-4-frog-river-one/</guid>
+      <pubDate>Sat, 05 Oct 2019 14:08:09 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;h2 id=&quot;Task-description&quot;&gt;&lt;a href=&quot;#Task-description&quot; class=&quot;headerlink&quot; title=&quot;Task description&quot;&gt;&lt;/a&gt;Task description&lt;/h2&gt;&lt;p&gt;시간별 개구리의 위치 정보
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2019/10/05/codility-lesson-4-frog-river-one/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Codility Lesson  — PermCheck</title>
+      <link>https://mulder21c.github.io/2019/09/30/codility-lesson-4-perm-check/</link>
+      <guid>https://mulder21c.github.io/2019/09/30/codility-lesson-4-perm-check/</guid>
+      <pubDate>Mon, 30 Sep 2019 02:01:46 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;h2 id=&quot;Task-description&quot;&gt;&lt;a href=&quot;#Task-description&quot; class=&quot;headerlink&quot; title=&quot;Task description&quot;&gt;&lt;/a&gt;Task description&lt;/h2&gt;&lt;p&gt;주어진 배열이 순열이면 1
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2019/09/30/codility-lesson-4-perm-check/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>착각은 자유가 아닌각 세미나 진행 후기</title>
+      <link>https://mulder21c.github.io/2019/09/29/reviewing-illusion-is-not-freedom-seminar/</link>
+      <guid>https://mulder21c.github.io/2019/09/29/reviewing-illusion-is-not-freedom-seminar/</guid>
+      <pubDate>Sun, 29 Sep 2019 10:13:06 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;지난 7월 20일, 그리고 지난 9월 21일에는 앵콜전으로 &amp;quot;착각은 자유가 아닌각&amp;quot;이라는 타이틀로 
+하코사에서 작게 세미나를 진행했다. &lt;/p&gt;
+&lt;h2 id=&quot;세미나를-결정하기-까지&quot;&gt;&lt;a href=&quot;#세미나를-결정하기-까지&quot; 
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2019/09/29/reviewing-illusion-is-not-freedom-seminar/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Codility Lesson 3 — tapeEquilibrium</title>
+      <link>https://mulder21c.github.io/2019/09/19/codility-lesson-3-tape-equilibrium/</link>
+      <guid>https://mulder21c.github.io/2019/09/19/codility-lesson-3-tape-equilibrium/</guid>
+      <pubDate>Thu, 19 Sep 2019 14:40:44 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;h2 id=&quot;Task-description&quot;&gt;&lt;a href=&quot;#Task-description&quot; class=&quot;headerlink&quot; title=&quot;Task description&quot;&gt;&lt;/a&gt;Task description&lt;/h2&gt;&lt;p&gt;|(A[0] + ... +
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2019/09/19/codility-lesson-3-tape-equilibrium/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Codility Lesson 3 — PermMissingElm</title>
+      <link>https://mulder21c.github.io/2019/09/17/codility-lesson-3-perm-missing-elem/</link>
+      <guid>https://mulder21c.github.io/2019/09/17/codility-lesson-3-perm-missing-elem/</guid>
+      <pubDate>Tue, 17 Sep 2019 02:57:32 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;h2 id=&quot;Task-description&quot;&gt;&lt;a href=&quot;#Task-description&quot; class=&quot;headerlink&quot; title=&quot;Task description&quot;&gt;&lt;/a&gt;Task description&lt;/h2&gt;&lt;p&gt;주어진 순열에서 누락된 요
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2019/09/17/codility-lesson-3-perm-missing-elem/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Codility Lesson 3 — FrogJump</title>
+      <link>https://mulder21c.github.io/2019/09/16/codility-lesson-3-frog-jump/</link>
+      <guid>https://mulder21c.github.io/2019/09/16/codility-lesson-3-frog-jump/</guid>
+      <pubDate>Mon, 16 Sep 2019 02:54:23 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;h2 id=&quot;Task-description&quot;&gt;&lt;a href=&quot;#Task-description&quot; class=&quot;headerlink&quot; title=&quot;Task description&quot;&gt;&lt;/a&gt;Task description&lt;/h2&gt;&lt;p&gt;위치 X에서 Y까지 최소 
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2019/09/16/codility-lesson-3-frog-jump/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>알고리즘 연습을 다시 시작했다.</title>
+      <link>https://mulder21c.github.io/2019/09/14/beginning-to-practice-algorithms/</link>
+      <guid>https://mulder21c.github.io/2019/09/14/beginning-to-practice-algorithms/</guid>
+      <pubDate>Sat, 14 Sep 2019 10:41:36 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;최근 &lt;a href=&quot;https://codility.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Codility&lt;/a&gt;를 통해 알고리즘 문제를 다시 풀어보기 시작했다. 
+&lt;small class=&quot;silence&quot;&gt;(알고리즘을 다
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2019/09/14/beginning-to-practice-algorithms/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Codility Lesson 2 — CyclicRotation</title>
+      <link>https://mulder21c.github.io/2019/09/13/codility-lesson-2-cyclic-rotation/</link>
+      <guid>https://mulder21c.github.io/2019/09/13/codility-lesson-2-cyclic-rotation/</guid>
+      <pubDate>Thu, 12 Sep 2019 15:35:12 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;h2 id=&quot;Task-description&quot;&gt;&lt;a href=&quot;#Task-description&quot; class=&quot;headerlink&quot; title=&quot;Task description&quot;&gt;&lt;/a&gt;Task description&lt;/h2&gt;&lt;p&gt;주어진 수만큼 배열을 오른
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2019/09/13/codility-lesson-2-cyclic-rotation/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Codility Lesson 2 — OddOccurrencesInArray</title>
+      <link>https://mulder21c.github.io/2019/09/12/codility-lesson-2-odd-occurences-in-array/</link>
+      <guid>https://mulder21c.github.io/2019/09/12/codility-lesson-2-odd-occurences-in-array/</guid>
+      <pubDate>Thu, 12 Sep 2019 14:45:24 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;h2 id=&quot;Task-description&quot;&gt;&lt;a href=&quot;#Task-description&quot; class=&quot;headerlink&quot; title=&quot;Task description&quot;&gt;&lt;/a&gt;Task description&lt;/h2&gt;&lt;p&gt;주어진 홀수 개의 요소를 
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2019/09/12/codility-lesson-2-odd-occurences-in-array/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Codility Lesson 1 — BinaryGap</title>
+      <link>https://mulder21c.github.io/2019/09/11/codility-lesson-1-binarygap/</link>
+      <guid>https://mulder21c.github.io/2019/09/11/codility-lesson-1-binarygap/</guid>
+      <pubDate>Wed, 11 Sep 2019 14:37:11 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;h2 id=&quot;Task&quot;&gt;&lt;a href=&quot;#Task&quot; class=&quot;headerlink&quot; title=&quot;Task&quot;&gt;&lt;/a&gt;Task&lt;/h2&gt;&lt;p&gt;주어진 정수의 2진 표현에서 가장 긴 zero sequence 구하기.&lt;/p&gt;
+&lt;h2 id=&quot;How-I-did-
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2019/09/11/codility-lesson-1-binarygap/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>아이패드 구매 하고 3주 써 본 기록</title>
+      <link>https://mulder21c.github.io/2019/08/09/3-weeks-after-bought-an-ipad/</link>
+      <guid>https://mulder21c.github.io/2019/08/09/3-weeks-after-bought-an-ipad/</guid>
+      <pubDate>Fri, 09 Aug 2019 14:38:13 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;아이패드를 구매한지 이제 대략 한 달이 되어 간다.&lt;/p&gt;
+&lt;p&gt;나를 잘 모르는 사람들은 아이패드를 구매했다고 하면 농담삼아 브루주아라고 말하기도 하는데,
+사실 아이패드를 사기까지 6년이 걸렸다.&lt;br&gt;내 경우에는 무언가 사고 싶은 욕구가 차오르
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2019/08/09/3-weeks-after-bought-an-ipad/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>세미나 어떻게 준비해야 할까?</title>
+      <link>https://mulder21c.github.io/2019/07/17/how-to-prepare-the-seminar/</link>
+      <guid>https://mulder21c.github.io/2019/07/17/how-to-prepare-the-seminar/</guid>
+      <pubDate>Wed, 17 Jul 2019 12:38:13 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;작년 하코사 세미나를 준비하면서 꽤 많은 스트레스 속에 있었고, 때문에 올 초 운영진 모임 때 
+올해 세미나 준비에서 손을 떼겠다고 공표했었다. 더불어 올해 세미나는 진행이 안 될 거라고 
+이야기했었는데 아니나 다를까 예상했던 대로 세미나는 불발
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2019/07/17/how-to-prepare-the-seminar/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>HTML은 웹이다</title>
+      <link>https://mulder21c.github.io/2019/06/25/html-is-the-web/</link>
+      <guid>https://mulder21c.github.io/2019/06/25/html-is-the-web/</guid>
+      <pubDate>Mon, 24 Jun 2019 15:34:51 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;※ 이 글은 Pete Lambert(&lt;a href=&quot;https://twitter.com/peterjlambert&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;@peterjlambert&lt;/a&gt;)가 작성한
+&lt;a href=&quot;https://
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2019/06/25/html-is-the-web/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>접근성 향상을 위한 이름 짓기</title>
+      <link>https://mulder21c.github.io/2019/04/29/naming-things-to-improve-accessibility/</link>
+      <guid>https://mulder21c.github.io/2019/04/29/naming-things-to-improve-accessibility/</guid>
+      <pubDate>Mon, 29 Apr 2019 14:28:08 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;※ 이 글은 Hidde de Vries가 작성한
+&lt;a href=&quot;https://hiddedevries.nl/en/blog/2019-04-18-naming-things-to-improve-accessibility/&quot; target=&quot;_blank&quot; r
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2019/04/29/naming-things-to-improve-accessibility/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>접근성 교육에서 자주 나오는 상위 5가지 질문</title>
+      <link>https://mulder21c.github.io/2019/04/25/top-5-questions-asked-in-accessibility-trainings/</link>
+      <guid>https://mulder21c.github.io/2019/04/25/top-5-questions-asked-in-accessibility-trainings/</guid>
+      <pubDate>Thu, 25 Apr 2019 14:56:18 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;※ 이 글은 Carie Fisher가 &lt;a href=&quot;https://www.deque.com/blog/top-5-questions-asked-in-accessibility-trainings/&quot; target=&quot;_blank&quot; rel=&quot;noopener
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2019/04/25/top-5-questions-asked-in-accessibility-trainings/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>접근 가능한 숨김 텍스트</title>
+      <link>https://mulder21c.github.io/2019/03/22/screen-hide-text/</link>
+      <guid>https://mulder21c.github.io/2019/03/22/screen-hide-text/</guid>
+      <pubDate>Fri, 22 Mar 2019 14:55:46 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;h2 id=&quot;숨김-텍스트&quot;&gt;&lt;a href=&quot;#숨김-텍스트&quot; class=&quot;headerlink&quot; title=&quot;숨김 텍스트&quot;&gt;&lt;/a&gt;숨김 텍스트&lt;/h2&gt;&lt;p&gt;오래동안 묵어있던 글감을 다시 꺼냈다. 다양한(?) 짓거리를 포스팅하려고 하다 결국은 포기하고
+단
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2019/03/22/screen-hide-text/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>깃북 파일 저장 시 오류 문제 해결</title>
+      <link>https://mulder21c.github.io/2019/02/07/resolve-gitbook-watch-issue/</link>
+      <guid>https://mulder21c.github.io/2019/02/07/resolve-gitbook-watch-issue/</guid>
+      <pubDate>Thu, 07 Feb 2019 11:30:48 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;한 동안 잘 사용하지 않다가 근래 다시 gitbook toolchain을 사용하고 있는데, gitbook toolchain이 가지고 있는
+고질적인 문제가 있었다.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-bash&quot;&gt;gitbook ser
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2019/02/07/resolve-gitbook-watch-issue/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>크로스 브라우징이란?</title>
+      <link>https://mulder21c.github.io/2019/01/30/what-is-cross-browsing/</link>
+      <guid>https://mulder21c.github.io/2019/01/30/what-is-cross-browsing/</guid>
+      <pubDate>Wed, 30 Jan 2019 13:54:11 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;&amp;#39;크로스 브라우징&amp;#39; 이라는 용어가 나온지도 10년이 훌쩍 넘은 듯 하다. 그런데 10년이 넘도록 크로스 브라우징에 대한
+이해는 여전히 잘못된 면모가 자꾸 보인다.&lt;/p&gt;
+&lt;h2 id=&quot;크로스-브라우징은-동일성을-의미하지-않는다&quot;&gt;&lt;
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2019/01/30/what-is-cross-browsing/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>블로그 테마 만들기 시작</title>
+      <link>https://mulder21c.github.io/2019/01/01/start-making-new-theme/</link>
+      <guid>https://mulder21c.github.io/2019/01/01/start-making-new-theme/</guid>
+      <pubDate>Tue, 01 Jan 2019 05:52:57 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;Hexo로 블로그를 옮긴지가 어느덧 1년 반이 되어가는 것 같다.&lt;/p&gt;
+&lt;p&gt;on/off-line에 제한되지 않고 편하게 어디에서나 글을 작성했으면 좋겠다는 생각을 가지고 hexo로 블로그를 옮기면서
+테마를 직접 만들기에는 hexo에 대한 이해
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2019/01/01/start-making-new-theme/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>2018년 회고</title>
+      <link>https://mulder21c.github.io/2018/12/22/2018-retrospective/</link>
+      <guid>https://mulder21c.github.io/2018/12/22/2018-retrospective/</guid>
+      <pubDate>Sat, 22 Dec 2018 04:59:34 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;h2 id=&quot;안녕-2018년&quot;&gt;&lt;a href=&quot;#안녕-2018년&quot; class=&quot;headerlink&quot; title=&quot;안녕, 2018년&quot;&gt;&lt;/a&gt;안녕, 2018년&lt;/h2&gt;&lt;p&gt;2018년이 시작된 지가 얼마 안 된 것 같은데, 어느덧 12월 중순에 접어들었
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2018/12/22/2018-retrospective/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>학습에 대한 오해</title>
+      <link>https://mulder21c.github.io/2018/12/02/misunderstanding-about-learning/</link>
+      <guid>https://mulder21c.github.io/2018/12/02/misunderstanding-about-learning/</guid>
+      <pubDate>Sun, 02 Dec 2018 06:54:14 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;어느 분야가 그렇지 않겠느냐마는, IT 업계에 종사하려면 혹은 이미 종사하고 있으면 새롭게 나타나는 기술이나 기존에
+알고 있던 기술이 판올림되거나 등등의 문제로 지속적인 학습이 필수 불가결한 부분인듯 하다.&lt;/p&gt;
+&lt;p&gt;개인적으로 소소하게 강의형
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2018/12/02/misunderstanding-about-learning/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>모르는 사람에게 질문할거면 예의 좀 지켜라</title>
+      <link>https://mulder21c.github.io/2018/09/05/be-polite-when-you-ask-to-a-question-to-someone-you-dont-know/</link>
+      <guid>https://mulder21c.github.io/2018/09/05/be-polite-when-you-ask-to-a-question-to-someone-you-dont-know/</guid>
+      <pubDate>Wed, 05 Sep 2018 10:43:15 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;네이버 카페 앱으로부터 댓글 알람이 하나 왔다.&lt;/p&gt;
+&lt;p&gt;
+  &lt;img src=&quot;/upload/2018/naver-cafe-app-screenshot.gif&quot; class=&quot;&quot;&gt;
+&lt;/p&gt;
+
+&lt;p&gt;비전공자로 이제 막 학원을 수료해서 취업을 준비하
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2018/09/05/be-polite-when-you-ask-to-a-question-to-someone-you-dont-know/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>파이썬으로 웹 크롤러 만들기</title>
+      <link>https://mulder21c.github.io/2018/06/20/creating-web-crawler-in-python/</link>
+      <guid>https://mulder21c.github.io/2018/06/20/creating-web-crawler-in-python/</guid>
+      <pubDate>Wed, 20 Jun 2018 06:07:24 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;내가 스탭으로 활동하고 있는 카페에는 하루에 십수개의 질문 게시글이 올라오고, 그 중 질문자의 일부는 답변을 받은 이후에 삭제하는 일이
+빈번하게 일어나고 있다. 이에 대해 패널티를 주고 있지만, 매 순간마다 지켜보고 있기는 어려우니 답변을 받고 
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2018/06/20/creating-web-crawler-in-python/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>해쉬 링크 오프셋 조정하기</title>
+      <link>https://mulder21c.github.io/2018/06/11/how-to-adjust-offset-anchor/</link>
+      <guid>https://mulder21c.github.io/2018/06/11/how-to-adjust-offset-anchor/</guid>
+      <pubDate>Mon, 11 Jun 2018 06:01:39 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;HTML 문서 내의 특정 위치로 이동하기 위해 해쉬 링크(hash link)를 사용하는 것은 아마 웹 퍼블리셔라면 모르는 이가 없을 거다.
+그런데 이 해쉬 링크로 이동하는 것은 기본적으로 해당 위치로 스크롤을 이동시키기 때문에 가시적으로 보이는 
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2018/06/11/how-to-adjust-offset-anchor/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>접근 가능한 탭 UI 만들기</title>
+      <link>https://mulder21c.github.io/2018/06/04/how-to-make-accessible-tab-content/</link>
+      <guid>https://mulder21c.github.io/2018/06/04/how-to-make-accessible-tab-content/</guid>
+      <pubDate>Mon, 04 Jun 2018 10:46:43 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;h2 id=&quot;기존-방식의-문제점&quot;&gt;&lt;a href=&quot;#기존-방식의-문제점&quot; class=&quot;headerlink&quot; title=&quot;기존 방식의 문제점&quot;&gt;&lt;/a&gt;기존 방식의 문제점&lt;/h2&gt;&lt;p&gt;과거, WAI-ARIA가 본격적으로 도입되기 이전에는 탭 콘텐츠에 대
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2018/06/04/how-to-make-accessible-tab-content/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Chrome 이미지 프린트 화질 문제</title>
+      <link>https://mulder21c.github.io/2018/06/02/chrome-image-print-low-resolution-issue/</link>
+      <guid>https://mulder21c.github.io/2018/06/02/chrome-image-print-low-resolution-issue/</guid>
+      <pubDate>Sat, 02 Jun 2018 13:21:53 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;이번 퇴직 이후에 이직을 위해 github 블로그에 올려둔 이력서를 업데이트 하면서 웹과 인쇄용을
+동시 지원하기 위한 작업을 진행했었다.&lt;/p&gt;
+&lt;p&gt;첫 페이지를 커버 페이지처럼 사용하기 위해서 여행지에서 찍은 사진을 삽입해 두고 너무 사실적인(
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2018/06/02/chrome-image-print-low-resolution-issue/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>웹 퍼블리셔의 포트폴리오는 어떻게 만들어야 할까? 두 번째 이야기</title>
+      <link>https://mulder21c.github.io/2018/05/30/how-to-make-web-publisher-portfolio-2/</link>
+      <guid>https://mulder21c.github.io/2018/05/30/how-to-make-web-publisher-portfolio-2/</guid>
+      <pubDate>Wed, 30 May 2018 07:59:24 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;퇴직 후 백수의 생활을 즐기면서(?) 신입 웹 퍼블리셔를 준비하는 분들을 대상으로 취업에 대한 조언과 상담을 하면서 종종
+포트폴리오까지 검토하는 일이 조금씩 생기고, 얼마전에는 포트폴리오를 봐줄 수 있는지에 대한 요청 메일이 날라오기도 했다.
+(
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2018/05/30/how-to-make-web-publisher-portfolio-2/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>백종원의 골목식당, 그리고 직업에 대한 전문성</title>
+      <link>https://mulder21c.github.io/2018/05/26/backstreet/</link>
+      <guid>https://mulder21c.github.io/2018/05/26/backstreet/</guid>
+      <pubDate>Sat, 26 May 2018 13:07:33 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;백종원의 골목식당은 첫 방송부터 지금까지 꾸준히 챙겨보고(?) 있는 프로그램 중 하나인데, 요새 원테이블
+식당이 방송 때마다 핫하게 이슈가 되고 있는듯 하다.&lt;/p&gt;
+&lt;p&gt;뭐... 원테이블 식당에 대한 이야기를 하려는 것은 당연히 아니고, 골목식
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2018/05/26/backstreet/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>웹 접근성과 역차별</title>
+      <link>https://mulder21c.github.io/2018/03/15/web-accessibility-and-reverse-discrimination/</link>
+      <guid>https://mulder21c.github.io/2018/03/15/web-accessibility-and-reverse-discrimination/</guid>
+      <pubDate>Thu, 15 Mar 2018 10:06:22 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;몇 달 전, 내 블로그의 글을 무단으로 불펌해간 이들을 추적(?)하느라 이미지 리소스가 사용된 URL를 추적하고, 몇 가지 키워드로
+검색을 하던 중에 2016년도에 H카페에 올렸던 글을 인용한 아티클 하나를 발견했다.&lt;/p&gt;
+&lt;p&gt;내가 올렸던 글
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2018/03/15/web-accessibility-and-reverse-discrimination/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>2017 일본 훗카이도 여행기록 ​#3</title>
+      <link>https://mulder21c.github.io/2018/03/15/2017-hukkaido-3/</link>
+      <guid>https://mulder21c.github.io/2018/03/15/2017-hukkaido-3/</guid>
+      <pubDate>Wed, 14 Mar 2018 17:53:10 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;2018년의 첫 날 눈 내리는 일본에서 맞이하는 여행 아침.&lt;/p&gt;
+&lt;p&gt;
+  &lt;img src=&quot;//farm5.staticflickr.com/4623/24812962007_546a64387e_c.jpg&quot; class=&quot;&quot; alt=&quot;빗방울이 맺힌 창
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2018/03/15/2017-hukkaido-3/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>2017 일본 훗카이도 여행기록 ​#2</title>
+      <link>https://mulder21c.github.io/2018/03/12/2017-hukkaido-2/</link>
+      <guid>https://mulder21c.github.io/2018/03/12/2017-hukkaido-2/</guid>
+      <pubDate>Sun, 11 Mar 2018 20:08:16 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;
+  &lt;img src=&quot;//farm5.staticflickr.com/4664/38972426104_e113daef37_c.jpg&quot; class=&quot;&quot; alt=&quot;순백의 하얀 눈 덮인 나무들로 둘러 싸인 절벽을 타고 하얀 물줄기가 흘러내리고 있다.&quot;&gt;
+
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2018/03/12/2017-hukkaido-2/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>2017 일본 훗카이도 여행기록 ​#1</title>
+      <link>https://mulder21c.github.io/2018/03/12/2017-hukkaido-1/</link>
+      <guid>https://mulder21c.github.io/2018/03/12/2017-hukkaido-1/</guid>
+      <pubDate>Sun, 11 Mar 2018 18:41:30 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;
+  &lt;img src=&quot;//farm5.staticflickr.com/4653/39679785701_3e91a525b1_c.jpg&quot; class=&quot;&quot; alt=&quot;눈과 고드름으로 덮인 통나무집 창문 너머로 무언가가 진열되어 있는 것이 보인다.&quot;&gt;
+&lt;/p
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2018/03/12/2017-hukkaido-1/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>퇴사 여행을 떠나다.</title>
+      <link>https://mulder21c.github.io/2018/03/09/i-resigned/</link>
+      <guid>https://mulder21c.github.io/2018/03/09/i-resigned/</guid>
+      <pubDate>Thu, 08 Mar 2018 23:02:17 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;h2 id=&quot;퇴사하겠습니다&quot;&gt;&lt;a href=&quot;#퇴사하겠습니다&quot; class=&quot;headerlink&quot; title=&quot;퇴사하겠습니다.&quot;&gt;&lt;/a&gt;퇴사하겠습니다.&lt;/h2&gt;&lt;p&gt;작년 10월 즈음이었던 것 같다. 내가 퇴사 의사를 공공연하게 밝히기 시작했던 것이.&lt;
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2018/03/09/i-resigned/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>2017 13박 15일 유럽 여행기 ​#15</title>
+      <link>https://mulder21c.github.io/2018/01/13/europ-travel-15/</link>
+      <guid>https://mulder21c.github.io/2018/01/13/europ-travel-15/</guid>
+      <pubDate>Sat, 13 Jan 2018 09:25:23 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;이번 유럽 여행의 마지막 날. 출국 시간이 오후 9시였기 때문에 하루를 그냥 보내기에는 시간을 너무 많이 버리게 되는
+상황이 될 것 같아 취리히에서의 마지막 날을 어떻게 보낼까 고민하던 차에 발견한 라퍼스빌 요나.&lt;/p&gt;
+&lt;p&gt;라퍼스빌 요나는 취
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2018/01/13/europ-travel-15/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>2017 13박 15일 유럽 여행기 ​#14</title>
+      <link>https://mulder21c.github.io/2018/01/07/europ-travel-14/</link>
+      <guid>https://mulder21c.github.io/2018/01/07/europ-travel-14/</guid>
+      <pubDate>Sun, 07 Jan 2018 07:05:53 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;유럽 여행의 마지막 일정인 취리히. 아웃을 취리히로 잡아놓았기 때문에 취리히에 발을 들여놓자마자 떠나기는 또
+아쉬울 것 같아 취리히 일정을 2일 잡아 인터라켄을 뒤로 하고 취리히로 들어왔다.&lt;/p&gt;
+&lt;p&gt;SBB를 타고 인터라켄에서 취리히로 들어오
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2018/01/07/europ-travel-14/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>2017 13박 15일 유럽 여행기 ​#13</title>
+      <link>https://mulder21c.github.io/2018/01/06/europ-travel-13/</link>
+      <guid>https://mulder21c.github.io/2018/01/06/europ-travel-13/</guid>
+      <pubDate>Sat, 06 Jan 2018 11:55:22 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;스위스에 왔으니 융프라우에 가지 않을 수가 없다!!!&lt;/p&gt;
+&lt;p&gt;출발하기 전에 동신항운 홈페이지에서 추천 일정을 보면서 하루 안에 어떻게 동선을 짜야 할지 고민하다가 융프라우를
+일정을 잘못 짜서 아쉬움을 남기고 싶지는 않아 아예 투어신청으로 눈
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2018/01/06/europ-travel-13/#disqus_thread</comments>
+    </item>
+    
+  </channel>
+</rss>

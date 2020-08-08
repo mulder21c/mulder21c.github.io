@@ -1,0 +1,354 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>세로 100% 레이아웃 - The Tracks of mulder21c</title><!-- Links--><link rel="canonical" href="https://mulder21c.github.io/2014/10/25/100-percent-height-layout"><!-- preload--><link rel="preload" as="image" href="/images/favicon.png" crossorigin="anonymous"><link rel="preload" as="image" href="//farm1.staticflickr.com/863/41108552022_61413423d5_b.jpg" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/iropke/IropkeBatangM.woff" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/spoqahansans/SpoqaHanSansRegular.woff2" crossorigin="anonymous"><!-- Icons--><link rel="shortcut icon" sizes="196x196" href="/images/favicon.png"><!-- open graph--><meta name="description" content="최근 모바일 작업을 하는 중에 flexbox 관련 CSS 를 찾다가 재밌는(?) trick을 발견했다.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="세로 100% 레이아웃">
+<meta property="og:url" content="https://mulder21c.github.io/2014/10/25/100-percent-height-layout/">
+<meta property="og:site_name" content="The Tracks of mulder21c">
+<meta property="og:description" content="최근 모바일 작업을 하는 중에 flexbox 관련 CSS 를 찾다가 재밌는(?) trick을 발견했다.">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://farm1.staticflickr.com/863/41108552022_61413423d5_b.jpg">
+<meta property="article:published_time" content="2014-10-24T15:08:25.000Z">
+<meta property="article:modified_time" content="2020-06-13T10:44:08.657Z">
+<meta property="article:author" content="멀더끙">
+<meta property="article:tag" content="세로 100% 레이아웃">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://farm1.staticflickr.com/863/41108552022_61413423d5_b.jpg"><!-- verify website ownership--><meta name="google-site-verification" content="cNXUGP2JbfDQYO1PIpkuHsivBfDI6Q_AFBBZzsNaUKs"><meta name="naver-site-verification" content="859a6966704edf251c82579243d7dda7a8a87799"><!-- styles--><link rel="stylesheet" href="/css/style.css"><style>
+</style><link rel="stylesheet" href="/fonts/iropke/iropke.css"><link rel="stylesheet" href="/fonts/notosanskr/NotoSansKR.css"><!-- JSON LD for SEO--><script type="application/ld+json">{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "세로 100% 레이아웃",
+  "alternativeHeadline": null,
+  "image": {
+    "@type": "imageObject",
+    "url": "https://farm1.staticflickr.com/863/41108552022_61413423d5_b.jpg",
+    "width": "1024",
+    "height": "684"
+  },
+  "genre": null,
+  "keywords": "세로 100% 레이아웃",
+  "editor": {
+    "@type": "Person",
+    "name": "멀더끙"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "멀더끙",
+    "logo": {
+      "@type": "imageObject",
+      "url": "https://mulder21c.github.io/images/favicon.png"
+    }
+  },
+  "author": {
+    "@type": "Person",
+    "name": "멀더끙"
+  },
+  "url": "https://mulder21c.github.io/2014/10/25/100-percent-height-layout/",
+  "dateCreated": "2014-10-25",
+  "datePublished": "2014-10-25",
+  "articleBody": "최근 모바일 작업을 하는 중에 flexbox 관련 CSS 를 찾다가 재밌는(?) trick을 발견했다."
+}</script><!--scripts--><script>(function(i,s,o,g,r,a,m) {i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,"script","//www.google-analytics.com/analytics.js","ga");
+ga("create", "UA-55718543-7", "auto");
+ga("send", "pageview");
+</script><meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/rss.xml" title="The Tracks of mulder21c" type="application/rss+xml">
+<link rel="stylesheet" href="/css/prism-xonokai.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><script src="/js/prism.js"></script>
+<script src="/js/prism-line-numbers.min.js"></script></head><body class="post"><header class="header hero hero--has-image"><div class="hero-wrapper"><div class="gnb"><a href="/">The Tracks of mulder21c</a><button class="nav-toggle" type="button" aria-haspopup="true" aria-controls="navigation"><span></span><span></span><span></span>menu</button></div><h1 class="header__title">세로 100% 레이아웃</h1><div class="hero__image" style="background-image: url(//farm1.staticflickr.com/863/41108552022_61413423d5_b.jpg);background-position: left 80%;"></div></div></header><div class="contents--container" role="main"><article class="article"><div class="article__meta"><div class="gravatar"><img src="/images/favicon.png" alt="authored by 멀더끙"></div><time class="article__meta__time" datetime="2014-10-24T15:08:25.000Z"><span aria-label="posted"><span class="fas fa-calendar-day" aria-hidden="true"></span></span>2014-10-25 00:08:25</time><div class="article__meta__category"><span aria-label="category"><span class="fas fa-archive" aria-hidden="true"></span></span><a class="article__meta__category__item" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/">개발노트</a><a class="article__meta__category__item" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/html-css/">HTML/CSS</a></div></div><div class="article__content"><p>기억하기로 처음 필자가 세로 100% 레이아웃을 만들기 위해 머리를 싸맸던것은, 블로그 스킨을 만들면서
+처음으로 header – main(container) – footer 구조를 만들기 위해서 였던것 같다.</p>
+<p>당시의 나는 아직 퍼블리셔로서의 진로는 결정하기 이전이었고, 그냥 취미삼아 공부삼아 블로그 스킨을
+만들던 때였다. 그 때부터 이미 구글은 내게 훌륭한 조언자(?)였고 인터넷에는 많은 선생님들이 계셨다 ㅎㅎ</p>
+<h2 id="Old-Version"><a href="#Old-Version" class="headerlink" title="Old Version"></a>Old Version</h2><p>지금까지도 여전히 사용되는 방법이기는 하지만, 이제는 Old 로 좀 넘기고 싶다 /=ㅁ=/ ;;</p>
+<p>아마 대다수가 많이 알고 있는 코드이겠지만 기존에 header – main(container) – footer의 구조에서 세로
+100% 레이아웃을 만들기 위해서는 다음과 같은 방식의 코드를 사용해 왔다.</p>
+<p>** Markup **</p>
+<pre class="line-numbers language-markup"><code class="language-markup"><span class="token doctype">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://www.w3.org/1999/xhtml<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">xml:</span>lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ko<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Content-Type<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/html;charset<span class="token punctuation">=</span>UTF-8<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>header<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    Header Area
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>wrapper<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+      컨테이너
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>footer<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    Footer Area
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>** CSS **</p>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token selector">html, body</span><span class="token punctuation">{</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span><span class="token number">100%</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector"><span class="token id">#header</span></span><span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span>relative<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span><span class="token number">100</span>px<span class="token punctuation">;</span>
+  <span class="token property">z-index</span><span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector"><span class="token id">#wrapper</span></span><span class="token punctuation">{</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span>-<span class="token number">100</span>px <span class="token number">0</span> -<span class="token number">100</span>px<span class="token punctuation">;</span>
+  <span class="token property">min-height</span><span class="token punctuation">:</span><span class="token number">100%</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">* html <span class="token id">#wrapper</span></span><span class="token punctuation">{</span>
+  <span class="token property">height</span><span class="token punctuation">:</span><span class="token number">100%</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector"><span class="token id">#container</span></span><span class="token punctuation">{</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span><span class="token number">100</span>px <span class="token number">0</span> <span class="token number">100</span>px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector"><span class="token id">#footer</span></span><span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span>relative<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span><span class="token number">100</span>px<span class="token punctuation">;</span>
+  <span class="token property">z-index</span><span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>아주 많이 봐 왔던 코드이리라 싶다. 그런에 이 코드의 문제(?)는 container를 감싸주는 dummy 요소가
+반드시 필요하다라는 점과… container 내의 padding 값이나 header/footer의 z-index 값으로 인해
+원치않은 오류를 아주 간혹 만나기도 했더라는 점… ㄷㄷㄷ;</p>
+<p>그러나 최근 모바일 작업을 하는 중에 flexbox 관련 CSS 를 찾다가 재밌는(?) trick을 발견했다. 이걸 어느
+사이트에서 봤었는지는 기억이 나질 않는데다 브라우저 history에도 남아있지를 않아서 확인이 불가능하지만,
+다행스럽게도 이 trick을 이용하여 작업해본 덕분에 머리속에 콕! 박혔다 ㅋ</p>
+<h2 id="Use-table-trick"><a href="#Use-table-trick" class="headerlink" title="Use table trick"></a>Use table trick</h2><p>제목에 보듯 그 trick이라는것은 table을 이용한 방법이다. HTML table element를 말하는 것이 아니라,
+CSS의 display 속성값 중 table에 관련된 값들을 이용한 방법이다.</p>
+<p>이미 table과 관련된 속성값을 이용한 트릭이 몇 가지 알려져 있는 것들이 있는데, 와… 정말 이걸 이렇게
+사용할 수 있으리라고는 정말 상상도 못했다. /=ㅁ=/ 외쿡 개발자들은 정말 대단하다… ㄷㄷㄷ</p>
+<p>코드는 다음과 같다.</p>
+<p>** Markup **</p>
+<pre class="line-numbers language-markup"><code class="language-markup"><span class="token doctype">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://www.w3.org/1999/xhtml<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">xml:</span>lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ko<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Content-Type<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/html;charset<span class="token punctuation">=</span>UTF-8<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Document<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>header<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    Header Area
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    컨테이너
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>footer<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    Footer Area
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>** CSS **</p>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token selector">html,body</span><span class="token punctuation">{</span>
+  <span class="token property">height</span><span class="token punctuation">:</span><span class="token number">100%</span>
+<span class="token punctuation">}</span>
+<span class="token selector">body</span><span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span>table<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span><span class="token number">100%</span>
+<span class="token punctuation">}</span>
+<span class="token selector"><span class="token id">#header</span>,<span class="token id">#footer</span></span><span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span>table-row<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span><span class="token number">100%</span><span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span><span class="token number">1</span>px
+<span class="token punctuation">}</span>
+<span class="token selector"><span class="token id">#container</span></span><span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span>table-row<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span><span class="token number">100%</span><span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span><span class="token number">100%</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>어떤가!!! table-row를 이용한 방법이라니!!!</p>
+<p>아, height : 1px 로 되어 있다 하여서 당황하지는 말자. table 렌더링 특성 상 1px 로 height 가 설정되어
+있다 하더라도 내부 컨텐츠에 따라 알아서 자동으로 늘어나고 #container 영역 역시 그에 따라 알아서
+height를 가져간다.</p>
+<p>그런데, display:table을 사용하는 방법이라니… 크로스브라우징에는 문제가 없을까? 늘 문제는 IE가
+일으키니 (이 죽일놈의 IE…) VirtualBox에 구성해둔 IE 6, 7, 8, 9 레거시 버전들로 테스트를 진행해 봤다.</p>
+<p>** Test Source Code **</p>
+<pre class="line-numbers language-markup"><code class="language-markup"><span class="token doctype">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://www.w3.org/1999/xhtml<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">xml:</span>lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ko<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Content-Type<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/html;charset<span class="token punctuation">=</span>UTF-8<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Document<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/css<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token style language-css">
+    <span class="token selector">*</span><span class="token punctuation">{</span><span class="token property">margin</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">;</span><span class="token property">padding</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">}</span>
+    <span class="token selector">html,body</span><span class="token punctuation">{</span><span class="token property">height</span><span class="token punctuation">:</span><span class="token number">100%</span><span class="token punctuation">}</span>
+    <span class="token selector">body</span><span class="token punctuation">{</span><span class="token property">display</span><span class="token punctuation">:</span>table<span class="token punctuation">;</span><span class="token property">width</span><span class="token punctuation">:</span><span class="token number">100%</span><span class="token punctuation">}</span>
+    <span class="token selector"><span class="token id">#header</span>,<span class="token id">#footer</span></span><span class="token punctuation">{</span><span class="token property">display</span><span class="token punctuation">:</span>table-row<span class="token punctuation">;</span><span class="token property">width</span><span class="token punctuation">:</span><span class="token number">100%</span><span class="token punctuation">;</span><span class="token property">height</span><span class="token punctuation">:</span><span class="token number">1</span>px<span class="token punctuation">}</span>
+    <span class="token selector"><span class="token id">#container</span></span><span class="token punctuation">{</span><span class="token property">display</span><span class="token punctuation">:</span>table-row<span class="token punctuation">;</span><span class="token property">width</span><span class="token punctuation">:</span><span class="token number">100%</span><span class="token punctuation">;</span><span class="token property">height</span><span class="token punctuation">:</span><span class="token number">100%</span><span class="token punctuation">}</span>
+
+    <span class="token selector">body</span><span class="token punctuation">{</span><span class="token property">font-size</span><span class="token punctuation">:</span><span class="token number">3</span>em<span class="token punctuation">;</span><span class="token property">color</span><span class="token punctuation">:</span><span class="token hexcode">#FFF</span><span class="token punctuation">}</span>
+    <span class="token selector"><span class="token id">#header</span>,<span class="token id">#footer</span></span><span class="token punctuation">{</span><span class="token property">background-color</span><span class="token punctuation">:</span><span class="token hexcode">#F00</span><span class="token punctuation">}</span>
+    <span class="token selector"><span class="token id">#container</span></span><span class="token punctuation">{</span><span class="token property">background-color</span><span class="token punctuation">:</span><span class="token hexcode">#0F0</span><span class="token punctuation">}</span>
+  </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>header<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    Header Area
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    컨테이너
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>footer<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    Footer Area
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<div class="horizon-overflow">
+  <table>
+    <caption><i class="fab fa-windows" aria-hidden="true"></i> IE 버전별 크로스브라우징 테스트 결과</caption>
+    <colgroup>
+      <col style="width:30%;">
+      <col style="width:20%;">
+    </colgroup>
+    <thead>
+      <tr>
+        <th scope="col">OS</th>
+        <th scope="col">IE version</th>
+        <th scope="col">테스트 결과</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row" rowspan="3">Windows XP</th>
+        <th scope="row">IE 6</th>
+        <td>
+          container가 브라우저의 높이 만큼 그대로 차지함. <br>
+          header / footer 가 차지한 영역만큼 추가로 스크롤링 발생 <br>
+          그래.. 넌 안될 줄 알았어…
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">IE 7</th>
+        <td>
+          뭐냐…넌… header / footer가 1px로 렌더링 <br>
+          footer 만큼의 영역만 여백으로 발생 <br>
+          너도 땡! 탈락!
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">IE 8</th>
+        <td>오오미!! 된다!!</td>
+      </tr>
+      <tr>
+        <th scope="row" rowspan="2">Windows 7(32bit)</th>
+        <th scope="row">IE 8</th>
+        <td>오~ 역시 잘됨</td>
+      </tr>
+      <tr>
+        <th scope="row">IE 9</th>
+        <td>오~ 잘 나옴</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<p>일단 IE 계열에서는 7 이하를 버리면 문제 없다. 쿨럭…</p>
+<p>그렇담 모바일 쪽은 어떨까? <br>
+모바일쪽은 아무래도 역시 모바일계의 IE 안드로이드 브라우저가 파편화가 심하니 안드로이드 브라우저를
+대상으로 Genymotion을 이용하여 가상화 테스트를 진행해봤다.</p>
+
+<div class="horizon-overflow">
+  <table>
+    <caption>
+      <i class="fab fa-android"></i> Android 버전별 기본 브라우저 테스트 결과
+    </caption>
+    <colgroup>
+      <col style="width:20%">
+    </colgroup>
+    <thead>
+      <tr>
+        <th scodpe="col">버전</th>
+        <th scodpe="col">테스트 결과</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">2.3.7 (생강빵) </th>
+        <td>어라? 의외로 의도대로 나옴</td>
+      </tr>
+      <tr>
+        <th scope="row">4.1.1 (젤리빈)</th>
+        <td>
+          헐퀴… 역시 안드로이드… container 영역에 width 값을100% 가지지 못하는 문제 발생 <br>
+          단, container 영역 내 직속자식으로 블럭요소를 넣으면 문제가 해결되기는 함.
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">4.2.2 (젤리빈)</th>
+        <td>상동</td>
+      </tr>
+      <tr>
+        <th scope="row">4.3 (젤리빈)</th>
+        <td>상동</td>
+      </tr>
+      <tr>
+        <th scope="row">4.4.4 (킷캣)</th>
+        <td>오.. 다시 잘 나옴</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<p>역시 명불허전 안드로이드다… <br>
+희한하게도 진저브레드에선 잘 나왔다가 젤리빈에선 버그가 나왔다가 다시 킷캣에선 잘 나온다… = _=a</p>
+<h2 id="결론"><a href="#결론" class="headerlink" title="결론"></a>결론</h2><p>결과적으로 PC 웹에서보자면 IE 7 이하에 대한 대응만 없다면 써 볼 만하겠다. 단, IE 8 은 그래도 웬지
+께름칙하므로… 테스트는 꼭 해봐야 할듯…</p>
+<p>모바일 웹에서는 container 영역에 직속자식으로 block-level 요소를 하나 집어넣고만 쓴다면 역시 괜찮은
+방법일듯 하다.</p>
+</div><div class="article__tags"><div class="article__tags__title">tags:</div><a class="article__tag__item" href="/tags/%EC%84%B8%EB%A1%9C-100-%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83/"><span class="fas fa-tag" aria-hidden="true"></span>세로 100% 레이아웃</a></div></article><div class="comment__container" role="region" aria-label="comments"><div id="lv-container" data-id="city" data-uid="MTAyMC8zMDYzOC83MTkz"></div></div></div><footer class="footer"><p class="copyright">&copy; 2012 ~ 2019 mulder21c <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" target="_blank" rel="license">(CCL-BY-NC-ND)</a></p><p class="credit">Powered by  <a href="https://hexo.io/" rel="external noreferrer" target="_blank">Hexo</a>. Theme by  <a href="https://github.com/mulder21c" rel="external noreferrer" target="_blank">mulder21c</a></p></footer><div class="nav" aria-hidden="true"><nav class="nav--container" id="navigation" aria-labelledby="nav__heading"><h2 class="nav__heading" id="nav__heading">Navigation</h2><hr class="nav__seperator"><ul class="menu-list">
+    <li class="menu-item" >
+      <a href="/" >
+        home
+      </a>
+    </li>
+    <li class="menu-item" >
+      <a href="/archives" >
+        archives
+      </a>
+    </li>
+    <li class="menu-item" >
+      <a href="/copyright" >
+        copyright
+      </a>
+    </li>
+    <li class="menu-item" >
+      <a href="/resume" >
+        about me
+      </a>
+    </li></ul><hr class="nav__seperator"><h3 class="nav__heading--sub">Categories</h3><ul class="category-list"><li class="category-list-item"><a class="category-list-link current" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/">개발노트</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/a11y/">A11Y</a></li><li class="category-list-item"><a class="category-list-link current" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/html-css/">HTML/CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/javascript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/etc/">etc..</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%83%9D%EA%B0%81%EB%85%B8%ED%8A%B8/">생각노트</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%83%9D%EA%B0%81%EB%85%B8%ED%8A%B8/in-christ/">in christ</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%83%9D%EA%B0%81%EB%85%B8%ED%8A%B8/in-dailylife/">in dailylife</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%83%9D%EA%B0%81%EB%85%B8%ED%8A%B8/in-occupation/">in occupation</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%BC%EC%83%81%EB%85%B8%ED%8A%B8/">일상노트</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%BC%EC%83%81%EB%85%B8%ED%8A%B8/miscellaneous/">miscellaneous</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%BC%EC%83%81%EB%85%B8%ED%8A%B8/%EC%97%AC%ED%96%89-%EC%82%AC%EC%A7%84/">여행 & 사진</a></li></ul></li></ul><hr class="nav__seperator"><h3 class="nav__heading--sub">External links</h3><ul class="link-list">
+      <li>
+        <a href="https://mulder21c.github.io/aria-practices" target="_blank" class="link-item">WAI-ARIA Authoring Practice 1.2 (진행중)</a>
+      </li>
+    
+      <li>
+        <a href="https://mulder21c.github.io/jest/docs/en/next/getting-started.html" target="_blank" class="link-item">Jest 공식 문서 개인 번역 (진행중)</a>
+      </li>
+    
+      <li>
+        <a href="https://mulder21c.github.io/seminar" target="_blank" class="link-item">세미나 발표 자료</a>
+      </li>
+    
+      <li>
+        <a href="https://mulder21c.github.io/html" target="_blank" class="link-item">HTML 5.1 명세 개인 번역 (중단)</a>
+      </li>
+    </ul><hr class="nav__seperator"><div class="nav__sns__icon-wrapper"><a class="nav__sns__icon" href="https://www.github.com/mulder21c" target="_blank" aria-label="github"><span class="fab fa-github-square" aria-hidden="true"></span></a><a class="nav__sns__icon" href="https://www.facebook.com/mulder21c" target="_blank" aria-label="facebook"><span class="fab fa-facebook-square" aria-hidden="true"></span></a><a class="nav__sns__icon" href="https://www.instagram.com/mulder21c/" target="_blank" aria-label="instagram"><span class="fab fa-instagram" aria-hidden="true"></span></a><a class="nav__sns__icon" href="https://twitter.com/mulder21c" target="_blank" aria-label="twitter"><span class="fab fa-twitter-square" aria-hidden="true"></span></a><a class="nav__sns__icon" href="https://www.linkedin.com/in/mulder21c/" target="_blank" aria-label="linkedin"><span class="fab fa-linkedin" aria-hidden="true"></span></a><a class="nav__sns__icon" href="http://flickr.com/photos/mulder21c" target="_blank" aria-label="flickr"><span class="fab fa-flickr" aria-hidden="true"></span></a><a class="nav__sns__icon" href="/rss.xml" target="_blank" aria-label="rss"><span class="fas fa-rss-square" aria-hidden="true"></span></a></div></nav></div><div class="license-notation dialog" role="dialog" aria-describedby="license-notation" aria-modal="true" aria-hidden="true" hidden><div class="dialog__content" id="license-notation"><p><img class="icon" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" alt="크리에이티브 커먼즈 라이선스">본 블로그의 모든 저작물은 <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">크리에이티브 커먼즈 저작자표시-비영리-변경금지 4.0 국제 라이선스</a>에 따라 이용할 수 있습니다.</p><p>저작권 위반시 저작권의 보호를 위해 법적인 조치를 취할 수 있으며,
+퍼가실 때에는 반드시 출처를 명시해 주시고, 사용처를 덧글로 남겨주시면 감사합니다.</p><p>저작권에 관련한 기타 자세한 내용은 <a rel="help" href="/copyright">저작권에 관한 경고</a>를 참고해주세요.</p><p class="dialog__footer"><input type="checkbox" name="license-agree" id="license-agree"><label for="license-agree">내용을 확인 했습니다.</label><br><button class="btn-close" type="button">닫기</button></p></div><div class="dialog__diemed"></div></div><script src="/js/webfontloader.js"></script><script>WebFont.load({
+  custom: {
+    families: ["Spoqa Han Sans", "Hack", "Font Awesome"],
+    urls: ["/fonts/spoqahansans/SpoqaHanSans-kr.css", "/fonts/hack/hack.css", "/fonts/fontawesome/fontawesome.css"]
+  }
+});</script><script>(function(d, s) {
+  if(!document.getElementById("lv-container")) return;
+  var j, e = d.getElementsByTagName(s)[0];
+  if (typeof LivereTower === "function") { return; }
+  j = d.createElement(s);
+  j.src = "https://cdn-city.livere.com/js/embed.dist.js";
+  j.async = true;
+  e.parentNode.insertBefore(j, e);
+})(document, "script");
+</script><script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(adsbygoogle = window.adsbygoogle || []).push({
+  google_ad_client: "ca-pub-5055523791773672",
+  enable_page_level_ads: true
+});</script><script src="/js/script.js"></script></body></html>
