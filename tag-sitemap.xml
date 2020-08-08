@@ -3,6 +3,34 @@
 
 
     <url>
+        <loc>https://mulder21c.github.io/tags/%EA%B8%B0%EC%88%A0-%EC%9D%B8%ED%84%B0%EB%B7%B0/</loc>
+        <lastmod>2020-08-08T08:59:59.964Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://mulder21c.github.io/tags/%EA%B3%BC%EC%A0%9C-%EC%A0%84%ED%98%95/</loc>
+        <lastmod>2020-08-08T08:59:59.964Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://mulder21c.github.io/tags/%EA%B8%B0%EC%88%A0-%EB%B6%80%EC%B1%84/</loc>
+        <lastmod>2020-08-08T08:59:59.964Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://mulder21c.github.io/tags/%EC%9D%B4%EC%A7%81-%EA%B3%BC%EC%A0%95/</loc>
+        <lastmod>2020-08-08T08:59:59.964Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://mulder21c.github.io/tags/%EC%96%B4%EB%94%94%EB%9D%BC%EA%B3%A4-%EC%96%98%EA%B8%B0-%EC%95%88%ED%96%88%EB%8B%A4/</loc>
         <lastmod>2020-06-13T10:44:08.687Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -11,34 +39,6 @@
 
     <url>
         <loc>https://mulder21c.github.io/tags/%ED%87%B4%EC%82%AC-%EC%9D%B4%EC%95%BC%EA%B8%B0/</loc>
-        <lastmod>2020-06-13T10:44:08.687Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://mulder21c.github.io/tags/%EA%B8%B0%EC%88%A0-%EC%9D%B8%ED%84%B0%EB%B7%B0/</loc>
-        <lastmod>2020-06-13T10:44:08.687Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://mulder21c.github.io/tags/%EA%B3%BC%EC%A0%9C-%EC%A0%84%ED%98%95/</loc>
-        <lastmod>2020-06-13T10:44:08.687Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://mulder21c.github.io/tags/%EA%B8%B0%EC%88%A0-%EB%B6%80%EC%B1%84/</loc>
-        <lastmod>2020-06-13T10:44:08.687Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://mulder21c.github.io/tags/%EC%9D%B4%EC%A7%81-%EA%B3%BC%EC%A0%95/</loc>
         <lastmod>2020-06-13T10:44:08.687Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
