@@ -9,8 +9,47 @@
     <atom:link href="/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>멀더끙의 개인 블로그 — 접근성에 관심이 많은 Front-End Developer, 커피 애호가, 사진 찍기 좋아하는 트래블 러버, 아직도 블로그 뭘 쓸지 모르겠는 초보 블로거, 그냥 이것 저것 개인의 생각을 끄적끄적이는 멀더끙의 블러그입니다.</description>
-    <pubDate>Sat, 08 Aug 2020 08:59:59 GMT</pubDate>
+    <pubDate>Sat, 15 Aug 2020 05:43:19 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>2020 이직 이야기</title>
+      <link>https://mulder21c.github.io/2020/06/28/turnover-4th/</link>
+      <guid>https://mulder21c.github.io/2020/06/28/turnover-4th/</guid>
+      <pubDate>Sun, 28 Jun 2020 09:42:51 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;이직 이야기의 마지막으로 Job Description에 대한 이야기를 좀 해보려고 한다. &lt;/p&gt;
+&lt;h2 id=&quot;부실한-Job-Description&quot;&gt;&lt;a href=&quot;#부실한-Job-Description&quot; class=&quot;headerlink&quot; tit
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2020/06/28/turnover-4th/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>2020 이직 이야기</title>
+      <link>https://mulder21c.github.io/2020/06/02/turnover-3rd/</link>
+      <guid>https://mulder21c.github.io/2020/06/02/turnover-3rd/</guid>
+      <pubDate>Tue, 02 Jun 2020 14:53:04 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;이직 프로세스를 진행하면서 프로세스가 늘 좋거나 so so 인것만은 아니다. 썩 기분이 나쁜 경우도 
+있고 짜증이 나는 경우도 종종 발생하는데 이번에는 이 경험들에 대해서 적어본다. &lt;/p&gt;
+&lt;h2 id=&quot;무작위로-날라오는-서치펌-메일&quot;&gt;&lt;a h
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2020/06/02/turnover-3rd/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>2020 이직 이야기</title>
@@ -941,46 +980,6 @@ corona-19 덕분(?)에 조금은 시기가 늦춰진 듯하다. &lt;/p&gt;
       
       
       <comments>https://mulder21c.github.io/2018/01/13/europ-travel-15/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>2017 13박 15일 유럽 여행기 ​#14</title>
-      <link>https://mulder21c.github.io/2018/01/07/europ-travel-14/</link>
-      <guid>https://mulder21c.github.io/2018/01/07/europ-travel-14/</guid>
-      <pubDate>Sun, 07 Jan 2018 07:05:53 GMT</pubDate>
-      <description>
-      
-        
-        
-          &lt;p&gt;유럽 여행의 마지막 일정인 취리히. 아웃을 취리히로 잡아놓았기 때문에 취리히에 발을 들여놓자마자 떠나기는 또
-아쉬울 것 같아 취리히 일정을 2일 잡아 인터라켄을 뒤로 하고 취리히로 들어왔다.&lt;/p&gt;
-&lt;p&gt;SBB를 타고 인터라켄에서 취리히로 들어오
-        
-      
-      </description>
-      
-      
-      <comments>https://mulder21c.github.io/2018/01/07/europ-travel-14/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>2017 13박 15일 유럽 여행기 ​#13</title>
-      <link>https://mulder21c.github.io/2018/01/06/europ-travel-13/</link>
-      <guid>https://mulder21c.github.io/2018/01/06/europ-travel-13/</guid>
-      <pubDate>Sat, 06 Jan 2018 11:55:22 GMT</pubDate>
-      <description>
-      
-        
-        
-          &lt;p&gt;스위스에 왔으니 융프라우에 가지 않을 수가 없다!!!&lt;/p&gt;
-&lt;p&gt;출발하기 전에 동신항운 홈페이지에서 추천 일정을 보면서 하루 안에 어떻게 동선을 짜야 할지 고민하다가 융프라우를
-일정을 잘못 짜서 아쉬움을 남기고 싶지는 않아 아예 투어신청으로 눈
-        
-      
-      </description>
-      
-      
-      <comments>https://mulder21c.github.io/2018/01/06/europ-travel-13/#disqus_thread</comments>
     </item>
     
   </channel>
