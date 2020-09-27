@@ -9,8 +9,28 @@
     <atom:link href="/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>멀더끙의 개인 블로그 — 접근성에 관심이 많은 Front-End Developer, 커피 애호가, 사진 찍기 좋아하는 트래블 러버, 아직도 블로그 뭘 쓸지 모르겠는 초보 블로거, 그냥 이것 저것 개인의 생각을 끄적끄적이는 멀더끙의 블러그입니다.</description>
-    <pubDate>Sat, 15 Aug 2020 05:43:19 GMT</pubDate>
+    <pubDate>Sun, 27 Sep 2020 07:04:50 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Nuxt + Storybook 통합 하기</title>
+      <link>https://mulder21c.github.io/2020/09/27/nuxt-storybook/</link>
+      <guid>https://mulder21c.github.io/2020/09/27/nuxt-storybook/</guid>
+      <pubDate>Sun, 27 Sep 2020 07:02:45 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;최근 프로젝트를 진행하면서 본격적으로 Storybook을 도입하기로 해서 Nuxt에 Storybook을 
+통합하여 프로덕트를 만들어 갔다. (but... 뒤로 갈 수록 일정 부족으로 인해 story 작성을 
+포기한건 안 비밀... 쿨럭....)&lt;
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2020/09/27/nuxt-storybook/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>2020 이직 이야기</title>
@@ -960,26 +980,6 @@ corona-19 덕분(?)에 조금은 시기가 늦춰진 듯하다. &lt;/p&gt;
       
       
       <comments>https://mulder21c.github.io/2018/03/09/i-resigned/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>2017 13박 15일 유럽 여행기 ​#15</title>
-      <link>https://mulder21c.github.io/2018/01/13/europ-travel-15/</link>
-      <guid>https://mulder21c.github.io/2018/01/13/europ-travel-15/</guid>
-      <pubDate>Sat, 13 Jan 2018 09:25:23 GMT</pubDate>
-      <description>
-      
-        
-        
-          &lt;p&gt;이번 유럽 여행의 마지막 날. 출국 시간이 오후 9시였기 때문에 하루를 그냥 보내기에는 시간을 너무 많이 버리게 되는
-상황이 될 것 같아 취리히에서의 마지막 날을 어떻게 보낼까 고민하던 차에 발견한 라퍼스빌 요나.&lt;/p&gt;
-&lt;p&gt;라퍼스빌 요나는 취
-        
-      
-      </description>
-      
-      
-      <comments>https://mulder21c.github.io/2018/01/13/europ-travel-15/#disqus_thread</comments>
     </item>
     
   </channel>
