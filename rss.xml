@@ -9,8 +9,29 @@
     <atom:link href="/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>멀더끙의 개인 블로그 — 접근성에 관심이 많은 Front-End Developer, 커피 애호가, 사진 찍기 좋아하는 트래블 러버, 아직도 블로그 뭘 쓸지 모르겠는 초보 블로거, 그냥 이것 저것 개인의 생각을 끄적끄적이는 멀더끙의 블러그입니다.</description>
-    <pubDate>Sun, 27 Sep 2020 07:04:50 GMT</pubDate>
+    <pubDate>Sat, 03 Oct 2020 13:25:59 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>JS to SCSS 변환</title>
+      <link>https://mulder21c.github.io/2020/10/03/js-to-scss/</link>
+      <guid>https://mulder21c.github.io/2020/10/03/js-to-scss/</guid>
+      <pubDate>Sat, 03 Oct 2020 13:24:36 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;최근 프로젝트에 Storybook을 도입하면서 덩달아 고민하게 되었던 것이 SCSS 변수를 JS에서 
+공유하는 문제였다. &lt;/p&gt;
+&lt;p&gt;혹자는 굳이 그런짓(?)을 왜 하려고 하느냐 할 수도 있겠으나, 현재 올려둔 
+&lt;a href=&quot;https://
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2020/10/03/js-to-scss/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>Nuxt + Storybook 통합 하기</title>
@@ -962,24 +983,6 @@ corona-19 덕분(?)에 조금은 시기가 늦춰진 듯하다. &lt;/p&gt;
       
       
       <comments>https://mulder21c.github.io/2018/03/12/2017-hukkaido-1/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>퇴사 여행을 떠나다.</title>
-      <link>https://mulder21c.github.io/2018/03/09/i-resigned/</link>
-      <guid>https://mulder21c.github.io/2018/03/09/i-resigned/</guid>
-      <pubDate>Thu, 08 Mar 2018 23:02:17 GMT</pubDate>
-      <description>
-      
-        
-        
-          &lt;h2 id=&quot;퇴사하겠습니다&quot;&gt;&lt;a href=&quot;#퇴사하겠습니다&quot; class=&quot;headerlink&quot; title=&quot;퇴사하겠습니다.&quot;&gt;&lt;/a&gt;퇴사하겠습니다.&lt;/h2&gt;&lt;p&gt;작년 10월 즈음이었던 것 같다. 내가 퇴사 의사를 공공연하게 밝히기 시작했던 것이.&lt;
-        
-      
-      </description>
-      
-      
-      <comments>https://mulder21c.github.io/2018/03/09/i-resigned/#disqus_thread</comments>
     </item>
     
   </channel>
