@@ -8,6 +8,20 @@
     </url>
 
     <url>
+        <loc>https://mulder21c.github.io/categories/%EC%83%9D%EA%B0%81%EB%85%B8%ED%8A%B8/in-occupation/</loc>
+        <lastmod>2020-10-31T05:56:51.471Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://mulder21c.github.io/categories/%EC%83%9D%EA%B0%81%EB%85%B8%ED%8A%B8/</loc>
+        <lastmod>2020-10-31T05:56:51.471Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://mulder21c.github.io/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/front-end/</loc>
         <lastmod>2020-10-17T08:52:00.332Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -43,13 +57,6 @@
     </url>
 
     <url>
-        <loc>https://mulder21c.github.io/categories/%EC%83%9D%EA%B0%81%EB%85%B8%ED%8A%B8/</loc>
-        <lastmod>2020-06-13T10:44:08.686Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://mulder21c.github.io/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/html-css/</loc>
         <lastmod>2020-06-13T10:44:08.685Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -59,13 +66,6 @@
     <url>
         <loc>https://mulder21c.github.io/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/javascript/</loc>
         <lastmod>2020-06-13T10:44:08.684Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://mulder21c.github.io/categories/%EC%83%9D%EA%B0%81%EB%85%B8%ED%8A%B8/in-occupation/</loc>
-        <lastmod>2020-06-13T10:44:08.681Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

@@ -9,8 +9,29 @@
     <atom:link href="/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>멀더끙의 개인 블로그 — 접근성에 관심이 많은 Front-End Developer, 커피 애호가, 사진 찍기 좋아하는 트래블 러버, 아직도 블로그 뭘 쓸지 모르겠는 초보 블로거, 그냥 이것 저것 개인의 생각을 끄적끄적이는 멀더끙의 블러그입니다.</description>
-    <pubDate>Sat, 17 Oct 2020 08:52:00 GMT</pubDate>
+    <pubDate>Sat, 31 Oct 2020 05:56:51 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Nuxt를 통해 보는 프론트엔드 개발자가 하는 일</title>
+      <link>https://mulder21c.github.io/2020/10/31/see-what-does-front-end-developer-do-through-nuxt/</link>
+      <guid>https://mulder21c.github.io/2020/10/31/see-what-does-front-end-developer-do-through-nuxt/</guid>
+      <pubDate>Sat, 31 Oct 2020 05:07:47 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;div class=&quot;note&quot;&gt;
+* 미리 언급해두지만, 여기서 이야기하는 프론트엔드 개발자는 넓은 범위의 프론트엔드 개발자가 
+아니라 좁은 의미 — 소위 Front-End framework를 이용하며 JS(혹은 TS)를 주 언어로 프로덕트를 
+개발하
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2020/10/31/see-what-does-front-end-developer-do-through-nuxt/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>Nuxt Router kebab-case 처리</title>
@@ -962,26 +983,6 @@ corona-19 덕분(?)에 조금은 시기가 늦춰진 듯하다. &lt;/p&gt;
       
       
       <comments>https://mulder21c.github.io/2018/03/15/2017-hukkaido-3/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>2017 일본 훗카이도 여행기록 ​#2</title>
-      <link>https://mulder21c.github.io/2018/03/12/2017-hukkaido-2/</link>
-      <guid>https://mulder21c.github.io/2018/03/12/2017-hukkaido-2/</guid>
-      <pubDate>Sun, 11 Mar 2018 20:08:16 GMT</pubDate>
-      <description>
-      
-        
-        
-          &lt;p&gt;
-  &lt;img src=&quot;//farm5.staticflickr.com/4664/38972426104_e113daef37_c.jpg&quot; class=&quot;&quot; alt=&quot;순백의 하얀 눈 덮인 나무들로 둘러 싸인 절벽을 타고 하얀 물줄기가 흘러내리고 있다.&quot;&gt;
-
-        
-      
-      </description>
-      
-      
-      <comments>https://mulder21c.github.io/2018/03/12/2017-hukkaido-2/#disqus_thread</comments>
     </item>
     
   </channel>
