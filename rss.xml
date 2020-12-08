@@ -9,8 +9,28 @@
     <atom:link href="/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>멀더끙의 개인 블로그 — 접근성에 관심이 많은 Front-End Developer, 커피 애호가, 사진 찍기 좋아하는 트래블 러버, 아직도 블로그 뭘 쓸지 모르겠는 초보 블로거, 그냥 이것 저것 개인의 생각을 끄적끄적이는 멀더끙의 블러그입니다.</description>
-    <pubDate>Sat, 31 Oct 2020 05:56:51 GMT</pubDate>
+    <pubDate>Tue, 08 Dec 2020 10:12:13 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>colum flexbox에서 padding bottom 문제 해결</title>
+      <link>https://mulder21c.github.io/2020/12/08/fix-padding-bottom-bug-in-flex-on-firefox/</link>
+      <guid>https://mulder21c.github.io/2020/12/08/fix-padding-bottom-bug-in-flex-on-firefox/</guid>
+      <pubDate>Tue, 08 Dec 2020 10:12:13 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;FlexBox를 사용 하는 중 padding-bottom이 실종되는 상황을 만나게 되었다. &lt;/p&gt;
+&lt;p&gt;정확하게는 Firefox에서 column flexbox에 발생 된 문제로 
+&lt;code class=&quot;language-css&quot;&gt;overflow:
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2020/12/08/fix-padding-bottom-bug-in-flex-on-firefox/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>Nuxt를 통해 보는 프론트엔드 개발자가 하는 일</title>
@@ -963,26 +983,6 @@ corona-19 덕분(?)에 조금은 시기가 늦춰진 듯하다. &lt;/p&gt;
       
       
       <comments>https://mulder21c.github.io/2018/03/15/web-accessibility-and-reverse-discrimination/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>2017 일본 훗카이도 여행기록 ​#3</title>
-      <link>https://mulder21c.github.io/2018/03/15/2017-hukkaido-3/</link>
-      <guid>https://mulder21c.github.io/2018/03/15/2017-hukkaido-3/</guid>
-      <pubDate>Wed, 14 Mar 2018 17:53:10 GMT</pubDate>
-      <description>
-      
-        
-        
-          &lt;p&gt;2018년의 첫 날 눈 내리는 일본에서 맞이하는 여행 아침.&lt;/p&gt;
-&lt;p&gt;
-  &lt;img src=&quot;//farm5.staticflickr.com/4623/24812962007_546a64387e_c.jpg&quot; class=&quot;&quot; alt=&quot;빗방울이 맺힌 창
-        
-      
-      </description>
-      
-      
-      <comments>https://mulder21c.github.io/2018/03/15/2017-hukkaido-3/#disqus_thread</comments>
     </item>
     
   </channel>
