@@ -10,10 +10,10 @@
 <meta property="article:published_time" content="2014-10-14T05:23:08.000Z">
 <meta property="article:modified_time" content="2020-06-13T10:44:08.655Z">
 <meta property="article:author" content="멀더끙">
-<meta property="article:tag" content="virtualbox">
 <meta property="article:tag" content="크로스브라우징">
 <meta property="article:tag" content="cross-browsing">
 <meta property="article:tag" content="가상 머신">
+<meta property="article:tag" content="virtualbox">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://mulder21c.github.io/upload/2014/vb-04.jpg"><!-- verify website ownership--><meta name="google-site-verification" content="cNXUGP2JbfDQYO1PIpkuHsivBfDI6Q_AFBBZzsNaUKs"><meta name="naver-site-verification" content="859a6966704edf251c82579243d7dda7a8a87799"><!-- styles--><link rel="stylesheet" href="/css/style.css"><style>
 </style><link rel="stylesheet" href="/fonts/iropke/iropke.css"><link rel="stylesheet" href="/fonts/notosanskr/NotoSansKR.css"><!-- JSON LD for SEO--><script type="application/ld+json">{
@@ -28,7 +28,7 @@
     "height": null
   },
   "genre": null,
-  "keywords": "virtualbox,크로스브라우징,cross-browsing,가상 머신",
+  "keywords": "크로스브라우징,cross-browsing,가상 머신,virtualbox",
   "editor": {
     "@type": "Person",
     "name": "멀더끙"
@@ -57,7 +57,8 @@ ga("create", "UA-55718543-7", "auto");
 ga("send", "pageview");
 </script><meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/rss.xml" title="The Tracks of mulder21c" type="application/rss+xml">
 <link rel="stylesheet" href="/css/prism-xonokai.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><script defer src="/js/prism.js"></script></head><body class="post"><header class="header hero hero--has-image"><div class="hero-wrapper"><div class="gnb"><a href="/">The Tracks of mulder21c</a><button class="nav-toggle" type="button" aria-haspopup="true" aria-controls="navigation"><span></span><span></span><span></span>menu</button></div><h1 class="header__title">크로스브라우징 테스트 환경 구축 (VirtualBox)</h1><div class="hero__image" style="background-image: url(/upload/2014/vb-04.jpg);"></div></div></header><div class="contents--container" role="main"><article class="article"><div class="article__meta"><div class="gravatar"><img src="/images/favicon.png" alt="authored by 멀더끙"></div><time class="article__meta__time" datetime="2014-10-14T05:23:08.000Z"><span aria-label="posted"><span class="fas fa-calendar-day" aria-hidden="true"></span></span>2014-10-14 14:23:08</time><div class="article__meta__category"><span aria-label="category"><span class="fas fa-archive" aria-hidden="true"></span></span><a class="article__meta__category__item" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/">개발노트</a><a class="article__meta__category__item" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/html-css/">HTML/CSS</a></div></div><div class="article__content"><p>퍼블리셔에게 가장 필요한 것 중 한 가지가 아마 크로스브라우징을 테스트하기 위한 환경을 구축하는 일일
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><script src="/js/prism.js"></script>
+<script src="/js/prism-line-numbers.min.js"></script></head><body class="post"><header class="header hero hero--has-image"><div class="hero-wrapper"><div class="gnb"><a href="/">The Tracks of mulder21c</a><button class="nav-toggle" type="button" aria-haspopup="true" aria-controls="navigation"><span></span><span></span><span></span>menu</button></div><h1 class="header__title">크로스브라우징 테스트 환경 구축 (VirtualBox)</h1><div class="hero__image" style="background-image: url(/upload/2014/vb-04.jpg);"></div></div></header><div class="contents--container" role="main"><article class="article"><div class="article__meta"><div class="gravatar"><img src="/images/favicon.png" alt="authored by 멀더끙"></div><time class="article__meta__time" datetime="2014-10-14T05:23:08.000Z"><span aria-label="posted"><span class="fas fa-calendar-day" aria-hidden="true"></span></span>2014-10-14 14:23:08</time><div class="article__meta__category"><span aria-label="category"><span class="fas fa-archive" aria-hidden="true"></span></span><a class="article__meta__category__item" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/">개발노트</a><a class="article__meta__category__item" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/html-css/">HTML/CSS</a></div></div><div class="article__content"><p>퍼블리셔에게 가장 필요한 것 중 한 가지가 아마 크로스브라우징을 테스트하기 위한 환경을 구축하는 일일
 것이다. 그도 그럴 것이 Microsoft Internet Explorer(이하 IE)는 버전마다 그리고 어느 OS에 설치되어
 있느냐에 따라 버그가 다르고 렌더링이 차이가 나기 때문.</p>
 <p>Windows에는 기본적으로 1개 버전의 IE만을 설치할 수 있게 되어 있기 때문에, 여러 버전을 테스트한다는
@@ -106,7 +107,7 @@ IE들에 대해 크로스브라우징 테스트를 정확하게 할 수 있게 �
 <p>다음 이미지는 필자가 VirtualBox로 구성한 windows – IE 레거시 버전의 가상 머신들의 스크린샷이다.</p>
 <p>
   <img src="/upload/2014/vb-04.jpg" class="" alt="Windows-IE별 가상 머신 구축 현황 스크린샷">
-</p></div><div class="article__tags"><div class="article__tags__title">tags:</div><a class="article__tag__item" href="/tags/virtualbox/"><span class="fas fa-tag" aria-hidden="true"></span>virtualbox</a><a class="article__tag__item" href="/tags/%ED%81%AC%EB%A1%9C%EC%8A%A4%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A7%95/"><span class="fas fa-tag" aria-hidden="true"></span>크로스브라우징</a><a class="article__tag__item" href="/tags/cross-browsing/"><span class="fas fa-tag" aria-hidden="true"></span>cross-browsing</a><a class="article__tag__item" href="/tags/%EA%B0%80%EC%83%81-%EB%A8%B8%EC%8B%A0/"><span class="fas fa-tag" aria-hidden="true"></span>가상 머신</a></div></article><div class="comment__container" role="region" aria-label="comments"><div id="lv-container" data-id="city" data-uid="MTAyMC8zMDYzOC83MTkz"></div></div></div><footer class="footer"><p class="copyright">&copy; 2012 ~ 2019 mulder21c <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" target="_blank" rel="license">(CCL-BY-NC-ND)</a></p><p class="credit">Powered by  <a href="https://hexo.io/" rel="external noreferrer" target="_blank">Hexo</a>. Theme by  <a href="https://github.com/mulder21c" rel="external noreferrer" target="_blank">mulder21c</a></p></footer><div class="nav" aria-hidden="true"><nav class="nav--container" id="navigation" aria-labelledby="nav__heading"><h2 class="nav__heading" id="nav__heading">Navigation</h2><hr class="nav__seperator"><ul class="menu-list">
+</p></div><div class="article__tags"><div class="article__tags__title">tags:</div><a class="article__tag__item" href="/tags/%ED%81%AC%EB%A1%9C%EC%8A%A4%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A7%95/"><span class="fas fa-tag" aria-hidden="true"></span>크로스브라우징</a><a class="article__tag__item" href="/tags/cross-browsing/"><span class="fas fa-tag" aria-hidden="true"></span>cross-browsing</a><a class="article__tag__item" href="/tags/%EA%B0%80%EC%83%81-%EB%A8%B8%EC%8B%A0/"><span class="fas fa-tag" aria-hidden="true"></span>가상 머신</a><a class="article__tag__item" href="/tags/virtualbox/"><span class="fas fa-tag" aria-hidden="true"></span>virtualbox</a></div></article><div class="comment__container" role="region" aria-label="comments"><div id="lv-container" data-id="city" data-uid="MTAyMC8zMDYzOC83MTkz"></div></div></div><footer class="footer"><p class="copyright">&copy; 2012 ~ 2019 mulder21c <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" target="_blank" rel="license">(CCL-BY-NC-ND)</a></p><p class="credit">Powered by  <a href="https://hexo.io/" rel="external noreferrer" target="_blank">Hexo</a>. Theme by  <a href="https://github.com/mulder21c" rel="external noreferrer" target="_blank">mulder21c</a></p></footer><div class="nav" aria-hidden="true"><nav class="nav--container" id="navigation" aria-labelledby="nav__heading"><h2 class="nav__heading" id="nav__heading">Navigation</h2><hr class="nav__seperator"><ul class="menu-list">
     <li class="menu-item" >
       <a href="/" >
         home

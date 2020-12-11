@@ -53,11 +53,12 @@ ga("create", "UA-55718543-7", "auto");
 ga("send", "pageview");
 </script><meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/rss.xml" title="The Tracks of mulder21c" type="application/rss+xml">
 <link rel="stylesheet" href="/css/prism-xonokai.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><script defer src="/js/prism.js"></script></head><body class="post"><header class="header hero hero--has-image"><div class="hero-wrapper"><div class="gnb"><a href="/">The Tracks of mulder21c</a><button class="nav-toggle" type="button" aria-haspopup="true" aria-controls="navigation"><span></span><span></span><span></span>menu</button></div><h1 class="header__title">CSS로 jQuery slideToggle() 효과 만들어보기</h1><div class="hero__image" style="background-image: url(//farm1.staticflickr.com/863/41108552022_61413423d5_b.jpg);background-position: left 80%;"></div></div></header><div class="contents--container" role="main"><article class="article"><div class="article__meta"><div class="gravatar"><img src="/images/favicon.png" alt="authored by 멀더끙"></div><time class="article__meta__time" datetime="2014-10-27T05:51:12.000Z"><span aria-label="posted"><span class="fas fa-calendar-day" aria-hidden="true"></span></span>2014-10-27 14:51:12</time><div class="article__meta__category"><span aria-label="category"><span class="fas fa-archive" aria-hidden="true"></span></span><a class="article__meta__category__item" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/">개발노트</a><a class="article__meta__category__item" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/html-css/">HTML/CSS</a></div></div><div class="article__content"><p>일전에 프로젝트로 모바일 웹을 만들면서 재미겸 연습겸(?) CSS animation과 max-height 를
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><script src="/js/prism.js"></script>
+<script src="/js/prism-line-numbers.min.js"></script></head><body class="post"><header class="header hero hero--has-image"><div class="hero-wrapper"><div class="gnb"><a href="/">The Tracks of mulder21c</a><button class="nav-toggle" type="button" aria-haspopup="true" aria-controls="navigation"><span></span><span></span><span></span>menu</button></div><h1 class="header__title">CSS로 jQuery slideToggle() 효과 만들어보기</h1><div class="hero__image" style="background-image: url(//farm1.staticflickr.com/863/41108552022_61413423d5_b.jpg);background-position: left 80%;"></div></div></header><div class="contents--container" role="main"><article class="article"><div class="article__meta"><div class="gravatar"><img src="/images/favicon.png" alt="authored by 멀더끙"></div><time class="article__meta__time" datetime="2014-10-27T05:51:12.000Z"><span aria-label="posted"><span class="fas fa-calendar-day" aria-hidden="true"></span></span>2014-10-27 14:51:12</time><div class="article__meta__category"><span aria-label="category"><span class="fas fa-archive" aria-hidden="true"></span></span><a class="article__meta__category__item" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/">개발노트</a><a class="article__meta__category__item" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/html-css/">HTML/CSS</a></div></div><div class="article__content"><p>일전에 프로젝트로 모바일 웹을 만들면서 재미겸 연습겸(?) CSS animation과 max-height 를
 이용해서 jQuery의 slideToggle()과 같은 효과를 만들어 봤다. 몇 가지 고민을 더 해봐야 하는 부분이
 있지만 만들어보고 나니 재밌는 형태를 하나 만든거 같다 ㅋ</p>
 <h2 id="Example-Sources"><a href="#Example-Sources" class="headerlink" title="Example Sources"></a>Example Sources</h2><p>** markup **</p>
-<pre class="line-numbers language-markup" ><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nav</span><span class="token punctuation">></span></span>
+<pre class="line-numbers language-markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nav</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>
       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>menu-01<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
@@ -82,41 +83,41 @@ ga("send", "pageview");
       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>menu-05<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nav</span><span class="token punctuation">></span></span></code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nav</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>** CSS **</p>
-<pre class="line-numbers language-css" data-line="23-29,32"><code class="language-css"><span class="token selector">nav ul</span><span class="token punctuation">{</span>
-  <span class="token property">list-style-type</span><span class="token punctuation">:</span> none
-<span class="token punctuation">}</span>
-<span class="token selector">nav ul<span class="token pseudo-element">:after</span></span><span class="token punctuation">{</span>
-  <span class="token property">clear</span><span class="token punctuation">:</span> both<span class="token punctuation">;</span>
-  <span class="token property">display</span><span class="token punctuation">:</span> table<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token selector">nav > ul > li</span><span class="token punctuation">{</span>
-  <span class="token property">float</span><span class="token punctuation">:</span> left<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token selector">nav > ul > li</span><span class="token punctuation">{</span>
-  <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
-  <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token hexcode">#DEDEDE</span><span class="token punctuation">;</span>
-  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">20%</span><span class="token punctuation">;</span>
-  <span class="token property">line-height</span><span class="token punctuation">:</span> <span class="token number">50</span>px
-<span class="token punctuation">}</span>
-<span class="token selector">nav ul<span class="token class">.sub-nav</span></span><span class="token punctuation">{</span>
-  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
-  <span class="token property">top</span><span class="token punctuation">:</span> <span class="token number">50</span>px<span class="token punctuation">;</span>
-  <span class="token property">left</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
-  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">100%</span><span class="token punctuation">;</span>
-  <span class="token property">z-index</span><span class="token punctuation">:</span> <span class="token number">900</span><span class="token punctuation">;</span>
-  <span class="token property">max-height</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">;</span>
-  <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
-  <span class="token property">-webkit-transition</span><span class="token punctuation">:</span>all <span class="token number">.5</span> <span class="token function">cubic-bezier</span><span class="token punctuation">(</span><span class="token number">0</span>, <span class="token number">0</span>, <span class="token number">1</span>, <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token property">-moz-transition</span><span class="token punctuation">:</span>all <span class="token number">.5</span>s <span class="token function">cubic-bezier</span><span class="token punctuation">(</span><span class="token number">0</span>, <span class="token number">0</span>, <span class="token number">1</span>, <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token property">-ms-transition</span><span class="token punctuation">:</span>all <span class="token number">.5</span>s <span class="token function">cubic-bezier</span><span class="token punctuation">(</span><span class="token number">0</span>, <span class="token number">0</span>, <span class="token number">1</span>, <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token property">-o-transition</span><span class="token punctuation">:</span>all <span class="token number">.5</span>s <span class="token function">cubic-bezier</span><span class="token punctuation">(</span><span class="token number">0</span>, <span class="token number">0</span>, <span class="token number">1</span>, <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token property">transition</span><span class="token punctuation">:</span>all <span class="token number">.5</span>s <span class="token function">cubic-bezier</span><span class="token punctuation">(</span><span class="token number">0</span>, <span class="token number">0</span>, <span class="token number">1</span>, <span class="token number">1</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-<span class="token selector">nav > ul > li<span class="token pseudo-class">:hover</span> ul<span class="token class">.sub-nav</span></span><span class="token punctuation">{</span>
-  <span class="token property">max-height</span><span class="token punctuation">:</span><span class="token number">250</span>px
-<span class="token punctuation">}</span></code></pre>
+<pre class="line-numbers language-css|data-line=&quot;23-29,32&quot;"><code class="language-css|data-line=&quot;23-29,32&quot;">nav ul{
+  list-style-type: none
+}
+nav ul:after{
+  clear: both;
+  display: table;
+}
+nav > ul > li{
+  float: left;
+}
+nav > ul > li{
+  position: relative;
+  background-color: #DEDEDE;
+  width: 20%;
+  line-height: 50px
+}
+nav ul.sub-nav{
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  z-index: 900;
+  max-height:0;
+  overflow: hidden;
+  -webkit-transition:all .5 cubic-bezier(0, 0, 1, 1);
+  -moz-transition:all .5s cubic-bezier(0, 0, 1, 1);
+  -ms-transition:all .5s cubic-bezier(0, 0, 1, 1);
+  -o-transition:all .5s cubic-bezier(0, 0, 1, 1);
+  transition:all .5s cubic-bezier(0, 0, 1, 1)
+}
+nav > ul > li:hover ul.sub-nav{
+  max-height:250px
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="description"><a href="#description" class="headerlink" title="description"></a>description</h2><p>방법은 단순히 해당 요소에 max-height 값을 0, overflow 값을 hidden으로 두고 transition을 주며, 펼쳐진
 상태에 대한 셀렉터에 max-height 값을 지정해 주면 된다.</p>
 <p>이 방법을 쓰게 되면 transition에 설정한 duration동안 max-height 값이 0에서부터 지정한 값까지 변하며
