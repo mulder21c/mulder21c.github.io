@@ -9,8 +9,27 @@
     <atom:link href="/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>멀더끙의 개인 블로그 — 접근성에 관심이 많은 Front-End Developer, 커피 애호가, 사진 찍기 좋아하는 트래블 러버, 아직도 블로그 뭘 쓸지 모르겠는 초보 블로거, 그냥 이것 저것 개인의 생각을 끄적끄적이는 멀더끙의 블러그입니다.</description>
-    <pubDate>Tue, 08 Dec 2020 10:12:13 GMT</pubDate>
+    <pubDate>Thu, 31 Dec 2020 06:39:47 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>2020년 회고</title>
+      <link>https://mulder21c.github.io/2020/12/31/2020-retrospective/</link>
+      <guid>https://mulder21c.github.io/2020/12/31/2020-retrospective/</guid>
+      <pubDate>Thu, 31 Dec 2020 06:39:47 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;올해는 아홉수를 제대로 겪은 한 해 였던 것 같다. &lt;/p&gt;
+&lt;h2 id=&quot;2번의-퇴사&quot;&gt;&lt;a href=&quot;#2번의-퇴사&quot; class=&quot;headerlink&quot; title=&quot;2번의 퇴사&quot;&gt;&lt;/a&gt;2번의 퇴사&lt;/h2&gt;&lt;p&gt;아홉수를 제대로 겪게 만든 가장
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2020/12/31/2020-retrospective/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>colum flexbox에서 padding bottom 문제 해결</title>
@@ -963,26 +982,6 @@ corona-19 덕분(?)에 조금은 시기가 늦춰진 듯하다. &lt;/p&gt;
       
       
       <comments>https://mulder21c.github.io/2018/05/26/backstreet/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>웹 접근성과 역차별</title>
-      <link>https://mulder21c.github.io/2018/03/15/web-accessibility-and-reverse-discrimination/</link>
-      <guid>https://mulder21c.github.io/2018/03/15/web-accessibility-and-reverse-discrimination/</guid>
-      <pubDate>Thu, 15 Mar 2018 10:06:22 GMT</pubDate>
-      <description>
-      
-        
-        
-          &lt;p&gt;몇 달 전, 내 블로그의 글을 무단으로 불펌해간 이들을 추적(?)하느라 이미지 리소스가 사용된 URL를 추적하고, 몇 가지 키워드로
-검색을 하던 중에 2016년도에 H카페에 올렸던 글을 인용한 아티클 하나를 발견했다.&lt;/p&gt;
-&lt;p&gt;내가 올렸던 글
-        
-      
-      </description>
-      
-      
-      <comments>https://mulder21c.github.io/2018/03/15/web-accessibility-and-reverse-discrimination/#disqus_thread</comments>
     </item>
     
   </channel>

@@ -8,6 +8,20 @@
     </url>
 
     <url>
+        <loc>https://mulder21c.github.io/categories/%EC%9D%BC%EC%83%81%EB%85%B8%ED%8A%B8/miscellaneous/</loc>
+        <lastmod>2020-12-31T06:39:47.885Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://mulder21c.github.io/categories/%EC%9D%BC%EC%83%81%EB%85%B8%ED%8A%B8/</loc>
+        <lastmod>2020-12-31T06:39:47.885Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://mulder21c.github.io/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/html-css/</loc>
         <lastmod>2020-12-08T10:12:13.327Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -38,20 +52,6 @@
     <url>
         <loc>https://mulder21c.github.io/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/front-end/</loc>
         <lastmod>2020-10-17T08:52:00.332Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://mulder21c.github.io/categories/%EC%9D%BC%EC%83%81%EB%85%B8%ED%8A%B8/miscellaneous/</loc>
-        <lastmod>2020-08-29T10:25:37.014Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://mulder21c.github.io/categories/%EC%9D%BC%EC%83%81%EB%85%B8%ED%8A%B8/</loc>
-        <lastmod>2020-08-29T10:25:37.014Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
