@@ -58,8 +58,7 @@ ga("create", "UA-55718543-7", "auto");
 ga("send", "pageview");
 </script><meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/rss.xml" title="The Tracks of mulder21c" type="application/rss+xml">
 <link rel="stylesheet" href="/css/prism-xonokai.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><script src="/js/prism.js"></script>
-<script src="/js/prism-line-numbers.min.js"></script></head><body class="post"><header class="header hero hero--has-image"><div class="hero-wrapper"><div class="gnb"><a href="/">The Tracks of mulder21c</a><button class="nav-toggle" type="button" aria-haspopup="true" aria-controls="navigation"><span></span><span></span><span></span>menu</button></div><h1 class="header__title">Nuxt Router kebab-case 처리</h1><div class="hero__image" style="background-image: url(/upload/2020/nuxt-router-name.jpg);"></div></div></header><div class="contents--container" role="main"><article class="article"><div class="article__meta"><div class="gravatar"><img src="/images/favicon.png" alt="authored by 멀더끙"></div><time class="article__meta__time" datetime="2020-10-17T08:51:36.000Z"><span aria-label="posted"><span class="fas fa-calendar-day" aria-hidden="true"></span></span>2020-10-17 17:51:36</time><div class="article__meta__category"><span aria-label="category"><span class="fas fa-archive" aria-hidden="true"></span></span><a class="article__meta__category__item" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/">개발노트</a><a class="article__meta__category__item" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/front-end/">Front-End</a></div></div><div class="article__content"><p>Nuxt를 사용할 때 page component 파일을 PascalCase 혹은 camelCase로 생성하게 되면
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><script defer src="/js/prism.js"></script></head><body class="post"><header class="header hero hero--has-image"><div class="hero-wrapper"><div class="gnb"><a href="/">The Tracks of mulder21c</a><button class="nav-toggle" type="button" aria-haspopup="true" aria-controls="navigation"><span></span><span></span><span></span>menu</button></div><h1 class="header__title">Nuxt Router kebab-case 처리</h1><div class="hero__image" style="background-image: url(/upload/2020/nuxt-router-name.jpg);"></div></div></header><div class="contents--container" role="main"><article class="article"><div class="article__meta"><div class="gravatar"><img src="/images/favicon.png" alt="authored by 멀더끙"></div><time class="article__meta__time" datetime="2020-10-17T08:51:36.000Z"><span aria-label="posted"><span class="fas fa-calendar-day" aria-hidden="true"></span></span>2020-10-17 17:51:36</time><div class="article__meta__category"><span aria-label="category"><span class="fas fa-archive" aria-hidden="true"></span></span><a class="article__meta__category__item" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/">개발노트</a><a class="article__meta__category__item" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/front-end/">Front-End</a></div></div><div class="article__content"><p>Nuxt를 사용할 때 page component 파일을 PascalCase 혹은 camelCase로 생성하게 되면
 router name 역시 PascalCase, camelCase로 고스란히 생성된다.<br>물론 case-insensitive 처리해도 되지만, URL에 대소문자가 섞여 노출 되는게 썩 좋은 경험은 
 아니었어서 kebab-case로 노출되도록 변경이 필요했다. </p>
 <p>단순하게 page component 파일을 생성할 때 파일명 자체를 kabab-case에 맞추어서 생성해도 
@@ -68,7 +67,7 @@ router name 역시 PascalCase, camelCase로 고스란히 생성된다.<br>물론
 kebab-case 처리하도록 만들었다. </p>
 <p>다행히(?) Nuxt에서는 라우터 확장을 위해 <code>extendRoutes</code> 옵션을 제공하고 있어 이를 활용하여 
 처리가 가능했다.</p>
-<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">const</span> convertKebabCase <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'lodash/kebabCase'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-javascript" ><code class="language-javascript"><span class="token keyword">const</span> convertKebabCase <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'lodash/kebabCase'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token operator">...</span> 
 router<span class="token punctuation">:</span> <span class="token punctuation">{</span>
   <span class="token function">extendRoutes</span><span class="token punctuation">(</span>routes<span class="token punctuation">,</span> resolve<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -80,26 +79,26 @@ router<span class="token punctuation">:</span> <span class="token punctuation">{
           <span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
-<span class="token punctuation">}</span><span class="token punctuation">,</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span class="token punctuation">,</span></code></pre>
 <p>단순히 path를 segmentation하여 각각을 kebab-case로 변경시키고 다시 합치는 방식으로...</p>
 <p>이렇게 해서 잘 되는 줄 알았...는데... dynamic router에서 다시 문제가 발생했다.<br><code>lodash/convertKebabCase</code>가 dynamic router path에 붙어있는 &quot;:&quot;를 제거해버렸... ㅋㅋㅋ</p>
 <p>하여, path에 &quot;:&quot;의 존재 여부에 따라 변경 되도록 바꾸었고,</p>
-<pre class="line-numbers language-javascript|data-line=&quot;9-12&quot;"><code class="language-javascript|data-line=&quot;9-12&quot;">const convertKebabCase = require('lodash/kebabCase');
-... 
-router: {
-  extendRoutes(routes, resolve) {
-    routes.forEach(route => {
-      route.path =
-        route.path
-          .split('/')
-          .map(path => {
-              if (/^\:/.test(path)) return path;
-              return convertKebabCase(path);
-            })
-          .join('/');
-    });
-  },
-},<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-javascript" data-line="9-12"><code class="language-javascript"><span class="token keyword">const</span> convertKebabCase <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'lodash/kebabCase'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">...</span> 
+router<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  <span class="token function">extendRoutes</span><span class="token punctuation">(</span>routes<span class="token punctuation">,</span> resolve<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    routes<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>route <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+      route<span class="token punctuation">.</span>path <span class="token operator">=</span>
+        route<span class="token punctuation">.</span>path
+          <span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span>
+          <span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>path <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+              <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token regex">/^\:/</span><span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span> path<span class="token punctuation">;</span>
+              <span class="token keyword">return</span> <span class="token function">convertKebabCase</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span>
+          <span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span></code></pre>
 <p>현재까지는 아직 아무런 문제를 일으키지 않고 잘 돌아가고 있다 </p>
 </div><div class="article__tags"><div class="article__tags__title">tags:</div><a class="article__tag__item" href="/tags/nuxt-page-component/"><span class="fas fa-tag" aria-hidden="true"></span>Nuxt Page Component</a><a class="article__tag__item" href="/tags/nuxt-router-name/"><span class="fas fa-tag" aria-hidden="true"></span>Nuxt Router name</a><a class="article__tag__item" href="/tags/nuxt-router-pascalcase/"><span class="fas fa-tag" aria-hidden="true"></span>Nuxt Router PascalCase</a><a class="article__tag__item" href="/tags/nuxt-router-kebab-case/"><span class="fas fa-tag" aria-hidden="true"></span>Nuxt Router kebab-case</a></div></article><div class="comment__container" role="region" aria-label="comments"><div id="lv-container" data-id="city" data-uid="MTAyMC8zMDYzOC83MTkz"></div></div></div><footer class="footer"><p class="copyright">&copy; 2012 ~ 2019 mulder21c <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" target="_blank" rel="license">(CCL-BY-NC-ND)</a></p><p class="credit">Powered by  <a href="https://hexo.io/" rel="external noreferrer" target="_blank">Hexo</a>. Theme by  <a href="https://github.com/mulder21c" rel="external noreferrer" target="_blank">mulder21c</a></p></footer><div class="nav" aria-hidden="true"><nav class="nav--container" id="navigation" aria-labelledby="nav__heading"><h2 class="nav__heading" id="nav__heading">Navigation</h2><hr class="nav__seperator"><ul class="menu-list">
     <li class="menu-item" >

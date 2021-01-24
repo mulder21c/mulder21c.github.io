@@ -1,0 +1,152 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>JavaScript 퍼블리셔가 해야 하는 건가? - The Tracks of mulder21c</title><!-- Links--><link rel="canonical" href="https://mulder21c.io/should-does-web-publisher-implement-javascript"><!-- preload--><link rel="preload" as="image" href="/images/favicon.png" crossorigin="anonymous"><link rel="preload" as="image" href="/upload/2013/html-code.gif" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/iropke/IropkeBatangM.woff" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/spoqahansans/SpoqaHanSansRegular.woff2" crossorigin="anonymous"><!-- Icons--><link rel="shortcut icon" sizes="196x196" href="/images/favicon.png"><!-- open graph--><meta name="description" content="가끔 JavaScript 스터디나 세미나를 하다 보면 JavaScript를 퍼블리셔가 해야 하는가 질문하는 이들이 종종 있다. 아침 출근길에 왠지 그냥 갑자기 생각이 나서 블로그에다 끄적여본다.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript 퍼블리셔가 해야 하는 건가?">
+<meta property="og:url" content="https://mulder21c.io/should-does-web-publisher-implement-javascript/">
+<meta property="og:site_name" content="The Tracks of mulder21c">
+<meta property="og:description" content="가끔 JavaScript 스터디나 세미나를 하다 보면 JavaScript를 퍼블리셔가 해야 하는가 질문하는 이들이 종종 있다. 아침 출근길에 왠지 그냥 갑자기 생각이 나서 블로그에다 끄적여본다.">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://mulder21c.io/upload/2013/html-code.gif">
+<meta property="og:image" content="https://farm1.staticflickr.com/863/41108552022_61413423d5_b.jpg">
+<meta property="article:published_time" content="2012-09-18T23:50:23.000Z">
+<meta property="article:modified_time" content="2020-06-13T10:44:08.654Z">
+<meta property="article:author" content="멀더끙">
+<meta property="article:tag" content="웹 퍼블리셔">
+<meta property="article:tag" content="JavaScript">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://mulder21c.io/upload/2013/html-code.gif"><!-- verify website ownership--><meta name="google-site-verification" content="cNXUGP2JbfDQYO1PIpkuHsivBfDI6Q_AFBBZzsNaUKs"><meta name="naver-site-verification" content="859a6966704edf251c82579243d7dda7a8a87799"><!-- styles--><link rel="stylesheet" href="/css/style.css"><style>
+</style><link rel="stylesheet" href="/fonts/iropke/iropke.css"><link rel="stylesheet" href="/fonts/notosanskr/NotoSansKR.css"><!-- JSON LD for SEO--><script type="application/ld+json">{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "JavaScript 퍼블리셔가 해야 하는 건가?",
+  "alternativeHeadline": null,
+  "image": {
+    "@type": "imageObject",
+    "url": "https://mulder21c.io/upload/2013/html-code.gif",
+    "width": null,
+    "height": null
+  },
+  "genre": null,
+  "keywords": "웹 퍼블리셔,JavaScript",
+  "editor": {
+    "@type": "Person",
+    "name": "멀더끙"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "멀더끙",
+    "logo": {
+      "@type": "imageObject",
+      "url": "https://mulder21c.io/images/favicon.png"
+    }
+  },
+  "author": {
+    "@type": "Person",
+    "name": "멀더끙"
+  },
+  "url": "https://mulder21c.io/should-does-web-publisher-implement-javascript/",
+  "dateCreated": "2012-09-19",
+  "datePublished": "2012-09-19",
+  "articleBody": "가끔 JavaScript 스터디나 세미나를 하다 보면 JavaScript를 퍼블리셔가 해야 하는가 질문하는 이들이 종종 있다. 아침 출근길에 왠지 그냥 갑자기 생각이 나서 블로그에다 끄적여본다."
+}</script><!--scripts--><script>(function(i,s,o,g,r,a,m) {i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,"script","//www.google-analytics.com/analytics.js","ga");
+ga("create", "UA-55718543-7", "auto");
+ga("send", "pageview");
+</script><meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/rss.xml" title="The Tracks of mulder21c" type="application/rss+xml">
+<link rel="stylesheet" href="/css/prism-xonokai.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><script src="/js/prism.js"></script>
+<script src="/js/prism-line-numbers.min.js"></script></head><body class="post"><header class="header hero hero--has-image"><div class="hero-wrapper"><div class="gnb"><a href="/">The Tracks of mulder21c</a><button class="nav-toggle" type="button" aria-haspopup="true" aria-controls="navigation"><span></span><span></span><span></span>menu</button></div><h1 class="header__title">JavaScript 퍼블리셔가 해야 하는 건가?</h1><div class="hero__image" style="background-image: url(/upload/2013/html-code.gif);"></div></div></header><div class="contents--container" role="main"><article class="article"><div class="article__meta"><div class="gravatar"><img src="/images/favicon.png" alt="authored by 멀더끙"></div><time class="article__meta__time" datetime="2012-09-18T23:50:23.000Z"><span aria-label="posted"><span class="fas fa-calendar-day" aria-hidden="true"></span></span>2012-09-19 08:50:23</time><div class="article__meta__category"><span aria-label="category"><span class="fas fa-archive" aria-hidden="true"></span></span><a class="article__meta__category__item" href="/categories/%EC%83%9D%EA%B0%81%EB%85%B8%ED%8A%B8/">생각노트</a><a class="article__meta__category__item" href="/categories/%EC%83%9D%EA%B0%81%EB%85%B8%ED%8A%B8/in-occupation/">in occupation</a></div></div><div class="article__content"><p>가끔 JavaScript 스터디나 세미나를 하다 보면 JavaScript를 퍼블리셔가 해야 하는가 질문하는 이들이 종종
+있다. <br>
+아침 출근길에 왠지 그냥 갑자기 생각이 나서 블로그에다 끄적여본다.</p>
+<p>결론부터 말하자면, 그냥 <em>본인 선택이다</em> 라고 하고싶다. <br>
+JavaScript를 다룰 줄 아는 퍼블리셔는 그 만큼의 능력이 있는 퍼블리셔요, JavaScript를 다룰 줄 모르는
+퍼블리셔는 그 만큼의 능력만 있는 퍼블리셔인 것 이 될 뿐이다.</p>
+<h2 id="앞으로는-어떻게-변화될-것이냐를-바라보아야…"><a href="#앞으로는-어떻게-변화될-것이냐를-바라보아야…" class="headerlink" title="앞으로는 어떻게 변화될 것이냐를 바라보아야…"></a>앞으로는 어떻게 변화될 것이냐를 바라보아야…</h2><p>다만, 주의 깊게 생각해야 할 것은 앞으로는 어떻게 변화될 것이냐 라는 것이다.</p>
+<p>이전의 웹디자이너를 보자. (이건 내가 종종 위 질문을 던지는 이들에게 하는 말이다.) 웹 1세대,
+웹 초창기에는 웹 디자이너는 꽤 잘 나가는 소위 말하는 유망 직종이었다. 당시에는 디자인만 잘 할 줄
+알면 되었고, 거기에 플래시나 코딩까지 할 줄 알면 웬만큼 인정받는 위치였다.</p>
+<p>그러나 어느 순간부터 온갖 직업학교들이 웹디자이너를 유망직종이라며 웹디자이너를 &#39;양산&#39;해 내기
+시작했고, 많은 수의 웹디자이너가 쏟아져 나오기 시작했다. <br>
+여기서부터 문제가 생기기 시작했다라는 것이다. 과잉공급… <br>
+수요에 비해 공급이 너무 많아지고, 직업학교에서 양산해내다보니 웹디자이너들의 실력이 평준화(?)
+되어지기 시작했다. <br>
+이는 곧 업계에도 영향을 미쳐, 굳이 높은 급여를 주어가며 쓰기보다 어차피 공급은 많으니 일명
+후려치기단가가 나타나기 시작한 것이다.</p>
+<p>퍼블리셔라고 별반 다르지 않다. <br>
+현재 많은 직업학교들이 퍼블리셔를 유망직종이라며 양산해내고 있고 점점 많은 퍼블리셔들이 쏟아져
+나오기 시작하고 있다. <br>
+이미 직업학교들이나 학원들이 웹표준을 가르치고 웹접근성을 가르치고 있으니, 결국 많은 퍼블리셔의
+실력은 역시나 평준화되기 마련이다. <br>
+지금 당장에야 표준/접근성을 지킬줄 아는 퍼블리셔가 상대적으로 적으니 문제가 안될지 몰라도 향후 몇
+년내에는 실력의 평준화는 어쩌면 당연한 결과가 될지 모른다.</p>
+<p>자 그렇다면, 웹표준과 접근성은 어느 정도 지킬 줄 아는 퍼블리셔는 쌔고 쌨다. <br>
+그런데, 그 중에 JavaScript 를 능숙하게 컨트롤 할 줄 아는 퍼블리셔가 일부 있다.  <br>
+당신이 회사 인사 담당자라면 비싼 비용을 들여 JavaScript는 모르지만 웹표준과 접근성을 지킬 줄 아는
+퍼블리셔를 쓸텐가? 아니면 저렴한 비용으로 웹표준과 접근성을 지킬 줄 아는 퍼블리셔를 쓸텐가? <br>
+또는 적은 비용을 들여 웹표준과 접근성을 지킬 줄 아는 퍼블리셔를 쓸텐가? 아니면 비용을 조금 더
+들이더라도 JavaScript 를 능숙하게 컨트롤 할 줄 알고 웹표준과 접근성을 지킬 줄 아는 퍼블리셔를 쓸텐가?</p>
+<p>이 부분을 고려하여 선택하는 건 어찌되었든 자기의 몫이다.
+그냥 후려치기 단가를 받으면서 퍼블리싱을 하고 싶다면 그냥 말마따나 코더<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>로 남아있으면 되는 것이고,
+내 몸 값을 올려내고 싶다면 JavaScript 는 필수불가결한 요소임에는 틀림이 없을 것으로 보인다. 아니면
+정말 최고의 퀄리티와 미칠듯한 작업속도를 가진 코더가 되던가 ;;;;</p>
+<p>앞으로의 웹 환경은 더욱 더 사용자와 브라우저간 interactive 한 웹으로 계속해서 발전해 나아가게 될
+것이고 점점 더 편리한 사용성을 위해 Front-End에서의 처리는 더욱 많아질 것이다. <br>
+그러자면 JavaScript의 처리는 당연한 선택요소이다. 이 환경 속에서 퍼블리셔로 살아남기. 어떤 방향을
+가지고 앞을 바라 보아야 할까? <br>
+뭐 나는 몇 년 내에 퍼블리셔를 접을거다 한다면 일체 상관이 없는 이야기겠지만, 그렇지 않은 이상에야
+분명 심각하게 고민을 해 봐야 할 문제다.</p>
+<h2 id="필요할-때-가서-하면-된다"><a href="#필요할-때-가서-하면-된다" class="headerlink" title="필요할 때 가서 하면 된다?"></a>필요할 때 가서 하면 된다?</h2><p>가끔 사람들과 이야기 하다보면 당장 필요하지 않으니 필요할 때 가서 하면 된다는 사람들이 꽤나 많다. <br>
+웃기는 소리다.</p>
+<p>지금 준비하지 않는 사람이 그 때가서 준비할 성 싶은가? <br>
+아니 그 때 가서 준비한다해도 이미 준비해 왔던 사람과 쨉이 될 거라 생각하는가?</p>
+<p>그 때 가서란 없다. 준비라는것은 미리 하는게 준비이지 닥쳐서 하는 건 준비가 아니다. <br>
+한 발 앞서 준비하는 사람 vs. 남들 다 하니까 그제서야 하는 사람 어느 쪽이 될것인가?</p>
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style:none; padding-left: 0;"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">1.</span><span style="display: inline-block; vertical-align: top;">여기서 언급한 '코더'는 coding 하는 사람으로서의 coder가 아니라, 자신이 만들고 있는 작업물에 대해
+깊이 있는 고민이나 사상 없이 프로젝트 매니저 혹은 프로젝트 리더가 시키는 대로만 코드를 작성하는
+이를 지칭한다.</span><a href="#fnref:1" rev="footnote"> ↩</a></li></ol></div></div></div><div class="article__tags"><div class="article__tags__title">tags:</div><a class="article__tag__item" href="/tags/%EC%9B%B9-%ED%8D%BC%EB%B8%94%EB%A6%AC%EC%85%94/"><span class="fas fa-tag" aria-hidden="true"></span>웹 퍼블리셔</a><a class="article__tag__item" href="/tags/javascript/"><span class="fas fa-tag" aria-hidden="true"></span>JavaScript</a></div></article><div class="comment__container" role="region" aria-label="comments"></div></div><footer class="footer"><p class="copyright">&copy; 2012 ~ 2019 mulder21c <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" target="_blank" rel="license">(CCL-BY-NC-ND)</a></p><p class="credit">Powered by  <a href="https://hexo.io/" rel="external noreferrer" target="_blank">Hexo</a>. Theme by  <a href="https://github.com/mulder21c" rel="external noreferrer" target="_blank">mulder21c</a></p></footer><div class="nav" aria-hidden="true"><nav class="nav--container" id="navigation" aria-labelledby="nav__heading"><h2 class="nav__heading" id="nav__heading">Navigation</h2><hr class="nav__seperator"><ul class="menu-list">
+    <li class="menu-item" >
+      <a href="/" >
+        home
+      </a>
+    </li>
+    <li class="menu-item" >
+      <a href="/archives" >
+        archives
+      </a>
+    </li>
+    <li class="menu-item" >
+      <a href="/copyright" >
+        copyright
+      </a>
+    </li>
+    <li class="menu-item" >
+      <a href="/resume" >
+        about me
+      </a>
+    </li></ul><hr class="nav__seperator"><h3 class="nav__heading--sub">Categories</h3><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/">개발노트</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/a11y/">A11Y</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/front-end/">Front-End</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/html-css/">HTML/CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/javascript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/etc/">etc..</a></li></ul></li><li class="category-list-item"><a class="category-list-link current" href="/categories/%EC%83%9D%EA%B0%81%EB%85%B8%ED%8A%B8/">생각노트</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%83%9D%EA%B0%81%EB%85%B8%ED%8A%B8/in-christ/">in christ</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%83%9D%EA%B0%81%EB%85%B8%ED%8A%B8/in-dailylife/">in dailylife</a></li><li class="category-list-item"><a class="category-list-link current" href="/categories/%EC%83%9D%EA%B0%81%EB%85%B8%ED%8A%B8/in-occupation/">in occupation</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%BC%EC%83%81%EB%85%B8%ED%8A%B8/">일상노트</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%BC%EC%83%81%EB%85%B8%ED%8A%B8/miscellaneous/">miscellaneous</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%BC%EC%83%81%EB%85%B8%ED%8A%B8/%EC%97%AC%ED%96%89-%EC%82%AC%EC%A7%84/">여행 & 사진</a></li></ul></li></ul><hr class="nav__seperator"><h3 class="nav__heading--sub">External links</h3><ul class="link-list">
+      <li>
+        <a href="https://mulder21c.github.io/aria-practices" target="_blank" class="link-item">WAI-ARIA Authoring Practice 1.2 (진행중)</a>
+      </li>
+    
+      <li>
+        <a href="https://mulder21c.github.io/jest/docs/en/next/getting-started.html" target="_blank" class="link-item">Jest 공식 문서 개인 번역 (진행중)</a>
+      </li>
+    
+      <li>
+        <a href="https://mulder21c.github.io/seminar" target="_blank" class="link-item">세미나 발표 자료</a>
+      </li>
+    
+      <li>
+        <a href="https://mulder21c.github.io/html" target="_blank" class="link-item">HTML 5.1 명세 개인 번역 (중단)</a>
+      </li>
+    </ul><hr class="nav__seperator"><div class="nav__sns__icon-wrapper"><a class="nav__sns__icon" href="https://www.github.com/mulder21c" target="_blank" aria-label="github"><span class="fab fa-github-square" aria-hidden="true"></span></a><a class="nav__sns__icon" href="https://www.facebook.com/mulder21c" target="_blank" aria-label="facebook"><span class="fab fa-facebook-square" aria-hidden="true"></span></a><a class="nav__sns__icon" href="https://www.instagram.com/mulder21c/" target="_blank" aria-label="instagram"><span class="fab fa-instagram" aria-hidden="true"></span></a><a class="nav__sns__icon" href="https://twitter.com/mulder21c" target="_blank" aria-label="twitter"><span class="fab fa-twitter-square" aria-hidden="true"></span></a><a class="nav__sns__icon" href="https://www.linkedin.com/in/mulder21c/" target="_blank" aria-label="linkedin"><span class="fab fa-linkedin" aria-hidden="true"></span></a><a class="nav__sns__icon" href="http://flickr.com/photos/mulder21c" target="_blank" aria-label="flickr"><span class="fab fa-flickr" aria-hidden="true"></span></a><a class="nav__sns__icon" href="/rss.xml" target="_blank" aria-label="rss"><span class="fas fa-rss-square" aria-hidden="true"></span></a></div></nav></div><div class="license-notation dialog" role="dialog" aria-describedby="license-notation" aria-modal="true" aria-hidden="true" hidden><div class="dialog__content" id="license-notation"><p><img class="icon" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" alt="크리에이티브 커먼즈 라이선스">본 블로그의 모든 저작물은 <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">크리에이티브 커먼즈 저작자표시-비영리-변경금지 4.0 국제 라이선스</a>에 따라 이용할 수 있습니다.</p><p>저작권 위반시 저작권의 보호를 위해 법적인 조치를 취할 수 있으며,
+퍼가실 때에는 반드시 출처를 명시해 주시고, 사용처를 덧글로 남겨주시면 감사합니다.</p><p>저작권에 관련한 기타 자세한 내용은 <a rel="help" href="/copyright">저작권에 관한 경고</a>를 참고해주세요.</p><p class="dialog__footer"><input type="checkbox" name="license-agree" id="license-agree"><label for="license-agree">내용을 확인 했습니다.</label><br><button class="btn-close" type="button">닫기</button></p></div><div class="dialog__diemed"></div></div><script src="/js/webfontloader.js"></script><script>WebFont.load({
+  custom: {
+    families: ["Spoqa Han Sans", "Hack", "Font Awesome"],
+    urls: ["/fonts/spoqahansans/SpoqaHanSans-kr.css", "/fonts/hack/hack.css", "/fonts/fontawesome/fontawesome.css"]
+  }
+});</script><script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(adsbygoogle = window.adsbygoogle || []).push({
+  google_ad_client: "ca-pub-5055523791773672",
+  enable_page_level_ads: true
+});</script><script src="/js/script.js"></script></body></html>

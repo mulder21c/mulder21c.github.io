@@ -61,8 +61,7 @@ ga("create", "UA-55718543-7", "auto");
 ga("send", "pageview");
 </script><meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/rss.xml" title="The Tracks of mulder21c" type="application/rss+xml">
 <link rel="stylesheet" href="/css/prism-xonokai.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><script src="/js/prism.js"></script>
-<script src="/js/prism-line-numbers.min.js"></script></head><body class="post"><header class="header hero hero--has-image"><div class="hero-wrapper"><div class="gnb"><a href="/">The Tracks of mulder21c</a><button class="nav-toggle" type="button" aria-haspopup="true" aria-controls="navigation"><span></span><span></span><span></span>menu</button></div><h1 class="header__title">Nuxt + Storybook 통합 하기</h1><p class="header__title-sub">Nuxt Storybook 통합 삽질기</p><div class="hero__image" style="background-image: url(/upload/2020/nuxt-storybook.png);"></div></div></header><div class="contents--container" role="main"><article class="article"><div class="article__meta"><div class="gravatar"><img src="/images/favicon.png" alt="authored by 멀더끙"></div><time class="article__meta__time" datetime="2020-09-27T07:02:45.000Z"><span aria-label="posted"><span class="fas fa-calendar-day" aria-hidden="true"></span></span>2020-09-27 16:02:45</time><div class="article__meta__category"><span aria-label="category"><span class="fas fa-archive" aria-hidden="true"></span></span><a class="article__meta__category__item" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/">개발노트</a><a class="article__meta__category__item" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/front-end/">Front-End</a></div></div><div class="article__content"><p>최근 프로젝트를 진행하면서 본격적으로 Storybook을 도입하기로 해서 Nuxt에 Storybook을 
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><script defer src="/js/prism.js"></script></head><body class="post"><header class="header hero hero--has-image"><div class="hero-wrapper"><div class="gnb"><a href="/">The Tracks of mulder21c</a><button class="nav-toggle" type="button" aria-haspopup="true" aria-controls="navigation"><span></span><span></span><span></span>menu</button></div><h1 class="header__title">Nuxt + Storybook 통합 하기</h1><p class="header__title-sub">Nuxt Storybook 통합 삽질기</p><div class="hero__image" style="background-image: url(/upload/2020/nuxt-storybook.png);"></div></div></header><div class="contents--container" role="main"><article class="article"><div class="article__meta"><div class="gravatar"><img src="/images/favicon.png" alt="authored by 멀더끙"></div><time class="article__meta__time" datetime="2020-09-27T07:02:45.000Z"><span aria-label="posted"><span class="fas fa-calendar-day" aria-hidden="true"></span></span>2020-09-27 16:02:45</time><div class="article__meta__category"><span aria-label="category"><span class="fas fa-archive" aria-hidden="true"></span></span><a class="article__meta__category__item" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/">개발노트</a><a class="article__meta__category__item" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/front-end/">Front-End</a></div></div><div class="article__content"><p>최근 프로젝트를 진행하면서 본격적으로 Storybook을 도입하기로 해서 Nuxt에 Storybook을 
 통합하여 프로덕트를 만들어 갔다. (but... 뒤로 갈 수록 일정 부족으로 인해 story 작성을 
 포기한건 안 비밀... 쿨럭....)</p>
 <p>Nuxt에 Storybook을 통합시키는데 생각보다 난관이 좀 있었다.<br>Storybook 자체 오류도 문제였지만, 트러블 슈팅을 위한 공식 자료를 찾기 어려웠을 뿐더러
@@ -194,7 +193,7 @@ Storybook을 도입한 사례를 찾기가 쉽지 않아서 결국 또 맨 땅�
 작성할 경우를 기준으로 한다. nuxt/storybook을 사용하는 경우는 적절히 변형해서 사용하면 
 된다. </p>
 <h2 id="lt-nuxt-link-gt-해결"><a href="#lt-nuxt-link-gt-해결" class="headerlink" title="&lt;nuxt-link&gt; 해결"></a>&lt;nuxt-link&gt; 해결</h2><p>이 문제는 <code>.storybook/preview.js</code> 파일에 다음의 코드를 삽입하여 해결할 수 있다.  </p>
-<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-javascript" ><code class="language-javascript"><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> <span class="token punctuation">{</span> action <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@storybook/addon-actions'</span><span class="token punctuation">;</span>
 
 Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">'nuxt-link'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
@@ -205,7 +204,7 @@ Vue<span class="token punctuation">.</span><span class="token function">componen
     <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
   template<span class="token punctuation">:</span> <span class="token string">'&lt;a :href="to" @click.prevent="log()">&lt;slot />&lt;/a>'</span><span class="token punctuation">,</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <p><code>preview.js</code> 파일에 삽입한 이유는 global하게 적용되도록 하기 위함인데 global이 아닌 특정 
 컴포넌트에만 적용되게 하고 싶다면 해당 컴포넌트의 스토리에 직접 적용하면 된다.</p>
 <p><code class="language-javascript">log</code> method를 둔 것은 해당 컴포넌트 동작이 
@@ -225,30 +224,30 @@ Vue<span class="token punctuation">.</span><span class="token function">componen
 사용하는 것 외에, <code class="language-markup">&lt;nuxt></code>에 대한 커스텀 
 컴포넌트를 생성해야 한다. </p>
 <p>일단 <code>.storybook/preview.js</code>에 커스텀 컴포넌트를 생성한다. </p>
-<pre class="line-numbers language-js"><code class="language-js">Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`nuxt`</span></span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-js" ><code class="language-js">Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`nuxt`</span></span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
   template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`&lt;router-view />`</span></span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <p>이 컴포넌트를 <code class="language-jsx">&lt;router-view /></code>로 렌더링 시키면 
 이제 공은 storybook-vue-router 모듈로 넘어가 처리되게 된다.</p>
 <p><code class="language-markup">&lt;nuxt></code> 컴포넌트를 
 사용하는 컴포넌트에 해당 모듈을 불러들여 decorator로 등록한다.</p>
-<pre class="line-numbers language-jsx|data-line=&quot;1,6-16&quot;"><code class="language-jsx|data-line=&quot;1,6-16&quot;">import StoryRouter from 'storybook-vue-router';
+<pre class="line-numbers language-jsx" data-line="1,6-16"><code class="language-jsx"><span class="token keyword">import</span> StoryRouter <span class="token keyword">from</span> <span class="token string">'storybook-vue-router'</span><span class="token punctuation">;</span>
 
-<Meta
-  title="Pages/Main"
-  component={MainPage}
-  decorators={[
-    StoryRouter({}, {
-      routes: [
-        {
-          path: `/`,
-          component: MainPage,
-          name: `index`
-        }
-      ]
-    }),
-  ]}
-/><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Meta</span>
+  <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Pages/Main<span class="token punctuation">"</span></span>
+  <span class="token attr-name">component</span><span class="token script language-javascript"><span class="token punctuation">=</span><span class="token punctuation">{</span>MainPage<span class="token punctuation">}</span></span>
+  <span class="token attr-name">decorators</span><span class="token script language-javascript"><span class="token punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">[</span>
+    <span class="token function">StoryRouter</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      routes<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+          path<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`/`</span></span><span class="token punctuation">,</span>
+          component<span class="token punctuation">:</span> MainPage<span class="token punctuation">,</span>
+          name<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`index`</span></span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span></span><span class="token attr-name">),</span>
+  <span class="token attr-name">]}</span>
+<span class="token punctuation">/></span></span></code></pre>
 <p>이제 <code class="language-markup">&lt;nuxt></code>가 실제 페이지를 렌더링 하는 것을
 확인 할 수 있다. </p>
 <p>비슷한 방법으로 <code class="language-markup">&lt;nuxt-child></code> 역시 처리할 
@@ -256,7 +255,7 @@ Vue<span class="token punctuation">.</span><span class="token function">componen
 <h2 id="Vuex-해결"><a href="#Vuex-해결" class="headerlink" title="Vuex 해결"></a>Vuex 해결</h2><p>nuxt를 사용하면 폴더 구조에 따라 자동으로 Vuex 모듈이 처리되는데 역시 Storybook에서는 
 이를 자동으로 받아들이지 않는다. </p>
 <p>일단 Vuex의 처리는 Storybook에 수동으로 모듈을 등록해주면 된다.<br><code>.storybook/store.js</code>를 생성하고 다음 예시를 참고하여 Vuex 모듈을 등록한다. </p>
-<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">import</span> Vuex <span class="token keyword">from</span> <span class="token string">'vuex'</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-javascript" ><code class="language-javascript"><span class="token keyword">import</span> Vuex <span class="token keyword">from</span> <span class="token string">'vuex'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> main <span class="token keyword">from</span> <span class="token string">'@/store'</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">// nuxt에 등록한 store import</span>
 <span class="token keyword">import</span> navigation <span class="token keyword">from</span> <span class="token string">'@/store/navigation'</span><span class="token punctuation">;</span>
@@ -271,37 +270,37 @@ Vue<span class="token punctuation">.</span><span class="token function">componen
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token keyword">export</span> <span class="token keyword">default</span> store<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">export</span> <span class="token keyword">default</span> store<span class="token punctuation">;</span></code></pre>
 <p>이후 Vuex에 접근해야 하는 컴포넌트의 스토리에 store를 추가해준다. </p>
-<pre class="line-numbers language-jsx|data-line=&quot;2,3,8-11&quot;"><code class="language-jsx|data-line=&quot;2,3,8-11&quot;">...
-import store from '@/.storybook/store';
-import { mapGetters } from 'vuex';
-...
-export const Template = (args) => {
-  return {
-    components: {MainPage},
-    store,
-    computed: {
-      ...mapGetters('navigation', ['mainNavList', 'mainNavHeading'])
-    },
-    template: `<nuxt />`
-  }
-}
+<pre class="line-numbers language-jsx" data-line="2,3,8-11"><code class="language-jsx"><span class="token operator">...</span>
+<span class="token keyword">import</span> store <span class="token keyword">from</span> <span class="token string">'@/.storybook/store'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> mapGetters <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vuex'</span><span class="token punctuation">;</span>
+<span class="token operator">...</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> Template <span class="token operator">=</span> <span class="token punctuation">(</span>args<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    components<span class="token punctuation">:</span> <span class="token punctuation">{</span>MainPage<span class="token punctuation">}</span><span class="token punctuation">,</span>
+    store<span class="token punctuation">,</span>
+    computed<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      <span class="token operator">...</span><span class="token function">mapGetters</span><span class="token punctuation">(</span><span class="token string">'navigation'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'mainNavList'</span><span class="token punctuation">,</span> <span class="token string">'mainNavHeading'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`&lt;nuxt />`</span></span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
 # Main Page
 
-<Canvas>
-  <Story name="MainPage">
-    { Template.bind({}) }
-  </Story>
-</Canvas><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Canvas</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Story</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>MainPage<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token punctuation">{</span> Template<span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Story</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Canvas</span><span class="token punctuation">></span></span></code></pre>
 <h2 id="NuxtServerInit-처리"><a href="#NuxtServerInit-처리" class="headerlink" title="NuxtServerInit 처리"></a>NuxtServerInit 처리</h2><p>Vuex를 등록하고 나서 또 하나의 난관(?)이 NuxtServerInit다. </p>
 <p>NuxtServerInit은 Nuxt에서만 제공되는 액션 메서드이니 당연히(?) Storybook에서는 기본적으로 
 처리되지 않는다. </p>
 <p>이를 처리하는 방법은 구글님께 여쭈어도 답을 찾지 못했는데, 의외의 곳에서 해결책을 찾았다.<br>앞서 등록한 store 객체에 nuxtServerInit 액션 메서드가 등록이 되어 있더라는!!!</p>
 <p>하여 <code>.storybook/store.js</code>에 다음과 같이 코드를 추가해서 store를 불러들일 때 강제로 
 nuxtServerInit 메서드를 실행시키도록 처리해보았다. </p>
-<pre class="line-numbers language-js"><code class="language-js"><span class="token operator">...</span>
+<pre class="line-numbers language-js" ><code class="language-js"><span class="token operator">...</span>
 
 <span class="token keyword">if</span> <span class="token punctuation">(</span>store<span class="token punctuation">.</span>_actions <span class="token operator">&amp;&amp;</span> store<span class="token punctuation">.</span>_actions<span class="token punctuation">.</span>nuxtServerInit<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">try</span> <span class="token punctuation">{</span>
@@ -313,7 +312,7 @@ nuxtServerInit 메서드를 실행시키도록 처리해보았다. </p>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 
-<span class="token keyword">export</span> <span class="token keyword">default</span> store<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">export</span> <span class="token keyword">default</span> store<span class="token punctuation">;</span></code></pre>
 <p>이후 NuxtServerInit에서 처리되는 데이터까지 들어와 스토리에 반영되는 것을 확인 할 수 있었다. </p>
 <p>nuxt/storybook의 경우 NuxtServierInit을 처리 하기 위해서 이 방법을 쓰려면 바로 위의
 <a href="#Vuex-%ED%95%B4%EA%B2%B0">Vuex 해결</a> 부분을 같이 처리해 주어야 한다.  </p>
@@ -322,7 +321,7 @@ nuxtServerInit 메서드를 실행시키도록 처리해보았다. </p>
 <p>때문에 node-sass, sass-loader를 추가로 설치해야 하고, <code>.storybook/main.js</code> 파일에
 로더 설정을 해주어야 한다. 추가로 Nuxt에 styleResources로 컴포넌트에서 사용하는 리소스를 
 미리 등록해 둔게 있다면 이 역시 함께 설정을 해주어야 storybook에도 반영된다.</p>
-<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`path`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-javascript" ><code class="language-javascript"><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`path`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">const</span> rootPath <span class="token operator">=</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token template-string"><span class="token string">`../`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
@@ -352,7 +351,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
     <span class="token keyword">return</span> config<span class="token punctuation">;</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <p>일단 여기까지가 내가 해결한 방법들이다.</p>
 <p>좀 더 나은 방법들이나 nuxt/storybook을 통하지 않고 nuxt context에 접근 가능한 방법을
 알고 있는 분이 있다면 힌트 좀... ㅎㅎㅎ</p>

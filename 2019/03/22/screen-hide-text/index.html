@@ -59,8 +59,7 @@ ga("create", "UA-55718543-7", "auto");
 ga("send", "pageview");
 </script><meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/rss.xml" title="The Tracks of mulder21c" type="application/rss+xml">
 <link rel="stylesheet" href="/css/prism-xonokai.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><script src="/js/prism.js"></script>
-<script src="/js/prism-line-numbers.min.js"></script></head><body class="post"><header class="header hero hero--has-image"><div class="hero-wrapper"><div class="gnb"><a href="/">The Tracks of mulder21c</a><button class="nav-toggle" type="button" aria-haspopup="true" aria-controls="navigation"><span></span><span></span><span></span>menu</button></div><h1 class="header__title">접근 가능한 숨김 텍스트</h1><div class="hero__image" style="background-image: url(/upload/2019/reading-glass.jpg);"></div></div></header><div class="contents--container" role="main"><article class="article"><div class="article__meta"><div class="gravatar"><img src="/images/favicon.png" alt="authored by 멀더끙"></div><time class="article__meta__time" datetime="2019-03-22T14:55:46.000Z"><span aria-label="posted"><span class="fas fa-calendar-day" aria-hidden="true"></span></span>2019-03-22 23:55:46</time><div class="article__meta__category"><span aria-label="category"><span class="fas fa-archive" aria-hidden="true"></span></span><a class="article__meta__category__item" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/">개발노트</a><a class="article__meta__category__item" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/a11y/">A11Y</a></div></div><div class="article__content"><h2 id="숨김-텍스트"><a href="#숨김-텍스트" class="headerlink" title="숨김 텍스트"></a>숨김 텍스트</h2><p>오래동안 묵어있던 글감을 다시 꺼냈다. 다양한(?) 짓거리를 포스팅하려고 하다 결국은 포기하고
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><script defer src="/js/prism.js"></script></head><body class="post"><header class="header hero hero--has-image"><div class="hero-wrapper"><div class="gnb"><a href="/">The Tracks of mulder21c</a><button class="nav-toggle" type="button" aria-haspopup="true" aria-controls="navigation"><span></span><span></span><span></span>menu</button></div><h1 class="header__title">접근 가능한 숨김 텍스트</h1><div class="hero__image" style="background-image: url(/upload/2019/reading-glass.jpg);"></div></div></header><div class="contents--container" role="main"><article class="article"><div class="article__meta"><div class="gravatar"><img src="/images/favicon.png" alt="authored by 멀더끙"></div><time class="article__meta__time" datetime="2019-03-22T14:55:46.000Z"><span aria-label="posted"><span class="fas fa-calendar-day" aria-hidden="true"></span></span>2019-03-22 23:55:46</time><div class="article__meta__category"><span aria-label="category"><span class="fas fa-archive" aria-hidden="true"></span></span><a class="article__meta__category__item" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/">개발노트</a><a class="article__meta__category__item" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/a11y/">A11Y</a></div></div><div class="article__content"><h2 id="숨김-텍스트"><a href="#숨김-텍스트" class="headerlink" title="숨김 텍스트"></a>숨김 텍스트</h2><p>오래동안 묵어있던 글감을 다시 꺼냈다. 다양한(?) 짓거리를 포스팅하려고 하다 결국은 포기하고
 단순하게 포스팅 하기로... <span aria-hidden="true">= _=a</span><span class="sr-only">긁적긁적<span></p>
 <p>퍼블리싱 작업을 진행하다보면 종종 숨김 텍스트를 사용해야 하는 상황에 맞닥뜨릴 때가 많다.</p>
 <p>IR(Image Replace) 기법을 사용해야 할 때가 그 중 대표적인 한 가지이고, 기획 문서나
@@ -89,9 +88,9 @@ ga("send", "pageview");
 <p>이 검색엔진에는 &lsquo;black hat&rsquo;이라는 것이 있다. 검색 엔진 결과 페이지의 순위를
 높이기 위해 올바르지 않은 방법을 사용한 사례가 이에 해당되는데 이에 관하여는 더 모르고 있는
 경우가 많다.</p>
-<h2 id="숨김-처리-방식과-그로-인한-문제"><a href="#숨김-처리-방식과-그로-인한-문제" class="headerlink" title="숨김 처리 방식과 그로 인한 문제"></a>숨김 처리 방식과 그로 인한 문제</h2><h3 id="display-이용"><a href="#display-이용" class="headerlink" title="display 이용"></a>display 이용</h3><pre class="line-numbers language-css"><code class="language-css"><span class="token selector"><span class="token class">.hidden</span> </span><span class="token punctuation">{</span>
+<h2 id="숨김-처리-방식과-그로-인한-문제"><a href="#숨김-처리-방식과-그로-인한-문제" class="headerlink" title="숨김 처리 방식과 그로 인한 문제"></a>숨김 처리 방식과 그로 인한 문제</h2><h3 id="display-이용"><a href="#display-이용" class="headerlink" title="display 이용"></a>display 이용</h3><pre class="line-numbers language-css" ><code class="language-css"><span class="token selector"><span class="token class">.hidden</span> </span><span class="token punctuation">{</span>
   <span class="token property">display</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>아마 접근성을 전혀 모르는 이들이 주로 선택하는 방법일 거다.</p>
 <p>그리고 요새 자주 보이는 상황으로는... 접근성에 전혀 관심을 둔 적이 없는 Front-End 개발자들의
 산출물에서도 이러한 경우를 쉽게 발견할 수 있다. 퍼블리셔가 그렇게 전달을 해 준적이 없어서
@@ -102,16 +101,16 @@ ga("send", "pageview");
 때문에 보조기기에도 정보를 전달하지 않도록 처리된다.</p>
 <p>이렇게 숨겨놓은 건 숨겨 놓은게 아니라 그냥 없는 것과 같다. <br>
 애초에 없는 녀석이니 사용자에게 전달조차 되지 않는다.</p>
-<h3 id="visibility-이용"><a href="#visibility-이용" class="headerlink" title="visibility 이용"></a>visibility 이용</h3><pre class="line-numbers language-css"><code class="language-css"><span class="token selector"><span class="token class">.hidden</span> </span><span class="token punctuation">{</span>
+<h3 id="visibility-이용"><a href="#visibility-이용" class="headerlink" title="visibility 이용"></a>visibility 이용</h3><pre class="line-numbers language-css" ><code class="language-css"><span class="token selector"><span class="token class">.hidden</span> </span><span class="token punctuation">{</span>
   <span class="token property">visibility</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>이 녀석의 경우는 사실 가시성을 <var>hidden</var>으로 주어 가시적으로는 숨김 처리를
 해두었지만 자리는 차지하고 있기 때문에 잘 사용되지는 않는 녀석이기는 하다.</p>
 <p>하지만</p>
-<pre class="line-numbers language-css"><code class="language-css"><span class="token selector"><span class="token class">.class</span> </span><span class="token punctuation">{</span>
+<pre class="line-numbers language-css" ><code class="language-css"><span class="token selector"><span class="token class">.class</span> </span><span class="token punctuation">{</span>
   <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
   <span class="token property">visibility</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>이러한 형태를 만들어 놓는 경우도 가끔 보이기도 한다.</p>
 <p><span class="not">자리도 차지하지 못하게 만들었고 가시적으로도 숨겼다! 성공이다!</span>는
 착각이고 여전히 접근성에서의 문제가 있다.</p>
@@ -120,9 +119,9 @@ ga("send", "pageview");
 역시 해당 정보를 사용자에게 전달해주지 않게 된다.</p>
 <p>따라서 결국 이 방법 역시 숨김 텍스트로는 적합하지 않다.</p>
 <h3 id="text-indent-이용"><a href="#text-indent-이용" class="headerlink" title="text-indent 이용"></a>text-indent 이용</h3><p>IR 기법으로 가장 많이 사용하고 있는 방식이 아마 이 text-indent라는 방식일 거다.</p>
-<pre class="line-numbers language-css"><code class="language-css"><span class="token selector"><span class="token class">.hidden</span> </span><span class="token punctuation">{</span>
+<pre class="line-numbers language-css" ><code class="language-css"><span class="token selector"><span class="token class">.hidden</span> </span><span class="token punctuation">{</span>
   <span class="token property">text-indent</span><span class="token punctuation">:</span> -<span class="token number">9999</span>px<span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>phark method라고도 알려져 있는 방식인데, CSS의 들여쓰기 기능을 이용해서 텍스트를 아주 저
 멀리로 보내버리는 방법이다.</p>
 <p>이번에는 노출이나 가시성을 변경하지 않았으므로 문제가 없을 것만 같이 보일지 모르겠다. <br>
@@ -170,32 +169,32 @@ ga("send", "pageview");
 좋은(?) 방법이다.</p>
 <p>또한 이 방법은 Google의 웹마스터 가이드라인을 위반하는 것이기 때문에 결국 black hat까지도
 유발하는 원인이 될 수 있다.</p>
-<h3 id="opacity-이용"><a href="#opacity-이용" class="headerlink" title="opacity 이용"></a>opacity 이용</h3><pre class="line-numbers language-css"><code class="language-css"><span class="token selector"><span class="token class">.hidden</span> </span><span class="token punctuation">{</span>
+<h3 id="opacity-이용"><a href="#opacity-이용" class="headerlink" title="opacity 이용"></a>opacity 이용</h3><pre class="line-numbers language-css" ><code class="language-css"><span class="token selector"><span class="token class">.hidden</span> </span><span class="token punctuation">{</span>
   <span class="token property">opacity</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>이 방법 역시 가시성을 숨기는 것과 비슷한 효과로 투명하게 만들어 사용자의 눈을 속이는(?)
 방법으로 간혹 사용되는 것을 볼 수 있다.</p>
 <p>하지만 이 역시 초점 이동, 대화형 요소인 경우 마우스 포인터가 반응하는 문제 등이 발생되고
 VoiceOver는 이를 읽어주지 않는 것으로 확인된다.</p>
 <p>역시 접근성에서는 문제가 많다.</p>
 <h3 id="positioning-screen-out"><a href="#positioning-screen-out" class="headerlink" title="positioning screen out"></a>positioning screen out</h3><p>아마 가장 많이 알고 있고 가장 많이 사용되고 있는 방법일 것으로 생각되는데,</p>
-<pre class="line-numbers language-css"><code class="language-css"><span class="token selector"><span class="token class">.hidden</span> </span><span class="token punctuation">{</span>
+<pre class="line-numbers language-css" ><code class="language-css"><span class="token selector"><span class="token class">.hidden</span> </span><span class="token punctuation">{</span>
   <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
   <span class="token property">top</span><span class="token punctuation">:</span> -<span class="token number">9999</span>px<span class="token punctuation">;</span>
   <span class="token property">left</span><span class="token punctuation">:</span> -<span class="token number">9999</span>px<span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>와 같은 방법이다.</p>
 <p>이 방법은 처음 text indenting 방식과 동일한 문제를 가지고 있다.</p>
 <h3 id="Hiding-with-Clip"><a href="#Hiding-with-Clip" class="headerlink" title="Hiding with Clip"></a>Hiding with Clip</h3><p>이쯤 되면 접근 가능한 숨김 방법이라는 것은 불가능에 가까워 보인다.</p>
 <p>하지만 아직 인터넷에 공개되어 있는 한 가지 방법이 더 있는데, H5BP<sup id="fnref:6"><a href="#fn:6" rel="footnote">6</a></sup>에서 채택한 방법으로</p>
-<pre class="line-numbers language-css"><code class="language-css"><span class="token selector"><span class="token class">.hidden</span> </span><span class="token punctuation">{</span>
+<pre class="line-numbers language-css" ><code class="language-css"><span class="token selector"><span class="token class">.hidden</span> </span><span class="token punctuation">{</span>
   <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
   <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
   <span class="token property">border</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
   <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">1</span>px<span class="token punctuation">;</span>
   <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">1</span>px<span class="token punctuation">;</span>
   <span class="token property">clip</span><span class="token punctuation">:</span> <span class="token function">rect</span><span class="token punctuation">(</span><span class="token number">1</span>px, <span class="token number">1</span>px, <span class="token number">1</span>px, <span class="token number">1</span>px<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>으로 처리하는 방식이다.</p>
 <p>이 방법을 사용하는 이는 아마도 접근성에 관심이 있다보니 찾고 찾고 찾아 여기까지 도달하지
 않았을까 생각한다. 왜냐하면... 이 방식을 쓰는 이들을 별로 본적이 없기 때문...</p>
@@ -214,20 +213,20 @@ screen out 기법으로 인한 black hat을 피하기 위해 고안된 방법으
 <var>div</var> 요소로 묶어놓은 것 마냥 끊어읽게 되는 일이 발생된다.</p>
 <h2 id="접근-가능한-숨김-방법"><a href="#접근-가능한-숨김-방법" class="headerlink" title="접근 가능한 숨김 방법"></a>접근 가능한 숨김 방법</h2><p>결국 문맥까지 고려해본다면 H5BP 방식에서 <var>position</var>을 들어내야하고, clip의
 최신 표준을 사용해야 한다.</p>
-<pre class="line-numbers language-css"><code class="language-css"><span class="token selector"><span class="token class">.hidden</span> </span><span class="token punctuation">{</span>
+<pre class="line-numbers language-css" ><code class="language-css"><span class="token selector"><span class="token class">.hidden</span> </span><span class="token punctuation">{</span>
   <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
   <span class="token property">border</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
   <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">1</span>px<span class="token punctuation">;</span>
   <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">1</span>px<span class="token punctuation">;</span>
   <span class="token property">clip</span><span class="token punctuation">:</span> <span class="token function">rect</span><span class="token punctuation">(</span><span class="token number">1</span>px, <span class="token number">1</span>px, <span class="token number">1</span>px, <span class="token number">1</span>px<span class="token punctuation">)</span><span class="token punctuation">;</span> // for legacy browsers
   <span class="token property">clip-path</span><span class="token punctuation">:</span> <span class="token function">inset</span><span class="token punctuation">(</span><span class="token number">50%</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>다만 이렇게 할 경우, phrasing contents는 inline formatting context를 가지기 때문에
 <var>width</var>, <var>height</var>를 가질 수 없고 더구나 이를 가진다 하더라도 1px
 만큼의 자리를 차지하게 되는 문제가 또 발생된다.</p>
 <p>때문에, block/inline formatting context에 따라서 분리하여 적용하는 것이 필요해진다.</p>
 <p>즉, block formatting context라면</p>
-<pre class="line-numbers language-css"><code class="language-css"><span class="token selector"><span class="token class">.hidden</span> </span><span class="token punctuation">{</span>
+<pre class="line-numbers language-css" ><code class="language-css"><span class="token selector"><span class="token class">.hidden</span> </span><span class="token punctuation">{</span>
   <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
   <span class="token property">border</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
   <span class="token property">margin</span><span class="token punctuation">:</span> -<span class="token number">1</span>px<span class="token punctuation">;</span>
@@ -235,9 +234,9 @@ screen out 기법으로 인한 black hat을 피하기 위해 고안된 방법으
   <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">1</span>px<span class="token punctuation">;</span>
   <span class="token property">clip</span><span class="token punctuation">:</span> <span class="token function">rect</span><span class="token punctuation">(</span><span class="token number">1</span>px, <span class="token number">1</span>px, <span class="token number">1</span>px, <span class="token number">1</span>px<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token property">clip-path</span><span class="token punctuation">:</span> <span class="token function">inset</span><span class="token punctuation">(</span><span class="token number">50%</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>혹은</p>
-<pre class="line-numbers language-css"><code class="language-css"><span class="token selector"><span class="token class">.hidden</span> </span><span class="token punctuation">{</span>
+<pre class="line-numbers language-css" ><code class="language-css"><span class="token selector"><span class="token class">.hidden</span> </span><span class="token punctuation">{</span>
   <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
   <span class="token property">border</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
   <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
@@ -245,9 +244,9 @@ screen out 기법으로 인한 black hat을 피하기 위해 고안된 방법으
   <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">1</span>px<span class="token punctuation">;</span>
   <span class="token property">clip</span><span class="token punctuation">:</span> <span class="token function">rect</span><span class="token punctuation">(</span><span class="token number">1</span>px, <span class="token number">1</span>px, <span class="token number">1</span>px, <span class="token number">1</span>px<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token property">clip-path</span><span class="token punctuation">:</span> <span class="token function">inset</span><span class="token punctuation">(</span><span class="token number">50%</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>정도로 주어볼 수 있고, inline formatting context라면</p>
-<pre class="line-numbers language-css"><code class="language-css"><span class="token selector"><span class="token class">.hidden</span> </span><span class="token punctuation">{</span>
+<pre class="line-numbers language-css" ><code class="language-css"><span class="token selector"><span class="token class">.hidden</span> </span><span class="token punctuation">{</span>
   <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
   <span class="token property">display</span><span class="token punctuation">:</span> inline-block<span class="token punctuation">;</span>
   <span class="token property">border</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
@@ -256,7 +255,7 @@ screen out 기법으로 인한 black hat을 피하기 위해 고안된 방법으
   <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">1</span>px<span class="token punctuation">;</span>
   <span class="token property">clip</span><span class="token punctuation">:</span> <span class="token function">rect</span><span class="token punctuation">(</span><span class="token number">1</span>px, <span class="token number">1</span>px, <span class="token number">1</span>px, <span class="token number">1</span>px<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token property">clip-path</span><span class="token punctuation">:</span> <span class="token function">inset</span><span class="token punctuation">(</span><span class="token number">50%</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>정도로 해 볼 수 있겠다.</p>
 <p>두 가지를 나누어서 고려해야 하는 것이 불편하기는 하지만, 현재 상황에서 둘 모두를 만족하는
 방법이 과연 있을지는 좀 더 고민을 해 봐야 알 수 있을 듯 하다.</p>

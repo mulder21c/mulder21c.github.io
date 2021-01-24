@@ -1,0 +1,183 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>CSS로 jQuery slideToggle() 효과 만들어보기 - The Tracks of mulder21c</title><!-- Links--><link rel="canonical" href="https://mulder21c.io/create-a-jquery-slidetoggle-with-css"><!-- preload--><link rel="preload" as="image" href="/images/favicon.png" crossorigin="anonymous"><link rel="preload" as="image" href="//farm1.staticflickr.com/863/41108552022_61413423d5_b.jpg" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/iropke/IropkeBatangM.woff" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/spoqahansans/SpoqaHanSansRegular.woff2" crossorigin="anonymous"><!-- Icons--><link rel="shortcut icon" sizes="196x196" href="/images/favicon.png"><!-- open graph--><meta name="description" content="일전에 프로젝트로 모바일 웹을 만들면서 재미겸 연습겸(?) CSS animation과 max-height 를 이용해서 jQuery의 slideToggle()과 같은 효과를 만들어 봤다">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS로 jQuery slideToggle() 효과 만들어보기">
+<meta property="og:url" content="https://mulder21c.io/create-a-jquery-slidetoggle-with-css/">
+<meta property="og:site_name" content="The Tracks of mulder21c">
+<meta property="og:description" content="일전에 프로젝트로 모바일 웹을 만들면서 재미겸 연습겸(?) CSS animation과 max-height 를 이용해서 jQuery의 slideToggle()과 같은 효과를 만들어 봤다">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://farm1.staticflickr.com/863/41108552022_61413423d5_b.jpg">
+<meta property="article:published_time" content="2014-10-27T05:51:12.000Z">
+<meta property="article:modified_time" content="2020-06-13T10:44:08.657Z">
+<meta property="article:author" content="멀더끙">
+<meta property="article:tag" content="css animation">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://farm1.staticflickr.com/863/41108552022_61413423d5_b.jpg"><!-- verify website ownership--><meta name="google-site-verification" content="cNXUGP2JbfDQYO1PIpkuHsivBfDI6Q_AFBBZzsNaUKs"><meta name="naver-site-verification" content="859a6966704edf251c82579243d7dda7a8a87799"><!-- styles--><link rel="stylesheet" href="/css/style.css"><style>
+</style><link rel="stylesheet" href="/fonts/iropke/iropke.css"><link rel="stylesheet" href="/fonts/notosanskr/NotoSansKR.css"><!-- JSON LD for SEO--><script type="application/ld+json">{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "CSS로 jQuery slideToggle() 효과 만들어보기",
+  "alternativeHeadline": null,
+  "image": {
+    "@type": "imageObject",
+    "url": "https://farm1.staticflickr.com/863/41108552022_61413423d5_b.jpg",
+    "width": "1024",
+    "height": "684"
+  },
+  "genre": null,
+  "keywords": "css animation",
+  "editor": {
+    "@type": "Person",
+    "name": "멀더끙"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "멀더끙",
+    "logo": {
+      "@type": "imageObject",
+      "url": "https://mulder21c.io/images/favicon.png"
+    }
+  },
+  "author": {
+    "@type": "Person",
+    "name": "멀더끙"
+  },
+  "url": "https://mulder21c.io/create-a-jquery-slidetoggle-with-css/",
+  "dateCreated": "2014-10-27",
+  "datePublished": "2014-10-27",
+  "articleBody": "일전에 프로젝트로 모바일 웹을 만들면서 재미겸 연습겸(?) CSS animation과 max-height 를 이용해서 jQuery의 slideToggle()과 같은 효과를 만들어 봤다"
+}</script><!--scripts--><script>(function(i,s,o,g,r,a,m) {i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,"script","//www.google-analytics.com/analytics.js","ga");
+ga("create", "UA-55718543-7", "auto");
+ga("send", "pageview");
+</script><meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/rss.xml" title="The Tracks of mulder21c" type="application/rss+xml">
+<link rel="stylesheet" href="/css/prism-xonokai.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><script src="/js/prism.js"></script>
+<script src="/js/prism-line-numbers.min.js"></script></head><body class="post"><header class="header hero hero--has-image"><div class="hero-wrapper"><div class="gnb"><a href="/">The Tracks of mulder21c</a><button class="nav-toggle" type="button" aria-haspopup="true" aria-controls="navigation"><span></span><span></span><span></span>menu</button></div><h1 class="header__title">CSS로 jQuery slideToggle() 효과 만들어보기</h1><div class="hero__image" style="background-image: url(//farm1.staticflickr.com/863/41108552022_61413423d5_b.jpg);background-position: left 80%;"></div></div></header><div class="contents--container" role="main"><article class="article"><div class="article__meta"><div class="gravatar"><img src="/images/favicon.png" alt="authored by 멀더끙"></div><time class="article__meta__time" datetime="2014-10-27T05:51:12.000Z"><span aria-label="posted"><span class="fas fa-calendar-day" aria-hidden="true"></span></span>2014-10-27 14:51:12</time><div class="article__meta__category"><span aria-label="category"><span class="fas fa-archive" aria-hidden="true"></span></span><a class="article__meta__category__item" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/">개발노트</a><a class="article__meta__category__item" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/html-css/">HTML/CSS</a></div></div><div class="article__content"><p>일전에 프로젝트로 모바일 웹을 만들면서 재미겸 연습겸(?) CSS animation과 max-height 를
+이용해서 jQuery의 slideToggle()과 같은 효과를 만들어 봤다. 몇 가지 고민을 더 해봐야 하는 부분이
+있지만 만들어보고 나니 재밌는 형태를 하나 만든거 같다 ㅋ</p>
+<h2 id="Example-Sources"><a href="#Example-Sources" class="headerlink" title="Example Sources"></a>Example Sources</h2><p>** markup **</p>
+<pre class="line-numbers language-markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nav</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>menu-01<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>sub-nav<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>sub-menu-01<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>sub-menu-02<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>sub-menu-03<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>sub-menu-04<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>sub-menu-05<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>menu-02<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>menu-03<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>menu-04<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>menu-05<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nav</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>** CSS **</p>
+<pre class="line-numbers language-css|data-line=&quot;23-29,32&quot;"><code class="language-css|data-line=&quot;23-29,32&quot;">nav ul{
+  list-style-type: none
+}
+nav ul:after{
+  clear: both;
+  display: table;
+}
+nav > ul > li{
+  float: left;
+}
+nav > ul > li{
+  position: relative;
+  background-color: #DEDEDE;
+  width: 20%;
+  line-height: 50px
+}
+nav ul.sub-nav{
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  z-index: 900;
+  max-height:0;
+  overflow: hidden;
+  -webkit-transition:all .5 cubic-bezier(0, 0, 1, 1);
+  -moz-transition:all .5s cubic-bezier(0, 0, 1, 1);
+  -ms-transition:all .5s cubic-bezier(0, 0, 1, 1);
+  -o-transition:all .5s cubic-bezier(0, 0, 1, 1);
+  transition:all .5s cubic-bezier(0, 0, 1, 1)
+}
+nav > ul > li:hover ul.sub-nav{
+  max-height:250px
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="description"><a href="#description" class="headerlink" title="description"></a>description</h2><p>방법은 단순히 해당 요소에 max-height 값을 0, overflow 값을 hidden으로 두고 transition을 주며, 펼쳐진
+상태에 대한 셀렉터에 max-height 값을 지정해 주면 된다.</p>
+<p>이 방법을 쓰게 되면 transition에 설정한 duration동안 max-height 값이 0에서부터 지정한 값까지 변하며
+가시적으로는 마치 slideDown()을 준것과 같은 효과를 가져오게 된다.</p>
+<p>참, 물론 키보드에 대응시키기 위해서는 역시 JavaScript를 사용해야만 하는 문제가 여전히 남아있기는 하다.</p>
+<h2 id="Comments"><a href="#Comments" class="headerlink" title="Comments"></a>Comments</h2><p>다만, 이 방법에서 좀 더 고민을 해야 하는 부분이 발생이 되는데 바로 이 max-height로 동작된다라는 부분이다.
+만일 단 하나만을 애니메이트 시키거나 동일한 높이값을 가지는 요소들에 대해서 max-height를 조정하게
+된다면 큰 문제가 안되겠지만, 각기 다른 높이를 가지는 요소들을 컨트롤 하자면 애매해 질 수도 있다라는
+것… 쿨럭;;</p>
+<p>만일 각각의 높이에 대해 max-height 을 일일이 다 작성하자면 살짝 귀찮아지기도 하고 CSS 작성량이 좀
+많아지게 될 수도 있다.</p>
+<p>반면, 아예 max-height 값을 가장 큰 값으로 맞추어서 하게 되면 max-height 값이 특정 시간 안에 움직이는
+케이스이다 보니, 어떤 것은 상대적으로 빠르게 애니메이트되는 것 처럼 보이고 어떤 것은 상대적으로
+느리게 애니메이트 되는 것 처럼 보일 수 있다는 점이 좀 고민스럽게 만들기도 한다.</p>
+<h2 id="Live-Demo"><a href="#Live-Demo" class="headerlink" title="Live Demo"></a>Live Demo</h2>
+<p data-height="365" data-theme-id="dark" data-slug-hash="yBkho" data-default-tab="result" data-user="mulder21c" data-embed-version="2" data-pen-title="yBkho" class="codepen">See the Pen <a href="https://codepen.io/mulder21c/pen/yBkho/" target="_blank" rel="noopener">yBkho</a> by mulder21c (<a href="https://codepen.io/mulder21c" target="_blank" rel="noopener">@mulder21c</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+</div><div class="article__tags"><div class="article__tags__title">tags:</div><a class="article__tag__item" href="/tags/css-animation/"><span class="fas fa-tag" aria-hidden="true"></span>css animation</a></div></article><div class="comment__container" role="region" aria-label="comments"></div></div><footer class="footer"><p class="copyright">&copy; 2012 ~ 2019 mulder21c <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" target="_blank" rel="license">(CCL-BY-NC-ND)</a></p><p class="credit">Powered by  <a href="https://hexo.io/" rel="external noreferrer" target="_blank">Hexo</a>. Theme by  <a href="https://github.com/mulder21c" rel="external noreferrer" target="_blank">mulder21c</a></p></footer><div class="nav" aria-hidden="true"><nav class="nav--container" id="navigation" aria-labelledby="nav__heading"><h2 class="nav__heading" id="nav__heading">Navigation</h2><hr class="nav__seperator"><ul class="menu-list">
+    <li class="menu-item" >
+      <a href="/" >
+        home
+      </a>
+    </li>
+    <li class="menu-item" >
+      <a href="/archives" >
+        archives
+      </a>
+    </li>
+    <li class="menu-item" >
+      <a href="/copyright" >
+        copyright
+      </a>
+    </li>
+    <li class="menu-item" >
+      <a href="/resume" >
+        about me
+      </a>
+    </li></ul><hr class="nav__seperator"><h3 class="nav__heading--sub">Categories</h3><ul class="category-list"><li class="category-list-item"><a class="category-list-link current" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/">개발노트</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/a11y/">A11Y</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/front-end/">Front-End</a></li><li class="category-list-item"><a class="category-list-link current" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/html-css/">HTML/CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/javascript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/etc/">etc..</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%83%9D%EA%B0%81%EB%85%B8%ED%8A%B8/">생각노트</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%83%9D%EA%B0%81%EB%85%B8%ED%8A%B8/in-christ/">in christ</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%83%9D%EA%B0%81%EB%85%B8%ED%8A%B8/in-dailylife/">in dailylife</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%83%9D%EA%B0%81%EB%85%B8%ED%8A%B8/in-occupation/">in occupation</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%BC%EC%83%81%EB%85%B8%ED%8A%B8/">일상노트</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%BC%EC%83%81%EB%85%B8%ED%8A%B8/miscellaneous/">miscellaneous</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%BC%EC%83%81%EB%85%B8%ED%8A%B8/%EC%97%AC%ED%96%89-%EC%82%AC%EC%A7%84/">여행 & 사진</a></li></ul></li></ul><hr class="nav__seperator"><h3 class="nav__heading--sub">External links</h3><ul class="link-list">
+      <li>
+        <a href="https://mulder21c.github.io/aria-practices" target="_blank" class="link-item">WAI-ARIA Authoring Practice 1.2 (진행중)</a>
+      </li>
+    
+      <li>
+        <a href="https://mulder21c.github.io/jest/docs/en/next/getting-started.html" target="_blank" class="link-item">Jest 공식 문서 개인 번역 (진행중)</a>
+      </li>
+    
+      <li>
+        <a href="https://mulder21c.github.io/seminar" target="_blank" class="link-item">세미나 발표 자료</a>
+      </li>
+    
+      <li>
+        <a href="https://mulder21c.github.io/html" target="_blank" class="link-item">HTML 5.1 명세 개인 번역 (중단)</a>
+      </li>
+    </ul><hr class="nav__seperator"><div class="nav__sns__icon-wrapper"><a class="nav__sns__icon" href="https://www.github.com/mulder21c" target="_blank" aria-label="github"><span class="fab fa-github-square" aria-hidden="true"></span></a><a class="nav__sns__icon" href="https://www.facebook.com/mulder21c" target="_blank" aria-label="facebook"><span class="fab fa-facebook-square" aria-hidden="true"></span></a><a class="nav__sns__icon" href="https://www.instagram.com/mulder21c/" target="_blank" aria-label="instagram"><span class="fab fa-instagram" aria-hidden="true"></span></a><a class="nav__sns__icon" href="https://twitter.com/mulder21c" target="_blank" aria-label="twitter"><span class="fab fa-twitter-square" aria-hidden="true"></span></a><a class="nav__sns__icon" href="https://www.linkedin.com/in/mulder21c/" target="_blank" aria-label="linkedin"><span class="fab fa-linkedin" aria-hidden="true"></span></a><a class="nav__sns__icon" href="http://flickr.com/photos/mulder21c" target="_blank" aria-label="flickr"><span class="fab fa-flickr" aria-hidden="true"></span></a><a class="nav__sns__icon" href="/rss.xml" target="_blank" aria-label="rss"><span class="fas fa-rss-square" aria-hidden="true"></span></a></div></nav></div><div class="license-notation dialog" role="dialog" aria-describedby="license-notation" aria-modal="true" aria-hidden="true" hidden><div class="dialog__content" id="license-notation"><p><img class="icon" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" alt="크리에이티브 커먼즈 라이선스">본 블로그의 모든 저작물은 <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">크리에이티브 커먼즈 저작자표시-비영리-변경금지 4.0 국제 라이선스</a>에 따라 이용할 수 있습니다.</p><p>저작권 위반시 저작권의 보호를 위해 법적인 조치를 취할 수 있으며,
+퍼가실 때에는 반드시 출처를 명시해 주시고, 사용처를 덧글로 남겨주시면 감사합니다.</p><p>저작권에 관련한 기타 자세한 내용은 <a rel="help" href="/copyright">저작권에 관한 경고</a>를 참고해주세요.</p><p class="dialog__footer"><input type="checkbox" name="license-agree" id="license-agree"><label for="license-agree">내용을 확인 했습니다.</label><br><button class="btn-close" type="button">닫기</button></p></div><div class="dialog__diemed"></div></div><script src="/js/webfontloader.js"></script><script>WebFont.load({
+  custom: {
+    families: ["Spoqa Han Sans", "Hack", "Font Awesome"],
+    urls: ["/fonts/spoqahansans/SpoqaHanSans-kr.css", "/fonts/hack/hack.css", "/fonts/fontawesome/fontawesome.css"]
+  }
+});</script><script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(adsbygoogle = window.adsbygoogle || []).push({
+  google_ad_client: "ca-pub-5055523791773672",
+  enable_page_level_ads: true
+});</script><script src="/js/script.js"></script></body></html>

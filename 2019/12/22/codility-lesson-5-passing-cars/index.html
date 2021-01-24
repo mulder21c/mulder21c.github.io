@@ -55,8 +55,7 @@ ga("create", "UA-55718543-7", "auto");
 ga("send", "pageview");
 </script><meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/rss.xml" title="The Tracks of mulder21c" type="application/rss+xml">
 <link rel="stylesheet" href="/css/prism-xonokai.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><script src="/js/prism.js"></script>
-<script src="/js/prism-line-numbers.min.js"></script></head><body class="post"><header class="header hero hero--has-image"><div class="hero-wrapper"><div class="gnb"><a href="/">The Tracks of mulder21c</a><button class="nav-toggle" type="button" aria-haspopup="true" aria-controls="navigation"><span></span><span></span><span></span>menu</button></div><h1 class="header__title">Codility Lesson 5 — PassingCars</h1><div class="hero__image" style="background-image: url(/upload/2019/codility-passing-cars.png);"></div></div></header><div class="contents--container" role="main"><article class="article"><div class="article__meta"><div class="gravatar"><img src="/images/favicon.png" alt="authored by 멀더끙"></div><time class="article__meta__time" datetime="2019-12-22T13:47:44.000Z"><span aria-label="posted"><span class="fas fa-calendar-day" aria-hidden="true"></span></span>2019-12-22 22:47:44</time><div class="article__meta__category"><span aria-label="category"><span class="fas fa-archive" aria-hidden="true"></span></span><a class="article__meta__category__item" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/">개발노트</a><a class="article__meta__category__item" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/javascript/">JavaScript</a></div></div><div class="article__content"><h2 id="Task-description"><a href="#Task-description" class="headerlink" title="Task description"></a>Task description</h2><ul>
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><script defer src="/js/prism.js"></script></head><body class="post"><header class="header hero hero--has-image"><div class="hero-wrapper"><div class="gnb"><a href="/">The Tracks of mulder21c</a><button class="nav-toggle" type="button" aria-haspopup="true" aria-controls="navigation"><span></span><span></span><span></span>menu</button></div><h1 class="header__title">Codility Lesson 5 — PassingCars</h1><div class="hero__image" style="background-image: url(/upload/2019/codility-passing-cars.png);"></div></div></header><div class="contents--container" role="main"><article class="article"><div class="article__meta"><div class="gravatar"><img src="/images/favicon.png" alt="authored by 멀더끙"></div><time class="article__meta__time" datetime="2019-12-22T13:47:44.000Z"><span aria-label="posted"><span class="fas fa-calendar-day" aria-hidden="true"></span></span>2019-12-22 22:47:44</time><div class="article__meta__category"><span aria-label="category"><span class="fas fa-archive" aria-hidden="true"></span></span><a class="article__meta__category__item" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/">개발노트</a><a class="article__meta__category__item" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/javascript/">JavaScript</a></div></div><div class="article__content"><h2 id="Task-description"><a href="#Task-description" class="headerlink" title="Task description"></a>Task description</h2><ul>
 <li>연이은 차량 배열 A가 주어지고 이 차량(?)들은 값을 0/1을 가짐.</li>
 <li>0은 동쪽으로 이동하는 차량, 1은 서쪽으로 이동하는 차량</li>
 <li>교차해 지나간 차량의 쌍의 수 찾기 (단 쌍을 이루는 첫번째 차량은 0 이어야 함)</li>
@@ -66,7 +65,7 @@ ga("send", "pageview");
 <p>결국 반대 방향으로 가는 차량이 나타났을 때, 동일한 방향으로 가는 차량의 수만큼과 교차하므로 
 각 차량을 순회하면서<br>교차한 수 = 교차한 수 + 같은 방향으로 가는 차량 수<br>를 누산하면 된다.</p>
 <p>단, 1,000,000,000을 넘어서면 -1 반환.</p>
-<h3 id="Solved-Code"><a href="#Solved-Code" class="headerlink" title="Solved Code"></a>Solved Code</h3><pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">solution</span><span class="token punctuation">(</span>A<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<h3 id="Solved-Code"><a href="#Solved-Code" class="headerlink" title="Solved Code"></a>Solved Code</h3><pre class="line-numbers language-javascript" ><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">solution</span><span class="token punctuation">(</span>A<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">const</span> limit <span class="token operator">=</span> <span class="token number">1000000000</span><span class="token punctuation">,</span>
         condition <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
 
@@ -84,7 +83,7 @@ ga("send", "pageview");
 
   <span class="token keyword">return</span> count<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <h2 id="Retrospective"><a href="#Retrospective" class="headerlink" title="Retrospective"></a>Retrospective</h2><ul>
 <li>역시 문제를 이해하는게 문제였다...</li>
 <li>대체 왜 각 car는 0s 나 1s를 가진다고 문제를 내놓은 건지부터가 허들이었다.<br>0초나 1초인데 0초는 동쪽을 향해 가고 1초는 서쪽을 향해 간다는게 대체 무슨 말인지 

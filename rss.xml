@@ -9,8 +9,26 @@
     <atom:link href="/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>멀더끙의 개인 블로그 — 접근성에 관심이 많은 Front-End Developer, 커피 애호가, 사진 찍기 좋아하는 트래블 러버, 아직도 블로그 뭘 쓸지 모르겠는 초보 블로거, 그냥 이것 저것 개인의 생각을 끄적끄적이는 멀더끙의 블러그입니다.</description>
-    <pubDate>Thu, 31 Dec 2020 06:39:47 GMT</pubDate>
+    <pubDate>Sun, 24 Jan 2021 19:17:46 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>pass function as props in vue</title>
+      <link>https://mulder21c.github.io/2021/01/24/pass-function-as-props-in-vue/</link>
+      <guid>https://mulder21c.github.io/2021/01/24/pass-function-as-props-in-vue/</guid>
+      <pubDate>Sun, 24 Jan 2021 02:16:03 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;h2 id=&quot;Event-handling-and-Atomic-Design-System&quot;&gt;&lt;a href=&quot;#Event-handling-and-Atomic-Design-System&quot; class=&quot;headerlink&quot; title=&quot;Event handling
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2021/01/24/pass-function-as-props-in-vue/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>2020년 회고</title>
@@ -962,26 +980,6 @@ corona-19 덕분(?)에 조금은 시기가 늦춰진 듯하다. &lt;/p&gt;
       
       
       <comments>https://mulder21c.github.io/2018/05/30/how-to-make-web-publisher-portfolio-2/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>백종원의 골목식당, 그리고 직업에 대한 전문성</title>
-      <link>https://mulder21c.github.io/2018/05/26/backstreet/</link>
-      <guid>https://mulder21c.github.io/2018/05/26/backstreet/</guid>
-      <pubDate>Sat, 26 May 2018 13:07:33 GMT</pubDate>
-      <description>
-      
-        
-        
-          &lt;p&gt;백종원의 골목식당은 첫 방송부터 지금까지 꾸준히 챙겨보고(?) 있는 프로그램 중 하나인데, 요새 원테이블
-식당이 방송 때마다 핫하게 이슈가 되고 있는듯 하다.&lt;/p&gt;
-&lt;p&gt;뭐... 원테이블 식당에 대한 이야기를 하려는 것은 당연히 아니고, 골목식
-        
-      
-      </description>
-      
-      
-      <comments>https://mulder21c.github.io/2018/05/26/backstreet/#disqus_thread</comments>
     </item>
     
   </channel>
