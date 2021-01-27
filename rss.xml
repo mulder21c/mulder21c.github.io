@@ -9,8 +9,26 @@
     <atom:link href="/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>멀더끙의 개인 블로그 — 접근성에 관심이 많은 Front-End Developer, 커피 애호가, 사진 찍기 좋아하는 트래블 러버, 아직도 블로그 뭘 쓸지 모르겠는 초보 블로거, 그냥 이것 저것 개인의 생각을 끄적끄적이는 멀더끙의 블러그입니다.</description>
-    <pubDate>Sun, 24 Jan 2021 19:17:46 GMT</pubDate>
+    <pubDate>Wed, 27 Jan 2021 16:48:39 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>개발환경 WSL2 + zsh로 갈아타기</title>
+      <link>https://mulder21c.github.io/2021/01/28/setting-up-wsl-2-dev-env-and-zsh-on-windws-10/</link>
+      <guid>https://mulder21c.github.io/2021/01/28/setting-up-wsl-2-dev-env-and-zsh-on-windws-10/</guid>
+      <pubDate>Wed, 27 Jan 2021 15:32:57 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;h2 id=&quot;기존-환경&quot;&gt;&lt;a href=&quot;#기존-환경&quot; class=&quot;headerlink&quot; title=&quot;기존 환경&quot;&gt;&lt;/a&gt;기존 환경&lt;/h2&gt;&lt;p&gt;얼마 전까지만 해도 VS Code의 터미널을 git bash로 (이하 bash) 설정해서 5년 가까이 b
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2021/01/28/setting-up-wsl-2-dev-env-and-zsh-on-windws-10/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>pass function as props in vue</title>
@@ -960,26 +978,6 @@ corona-19 덕분(?)에 조금은 시기가 늦춰진 듯하다. &lt;/p&gt;
       
       
       <comments>https://mulder21c.github.io/2018/06/02/chrome-image-print-low-resolution-issue/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>웹 퍼블리셔의 포트폴리오는 어떻게 만들어야 할까? 두 번째 이야기</title>
-      <link>https://mulder21c.github.io/2018/05/30/how-to-make-web-publisher-portfolio-2/</link>
-      <guid>https://mulder21c.github.io/2018/05/30/how-to-make-web-publisher-portfolio-2/</guid>
-      <pubDate>Wed, 30 May 2018 07:59:24 GMT</pubDate>
-      <description>
-      
-        
-        
-          &lt;p&gt;퇴직 후 백수의 생활을 즐기면서(?) 신입 웹 퍼블리셔를 준비하는 분들을 대상으로 취업에 대한 조언과 상담을 하면서 종종
-포트폴리오까지 검토하는 일이 조금씩 생기고, 얼마전에는 포트폴리오를 봐줄 수 있는지에 대한 요청 메일이 날라오기도 했다.
-(
-        
-      
-      </description>
-      
-      
-      <comments>https://mulder21c.github.io/2018/05/30/how-to-make-web-publisher-portfolio-2/#disqus_thread</comments>
     </item>
     
   </channel>
