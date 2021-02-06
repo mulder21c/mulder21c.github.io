@@ -9,8 +9,28 @@
     <atom:link href="/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>멀더끙의 개인 블로그 — 접근성에 관심이 많은 Front-End Developer, 커피 애호가, 사진 찍기 좋아하는 트래블 러버, 아직도 블로그 뭘 쓸지 모르겠는 초보 블로거, 그냥 이것 저것 개인의 생각을 끄적끄적이는 멀더끙의 블러그입니다.</description>
-    <pubDate>Wed, 27 Jan 2021 16:48:39 GMT</pubDate>
+    <pubDate>Sat, 06 Feb 2021 13:46:10 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>json-server에 사용자 인증 구현하기</title>
+      <link>https://mulder21c.github.io/2021/02/06/implementing-authentication-with-json-server/</link>
+      <guid>https://mulder21c.github.io/2021/02/06/implementing-authentication-with-json-server/</guid>
+      <pubDate>Sat, 06 Feb 2021 05:10:27 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;최근 진행했던 한 기업의 사전 과제에서 JWT 인증 처리를 포함한 Mock API 구현이 범위에 있어 
+시도해 봤던 방법을 기록으로 남겨본다. (JSON server는 사용할 줄 안다는 가정하에서 포스팅한다.)&lt;/p&gt;
+&lt;p&gt;내 경우엔 mock A
+        
+      
+      </description>
+      
+      
+      <comments>https://mulder21c.github.io/2021/02/06/implementing-authentication-with-json-server/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>개발환경 WSL2 + zsh로 갈아타기</title>
@@ -958,26 +978,6 @@ corona-19 덕분(?)에 조금은 시기가 늦춰진 듯하다. &lt;/p&gt;
       
       
       <comments>https://mulder21c.github.io/2018/06/04/how-to-make-accessible-tab-content/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>Chrome 이미지 프린트 화질 문제</title>
-      <link>https://mulder21c.github.io/2018/06/02/chrome-image-print-low-resolution-issue/</link>
-      <guid>https://mulder21c.github.io/2018/06/02/chrome-image-print-low-resolution-issue/</guid>
-      <pubDate>Sat, 02 Jun 2018 13:21:53 GMT</pubDate>
-      <description>
-      
-        
-        
-          &lt;p&gt;이번 퇴직 이후에 이직을 위해 github 블로그에 올려둔 이력서를 업데이트 하면서 웹과 인쇄용을
-동시 지원하기 위한 작업을 진행했었다.&lt;/p&gt;
-&lt;p&gt;첫 페이지를 커버 페이지처럼 사용하기 위해서 여행지에서 찍은 사진을 삽입해 두고 너무 사실적인(
-        
-      
-      </description>
-      
-      
-      <comments>https://mulder21c.github.io/2018/06/02/chrome-image-print-low-resolution-issue/#disqus_thread</comments>
     </item>
     
   </channel>
