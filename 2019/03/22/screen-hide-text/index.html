@@ -8,7 +8,7 @@
 <meta property="og:image" content="https://mulder21c.github.io/upload/2019/reading-glass.jpg">
 <meta property="og:image" content="https://farm1.staticflickr.com/863/41108552022_61413423d5_b.jpg">
 <meta property="article:published_time" content="2019-03-22T14:55:46.000Z">
-<meta property="article:modified_time" content="2020-06-13T10:44:08.678Z">
+<meta property="article:modified_time" content="2021-05-01T12:56:25.494Z">
 <meta property="article:author" content="멀더끙">
 <meta property="article:tag" content="웹 접근성">
 <meta property="article:tag" content="accessibility">
@@ -59,7 +59,7 @@ ga("create", "UA-55718543-7", "auto");
 ga("send", "pageview");
 </script><meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/rss.xml" title="The Tracks of mulder21c" type="application/rss+xml">
 <link rel="stylesheet" href="/css/prism-xonokai.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><script defer src="/js/prism.js"></script></head><body class="post"><header class="header hero hero--has-image"><div class="hero-wrapper"><div class="gnb"><a href="/">The Tracks of mulder21c</a><button class="nav-toggle" type="button" aria-haspopup="true" aria-controls="navigation"><span></span><span></span><span></span>menu</button></div><h1 class="header__title">접근 가능한 숨김 텍스트</h1><div class="hero__image" style="background-image: url(/upload/2019/reading-glass.jpg);"></div></div></header><div class="contents--container" role="main"><article class="article"><div class="article__meta"><div class="gravatar"><img src="/images/favicon.png" alt="authored by 멀더끙"></div><time class="article__meta__time" datetime="2019-03-22T14:55:46.000Z"><span aria-label="posted"><span class="fas fa-calendar-day" aria-hidden="true"></span></span>2019-03-22 23:55:46</time><div class="article__meta__category"><span aria-label="category"><span class="fas fa-archive" aria-hidden="true"></span></span><a class="article__meta__category__item" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/">개발노트</a><a class="article__meta__category__item" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/a11y/">A11Y</a></div></div><div class="article__content"><h2 id="숨김-텍스트"><a href="#숨김-텍스트" class="headerlink" title="숨김 텍스트"></a>숨김 텍스트</h2><p>오래동안 묵어있던 글감을 다시 꺼냈다. 다양한(?) 짓거리를 포스팅하려고 하다 결국은 포기하고
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><script defer src="/js/prism.js"></script></head><body class="post"><header class="header hero hero--has-image"><div class="hero-wrapper"><div class="gnb"><a href="/">The Tracks of mulder21c</a><button class="nav-toggle" type="button" aria-haspopup="true" aria-controls="navigation"><span></span><span></span><span></span>menu</button></div><h1 class="header__title">접근 가능한 숨김 텍스트</h1><div class="hero__image" style="background-image: url(/upload/2019/reading-glass.jpg);"></div></div></header><div class="contents--container" role="main"><article class="article"><div class="article__meta"><div class="gravatar"><img src="/images/favicon.png" alt="authored by 멀더끙"></div><time class="article__meta__time" datetime="2021-05-01T11:50:14.000Z"><span aria-label="posted"><span class="fas fa-calendar-day" aria-hidden="true"></span></span>2021-05-01 20:50:14</time><div class="article__meta__category"><span aria-label="category"><span class="fas fa-archive" aria-hidden="true"></span></span><a class="article__meta__category__item" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/">개발노트</a><a class="article__meta__category__item" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/a11y/">A11Y</a></div></div><div class="article__content"><h2 id="숨김-텍스트"><a href="#숨김-텍스트" class="headerlink" title="숨김 텍스트"></a>숨김 텍스트</h2><p>오래동안 묵어있던 글감을 다시 꺼냈다. 다양한(?) 짓거리를 포스팅하려고 하다 결국은 포기하고
 단순하게 포스팅 하기로... <span aria-hidden="true">= _=a</span><span class="sr-only">긁적긁적<span></p>
 <p>퍼블리싱 작업을 진행하다보면 종종 숨김 텍스트를 사용해야 하는 상황에 맞닥뜨릴 때가 많다.</p>
 <p>IR(Image Replace) 기법을 사용해야 할 때가 그 중 대표적인 한 가지이고, 기획 문서나
@@ -166,7 +166,7 @@ ga("send", "pageview");
 <p>간혹 inline formatting context의 요소 간 공백을 제거 하기 위한 방법으로 부모 요소 혹은
 조상 요소에 <code class="language-css">font-size: 0;</code>를 적용하는 경우를
 쉽게 볼 수 있는데 이러한 경우 역시 VoiceOver에서는 접근이 불가한 상황을 만들어 내는
-좋은(?) 방법이다.</p>
+좋은(?) 방법이다. <sup id="fnref:6"><a href="#fn:6" rel="footnote">6</a></sup></p>
 <p>또한 이 방법은 Google의 웹마스터 가이드라인을 위반하는 것이기 때문에 결국 black hat까지도
 유발하는 원인이 될 수 있다.</p>
 <h3 id="opacity-이용"><a href="#opacity-이용" class="headerlink" title="opacity 이용"></a>opacity 이용</h3><pre class="line-numbers language-css" ><code class="language-css"><span class="token selector"><span class="token class">.hidden</span> </span><span class="token punctuation">{</span>
@@ -186,7 +186,7 @@ VoiceOver는 이를 읽어주지 않는 것으로 확인된다.</p>
 <p>와 같은 방법이다.</p>
 <p>이 방법은 처음 text indenting 방식과 동일한 문제를 가지고 있다.</p>
 <h3 id="Hiding-with-Clip"><a href="#Hiding-with-Clip" class="headerlink" title="Hiding with Clip"></a>Hiding with Clip</h3><p>이쯤 되면 접근 가능한 숨김 방법이라는 것은 불가능에 가까워 보인다.</p>
-<p>하지만 아직 인터넷에 공개되어 있는 한 가지 방법이 더 있는데, H5BP<sup id="fnref:6"><a href="#fn:6" rel="footnote">6</a></sup>에서 채택한 방법으로</p>
+<p>하지만 아직 인터넷에 공개되어 있는 한 가지 방법이 더 있는데, H5BP<sup id="fnref:7"><a href="#fn:7" rel="footnote">7</a></sup>에서 채택한 방법으로</p>
 <pre class="line-numbers language-css" ><code class="language-css"><span class="token selector"><span class="token class">.hidden</span> </span><span class="token punctuation">{</span>
   <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
   <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
@@ -205,14 +205,13 @@ screen out 기법으로 인한 black hat을 피하기 위해 고안된 방법으
 수단(?)으로 남아있는 듯 하다.</p>
 <p>하지만, 이 방법이 어느 제목에 속해있는지 잘 보자... 여기에도 여전히 문제는 남아있다.</p>
 <p>첫 째로는 <var>clip</var>이 deprecate된 속성이라는 점과, 둘 째로는
-<code class="language-css">position: absolute;</code>는 block formatting context로
+<code class="language-css">position: absolute;</code>는 block formatting context(이하 BFC)로
 변경시켜버리기 때문에 발생되는 문제다.</p>
-<p>만일 한 문단 안에서 inline formatting context로 전달되어야 하는 정보에 이 스타일을
-적용하게 되면 block formatting context로 변경되어 분리가 일어나게 된다. <sup id="fnref:7"><a href="#fn:7" rel="footnote">7</a></sup> <br>
-따라서 한 번에 전달되어야 하는 문맥이 끊어지는 일이 발생되어 스크린리더로 읽게 되면 마치
+<p>만일 한 문단 안에서 inline formatting context(이하 IFC)로 전달되어야 하는 정보에 이 스타일을
+적용하게 되면 BFC로 변경되어 분리가 일어나게 된다. <sup id="fnref:8"><a href="#fn:8" rel="footnote">8</a></sup><br>따라서 한 번에 전달되어야 하는 문맥이 끊어지는 일이 발생되어 스크린리더로 읽게 되면 마치
 <var>div</var> 요소로 묶어놓은 것 마냥 끊어읽게 되는 일이 발생된다.</p>
-<h2 id="접근-가능한-숨김-방법"><a href="#접근-가능한-숨김-방법" class="headerlink" title="접근 가능한 숨김 방법"></a>접근 가능한 숨김 방법</h2><p>결국 문맥까지 고려해본다면 H5BP 방식에서 <var>position</var>을 들어내야하고, clip의
-최신 표준을 사용해야 한다.</p>
+<h2 id="접근-가능한-숨김-방법"><a href="#접근-가능한-숨김-방법" class="headerlink" title="접근 가능한 숨김 방법"></a>접근 가능한 숨김 방법</h2><p>결국 문맥까지 고려해본다면 H5BP 방식에서 <code class="language-css">position: absolute;</code>을 
+들어내야하고, clip의 최신 표준을 사용해야 한다.</p>
 <pre class="line-numbers language-css" ><code class="language-css"><span class="token selector"><span class="token class">.hidden</span> </span><span class="token punctuation">{</span>
   <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
   <span class="token property">border</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
@@ -221,36 +220,44 @@ screen out 기법으로 인한 black hat을 피하기 위해 고안된 방법으
   <span class="token property">clip</span><span class="token punctuation">:</span> <span class="token function">rect</span><span class="token punctuation">(</span><span class="token number">1</span>px, <span class="token number">1</span>px, <span class="token number">1</span>px, <span class="token number">1</span>px<span class="token punctuation">)</span><span class="token punctuation">;</span> // for legacy browsers
   <span class="token property">clip-path</span><span class="token punctuation">:</span> <span class="token function">inset</span><span class="token punctuation">(</span><span class="token number">50%</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
-<p>다만 이렇게 할 경우, phrasing contents는 inline formatting context를 가지기 때문에
-<var>width</var>, <var>height</var>를 가질 수 없고 더구나 이를 가진다 하더라도 1px
-만큼의 자리를 차지하게 되는 문제가 또 발생된다.</p>
-<p>때문에, block/inline formatting context에 따라서 분리하여 적용하는 것이 필요해진다.</p>
-<p>즉, block formatting context라면</p>
-<pre class="line-numbers language-css" ><code class="language-css"><span class="token selector"><span class="token class">.hidden</span> </span><span class="token punctuation">{</span>
-  <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
-  <span class="token property">border</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
-  <span class="token property">margin</span><span class="token punctuation">:</span> -<span class="token number">1</span>px<span class="token punctuation">;</span>
-  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">1</span>px<span class="token punctuation">;</span>
-  <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">1</span>px<span class="token punctuation">;</span>
-  <span class="token property">clip</span><span class="token punctuation">:</span> <span class="token function">rect</span><span class="token punctuation">(</span><span class="token number">1</span>px, <span class="token number">1</span>px, <span class="token number">1</span>px, <span class="token number">1</span>px<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token property">clip-path</span><span class="token punctuation">:</span> <span class="token function">inset</span><span class="token punctuation">(</span><span class="token number">50%</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<p>혹은</p>
-<pre class="line-numbers language-css" ><code class="language-css"><span class="token selector"><span class="token class">.hidden</span> </span><span class="token punctuation">{</span>
-  <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
-  <span class="token property">border</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
-  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
-  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">1</span>px<span class="token punctuation">;</span>
-  <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">1</span>px<span class="token punctuation">;</span>
-  <span class="token property">clip</span><span class="token punctuation">:</span> <span class="token function">rect</span><span class="token punctuation">(</span><span class="token number">1</span>px, <span class="token number">1</span>px, <span class="token number">1</span>px, <span class="token number">1</span>px<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token property">clip-path</span><span class="token punctuation">:</span> <span class="token function">inset</span><span class="token punctuation">(</span><span class="token number">50%</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<p>정도로 주어볼 수 있고, inline formatting context라면</p>
+<p>그런데 이렇게 할 경우, phrasing contents는 IFC를 가지기 때문에 <var>width</var>, 
+<var>height</var>를 가질 수 없고 더구나 이를 가진다 하더라도 1px 만큼의 자리를 차지하게 
+되는 문제가 또 발생된다.</p>
+<p>우선, IFC에서의 문제는 <code class="language-css">display: inline-block</code>을 
+통해서 해결 할 수 있을 것이다.</p>
 <pre class="line-numbers language-css" ><code class="language-css"><span class="token selector"><span class="token class">.hidden</span> </span><span class="token punctuation">{</span>
   <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
   <span class="token property">display</span><span class="token punctuation">:</span> inline-block<span class="token punctuation">;</span>
   <span class="token property">border</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
-  <span class="token property">margin</span><span class="token punctuation">:</span> -<span class="token number">1</span>px<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">1</span>px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">1</span>px<span class="token punctuation">;</span>
+  <span class="token property">clip</span><span class="token punctuation">:</span> <span class="token function">rect</span><span class="token punctuation">(</span><span class="token number">1</span>px, <span class="token number">1</span>px, <span class="token number">1</span>px, <span class="token number">1</span>px<span class="token punctuation">)</span><span class="token punctuation">;</span> // for legacy browsers
+  <span class="token property">clip-path</span><span class="token punctuation">:</span> <span class="token function">inset</span><span class="token punctuation">(</span><span class="token number">50%</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>1px 만큼의 자리를 차지하는 것을 해결 하는 방법은 position 값을 
+<var>relative/absolute</var>로 주고 <var>top/left/z-index</var>를 조작 하는 방법과 
+<var>margin</var> 값을 음수로 조작하는 방법이 있겠으나, 음수 margin은 VoiceOver에서 
+읽기 순서에 변형이 일어나는 이슈가 보고 되었다고 하니 margin을 이용한 방법은 제외 되어야 한다. <sup id="fnref:9"><a href="#fn:9" rel="footnote">9</a></sup></p>
+<p>그렇다면 남은 방법은 positioning을 통한 <var>top/left/z-index</var>를 조작하는 방법인데, 
+<var>top/left</var>는 결국 주변 엘리먼트에 영향을 주게 되는 문제가 다시 발생할 소지가 남게 된다.<br>따라서 나는 아무도 선택하지 않은 z-index를 사용하기로 했다.</p>
+<p>즉, BFC라면</p>
+<pre class="line-numbers language-css" ><code class="language-css"><span class="token selector"><span class="token class">.hidden</span> </span><span class="token punctuation">{</span>
+  <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span> // relative를 사용해도 무관할 듯 하다
+  <span class="token property">z-index</span><span class="token punctuation">:</span> -<span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">1</span>px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">1</span>px<span class="token punctuation">;</span>
+  <span class="token property">clip</span><span class="token punctuation">:</span> <span class="token function">rect</span><span class="token punctuation">(</span><span class="token number">1</span>px, <span class="token number">1</span>px, <span class="token number">1</span>px, <span class="token number">1</span>px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">clip-path</span><span class="token punctuation">:</span> <span class="token function">inset</span><span class="token punctuation">(</span><span class="token number">50%</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>정도로 주어볼 수 있고, IFC라면</p>
+<pre class="line-numbers language-css" ><code class="language-css"><span class="token selector"><span class="token class">.hidden</span> </span><span class="token punctuation">{</span>
+  <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> inline-block<span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+  <span class="token property">z-index</span><span class="token punctuation">:</span> -<span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
   <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">1</span>px<span class="token punctuation">;</span>
   <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">1</span>px<span class="token punctuation">;</span>
   <span class="token property">clip</span><span class="token punctuation">:</span> <span class="token function">rect</span><span class="token punctuation">(</span><span class="token number">1</span>px, <span class="token number">1</span>px, <span class="token number">1</span>px, <span class="token number">1</span>px<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -270,10 +277,10 @@ screen out 기법으로 인한 black hat을 피하기 위해 고안된 방법으
 사이트의 품질을 떨어뜨릴 수도 있다. 반대로 내가 고민하는만큼 누군가가 배제되지 않고,
 사이트의 품질 역시 올라갈 수 있다.</p>
 <div id="footnotes"><hr><div id="footnotelist"><ol style="list-style:none; padding-left: 0;"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">1.</span><span style="display: inline-block; vertical-align: top;">Korean Web Content Accessibility Guidelines(한국형 웹 접근성 지침)</span><a href="#fnref:1" rev="footnote"> ↩</a></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">2.</span><span style="display: inline-block; vertical-align: top;"><a href="http://maileohye.com/html-text-indent-not-messing-up-your-rankings/" target="_blank" rel="noopener">HTML “text-indent: -9999px” and holding the line</a></span><a href="#fnref:2" rev="footnote"> ↩</a></li><li id="fn:3"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">3.</span><span style="display: inline-block; vertical-align: top;"><a href="https://support.google.com/webmasters/answer/66353" target="_blank" rel="noopener">숨겨진 텍스트 및 링크</a></span><a href="#fnref:3" rev="footnote"> ↩</a></li><li id="fn:4"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">4.</span><span style="display: inline-block; vertical-align: top;">간혹 모바일 디바이스에서는 초점 이동이 불가한 것으로 오인하는 경우가 있는데, iOS의
-경우는 오른쪽/왼쪽 스와이프로 초점 이동이 가능하다.</span><a href="#fnref:4" rev="footnote"> ↩</a></li><li id="fn:5"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">5.</span><span style="display: inline-block; vertical-align: top;"><a href="https://webaim.org/projects/screenreadersurvey7/#usage" target="_blank" rel="noopener">Screen Reader Usage Dec. 2017</a></span><a href="#fnref:5" rev="footnote"> ↩</a></li><li id="fn:6"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">6.</span><span style="display: inline-block; vertical-align: top;">HTML5 BoilerPlate</span><a href="#fnref:6" rev="footnote"> ↩</a></li><li id="fn:7"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">7.</span><span style="display: inline-block; vertical-align: top;">이 게시글을 예로 들자면, 첫 문장에 있는 이모티콘 옆에 실제로는 &quot;긁적긁적&quot;이라는
+경우는 오른쪽/왼쪽 스와이프로 초점 이동이 가능하다.</span><a href="#fnref:4" rev="footnote"> ↩</a></li><li id="fn:5"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">5.</span><span style="display: inline-block; vertical-align: top;"><a href="https://webaim.org/projects/screenreadersurvey7/#usage" target="_blank" rel="noopener">Screen Reader Usage Dec. 2017</a></span><a href="#fnref:5" rev="footnote"> ↩</a></li><li id="fn:6"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">6.</span><span style="display: inline-block; vertical-align: top;"><a href="https://terrillthompson.com/tests/hiddencontent.html" target="_blank" rel="noopener">Screen Reader hidden content test result</a></span><a href="#fnref:6" rev="footnote"> ↩</a></li><li id="fn:7"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">7.</span><span style="display: inline-block; vertical-align: top;">HTML5 BoilerPlate</span><a href="#fnref:7" rev="footnote"> ↩</a></li><li id="fn:8"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">8.</span><span style="display: inline-block; vertical-align: top;">이 게시글을 예로 들자면, 첫 문장에 있는 이모티콘 옆에 실제로는 &quot;긁적긁적&quot;이라는
 텍스트가 숨겨져 있는데 position: absolute가 적용되어 있을 경우라면 긁적긁적이 앞선 문단과
 분리되므로 스크린리더로 읽을 경우 탐색을 2번 해야만 해당 텍스트에 접근이 가능해진다.
-스크린리더를 열고 방향키를 내려가며 읽어보면 무슨 말인지 확실히 알 수 있다.</span><a href="#fnref:7" rev="footnote"> ↩</a></li></ol></div></div></div><div class="article__tags"><div class="article__tags__title">tags:</div><a class="article__tag__item" href="/tags/%EC%9B%B9-%EC%A0%91%EA%B7%BC%EC%84%B1/"><span class="fas fa-tag" aria-hidden="true"></span>웹 접근성</a><a class="article__tag__item" href="/tags/accessibility/"><span class="fas fa-tag" aria-hidden="true"></span>accessibility</a><a class="article__tag__item" href="/tags/hidden/"><span class="fas fa-tag" aria-hidden="true"></span>hidden</a><a class="article__tag__item" href="/tags/sr-only/"><span class="fas fa-tag" aria-hidden="true"></span>sr-only</a><a class="article__tag__item" href="/tags/visuallyhidden/"><span class="fas fa-tag" aria-hidden="true"></span>visuallyHidden</a></div></article><div class="comment__container" role="region" aria-label="comments"><div id="lv-container" data-id="city" data-uid="MTAyMC8zMDYzOC83MTkz"></div></div></div><footer class="footer"><p class="copyright">&copy; 2012 ~ 2019 mulder21c <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" target="_blank" rel="license">(CCL-BY-NC-ND)</a></p><p class="credit">Powered by  <a href="https://hexo.io/" rel="external noreferrer" target="_blank">Hexo</a>. Theme by  <a href="https://github.com/mulder21c" rel="external noreferrer" target="_blank">mulder21c</a></p></footer><div class="nav" aria-hidden="true"><nav class="nav--container" id="navigation" aria-labelledby="nav__heading"><h2 class="nav__heading" id="nav__heading">Navigation</h2><hr class="nav__seperator"><ul class="menu-list">
+스크린리더를 열고 방향키를 내려가며 읽어보면 무슨 말인지 확실히 알 수 있다.</span><a href="#fnref:8" rev="footnote"> ↩</a></li><li id="fn:9"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">9.</span><span style="display: inline-block; vertical-align: top;"><a href="https://github.com/h5bp/main.css/issues/12" target="_blank" rel="noopener">macOS - VoiceOver / Chrome announcing visually hidden text out of order</a> in H5BP github</span><a href="#fnref:9" rev="footnote"> ↩</a></li></ol></div></div></div><div class="article__tags"><div class="article__tags__title">tags:</div><a class="article__tag__item" href="/tags/%EC%9B%B9-%EC%A0%91%EA%B7%BC%EC%84%B1/"><span class="fas fa-tag" aria-hidden="true"></span>웹 접근성</a><a class="article__tag__item" href="/tags/accessibility/"><span class="fas fa-tag" aria-hidden="true"></span>accessibility</a><a class="article__tag__item" href="/tags/hidden/"><span class="fas fa-tag" aria-hidden="true"></span>hidden</a><a class="article__tag__item" href="/tags/sr-only/"><span class="fas fa-tag" aria-hidden="true"></span>sr-only</a><a class="article__tag__item" href="/tags/visuallyhidden/"><span class="fas fa-tag" aria-hidden="true"></span>visuallyHidden</a></div></article><div class="comment__container" role="region" aria-label="comments"><div id="lv-container" data-id="city" data-uid="MTAyMC8zMDYzOC83MTkz"></div></div></div><footer class="footer"><p class="copyright">&copy; 2012 ~ 2019 mulder21c <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" target="_blank" rel="license">(CCL-BY-NC-ND)</a></p><p class="credit">Powered by  <a href="https://hexo.io/" rel="external noreferrer" target="_blank">Hexo</a>. Theme by  <a href="https://github.com/mulder21c" rel="external noreferrer" target="_blank">mulder21c</a></p></footer><div class="nav" aria-hidden="true"><nav class="nav--container" id="navigation" aria-labelledby="nav__heading"><h2 class="nav__heading" id="nav__heading">Navigation</h2><hr class="nav__seperator"><ul class="menu-list">
     <li class="menu-item" >
       <a href="/" >
         home
