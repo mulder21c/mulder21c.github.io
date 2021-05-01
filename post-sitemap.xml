@@ -9,7 +9,7 @@
 
     <url>
         <loc>https://mulder21c.github.io/2017/07/26/establishment-of-structural-language/</loc>
-        <lastmod>2021-05-01T12:59:36.446Z</lastmod>
+        <lastmod>2021-05-01T13:06:53.134Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -17,7 +17,7 @@
 
     <url>
         <loc>https://mulder21c.github.io/2019/03/22/screen-hide-text/</loc>
-        <lastmod>2021-05-01T12:56:25.494Z</lastmod>
+        <lastmod>2021-05-01T13:06:13.639Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -160,7 +160,7 @@
     </url>
 
     <url>
-        <loc>https://mulder21c.github.io/2020/03/15/fragmentary-thought-for-consideration/</loc>
+        <loc>https://mulder21c.github.io/2020/03/31/do-not-use-kakao-talk-for-livelihood/</loc>
         <lastmod>2020-06-13T10:44:08.686Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -168,7 +168,7 @@
     </url>
 
     <url>
-        <loc>https://mulder21c.github.io/2020/03/31/do-not-use-kakao-talk-for-livelihood/</loc>
+        <loc>https://mulder21c.github.io/2020/03/15/fragmentary-thought-for-consideration/</loc>
         <lastmod>2020-06-13T10:44:08.686Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -192,7 +192,7 @@
     </url>
 
     <url>
-        <loc>https://mulder21c.github.io/2019/12/17/2019-retrospective/</loc>
+        <loc>https://mulder21c.github.io/2020/01/13/self-management-tools-i-introduced-for-2020/</loc>
         <lastmod>2020-06-13T10:44:08.684Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -208,7 +208,7 @@
     </url>
 
     <url>
-        <loc>https://mulder21c.github.io/2020/01/13/self-management-tools-i-introduced-for-2020/</loc>
+        <loc>https://mulder21c.github.io/2019/12/17/2019-retrospective/</loc>
         <lastmod>2020-06-13T10:44:08.684Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -216,7 +216,7 @@
     </url>
 
     <url>
-        <loc>https://mulder21c.github.io/2019/12/15/codility-lesson-4-missing-integer/</loc>
+        <loc>https://mulder21c.github.io/2019/10/05/codility-lesson-4-frog-river-one/</loc>
         <lastmod>2020-06-13T10:44:08.683Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -232,7 +232,7 @@
     </url>
 
     <url>
-        <loc>https://mulder21c.github.io/2019/10/05/codility-lesson-4-frog-river-one/</loc>
+        <loc>https://mulder21c.github.io/2019/12/15/codility-lesson-4-missing-integer/</loc>
         <lastmod>2020-06-13T10:44:08.683Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -248,7 +248,7 @@
     </url>
 
     <url>
-        <loc>https://mulder21c.github.io/2019/09/30/codility-lesson-4-perm-check/</loc>
+        <loc>https://mulder21c.github.io/2019/09/29/reviewing-illusion-is-not-freedom-seminar/</loc>
         <lastmod>2020-06-13T10:44:08.682Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -264,7 +264,7 @@
     </url>
 
     <url>
-        <loc>https://mulder21c.github.io/2019/09/29/reviewing-illusion-is-not-freedom-seminar/</loc>
+        <loc>https://mulder21c.github.io/2019/09/30/codility-lesson-4-perm-check/</loc>
         <lastmod>2020-06-13T10:44:08.682Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -280,14 +280,6 @@
     </url>
 
     <url>
-        <loc>https://mulder21c.github.io/2019/09/14/beginning-to-practice-algorithms/</loc>
-        <lastmod>2020-06-13T10:44:08.681Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://mulder21c.github.io/2019/09/16/codility-lesson-3-frog-jump/</loc>
         <lastmod>2020-06-13T10:44:08.681Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -296,8 +288,8 @@
     </url>
 
     <url>
-        <loc>https://mulder21c.github.io/2019/08/09/3-weeks-after-bought-an-ipad/</loc>
-        <lastmod>2020-06-13T10:44:08.680Z</lastmod>
+        <loc>https://mulder21c.github.io/2019/09/14/beginning-to-practice-algorithms/</loc>
+        <lastmod>2020-06-13T10:44:08.681Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -305,6 +297,14 @@
 
     <url>
         <loc>https://mulder21c.github.io/2019/07/17/how-to-prepare-the-seminar/</loc>
+        <lastmod>2020-06-13T10:44:08.680Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://mulder21c.github.io/2019/08/09/3-weeks-after-bought-an-ipad/</loc>
         <lastmod>2020-06-13T10:44:08.680Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -328,14 +328,6 @@
     </url>
 
     <url>
-        <loc>https://mulder21c.github.io/2019/04/25/top-5-questions-asked-in-accessibility-trainings/</loc>
-        <lastmod>2020-06-13T10:44:08.679Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://mulder21c.github.io/2019/06/25/html-is-the-web/</loc>
         <lastmod>2020-06-13T10:44:08.679Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -352,6 +344,14 @@
     </url>
 
     <url>
+        <loc>https://mulder21c.github.io/2019/04/25/top-5-questions-asked-in-accessibility-trainings/</loc>
+        <lastmod>2020-06-13T10:44:08.679Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://mulder21c.github.io/2019/02/07/resolve-gitbook-watch-issue/</loc>
         <lastmod>2020-06-13T10:44:08.678Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -360,23 +360,7 @@
     </url>
 
     <url>
-        <loc>https://mulder21c.github.io/2019/01/01/start-making-new-theme/</loc>
-        <lastmod>2020-06-13T10:44:08.677Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://mulder21c.github.io/2018/12/02/misunderstanding-about-learning/</loc>
-        <lastmod>2020-06-13T10:44:08.677Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://mulder21c.github.io/2019/01/30/what-is-cross-browsing/</loc>
         <lastmod>2020-06-13T10:44:08.677Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -392,15 +376,23 @@
     </url>
 
     <url>
-        <loc>https://mulder21c.github.io/2018/06/11/how-to-adjust-offset-anchor/</loc>
-        <lastmod>2020-06-13T10:44:08.676Z</lastmod>
+        <loc>https://mulder21c.github.io/2019/01/01/start-making-new-theme/</loc>
+        <lastmod>2020-06-13T10:44:08.677Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://mulder21c.github.io/2018/09/05/be-polite-when-you-ask-to-a-question-to-someone-you-dont-know/</loc>
+        <loc>https://mulder21c.github.io/2019/01/30/what-is-cross-browsing/</loc>
+        <lastmod>2020-06-13T10:44:08.677Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://mulder21c.github.io/2018/06/11/how-to-adjust-offset-anchor/</loc>
         <lastmod>2020-06-13T10:44:08.676Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -416,8 +408,8 @@
     </url>
 
     <url>
-        <loc>https://mulder21c.github.io/2018/06/02/chrome-image-print-low-resolution-issue/</loc>
-        <lastmod>2020-06-13T10:44:08.675Z</lastmod>
+        <loc>https://mulder21c.github.io/2018/09/05/be-polite-when-you-ask-to-a-question-to-someone-you-dont-know/</loc>
+        <lastmod>2020-06-13T10:44:08.676Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -432,8 +424,24 @@
     </url>
 
     <url>
+        <loc>https://mulder21c.github.io/2018/06/02/chrome-image-print-low-resolution-issue/</loc>
+        <lastmod>2020-06-13T10:44:08.675Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://mulder21c.github.io/2018/06/04/how-to-make-accessible-tab-content/</loc>
         <lastmod>2020-06-13T10:44:08.675Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://mulder21c.github.io/2018/05/26/backstreet/</loc>
+        <lastmod>2020-06-13T10:44:08.674Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -456,15 +464,7 @@
     </url>
 
     <url>
-        <loc>https://mulder21c.github.io/2018/05/26/backstreet/</loc>
-        <lastmod>2020-06-13T10:44:08.674Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://mulder21c.github.io/2018/01/13/europ-travel-15/</loc>
+        <loc>https://mulder21c.github.io/2018/03/09/i-resigned/</loc>
         <lastmod>2020-06-13T10:44:08.673Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -472,7 +472,7 @@
     </url>
 
     <url>
-        <loc>https://mulder21c.github.io/2018/03/09/i-resigned/</loc>
+        <loc>https://mulder21c.github.io/2018/01/13/europ-travel-15/</loc>
         <lastmod>2020-06-13T10:44:08.673Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -496,7 +496,7 @@
     </url>
 
     <url>
-        <loc>https://mulder21c.github.io/2018/01/06/europ-travel-13/</loc>
+        <loc>https://mulder21c.github.io/2017/12/28/europ-travel-12/</loc>
         <lastmod>2020-06-13T10:44:08.672Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -504,7 +504,7 @@
     </url>
 
     <url>
-        <loc>https://mulder21c.github.io/2017/12/28/europ-travel-12/</loc>
+        <loc>https://mulder21c.github.io/2018/01/06/europ-travel-13/</loc>
         <lastmod>2020-06-13T10:44:08.672Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -544,14 +544,6 @@
     </url>
 
     <url>
-        <loc>https://mulder21c.github.io/2017/12/10/europ-travel-10/</loc>
-        <lastmod>2020-06-13T10:44:08.670Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://mulder21c.github.io/2017/12/09/europ-travel-9/</loc>
         <lastmod>2020-06-13T10:44:08.670Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -561,6 +553,14 @@
 
     <url>
         <loc>https://mulder21c.github.io/2017/12/09/europ-travel-8/</loc>
+        <lastmod>2020-06-13T10:44:08.670Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://mulder21c.github.io/2017/12/10/europ-travel-10/</loc>
         <lastmod>2020-06-13T10:44:08.670Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -584,7 +584,7 @@
     </url>
 
     <url>
-        <loc>https://mulder21c.github.io/2017/11/03/europ-travel-4/</loc>
+        <loc>https://mulder21c.github.io/2017/11/04/europ-travel-5/</loc>
         <lastmod>2020-06-13T10:44:08.668Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -600,6 +600,14 @@
     </url>
 
     <url>
+        <loc>https://mulder21c.github.io/2017/11/03/europ-travel-4/</loc>
+        <lastmod>2020-06-13T10:44:08.668Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://mulder21c.github.io/2017/11/05/europ-travel-7/</loc>
         <lastmod>2020-06-13T10:44:08.668Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -608,8 +616,8 @@
     </url>
 
     <url>
-        <loc>https://mulder21c.github.io/2017/11/04/europ-travel-5/</loc>
-        <lastmod>2020-06-13T10:44:08.668Z</lastmod>
+        <loc>https://mulder21c.github.io/2017/11/01/europ-travel-1/</loc>
+        <lastmod>2020-06-13T10:44:08.667Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -625,14 +633,6 @@
 
     <url>
         <loc>https://mulder21c.github.io/2017/11/02/europ-travel-3/</loc>
-        <lastmod>2020-06-13T10:44:08.667Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://mulder21c.github.io/2017/11/01/europ-travel-1/</loc>
         <lastmod>2020-06-13T10:44:08.667Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -656,14 +656,6 @@
     </url>
 
     <url>
-        <loc>https://mulder21c.github.io/2017/09/02/is-the-web-planner-a-screen-designer/</loc>
-        <lastmod>2020-06-13T10:44:08.665Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://mulder21c.github.io/2017/09/04/about-sexual-minority/</loc>
         <lastmod>2020-06-13T10:44:08.665Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -672,8 +664,8 @@
     </url>
 
     <url>
-        <loc>https://mulder21c.github.io/2017/07/30/establishment-of-visual-language/</loc>
-        <lastmod>2020-06-13T10:44:08.664Z</lastmod>
+        <loc>https://mulder21c.github.io/2017/09/02/is-the-web-planner-a-screen-designer/</loc>
+        <lastmod>2020-06-13T10:44:08.665Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -697,6 +689,14 @@
 
     <url>
         <loc>https://mulder21c.github.io/2017/08/18/designer-is-not-painter/</loc>
+        <lastmod>2020-06-13T10:44:08.664Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://mulder21c.github.io/2017/07/30/establishment-of-visual-language/</loc>
         <lastmod>2020-06-13T10:44:08.664Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -744,7 +744,7 @@
     </url>
 
     <url>
-        <loc>https://mulder21c.github.io/2017/01/10/lets-work-on-why-please/</loc>
+        <loc>https://mulder21c.github.io/2016/10/14/prepare-to-translate-w3c-html5-specification/</loc>
         <lastmod>2020-06-13T10:44:08.661Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -752,7 +752,7 @@
     </url>
 
     <url>
-        <loc>https://mulder21c.github.io/2016/10/14/prepare-to-translate-w3c-html5-specification/</loc>
+        <loc>https://mulder21c.github.io/2017/01/10/lets-work-on-why-please/</loc>
         <lastmod>2020-06-13T10:44:08.661Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -768,6 +768,14 @@
     </url>
 
     <url>
+        <loc>https://mulder21c.github.io/2015/07/27/is-web-publisher-not-a-front-end-developer/</loc>
+        <lastmod>2020-06-13T10:44:08.660Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://mulder21c.github.io/2016/02/27/ytns-strange-video/</loc>
         <lastmod>2020-06-13T10:44:08.660Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -776,8 +784,8 @@
     </url>
 
     <url>
-        <loc>https://mulder21c.github.io/2015/07/27/is-web-publisher-not-a-front-end-developer/</loc>
-        <lastmod>2020-06-13T10:44:08.660Z</lastmod>
+        <loc>https://mulder21c.github.io/2015/01/19/how-to-make-potfolio-of-web-publisher/</loc>
+        <lastmod>2020-06-13T10:44:08.659Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -793,14 +801,6 @@
 
     <url>
         <loc>https://mulder21c.github.io/2015/06/08/providing-x-ua-compatible-as-http-header/</loc>
-        <lastmod>2020-06-13T10:44:08.659Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://mulder21c.github.io/2015/01/19/how-to-make-potfolio-of-web-publisher/</loc>
         <lastmod>2020-06-13T10:44:08.659Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -840,14 +840,6 @@
     </url>
 
     <url>
-        <loc>https://mulder21c.github.io/2014/11/03/automatically-enter-cell-phone-number-hyphen/</loc>
-        <lastmod>2020-06-13T10:44:08.657Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://mulder21c.github.io/2014/10/29/can-christians-not-drink-alcohol/</loc>
         <lastmod>2020-06-13T10:44:08.657Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -856,8 +848,8 @@
     </url>
 
     <url>
-        <loc>https://mulder21c.github.io/2014/10/14/troubleshooting-windows8-cpu-100-in-virtualbox/</loc>
-        <lastmod>2020-06-13T10:44:08.656Z</lastmod>
+        <loc>https://mulder21c.github.io/2014/11/03/automatically-enter-cell-phone-number-hyphen/</loc>
+        <lastmod>2020-06-13T10:44:08.657Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -865,6 +857,14 @@
 
     <url>
         <loc>https://mulder21c.github.io/2014/10/15/build-cross-browser-testing-environment-for-android/</loc>
+        <lastmod>2020-06-13T10:44:08.656Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://mulder21c.github.io/2014/10/14/troubleshooting-windows8-cpu-100-in-virtualbox/</loc>
         <lastmod>2020-06-13T10:44:08.656Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -888,14 +888,6 @@
     </url>
 
     <url>
-        <loc>https://mulder21c.github.io/2013/06/19/what-is-the-process-of-web-publisher-work/</loc>
-        <lastmod>2020-06-13T10:44:08.655Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://mulder21c.github.io/2013/10/18/who-has-lowered-the-barrier-to-entry-for-web-publisher/</loc>
         <lastmod>2020-06-13T10:44:08.655Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -904,8 +896,8 @@
     </url>
 
     <url>
-        <loc>https://mulder21c.github.io/2012/09/19/should-does-web-publisher-implement-javascript/</loc>
-        <lastmod>2020-06-13T10:44:08.654Z</lastmod>
+        <loc>https://mulder21c.github.io/2013/06/19/what-is-the-process-of-web-publisher-work/</loc>
+        <lastmod>2020-06-13T10:44:08.655Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -913,6 +905,14 @@
 
     <url>
         <loc>https://mulder21c.github.io/2012/02/21/is-it-appropriate-to-use-the-site-logo-as-h1-in-terms-of-semantics/</loc>
+        <lastmod>2020-06-13T10:44:08.654Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://mulder21c.github.io/2012/09/19/should-does-web-publisher-implement-javascript/</loc>
         <lastmod>2020-06-13T10:44:08.654Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
