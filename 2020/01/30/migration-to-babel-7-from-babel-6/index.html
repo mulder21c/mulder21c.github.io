@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>babel 7 업데이트 후 node_modules 패키지가 변환되지 않는다면? - The Tracks of mulder21c</title><!-- Links--><link rel="canonical" href="https://mulder21c.github.io/2020/01/30/migration-to-babel-7-from-babel-6"><!-- preload--><link rel="preload" as="image" href="/images/favicon.png" crossorigin="anonymous"><link rel="preload" as="image" href="/upload/2020/es-notebook.jpg" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/iropke/IropkeBatangM.woff" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/spoqahansans/SpoqaHanSansRegular.woff2" crossorigin="anonymous"><!-- Icons--><link rel="shortcut icon" sizes="196x196" href="/images/favicon.png"><!-- open graph--><meta name="description" content="babel 공식 문서의 Upgrade to Babel 7을 참고서 삼아 @babel로 업데이트를 진행하고,  core-js를 설치하고 npm run serve 힘차게 두들기고 IE 10을 열었는데... 열었는데...">
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>babel 7 업데이트 후 node_modules 패키지가 변환되지 않는다면? - The Tracks of mulder21c</title><!-- Links--><link rel="canonical" href="https://mulder21c.io/migration-to-babel-7-from-babel-6"><!-- preload--><link rel="preload" as="image" href="/images/favicon.png" crossorigin="anonymous"><link rel="preload" as="image" href="/upload/2020/es-notebook.jpg" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/iropke/IropkeBatangM.woff" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/spoqahansans/SpoqaHanSansRegular.woff2" crossorigin="anonymous"><!-- Icons--><link rel="shortcut icon" sizes="196x196" href="/images/favicon.png"><!-- open graph--><meta name="description" content="babel 공식 문서의 Upgrade to Babel 7을 참고서 삼아 @babel로 업데이트를 진행하고,  core-js를 설치하고 npm run serve 힘차게 두들기고 IE 10을 열었는데... 열었는데...">
 <meta property="og:type" content="article">
 <meta property="og:title" content="babel 7 업데이트 후 node_modules 패키지가 변환되지 않는다면?">
 <meta property="og:url" content="https://mulder21c.github.io/2020/01/30/migration-to-babel-7-from-babel-6/">
@@ -56,21 +56,21 @@ ga("create", "UA-55718543-7", "auto");
 ga("send", "pageview");
 </script><meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/rss.xml" title="The Tracks of mulder21c" type="application/rss+xml">
 <link rel="stylesheet" href="/css/prism-xonokai.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><script defer src="/js/prism.js"></script></head><body class="post"><header class="header hero hero--has-image"><div class="hero-wrapper"><div class="gnb"><a href="/">The Tracks of mulder21c</a><button class="nav-toggle" type="button" aria-haspopup="true" aria-controls="navigation"><span></span><span></span><span></span>menu</button></div><h1 class="header__title">babel 7 업데이트 후 node_modules 패키지가 변환되지 않는다면?</h1><div class="hero__image" style="background-image: url(/upload/2020/es-notebook.jpg);background-position: center center;"></div></div></header><div class="contents--container" role="main"><article class="article"><div class="article__meta"><div class="gravatar"><img src="/images/favicon.png" alt="authored by 멀더끙"></div><time class="article__meta__time" datetime="2020-01-29T15:05:48.000Z"><span aria-label="posted"><span class="fas fa-calendar-day" aria-hidden="true"></span></span>2020-01-30 00:05:48</time><div class="article__meta__category"><span aria-label="category"><span class="fas fa-archive" aria-hidden="true"></span></span><a class="article__meta__category__item" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/">개발노트</a><a class="article__meta__category__item" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/front-end/">Front-End</a></div></div><div class="article__content"><p>기존에 개발 된 프로덕트가 빌드하는데만 한 시간을 훌쩍 넘어가는 상황이 지속적으로 발생되어 
-빌드 속도 개선을 위한 일환으로 기존의 webpack 3.x를 4.x로 마이그레이션 작업을 진행하기로 
-했다. 헌데... webpack 4로 올리자니 기존에 사용되고 있던 패키지들의 버전이 문제가 되어 
-온갖 것들을 동시에 버전업 해야 하는 상황이 빚어져서 이렇게 진행하기에는 리스크가 클 것으로 
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><script defer src="/js/prism.js"></script></head><body class="post"><header class="header hero hero--has-image"><div class="hero-wrapper"><div class="gnb"><a href="/">The Tracks of mulder21c</a><button class="nav-toggle" type="button" aria-haspopup="true" aria-controls="navigation"><span></span><span></span><span></span>menu</button></div><h1 class="header__title">babel 7 업데이트 후 node_modules 패키지가 변환되지 않는다면?</h1><div class="hero__image" style="background-image: url(/upload/2020/es-notebook.jpg);background-position: center center;"></div></div></header><div class="contents--container" role="main"><article class="article"><div class="article__meta"><div class="gravatar"><img src="/images/favicon.png" alt="authored by 멀더끙"></div><time class="article__meta__time" datetime="2020-01-29T15:05:48.000Z"><span aria-label="posted"><span class="fas fa-calendar-day" aria-hidden="true"></span></span>2020-01-30 00:05:48</time><div class="article__meta__category"><span aria-label="category"><span class="fas fa-archive" aria-hidden="true"></span></span><a class="article__meta__category__item" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/">개발노트</a><a class="article__meta__category__item" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/front-end/">Front-End</a></div></div><div class="article__content"><p>기존에 개발 된 프로덕트가 빌드하는데만 한 시간을 훌쩍 넘어가는 상황이 지속적으로 발생되어
+빌드 속도 개선을 위한 일환으로 기존의 webpack 3.x를 4.x로 마이그레이션 작업을 진행하기로
+했다. 헌데... webpack 4로 올리자니 기존에 사용되고 있던 패키지들의 버전이 문제가 되어
+온갖 것들을 동시에 버전업 해야 하는 상황이 빚어져서 이렇게 진행하기에는 리스크가 클 것으로
 판단하여 우선 babel부터 6.x에서 7.x로 마이그레이션을 진행하기로 했다.</p>
-<p>babel 공식 문서의 <a href="https://babeljs.io/docs/en/v7-migration" target="_blank" rel="noopener">Upgrade to Babel 7</a>을 
+<p>babel 공식 문서의 <a href="https://babeljs.io/docs/en/v7-migration" target="_blank" rel="noopener">Upgrade to Babel 7</a>을
 참고서 삼아 <code>@babel</code>로 업데이트를 진행하고, <code>core-js</code>를 설치하고 </p>
-<p><q>오케이~ 시킨 건 다 한거 같다!</q> 하고 <code class="language-bash">npm run serve</code> 힘차게 두들기고 
+<p><q>오케이~ 시킨 건 다 한거 같다!</q> 하고 <code class="language-bash">npm run serve</code> 힘차게 두들기고
 IE 10을 열었는데... 열었는데... </p>
 <p><img src="/upload/2020/ie10-error.gif" alt="IE 10 개발자도구 콘솔 탭 내 구문 오류 발생"></p>
-<p>구문 오류가 발생한 곳을 까보니 노드 패키지로 설치한 &#39;vue-mansonry&#39;가 트랜스파일되지 않고 
+<p>구문 오류가 발생한 곳을 까보니 노드 패키지로 설치한 &#39;vue-mansonry&#39;가 트랜스파일되지 않고
 꿋꿋하게 <code>const</code> 키워드를 똬악...</p>
-<p>Upgrade to Babel 7 문서에는 아무리 뒤져보아도 관련 내용을 찾지를 못하고 구글님께 
-제가 어찌하여야 <code>node_modules</code> 패키지를 트랜스파일 할 수 있겠습니까 여쭈어 
-몇 개의 아티클들을 거쳐 비로소 
+<p>Upgrade to Babel 7 문서에는 아무리 뒤져보아도 관련 내용을 찾지를 못하고 구글님께
+제가 어찌하여야 <code>node_modules</code> 패키지를 트랜스파일 할 수 있겠습니까 여쭈어
+몇 개의 아티클들을 거쳐 비로소
 <a href="https://github.com/babel/babel/issues/8672" target="_blank" rel="noopener">babel 7 can&#39;t compile in node_modules</a>
 라는 제목으로 올라온 babel github issue를 발견했다.</p>
 <p>허망(?)하게도 솔루션은 매우 간단했는데...</p>
@@ -151,15 +151,15 @@ module<span class="token punctuation">.</span>exports <span class="token operato
       <li>
         <a href="https://mulder21c.github.io/aria-practices" target="_blank" class="link-item">WAI-ARIA Authoring Practice 1.2 (진행중)</a>
       </li>
-    
+
       <li>
         <a href="https://mulder21c.github.io/jest/docs/en/next/getting-started.html" target="_blank" class="link-item">Jest 공식 문서 개인 번역 (진행중)</a>
       </li>
-    
+
       <li>
         <a href="https://mulder21c.github.io/seminar" target="_blank" class="link-item">세미나 발표 자료</a>
       </li>
-    
+
       <li>
         <a href="https://mulder21c.github.io/html" target="_blank" class="link-item">HTML 5.1 명세 개인 번역 (중단)</a>
       </li>

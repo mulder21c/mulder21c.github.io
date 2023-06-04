@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Codility Lesson 4 — MissingInteger - The Tracks of mulder21c</title><!-- Links--><link rel="canonical" href="https://mulder21c.github.io/2019/12/15/codility-lesson-4-missing-integer"><!-- preload--><link rel="preload" as="image" href="/images/favicon.png" crossorigin="anonymous"><link rel="preload" as="image" href="/upload/2019/codility-missing-integer.png" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/iropke/IropkeBatangM.woff" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/spoqahansans/SpoqaHanSansRegular.woff2" crossorigin="anonymous"><!-- Icons--><link rel="shortcut icon" sizes="196x196" href="/images/favicon.png"><!-- open graph--><meta name="description" content="Codility 알고리즘 연습  Lesson 4 MissingInteger">
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Codility Lesson 4 — MissingInteger - The Tracks of mulder21c</title><!-- Links--><link rel="canonical" href="https://mulder21c.io/codility-lesson-4-missing-integer"><!-- preload--><link rel="preload" as="image" href="/images/favicon.png" crossorigin="anonymous"><link rel="preload" as="image" href="/upload/2019/codility-missing-integer.png" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/iropke/IropkeBatangM.woff" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/spoqahansans/SpoqaHanSansRegular.woff2" crossorigin="anonymous"><!-- Icons--><link rel="shortcut icon" sizes="196x196" href="/images/favicon.png"><!-- open graph--><meta name="description" content="Codility 알고리즘 연습  Lesson 4 MissingInteger">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Codility Lesson 4 — MissingInteger">
 <meta property="og:url" content="https://mulder21c.github.io/2019/12/15/codility-lesson-4-missing-integer/">
@@ -64,7 +64,7 @@ ga("send", "pageview");
 의외로 금방 풀어냈음.</p>
 <h3 id="Solved-Code"><a href="#Solved-Code" class="headerlink" title="Solved Code"></a>Solved Code</h3><pre class="line-numbers language-javascript" ><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">solution</span><span class="token punctuation">(</span>A<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">const</span> hashMap <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-  A <span class="token operator">=</span> A<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> a <span class="token operator">-</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+  A <span class="token operator">=</span> A<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> a <span class="token operator">-</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
   A<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span> item <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
     <span class="token keyword">if</span><span class="token punctuation">(</span> item <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> hashMap<span class="token punctuation">[</span>item<span class="token punctuation">]</span> <span class="token operator">=</span> item<span class="token punctuation">;</span>
   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -77,7 +77,7 @@ ga("send", "pageview");
 <span class="token punctuation">}</span></code></pre>
 <h2 id="Retrospective"><a href="#Retrospective" class="headerlink" title="Retrospective"></a>Retrospective</h2><ul>
 <li>비슷한 문제를 풀어본 경허이 있으니 어렵지 않게 해결.</li>
-<li>위와 같이 풀어보고 나서 <code class="language-javascript">new Set</code>을 이용해서 
+<li>위와 같이 풀어보고 나서 <code class="language-javascript">new Set</code>을 이용해서
 중복을 제거하여 iterable을 순회해 봤는데 오히려 아주 살짝 느린 결과가 나오더라... ㅎㅎ </li>
 </ul>
 </div><div class="article__tags"><div class="article__tags__title">tags:</div><a class="article__tag__item" href="/tags/algorithm/"><span class="fas fa-tag" aria-hidden="true"></span>algorithm</a><a class="article__tag__item" href="/tags/codility/"><span class="fas fa-tag" aria-hidden="true"></span>codility</a></div></article><div class="comment__container" role="region" aria-label="comments"><div id="lv-container" data-id="city" data-uid="MTAyMC8zMDYzOC83MTkz"></div></div></div><footer class="footer"><p class="copyright">&copy; 2012 ~ 2019 mulder21c <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" target="_blank" rel="license">(CCL-BY-NC-ND)</a></p><p class="credit">Powered by  <a href="https://hexo.io/" rel="external noreferrer" target="_blank">Hexo</a>. Theme by  <a href="https://github.com/mulder21c" rel="external noreferrer" target="_blank">mulder21c</a></p></footer><div class="nav" aria-hidden="true"><nav class="nav--container" id="navigation" aria-labelledby="nav__heading"><h2 class="nav__heading" id="nav__heading">Navigation</h2><hr class="nav__seperator"><ul class="menu-list">
@@ -104,15 +104,15 @@ ga("send", "pageview");
       <li>
         <a href="https://mulder21c.github.io/aria-practices" target="_blank" class="link-item">WAI-ARIA Authoring Practice 1.2 (진행중)</a>
       </li>
-    
+
       <li>
         <a href="https://mulder21c.github.io/jest/docs/en/next/getting-started.html" target="_blank" class="link-item">Jest 공식 문서 개인 번역 (진행중)</a>
       </li>
-    
+
       <li>
         <a href="https://mulder21c.github.io/seminar" target="_blank" class="link-item">세미나 발표 자료</a>
       </li>
-    
+
       <li>
         <a href="https://mulder21c.github.io/html" target="_blank" class="link-item">HTML 5.1 명세 개인 번역 (중단)</a>
       </li>

@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>웹팩 4 마이그레이션 삽질기 - The Tracks of mulder21c</title><!-- Links--><link rel="canonical" href="https://mulder21c.github.io/2020/02/13/webpack-4-migration-from-3"><!-- preload--><link rel="preload" as="image" href="/images/favicon.png" crossorigin="anonymous"><link rel="preload" as="image" href="/upload/2020/webpack-alpine-marmot.jpg" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/iropke/IropkeBatangM.woff" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/spoqahansans/SpoqaHanSansRegular.woff2" crossorigin="anonymous"><!-- Icons--><link rel="shortcut icon" sizes="196x196" href="/images/favicon.png"><!-- open graph--><meta name="description" content="Webpack 3를 기반으로 구축된 서비스를 Webpack 4로 마이그레이션 작업을 진행했는데 꽤나  많은 삽질이 동원 되어 차후에 이런 일이 또 있을까 하여 기록으로 남겨둔다.">
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>웹팩 4 마이그레이션 삽질기 - The Tracks of mulder21c</title><!-- Links--><link rel="canonical" href="https://mulder21c.io/webpack-4-migration-from-3"><!-- preload--><link rel="preload" as="image" href="/images/favicon.png" crossorigin="anonymous"><link rel="preload" as="image" href="/upload/2020/webpack-alpine-marmot.jpg" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/iropke/IropkeBatangM.woff" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/spoqahansans/SpoqaHanSansRegular.woff2" crossorigin="anonymous"><!-- Icons--><link rel="shortcut icon" sizes="196x196" href="/images/favicon.png"><!-- open graph--><meta name="description" content="Webpack 3를 기반으로 구축된 서비스를 Webpack 4로 마이그레이션 작업을 진행했는데 꽤나  많은 삽질이 동원 되어 차후에 이런 일이 또 있을까 하여 기록으로 남겨둔다.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="웹팩 4 마이그레이션 삽질기">
 <meta property="og:url" content="https://mulder21c.github.io/2020/02/13/webpack-4-migration-from-3/">
@@ -57,7 +57,7 @@ ga("create", "UA-55718543-7", "auto");
 ga("send", "pageview");
 </script><meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/rss.xml" title="The Tracks of mulder21c" type="application/rss+xml">
 <link rel="stylesheet" href="/css/prism-xonokai.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><script defer src="/js/prism.js"></script></head><body class="post"><header class="header hero hero--has-image"><div class="hero-wrapper"><div class="gnb"><a href="/">The Tracks of mulder21c</a><button class="nav-toggle" type="button" aria-haspopup="true" aria-controls="navigation"><span></span><span></span><span></span>menu</button></div><h1 class="header__title">웹팩 4 마이그레이션 삽질기</h1><div class="hero__image" style="background-image: url(/upload/2020/webpack-alpine-marmot.jpg);background-position: left 40%;"></div></div></header><div class="contents--container" role="main"><article class="article"><div class="article__meta"><div class="gravatar"><img src="/images/favicon.png" alt="authored by 멀더끙"></div><time class="article__meta__time" datetime="2020-02-12T15:24:11.000Z"><span aria-label="posted"><span class="fas fa-calendar-day" aria-hidden="true"></span></span>2020-02-13 00:24:11</time><div class="article__meta__category"><span aria-label="category"><span class="fas fa-archive" aria-hidden="true"></span></span><a class="article__meta__category__item" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/">개발노트</a><a class="article__meta__category__item" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/front-end/">Front-End</a></div></div><div class="article__content"><p>Webpack 3를 기반으로 구축된 서비스를 Webpack 4로 마이그레이션 작업을 진행했는데 꽤나 많은 
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><script defer src="/js/prism.js"></script></head><body class="post"><header class="header hero hero--has-image"><div class="hero-wrapper"><div class="gnb"><a href="/">The Tracks of mulder21c</a><button class="nav-toggle" type="button" aria-haspopup="true" aria-controls="navigation"><span></span><span></span><span></span>menu</button></div><h1 class="header__title">웹팩 4 마이그레이션 삽질기</h1><div class="hero__image" style="background-image: url(/upload/2020/webpack-alpine-marmot.jpg);background-position: left 40%;"></div></div></header><div class="contents--container" role="main"><article class="article"><div class="article__meta"><div class="gravatar"><img src="/images/favicon.png" alt="authored by 멀더끙"></div><time class="article__meta__time" datetime="2020-02-12T15:24:11.000Z"><span aria-label="posted"><span class="fas fa-calendar-day" aria-hidden="true"></span></span>2020-02-13 00:24:11</time><div class="article__meta__category"><span aria-label="category"><span class="fas fa-archive" aria-hidden="true"></span></span><a class="article__meta__category__item" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/">개발노트</a><a class="article__meta__category__item" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/front-end/">Front-End</a></div></div><div class="article__content"><p>Webpack 3를 기반으로 구축된 서비스를 Webpack 4로 마이그레이션 작업을 진행했는데 꽤나 많은
 삽질이 동원 되어 차후에 이런 일이 또 있을까 하여 기록으로 남겨둔다.</p>
 <p>일단, 최초의 패키지 상태를 보면 (스압 주의...),</p>
 <pre class="line-numbers language-json" ><code class="language-json"><span class="token property">"dependencies"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
@@ -109,37 +109,37 @@ ga("send", "pageview");
   <span class="token property">"yaml-loader"</span><span class="token operator">:</span> <span class="token string">"^0.5.0"</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<h2 id="마이그레이션-가이드는-가이드가-아니더라"><a href="#마이그레이션-가이드는-가이드가-아니더라" class="headerlink" title="마이그레이션 가이드는 가이드가 아니더라..."></a>마이그레이션 가이드는 가이드가 아니더라...</h2><p>최초 작업이 들어갈 때 웹팩 공식 문서에 <a href="https://webpack.js.org/migrate/4/" target="_blank" rel="noopener">To v4 from v3</a>라고 
+<h2 id="마이그레이션-가이드는-가이드가-아니더라"><a href="#마이그레이션-가이드는-가이드가-아니더라" class="headerlink" title="마이그레이션 가이드는 가이드가 아니더라..."></a>마이그레이션 가이드는 가이드가 아니더라...</h2><p>최초 작업이 들어갈 때 웹팩 공식 문서에 <a href="https://webpack.js.org/migrate/4/" target="_blank" rel="noopener">To v4 from v3</a>라고
 이미 문서화 되어 있는 것이 있기에...  </p>
 <p>이 문서의 내용을 따라서</p>
 <ol>
 <li>webpack에 관련된 플러그인들을 최신 버전으로 업데이트 하고</li>
 <li><code class="language-javascript">mode</code>를 설정하고</li>
 <li>deprecated 된 플러그인을 </li>
-<li>코드상 에서 제거하고 <code>CommonsChunkPlugin</code>을 
+<li>코드상 에서 제거하고 <code>CommonsChunkPlugin</code>을
 <code>optimization.splitChunks</code>로 돌리고, </li>
-<li><code>yaml-loader</code>의 <code>type</code>을 <code>javascript/auto</code>로 
+<li><code>yaml-loader</code>의 <code>type</code>을 <code>javascript/auto</code>로
 변경하고, <code>json-loader</code>를 삭제하고.</li>
 </ol>
-<p>시키는 대로 착실하게(?) 따라하고 호기롭게 <code class="language-bash">npm run dev</code> 
+<p>시키는 대로 착실하게(?) 따라하고 호기롭게 <code class="language-bash">npm run dev</code>
 명령을 호기롭게 딱! 쳤는데...</p>
 <p><img src="/upload/2020/no-run.jpg" alt="안돼 안돌려줘 돌려줄 생각없어 빨리 되돌려놔 패러디"></p>
 <p>당연히 오류가 쫘아아아악... 돌아갈리가 없다... <span class="strike">왜지? 난 시키는 대로 했을 뿐인데</span></p>
 <p>마이그레이션 문서는 불친절했고 온갖 정보들을 찾아다니며 해결 해야만 했다.</p>
-<h2 id="바보야-문제는-Webpack만이-아니야"><a href="#바보야-문제는-Webpack만이-아니야" class="headerlink" title="바보야 문제는 Webpack만이 아니야"></a>바보야 문제는 Webpack만이 아니야</h2><p>오류는 다방면(?)으로 발생했다. 하나를 고치면 또 다른 오류를 내 뱉고 또 하나를 손보면 또 다른 
+<h2 id="바보야-문제는-Webpack만이-아니야"><a href="#바보야-문제는-Webpack만이-아니야" class="headerlink" title="바보야 문제는 Webpack만이 아니야"></a>바보야 문제는 Webpack만이 아니야</h2><p>오류는 다방면(?)으로 발생했다. 하나를 고치면 또 다른 오류를 내 뱉고 또 하나를 손보면 또 다른
 오류를 내뱉고...</p>
 <p>처음에는 오류 하나 하나를 살펴보고 해결해 가면 되겠지 했으나 그건 <span class="strike">순진한</span>
-멍충한 생각이었다.<br>오류를 해결해 가려면 해결해 갈 수록 의존성 패키지들의 끈끈한 의리가 도무지 해결이 되고 있는 
+멍충한 생각이었다.<br>오류를 해결해 가려면 해결해 갈 수록 의존성 패키지들의 끈끈한 의리가 도무지 해결이 되고 있는
 건지 아닌지를 판단하기 어렵게 만들었...</p>
-<p>이걸 땐 가뿐히... 변경 사항을 폐기하고 처음부터 다시.<br>일단 Webpack 버전을 올리지 않아도 문제가 없는 loader와 플러그인들부터 최신 버전으로 업데이트를 
+<p>이걸 땐 가뿐히... 변경 사항을 폐기하고 처음부터 다시.<br>일단 Webpack 버전을 올리지 않아도 문제가 없는 loader와 플러그인들부터 최신 버전으로 업데이트를
 시도하기 시작했다.</p>
-<p>그 첫 번째가 babel 6에서 7으로 업데이트.<br>이것 조차도 쉽지 않았는데 해당 부분은 
-<a href="/2020/01/30/migration-to-babel-7-from-babel-6">babel 7 업데이트 후 node_modules 패키지가 변환되지 않는다면?</a> 
+<p>그 첫 번째가 babel 6에서 7으로 업데이트.<br>이것 조차도 쉽지 않았는데 해당 부분은
+<a href="/2020/01/30/migration-to-babel-7-from-babel-6">babel 7 업데이트 후 node_modules 패키지가 변환되지 않는다면?</a>
 여기에 포스팅 했으니까 이건 넘어가고...</p>
-<h3 id="webpack-버전-안타는-loader와-plugins-업데이트하기"><a href="#webpack-버전-안타는-loader와-plugins-업데이트하기" class="headerlink" title="webpack 버전 안타는(?) loader와 plugins 업데이트하기"></a>webpack 버전 안타는(?) loader와 plugins 업데이트하기</h3><p>다음으로 시도한게 일단 Webpack 3에서도 문제가 없는 loader와 plugins들의 최신 버전을 설치 
+<h3 id="webpack-버전-안타는-loader와-plugins-업데이트하기"><a href="#webpack-버전-안타는-loader와-plugins-업데이트하기" class="headerlink" title="webpack 버전 안타는(?) loader와 plugins 업데이트하기"></a>webpack 버전 안타는(?) loader와 plugins 업데이트하기</h3><p>다음으로 시도한게 일단 Webpack 3에서도 문제가 없는 loader와 plugins들의 최신 버전을 설치
 하는 거였다. </p>
 <p>처음에는 모든 loader의 최신 버전 문서를 확인하고 문제가 없어 보이는 것들만 모아서 한 번에
-업데이트 하고 개발 서버를 실행시켰는데... 또 다시 오류가... 허허...<br>(이제 각 loader들의 문서도 믿지 않기로했다... 특별히 언급되어 있지 않으면 일단 오류를 낼 
+업데이트 하고 개발 서버를 실행시켰는데... 또 다시 오류가... 허허...<br>(이제 각 loader들의 문서도 믿지 않기로했다... 특별히 언급되어 있지 않으면 일단 오류를 낼
 잠재적 범인으로 간주하기로...)</p>
 <p>심지어 왜 이 눔의 <code>path</code> 패키지는 자꾸 패키지 내부에 git repository를 만드는지...</p>
 <pre class="line-numbers language-bash" ><code class="language-bash">$ <span class="token function">npm</span> <span class="token function">install</span> -D package@latest <span class="token operator">&amp;&amp;</span> <span class="token function">npm</span> run dev </code></pre>
@@ -158,9 +158,9 @@ ga("send", "pageview");
 <span class="token property">"vue-style-loader"</span><span class="token operator">:</span> <span class="token string">"^3.0.0"</span><span class="token punctuation">,</span>
 <span class="token property">"webpack"</span><span class="token operator">:</span> <span class="token string">"^3.12.0"</span><span class="token punctuation">,</span>
 <span class="token property">"webpack-dev-middleware"</span><span class="token operator">:</span> <span class="token string">"^1.10.1"</span></code></pre>
-<p>요것들 이더라. (반대로 이야기 하면 이것 외의 다른 패키지들은 바로 업데이트 쳐도 괜찮다는 것이니 
+<p>요것들 이더라. (반대로 이야기 하면 이것 외의 다른 패키지들은 바로 업데이트 쳐도 괜찮다는 것이니
 혹 최초 패키지 상태의 것들 중 언급되지 않은 것은 고민하지 않고 업데이트 쳐도 된다는 얘기)</p>
-<p>저 몇 개의 loader들은 webpack 4를 요구하는 통에 webapck과 동시에 버전업이 되어야 했고, 
+<p>저 몇 개의 loader들은 webpack 4를 요구하는 통에 webapck과 동시에 버전업이 되어야 했고,
 그 말 인즉슨... 이제부터 나오는 오류는 어쩔 수 없이 동시 다발적으로 봐야 한다는 말이었다.</p>
 <h3 id="본격적으로-webpack-4-update"><a href="#본격적으로-webpack-4-update" class="headerlink" title="본격적으로 webpack 4 update"></a>본격적으로 webpack 4 update</h3><p>이제 마음의 준비는 끝났고, <span class="strike">(오류를 만나도 당연히 여길테다)</span> </p>
 <ol>
@@ -168,25 +168,25 @@ ga("send", "pageview");
 </li>
 <li><p>문서를 따라 deprecated 된 플러그인들을 제거하고</p>
 <p><a href="https://dev.to/flexdinesh/upgrade-to-webpack-4---5bc5" target="_blank" rel="noopener">Upgrade to Webpack 4</a>
-문서를 보면 deprecated 된 플러그인을 어떻게 <code>optimization</code> 옵션으로 
+문서를 보면 deprecated 된 플러그인을 어떻게 <code>optimization</code> 옵션으로
 변경해야 하는지 나와있더라...</p>
-<p>Webpack 공식 문서에서는 deprecated 되어 optimization의 설정으로 옮겨 갔다는 설명이 
+<p>Webpack 공식 문서에서는 deprecated 되어 optimization의 설정으로 옮겨 갔다는 설명이
 되어 있지 않더라. 아니... 이런건 마이그레이션 가이드에 있어야 하는거 아니냐구요...</p>
 </li>
-<li><p><code>CommonsChunkPlugin</code>을 <code>optimization.splitChunks</code> 옵션으로 
+<li><p><code>CommonsChunkPlugin</code>을 <code>optimization.splitChunks</code> 옵션으로
 옮겨 놓고</p>
 </li>
 </ol>
 <p>개발 서버를 실행하니...</p>
 <p><img src="/upload/2020/nobless.jpg" alt="나는 아직 빌드를 허락하지 않았다 노블레스 웹툰 패러디"></p>
 <p><span class="strike">그럼 그렇지 될리가 없지... ㅋㅋㅋ</span></p>
-<p>당장 <code>extract-text-webpack-plugin</code>는 더 이상 안 쓰인다며 오류가...<br><code>mini-css-extract-plugin</code>로 대체 되었다고 하여 일단 추출하지 않도록 하고 
+<p>당장 <code>extract-text-webpack-plugin</code>는 더 이상 안 쓰인다며 오류가...<br><code>mini-css-extract-plugin</code>로 대체 되었다고 하여 일단 추출하지 않도록 하고
 다시 개발 서버 런...</p>
 <p><img src="/upload/2020/nobless.jpg" alt="나는 아직 빌드를 허락하지 않았다 노블레스 웹툰 패러디"></p>
 <p>우쒸... 또 오류다. 분명 하란 대로 다 했는데 이상하게 SCSS에서 오류가 발생한다.<br>수정된 설정을 다시 차근차근 뒤져봤지만 아무리 봐도 오류를 모르겠더라.</p>
-<p>일단 SCSS는 번들링 하지 않도록 임시로 빼놓고 돌려도 오류가 난다. 오류 메세지를 읽어봐도 
+<p>일단 SCSS는 번들링 하지 않도록 임시로 빼놓고 돌려도 오류가 난다. 오류 메세지를 읽어봐도
 대체 왜 여기서 오류가 나는지를 모르겠더라.</p>
-<p>webpack migration 가이드 중에 <code>json-loader</code>는 이제 제거 될 수 있다라는 
+<p>webpack migration 가이드 중에 <code>json-loader</code>는 이제 제거 될 수 있다라는
 것이 있어서 제거 했었는데, 아무래도 <code>ymal-loader</code>의 loader 설정에서 </p>
 <pre class="line-numbers language-json" ><code class="language-json"><span class="token punctuation">{</span>
   test<span class="token operator">:</span> /\.yml$/<span class="token punctuation">,</span>
@@ -202,13 +202,13 @@ ga("send", "pageview");
 <p>어??? 된다고?????!!! 왜??!!!! json-loader 설치한건데????<br>이해할 수 없으나... json-loader를 설치한 후에 SCSS 오류는 발생하지 않았다.<br>(webpack 공식문서 이 놈... 부들부들...)</p>
 <p>하지만 아직 mini-css-extract-plugin이 남았다.<br>일단 설치하고 무작정 적용하고 런...</p>
 <p><img src="/upload/2020/nobless.jpg" alt="나는 아직 빌드를 허락하지 않았다 노블레스 웹툰 패러디"></p>
-<p><span class="strike">아 또 왜!!!!</span> 이번에도 SCSS 오류다. 단지 추출을 하도록 설정 
+<p><span class="strike">아 또 왜!!!!</span> 이번에도 SCSS 오류다. 단지 추출을 하도록 설정
 했을 뿐인데 어째서 SCSS 오류가 발생하는것인지...</p>
-<p>vue-loader의 문제인가 하여 다시 vue-loader의 문서를 확인해봤다. vue-loader v15부터는 
-vue component에 포함된 <code>&lt;style lang="scss"></code>도 순수 scss 파일처럼 
-다룬다는 내용을 찾았고, 기존 것이 dependency의 것을 추출하도록 사용되었었기 때문에 
+<p>vue-loader의 문제인가 하여 다시 vue-loader의 문서를 확인해봤다. vue-loader v15부터는
+vue component에 포함된 <code>&lt;style lang="scss"></code>도 순수 scss 파일처럼
+다룬다는 내용을 찾았고, 기존 것이 dependency의 것을 추출하도록 사용되었었기 때문에
 node_modules의 것과 src의 것을 분리하여 처리할 필요가 생겼다.</p>
-<p>처음에는 <code>exclude</code>를 이용하여 한 쪽에는 <code>node_modules</code>를 
+<p>처음에는 <code>exclude</code>를 이용하여 한 쪽에는 <code>node_modules</code>를
 제외하게 하고, 한 쪽에서는 <code>src</code>를 제외하게 해서 설정해 봤으나 또 다시 오류...</p>
 <p>몇 번의 삽질을 진행하고 나서야 </p>
 <pre class="line-numbers language-json" ><code class="language-json"><span class="token punctuation">{</span>
@@ -264,15 +264,15 @@ node_modules의 것과 src의 것을 분리하여 처리할 필요가 생겼다.
       <li>
         <a href="https://mulder21c.github.io/aria-practices" target="_blank" class="link-item">WAI-ARIA Authoring Practice 1.2 (진행중)</a>
       </li>
-    
+
       <li>
         <a href="https://mulder21c.github.io/jest/docs/en/next/getting-started.html" target="_blank" class="link-item">Jest 공식 문서 개인 번역 (진행중)</a>
       </li>
-    
+
       <li>
         <a href="https://mulder21c.github.io/seminar" target="_blank" class="link-item">세미나 발표 자료</a>
       </li>
-    
+
       <li>
         <a href="https://mulder21c.github.io/html" target="_blank" class="link-item">HTML 5.1 명세 개인 번역 (중단)</a>
       </li>

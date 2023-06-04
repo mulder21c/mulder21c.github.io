@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>웹 퍼블리셔는 무슨 일을 하는가? Part 2 - The Tracks of mulder21c</title><!-- Links--><link rel="canonical" href="https://mulder21c.github.io/2017/07/30/establishment-of-visual-language"><!-- preload--><link rel="preload" as="image" href="/images/favicon.png" crossorigin="anonymous"><link rel="preload" as="image" href="/upload/2017/css.png" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/iropke/IropkeBatangM.woff" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/spoqahansans/SpoqaHanSansRegular.woff2" crossorigin="anonymous"><!-- Icons--><link rel="shortcut icon" sizes="196x196" href="/images/favicon.png"><!-- open graph--><meta name="description" content="웹 퍼블리셔는 그냥 되는대로 웹 브라우저를 띄워놓고 받은 디자인 시안대로 &quot;그려내는&quot; 것이 아니라, 웹 사이트 전반에 대한 스타일 규격을 만들어 내는 작업을 해야 한다.">
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>웹 퍼블리셔는 무슨 일을 하는가? Part 2 - The Tracks of mulder21c</title><!-- Links--><link rel="canonical" href="https://mulder21c.io/establishment-of-visual-language"><!-- preload--><link rel="preload" as="image" href="/images/favicon.png" crossorigin="anonymous"><link rel="preload" as="image" href="/upload/2017/css.png" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/iropke/IropkeBatangM.woff" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/spoqahansans/SpoqaHanSansRegular.woff2" crossorigin="anonymous"><!-- Icons--><link rel="shortcut icon" sizes="196x196" href="/images/favicon.png"><!-- open graph--><meta name="description" content="웹 퍼블리셔는 그냥 되는대로 웹 브라우저를 띄워놓고 받은 디자인 시안대로 &quot;그려내는&quot; 것이 아니라, 웹 사이트 전반에 대한 스타일 규격을 만들어 내는 작업을 해야 한다.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="웹 퍼블리셔는 무슨 일을 하는가? Part 2">
 <meta property="og:url" content="https://mulder21c.github.io/2017/07/30/establishment-of-visual-language/">
@@ -100,7 +100,7 @@ CSS는 (상대적으로) 배우기 쉬운 언어다 라는 것인데, 과연 정
 <li>CSS가 미치는 영향은 visual에 그치지 않고 웹 접근성, 검색엔진최적화에까지도 영향을 준다.</li>
 <li>CSS animation을 사용할 경우에는 퍼포먼스에도 영향이 있다.</li>
 </ul>
-<p>자, 다시 생각해보자. CSS는 정말 쉬운가?<br><small>아, 물론 그냥 시안을 브라우저에 그려내는 작업을 웹 퍼블리셔의 업무로 인식하는 사람에게는 
+<p>자, 다시 생각해보자. CSS는 정말 쉬운가?<br><small>아, 물론 그냥 시안을 브라우저에 그려내는 작업을 웹 퍼블리셔의 업무로 인식하는 사람에게는
 여전히 쉬운 일일거라는 것에는 동의한다.</small></p>
 <h2 id="CSS를-마구잡이로-쓰지-말자"><a href="#CSS를-마구잡이로-쓰지-말자" class="headerlink" title="CSS를 마구잡이로 쓰지 말자."></a>CSS를 마구잡이로 쓰지 말자.</h2><p>다시 말하지만, CSS는 &quot;스타일 규격&quot;을 만드는데 사용하는 언어다. <br>
 되는 대로 그냥 코드를 나열하여 PSD를 웹 브라우저로 옮기는 것은 &quot;웹 퍼블리싱&quot;을 하는 것이 아니라,
@@ -109,18 +109,18 @@ CSS는 (상대적으로) 배우기 쉬운 언어다 라는 것인데, 과연 정
 <p>물론, 앞서서 UI 기획자와 디자이너가 각자의 산출물을 잘 만들어 놓아야 가능하다는 것에 동의한다.
 하지만 앞서서 잘 만들어 놓지 않는다고 하여서 나도 엉망으로 만들면 똑같은 놈(?)이 되는 것 아닌가... <br>
 앞에서 못하면 우리라도 잘하자 ㅠㅠ</p>
-<h2 id="CSS를-다룬-다와-quot-css-quot-파일을-작성한다는-다르다"><a href="#CSS를-다룬-다와-quot-css-quot-파일을-작성한다는-다르다" class="headerlink" title="CSS를 다룬 다와 &quot;.css&quot; 파일을 작성한다는 다르다"></a>CSS를 다룬 다와 &quot;.css&quot; 파일을 작성한다는 다르다</h2><p>CSS를 다룬다는 것은 css 파일을 직접 작성한다가 아니라, 최종 렌더링 된 결과 CSS &mdash; 즉 
-어떤 과정을 거쳐 최종적으로 사용자의 브라우저에 노출되는 CSS를 책임진다는 것이고, 이 어떤 
+<h2 id="CSS를-다룬-다와-quot-css-quot-파일을-작성한다는-다르다"><a href="#CSS를-다룬-다와-quot-css-quot-파일을-작성한다는-다르다" class="headerlink" title="CSS를 다룬 다와 &quot;.css&quot; 파일을 작성한다는 다르다"></a>CSS를 다룬 다와 &quot;.css&quot; 파일을 작성한다는 다르다</h2><p>CSS를 다룬다는 것은 css 파일을 직접 작성한다가 아니라, 최종 렌더링 된 결과 CSS &mdash; 즉
+어떤 과정을 거쳐 최종적으로 사용자의 브라우저에 노출되는 CSS를 책임진다는 것이고, 이 어떤
 처리를 거치기 전의 파일 확장자가 CSS라는 보장은 어디에도 없다. </p>
-<p>최근에야 그나마 퍼블리셔를 채용하는 회사들이 전처리기(SASS 등)에 대한 요구사항이 많아져서 
-전처리 언어를 사용하는 퍼블리셔들이 늘어나기는 했지만 따지고 들어가보면 이것이 자신이 다루어야 
-하는 것이라서라는 인식에서라기 보다는 취업을 위해서 불가피하게 채용 조건에 있으니까 하는 경우가 
-더 많고 그마저도 에디터의 live compiler에 의존하여 에디터에 해당 기능이 없으면 손도 못대는 
+<p>최근에야 그나마 퍼블리셔를 채용하는 회사들이 전처리기(SASS 등)에 대한 요구사항이 많아져서
+전처리 언어를 사용하는 퍼블리셔들이 늘어나기는 했지만 따지고 들어가보면 이것이 자신이 다루어야
+하는 것이라서라는 인식에서라기 보다는 취업을 위해서 불가피하게 채용 조건에 있으니까 하는 경우가
+더 많고 그마저도 에디터의 live compiler에 의존하여 에디터에 해당 기능이 없으면 손도 못대는
 경우도 어렵지 않게 발견된다. </p>
-<p>학원이나 웹 퍼블리셔 관련 기초 강의가 CSS 파일을 작성하는 법으로 강의를 해서 그것만 아는 
-것인지는 모르겠으나, 앞서 HTML에 대해서 이야기 한 것과 동일하게 웹 퍼블리셔가 CSS를 다룬다는 
-것은 SA(C)SS&middot;LESS&middot;Stylus 등 전처리 뿐 아니라 
-Autoprefixer&middot;CSSNano 등 후처리도 다룰 줄 알아야 하고 당연히 그에 따라 
+<p>학원이나 웹 퍼블리셔 관련 기초 강의가 CSS 파일을 작성하는 법으로 강의를 해서 그것만 아는
+것인지는 모르겠으나, 앞서 HTML에 대해서 이야기 한 것과 동일하게 웹 퍼블리셔가 CSS를 다룬다는
+것은 SA(C)SS&middot;LESS&middot;Stylus 등 전처리 뿐 아니라
+Autoprefixer&middot;CSSNano 등 후처리도 다룰 줄 알아야 하고 당연히 그에 따라
 이를 위한 환경 구축, 설정 등도 할 수 있어야 한다.</p>
 </div><div class="article__tags"><div class="article__tags__title">tags:</div><a class="article__tag__item" href="/tags/%EC%9B%B9-%ED%8D%BC%EB%B8%94%EB%A6%AC%EC%85%94/"><span class="fas fa-tag" aria-hidden="true"></span>웹 퍼블리셔</a><a class="article__tag__item" href="/tags/css/"><span class="fas fa-tag" aria-hidden="true"></span>css</a><a class="article__tag__item" href="/tags/style/"><span class="fas fa-tag" aria-hidden="true"></span>style</a></div></article><div class="comment__container" role="region" aria-label="comments"><div id="lv-container" data-id="city" data-uid="MTAyMC8zMDYzOC83MTkz"></div></div></div><footer class="footer"><p class="copyright">&copy; 2012 ~ 2019 mulder21c <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" target="_blank" rel="license">(CCL-BY-NC-ND)</a></p><p class="credit">Powered by  <a href="https://hexo.io/" rel="external noreferrer" target="_blank">Hexo</a>. Theme by  <a href="https://github.com/mulder21c" rel="external noreferrer" target="_blank">mulder21c</a></p></footer><div class="nav" aria-hidden="true"><nav class="nav--container" id="navigation" aria-labelledby="nav__heading"><h2 class="nav__heading" id="nav__heading">Navigation</h2><hr class="nav__seperator"><ul class="menu-list">
     <li class="menu-item" >
@@ -146,15 +146,15 @@ Autoprefixer&middot;CSSNano 등 후처리도 다룰 줄 알아야 하고 당연�
       <li>
         <a href="https://mulder21c.github.io/aria-practices" target="_blank" class="link-item">WAI-ARIA Authoring Practice 1.2 (진행중)</a>
       </li>
-    
+
       <li>
         <a href="https://mulder21c.github.io/jest/docs/en/next/getting-started.html" target="_blank" class="link-item">Jest 공식 문서 개인 번역 (진행중)</a>
       </li>
-    
+
       <li>
         <a href="https://mulder21c.github.io/seminar" target="_blank" class="link-item">세미나 발표 자료</a>
       </li>
-    
+
       <li>
         <a href="https://mulder21c.github.io/html" target="_blank" class="link-item">HTML 5.1 명세 개인 번역 (중단)</a>
       </li>

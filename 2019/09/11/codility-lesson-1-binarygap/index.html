@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Codility Lesson 1 — BinaryGap - The Tracks of mulder21c</title><!-- Links--><link rel="canonical" href="https://mulder21c.github.io/2019/09/11/codility-lesson-1-binarygap"><!-- preload--><link rel="preload" as="image" href="/images/favicon.png" crossorigin="anonymous"><link rel="preload" as="image" href="/upload/2019/codility-binarygap.png" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/iropke/IropkeBatangM.woff" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/spoqahansans/SpoqaHanSansRegular.woff2" crossorigin="anonymous"><!-- Icons--><link rel="shortcut icon" sizes="196x196" href="/images/favicon.png"><!-- open graph--><meta name="description" content="Codility 알고리즘 연습  Lesson 1 BinaryGap">
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Codility Lesson 1 — BinaryGap - The Tracks of mulder21c</title><!-- Links--><link rel="canonical" href="https://mulder21c.io/codility-lesson-1-binarygap"><!-- preload--><link rel="preload" as="image" href="/images/favicon.png" crossorigin="anonymous"><link rel="preload" as="image" href="/upload/2019/codility-binarygap.png" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/iropke/IropkeBatangM.woff" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/spoqahansans/SpoqaHanSansRegular.woff2" crossorigin="anonymous"><!-- Icons--><link rel="shortcut icon" sizes="196x196" href="/images/favicon.png"><!-- open graph--><meta name="description" content="Codility 알고리즘 연습  Lesson 1 BinaryGap">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Codility Lesson 1 — BinaryGap">
 <meta property="og:url" content="https://mulder21c.github.io/2019/09/11/codility-lesson-1-binarygap/">
@@ -92,16 +92,16 @@ ga("send", "pageview");
     <span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> a<span class="token punctuation">.</span>length <span class="token operator">-</span> b<span class="token punctuation">.</span>length <span class="token punctuation">)</span>
     <span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-  <span class="token keyword">return</span> result <span class="token operator">?</span> result<span class="token punctuation">.</span>length <span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>  
+  <span class="token keyword">return</span> result <span class="token operator">?</span> result<span class="token punctuation">.</span>length <span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
 <h2 id="Retrospective"><a href="#Retrospective" class="headerlink" title="Retrospective"></a>Retrospective</h2><ul>
 <li><p>간만에 재귀함수를 만드려니 머리가 잠깐 멈추더라... </p>
 </li>
 <li><p>사실 처음 생각해 낸 프로세스에는 불필요한 프로세스가 끼어있었다. </p>
-<p><code class="language-javascript">.split('1')</code> 이후에 emptry string을 
+<p><code class="language-javascript">.split('1')</code> 이후에 emptry string을
 제거하는 프로세스 즉,<br><code class="language-javascript">.filter( entry => !!entry )</code>가 있었는데,
 sorting 하면서 필요 없다는걸 깨닫고 프로세스에서 제거.</p>
-<p>결과에는 영향을 주지 않지만 불필요한 연산이 끼어든다는 건, 생각의 흐름 속에서 깊이있는 
+<p>결과에는 영향을 주지 않지만 불필요한 연산이 끼어든다는 건, 생각의 흐름 속에서 깊이있는
 사고가 되지 않고 있다는 것이거나 한 번에 생각할 수 있는 청크가 크지 않다는 것일 듯 하다. </p>
 </li>
 <li><p>2진수 변환을 굳이 재귀함수를 쓸 필요가 없었다는 게 뒤늦게 생각났다. </p>
@@ -133,15 +133,15 @@ sorting 하면서 필요 없다는걸 깨닫고 프로세스에서 제거.</p>
       <li>
         <a href="https://mulder21c.github.io/aria-practices" target="_blank" class="link-item">WAI-ARIA Authoring Practice 1.2 (진행중)</a>
       </li>
-    
+
       <li>
         <a href="https://mulder21c.github.io/jest/docs/en/next/getting-started.html" target="_blank" class="link-item">Jest 공식 문서 개인 번역 (진행중)</a>
       </li>
-    
+
       <li>
         <a href="https://mulder21c.github.io/seminar" target="_blank" class="link-item">세미나 발표 자료</a>
       </li>
-    
+
       <li>
         <a href="https://mulder21c.github.io/html" target="_blank" class="link-item">HTML 5.1 명세 개인 번역 (중단)</a>
       </li>

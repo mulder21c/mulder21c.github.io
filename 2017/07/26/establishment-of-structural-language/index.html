@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>웹 퍼블리셔는 무슨 일을 하는가? Part 1 - The Tracks of mulder21c</title><!-- Links--><link rel="canonical" href="https://mulder21c.github.io/2017/07/26/establishment-of-structural-language"><!-- preload--><link rel="preload" as="image" href="/images/favicon.png" crossorigin="anonymous"><link rel="preload" as="image" href="/upload/2013/html-code.gif" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/iropke/IropkeBatangM.woff" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/spoqahansans/SpoqaHanSansRegular.woff2" crossorigin="anonymous"><!-- Icons--><link rel="shortcut icon" sizes="196x196" href="/images/favicon.png"><!-- open graph--><meta name="description" content="웹 페이지를 만들기 위해 태그를 작성하는 행위는 이 문서를 읽는 주체로 하여금 문서가 가진 정보가 무엇인지를 인식할 수 있도록 하기 위함이다.">
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>웹 퍼블리셔는 무슨 일을 하는가? Part 1 - The Tracks of mulder21c</title><!-- Links--><link rel="canonical" href="https://mulder21c.io/establishment-of-structural-language"><!-- preload--><link rel="preload" as="image" href="/images/favicon.png" crossorigin="anonymous"><link rel="preload" as="image" href="/upload/2013/html-code.gif" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/iropke/IropkeBatangM.woff" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/spoqahansans/SpoqaHanSansRegular.woff2" crossorigin="anonymous"><!-- Icons--><link rel="shortcut icon" sizes="196x196" href="/images/favicon.png"><!-- open graph--><meta name="description" content="웹 페이지를 만들기 위해 태그를 작성하는 행위는 이 문서를 읽는 주체로 하여금 문서가 가진 정보가 무엇인지를 인식할 수 있도록 하기 위함이다.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="웹 퍼블리셔는 무슨 일을 하는가? Part 1">
 <meta property="og:url" content="https://mulder21c.github.io/2017/07/26/establishment-of-structural-language/">
@@ -149,32 +149,32 @@ ga("send", "pageview");
 웹 퍼블리셔가 해야 할 일들이다.</p>
 <p>부디 제발 문서가 전달해야 하는 정보에는 관련짓지 않고 생각 없이 눈에 보이는 그림을 웹 브라우저에
 그려내는 행위를 멈추어 주기를 바란다. 마크업은 그보다 더 깊이가 있고 논리적이며 복잡한 작업이다.</p>
-<h2 id="HTML을-다룬다와-html-파일을-작성한다는-다르다"><a href="#HTML을-다룬다와-html-파일을-작성한다는-다르다" class="headerlink" title="HTML을 다룬다와 html 파일을 작성한다는 다르다"></a>HTML을 다룬다와 html 파일을 작성한다는 다르다</h2><p>아주 많은 웹 퍼블리셔들이 오인하는 것 중 하나가 HTML을 다루는 것을 <b>html 파일</b> 
+<h2 id="HTML을-다룬다와-html-파일을-작성한다는-다르다"><a href="#HTML을-다룬다와-html-파일을-작성한다는-다르다" class="headerlink" title="HTML을 다룬다와 html 파일을 작성한다는 다르다"></a>HTML을 다룬다와 html 파일을 작성한다는 다르다</h2><p>아주 많은 웹 퍼블리셔들이 오인하는 것 중 하나가 HTML을 다루는 것을 <b>html 파일</b>
 작성으로만 생각한다는 거다. </p>
-<p>아니, 웹 퍼블리셔가 HTML을 다룬다는 것은 html 파일을 다룬다는 것이 아니라 최종 렌더링 된 
-결과 HTML &mdash; 즉 어떤 과정을 거쳐 최종적으로 사용자의 브라우저에 노출되는 HTML을 
-책임 진다는 거다. 그리고 너무 당연하게 이 어떤 처리를 거치기 전의 파일 확장자가 html이라는 
+<p>아니, 웹 퍼블리셔가 HTML을 다룬다는 것은 html 파일을 다룬다는 것이 아니라 최종 렌더링 된
+결과 HTML &mdash; 즉 어떤 과정을 거쳐 최종적으로 사용자의 브라우저에 노출되는 HTML을
+책임 진다는 거다. 그리고 너무 당연하게 이 어떤 처리를 거치기 전의 파일 확장자가 html이라는
 보장은 어디에도 없다.</p>
-<p>나는 십여년전부터 웹 퍼블리셔가 간단한 수준의 서버 언어 &mdash; 텍스트 출력, 단순한 분기문, 
-반복문 정도는 읽거나 사용할 수 있어야 한다고 이야기해왔고, 그 때마다 돌아오는 반응은 개발자가 
+<p>나는 십여년전부터 웹 퍼블리셔가 간단한 수준의 서버 언어 &mdash; 텍스트 출력, 단순한 분기문,
+반복문 정도는 읽거나 사용할 수 있어야 한다고 이야기해왔고, 그 때마다 돌아오는 반응은 개발자가
 하는 걸 왜 퍼블리셔가 해야 하느냐라는 거였다.</p>
-<p>과거 CSS Tricks의 필진인 Chris Coyier는 웹 퍼블리셔에 해당하는 해외 포지션의 설명에 
-light backend를 포함시키고 있었다 (현재도 front-end에 여전히 light backend가 포함되어 
-있다). 개인적으로 light backend를 포함시켜둔 이유를 바로 위에서 언급한 그 이유 때문이라고 
+<p>과거 CSS Tricks의 필진인 Chris Coyier는 웹 퍼블리셔에 해당하는 해외 포지션의 설명에
+light backend를 포함시키고 있었다 (현재도 front-end에 여전히 light backend가 포함되어
+있다). 개인적으로 light backend를 포함시켜둔 이유를 바로 위에서 언급한 그 이유 때문이라고
 생각한다. </p>
-<p>최근에는 종종 템플릿 엔진(pug, ejs 등)을 이용해서 HTML을 렌더링하는 개발 환경을 가진 
-경우조차도 (개발 환경 설정을 해야 하는 것이니) 개발자가 해야 하는 것이지 퍼블리셔가 왜 이걸 
+<p>최근에는 종종 템플릿 엔진(pug, ejs 등)을 이용해서 HTML을 렌더링하는 개발 환경을 가진
+경우조차도 (개발 환경 설정을 해야 하는 것이니) 개발자가 해야 하는 것이지 퍼블리셔가 왜 이걸
 다루어야 하느냐고 반문하는 경우도 있었다.</p>
-<p>내가 처음 HTML을 만져본게 1998년이었고, 업으로 삼기 시작한게 2010년이었는데, 
-그 이후로 십여년이 지나는 동안 기술은 많은 부분 발전하고 변경되어 왔는데, 유독 웹 퍼블리셔들 
+<p>내가 처음 HTML을 만져본게 1998년이었고, 업으로 삼기 시작한게 2010년이었는데,
+그 이후로 십여년이 지나는 동안 기술은 많은 부분 발전하고 변경되어 왔는데, 유독 웹 퍼블리셔들
 만큼은 십여년 전의 기술에서 단 한 발자국도 떠나지 않으려는 듯 하다. </p>
-<p>십여년 전에야 디자이너에서 넘어온 퍼블리셔가 많았기 때문에 HTML 파일을 생성하고 다음 차례의 
-서버 사이드 개발자에게 전달하는 형태가 어쩌면 불가피한 상황이었을 수 있으나, 이 기조를 
+<p>십여년 전에야 디자이너에서 넘어온 퍼블리셔가 많았기 때문에 HTML 파일을 생성하고 다음 차례의
+서버 사이드 개발자에게 전달하는 형태가 어쩌면 불가피한 상황이었을 수 있으나, 이 기조를
 지금까지 가지고 오는 것에는 분명히 문제가 있다.  </p>
-<p>제발 서버 언어 붙으면 그건 이제 (서버 사이드) 개발자가 건드려야죠, Node 환경이기만 하면 
-그건 프론트엔드 개발자가 건드려야죠 하는 식으로 나는 &quot;HTML 파일<em>만</em>&quot; 건드립니다라는 
-되도 않는 고집은 좀 버렸으면 좋겠다.<br>내부 개발 환경이 handlbars&middot;pug 등의 템플릿 엔진으로 되어 있으면 이를 통해 HTML을 
-책임 질 수 있어야 하는 것이고, 필요하다면 PHP, JSP 등의 코드가 얹어져 있는 코드도 일부 
+<p>제발 서버 언어 붙으면 그건 이제 (서버 사이드) 개발자가 건드려야죠, Node 환경이기만 하면
+그건 프론트엔드 개발자가 건드려야죠 하는 식으로 나는 &quot;HTML 파일<em>만</em>&quot; 건드립니다라는
+되도 않는 고집은 좀 버렸으면 좋겠다.<br>내부 개발 환경이 handlbars&middot;pug 등의 템플릿 엔진으로 되어 있으면 이를 통해 HTML을
+책임 질 수 있어야 하는 것이고, 필요하다면 PHP, JSP 등의 코드가 얹어져 있는 코드도 일부
 수준에서는 수정 하여 처리 후 최종 렌더링 될 HTML을 책임질 수 있어야 하는 거다.</p>
 </div><div class="article__tags"><div class="article__tags__title">tags:</div><a class="article__tag__item" href="/tags/%EC%9B%B9-%ED%8D%BC%EB%B8%94%EB%A6%AC%EC%85%94/"><span class="fas fa-tag" aria-hidden="true"></span>웹 퍼블리셔</a><a class="article__tag__item" href="/tags/html/"><span class="fas fa-tag" aria-hidden="true"></span>HTML</a><a class="article__tag__item" href="/tags/markup/"><span class="fas fa-tag" aria-hidden="true"></span>markup</a></div></article><div class="comment__container" role="region" aria-label="comments"><div id="lv-container" data-id="city" data-uid="MTAyMC8zMDYzOC83MTkz"></div></div></div><footer class="footer"><p class="copyright">&copy; 2012 ~ 2019 mulder21c <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" target="_blank" rel="license">(CCL-BY-NC-ND)</a></p><p class="credit">Powered by  <a href="https://hexo.io/" rel="external noreferrer" target="_blank">Hexo</a>. Theme by  <a href="https://github.com/mulder21c" rel="external noreferrer" target="_blank">mulder21c</a></p></footer><div class="nav" aria-hidden="true"><nav class="nav--container" id="navigation" aria-labelledby="nav__heading"><h2 class="nav__heading" id="nav__heading">Navigation</h2><hr class="nav__seperator"><ul class="menu-list">
     <li class="menu-item" >
@@ -200,15 +200,15 @@ light backend를 포함시키고 있었다 (현재도 front-end에 여전히 lig
       <li>
         <a href="https://mulder21c.github.io/aria-practices" target="_blank" class="link-item">WAI-ARIA Authoring Practice 1.2 (진행중)</a>
       </li>
-    
+
       <li>
         <a href="https://mulder21c.github.io/jest/docs/en/next/getting-started.html" target="_blank" class="link-item">Jest 공식 문서 개인 번역 (진행중)</a>
       </li>
-    
+
       <li>
         <a href="https://mulder21c.github.io/seminar" target="_blank" class="link-item">세미나 발표 자료</a>
       </li>
-    
+
       <li>
         <a href="https://mulder21c.github.io/html" target="_blank" class="link-item">HTML 5.1 명세 개인 번역 (중단)</a>
       </li>

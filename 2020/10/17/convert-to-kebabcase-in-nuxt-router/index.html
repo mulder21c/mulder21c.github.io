@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Nuxt Router kebab-case 처리 - The Tracks of mulder21c</title><!-- Links--><link rel="canonical" href="https://mulder21c.github.io/2020/10/17/convert-to-kebabcase-in-nuxt-router"><!-- preload--><link rel="preload" as="image" href="/images/favicon.png" crossorigin="anonymous"><link rel="preload" as="image" href="/upload/2020/nuxt-router-name.jpg" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/iropke/IropkeBatangM.woff" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/spoqahansans/SpoqaHanSansRegular.woff2" crossorigin="anonymous"><!-- Icons--><link rel="shortcut icon" sizes="196x196" href="/images/favicon.png"><!-- open graph--><meta name="description" content="다른 컴포넌트 파일들과의 일관성을 맞추기 위해서 page에만 적용할 별도의 규칙을 만드는 것도  썩 마음에 들지 않아, 차라리 Nuxt에서 router를 생성할 때 파일명으로부터 kebab-case  처리하도록 만들었다.">
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Nuxt Router kebab-case 처리 - The Tracks of mulder21c</title><!-- Links--><link rel="canonical" href="https://mulder21c.io/convert-to-kebabcase-in-nuxt-router"><!-- preload--><link rel="preload" as="image" href="/images/favicon.png" crossorigin="anonymous"><link rel="preload" as="image" href="/upload/2020/nuxt-router-name.jpg" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/iropke/IropkeBatangM.woff" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/spoqahansans/SpoqaHanSansRegular.woff2" crossorigin="anonymous"><!-- Icons--><link rel="shortcut icon" sizes="196x196" href="/images/favicon.png"><!-- open graph--><meta name="description" content="다른 컴포넌트 파일들과의 일관성을 맞추기 위해서 page에만 적용할 별도의 규칙을 만드는 것도  썩 마음에 들지 않아, 차라리 Nuxt에서 router를 생성할 때 파일명으로부터 kebab-case  처리하도록 만들었다.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Nuxt Router kebab-case 처리">
 <meta property="og:url" content="https://mulder21c.github.io/2020/10/17/convert-to-kebabcase-in-nuxt-router/">
@@ -59,16 +59,16 @@ ga("send", "pageview");
 </script><meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/rss.xml" title="The Tracks of mulder21c" type="application/rss+xml">
 <link rel="stylesheet" href="/css/prism-xonokai.css" type="text/css">
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><script defer src="/js/prism.js"></script></head><body class="post"><header class="header hero hero--has-image"><div class="hero-wrapper"><div class="gnb"><a href="/">The Tracks of mulder21c</a><button class="nav-toggle" type="button" aria-haspopup="true" aria-controls="navigation"><span></span><span></span><span></span>menu</button></div><h1 class="header__title">Nuxt Router kebab-case 처리</h1><div class="hero__image" style="background-image: url(/upload/2020/nuxt-router-name.jpg);"></div></div></header><div class="contents--container" role="main"><article class="article"><div class="article__meta"><div class="gravatar"><img src="/images/favicon.png" alt="authored by 멀더끙"></div><time class="article__meta__time" datetime="2020-10-17T08:51:36.000Z"><span aria-label="posted"><span class="fas fa-calendar-day" aria-hidden="true"></span></span>2020-10-17 17:51:36</time><div class="article__meta__category"><span aria-label="category"><span class="fas fa-archive" aria-hidden="true"></span></span><a class="article__meta__category__item" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/">개발노트</a><a class="article__meta__category__item" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/front-end/">Front-End</a></div></div><div class="article__content"><p>Nuxt를 사용할 때 page component 파일을 PascalCase 혹은 camelCase로 생성하게 되면
-router name 역시 PascalCase, camelCase로 고스란히 생성된다.<br>물론 case-insensitive 처리해도 되지만, URL에 대소문자가 섞여 노출 되는게 썩 좋은 경험은 
+router name 역시 PascalCase, camelCase로 고스란히 생성된다.<br>물론 case-insensitive 처리해도 되지만, URL에 대소문자가 섞여 노출 되는게 썩 좋은 경험은
 아니었어서 kebab-case로 노출되도록 변경이 필요했다. </p>
-<p>단순하게 page component 파일을 생성할 때 파일명 자체를 kabab-case에 맞추어서 생성해도 
+<p>단순하게 page component 파일을 생성할 때 파일명 자체를 kabab-case에 맞추어서 생성해도
 충분히 되기는 한데, 다른 컴포넌트 파일들과의 일관성을 맞추기 위해서 page에만 적용할 별도의
-규칙을 만드는 것도 썩 마음에 들지 않아, 차라리 Nuxt에서 router를 생성할 때 파일명으로부터 
+규칙을 만드는 것도 썩 마음에 들지 않아, 차라리 Nuxt에서 router를 생성할 때 파일명으로부터
 kebab-case 처리하도록 만들었다. </p>
-<p>다행히(?) Nuxt에서는 라우터 확장을 위해 <code>extendRoutes</code> 옵션을 제공하고 있어 이를 활용하여 
+<p>다행히(?) Nuxt에서는 라우터 확장을 위해 <code>extendRoutes</code> 옵션을 제공하고 있어 이를 활용하여
 처리가 가능했다.</p>
 <pre class="line-numbers language-javascript" ><code class="language-javascript"><span class="token keyword">const</span> convertKebabCase <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'lodash/kebabCase'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">...</span> 
+<span class="token operator">...</span>
 router<span class="token punctuation">:</span> <span class="token punctuation">{</span>
   <span class="token function">extendRoutes</span><span class="token punctuation">(</span>routes<span class="token punctuation">,</span> resolve<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     routes<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>route <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
@@ -84,7 +84,7 @@ router<span class="token punctuation">:</span> <span class="token punctuation">{
 <p>이렇게 해서 잘 되는 줄 알았...는데... dynamic router에서 다시 문제가 발생했다.<br><code>lodash/convertKebabCase</code>가 dynamic router path에 붙어있는 &quot;:&quot;를 제거해버렸... ㅋㅋㅋ</p>
 <p>하여, path에 &quot;:&quot;의 존재 여부에 따라 변경 되도록 바꾸었고,</p>
 <pre class="line-numbers language-javascript" data-line="9-12"><code class="language-javascript"><span class="token keyword">const</span> convertKebabCase <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'lodash/kebabCase'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">...</span> 
+<span class="token operator">...</span>
 router<span class="token punctuation">:</span> <span class="token punctuation">{</span>
   <span class="token function">extendRoutes</span><span class="token punctuation">(</span>routes<span class="token punctuation">,</span> resolve<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     routes<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>route <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
@@ -124,15 +124,15 @@ router<span class="token punctuation">:</span> <span class="token punctuation">{
       <li>
         <a href="https://mulder21c.github.io/aria-practices" target="_blank" class="link-item">WAI-ARIA Authoring Practice 1.2 (진행중)</a>
       </li>
-    
+
       <li>
         <a href="https://mulder21c.github.io/jest/docs/en/next/getting-started.html" target="_blank" class="link-item">Jest 공식 문서 개인 번역 (진행중)</a>
       </li>
-    
+
       <li>
         <a href="https://mulder21c.github.io/seminar" target="_blank" class="link-item">세미나 발표 자료</a>
       </li>
-    
+
       <li>
         <a href="https://mulder21c.github.io/html" target="_blank" class="link-item">HTML 5.1 명세 개인 번역 (중단)</a>
       </li>

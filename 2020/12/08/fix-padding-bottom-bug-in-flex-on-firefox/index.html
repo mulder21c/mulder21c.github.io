@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>colum flexbox에서 padding bottom 문제 해결 - The Tracks of mulder21c</title><!-- Links--><link rel="canonical" href="https://mulder21c.github.io/2020/12/08/fix-padding-bottom-bug-in-flex-on-firefox"><!-- preload--><link rel="preload" as="image" href="/images/favicon.png" crossorigin="anonymous"><link rel="preload" as="image" href="/upload/2020/fails-padding-bottom-in-flexbox.jpg" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/iropke/IropkeBatangM.woff" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/spoqahansans/SpoqaHanSansRegular.woff2" crossorigin="anonymous"><!-- Icons--><link rel="shortcut icon" sizes="196x196" href="/images/favicon.png"><!-- open graph--><meta name="description" content="Firefox에서 column flexbox에 하단에 적용해 둔 padding-bottom이 실종되는 상황을  만나게 되었다.">
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>colum flexbox에서 padding bottom 문제 해결 - The Tracks of mulder21c</title><!-- Links--><link rel="canonical" href="https://mulder21c.io/fix-padding-bottom-bug-in-flex-on-firefox"><!-- preload--><link rel="preload" as="image" href="/images/favicon.png" crossorigin="anonymous"><link rel="preload" as="image" href="/upload/2020/fails-padding-bottom-in-flexbox.jpg" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/iropke/IropkeBatangM.woff" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/spoqahansans/SpoqaHanSansRegular.woff2" crossorigin="anonymous"><!-- Icons--><link rel="shortcut icon" sizes="196x196" href="/images/favicon.png"><!-- open graph--><meta name="description" content="Firefox에서 column flexbox에 하단에 적용해 둔 padding-bottom이 실종되는 상황을  만나게 되었다.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="colum flexbox에서 padding bottom 문제 해결">
 <meta property="og:url" content="https://mulder21c.github.io/2020/12/08/fix-padding-bottom-bug-in-flex-on-firefox/">
@@ -61,8 +61,8 @@ ga("send", "pageview");
 </script><meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/rss.xml" title="The Tracks of mulder21c" type="application/rss+xml">
 <link rel="stylesheet" href="/css/prism-xonokai.css" type="text/css">
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><script defer src="/js/prism.js"></script></head><body class="post"><header class="header hero hero--has-image"><div class="hero-wrapper"><div class="gnb"><a href="/">The Tracks of mulder21c</a><button class="nav-toggle" type="button" aria-haspopup="true" aria-controls="navigation"><span></span><span></span><span></span>menu</button></div><h1 class="header__title">colum flexbox에서 padding bottom 문제 해결</h1><div class="hero__image" style="background-image: url(/upload/2020/fails-padding-bottom-in-flexbox.jpg);"></div></div></header><div class="contents--container" role="main"><article class="article"><div class="article__meta"><div class="gravatar"><img src="/images/favicon.png" alt="authored by 멀더끙"></div><time class="article__meta__time" datetime="2020-12-08T10:12:13.000Z"><span aria-label="posted"><span class="fas fa-calendar-day" aria-hidden="true"></span></span>2020-12-08 19:12:13</time><div class="article__meta__category"><span aria-label="category"><span class="fas fa-archive" aria-hidden="true"></span></span><a class="article__meta__category__item" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/">개발노트</a><a class="article__meta__category__item" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/html-css/">HTML/CSS</a></div></div><div class="article__content"><p>FlexBox를 사용 하는 중 padding-bottom이 실종되는 상황을 만나게 되었다. </p>
-<p>정확하게는 Firefox에서 column flexbox에 발생 된 문제로 
-<code class="language-css">overflow: auto</code>에 의해 스크롤이 발생되었을 때 
+<p>정확하게는 Firefox에서 column flexbox에 발생 된 문제로
+<code class="language-css">overflow: auto</code>에 의해 스크롤이 발생되었을 때
 하단에 적용해 둔 padding이 실종되는 상황이다. </p>
 <p>물론, Chrome은 렌더링이 잘 된다... <s>힘내요 FireFox</s></p>
 <h2 id="발견된-상황"><a href="#발견된-상황" class="headerlink" title="발견된 상황"></a>발견된 상황</h2><h3 id="적용된-코드"><a href="#적용된-코드" class="headerlink" title="적용된 코드"></a>적용된 코드</h3><p>해당 문제와 관련 없는 코드는 삭제해 두었고, padding-top/bottom에 해당 하는 값은
@@ -80,8 +80,8 @@ ga("send", "pageview");
 <span class="token punctuation">}</span></code></pre>
 <h3 id="렌더링-된-화면"><a href="#렌더링-된-화면" class="headerlink" title="렌더링 된 화면"></a>렌더링 된 화면</h3>
 <figure class="figure">
-  <img 
-    src="/upload/2020/fails-padding-bottom-in-flexbox.jpg" 
+  <img
+    src="/upload/2020/fails-padding-bottom-in-flexbox.jpg"
     alt="" >
   <figcaption class="figure__caption">
     상단에는 padding이 적용되어 있지만, 하단에는 padding이 적용되지 않은 것 처럼 보여진다.
@@ -91,9 +91,9 @@ ga("send", "pageview");
 
 <h2 id="Fix-it"><a href="#Fix-it" class="headerlink" title="Fix it"></a>Fix it</h2><p>찾아보니 FireFox와 Safari에서 발생되는 버그로 알려져 있더라.<br>나는 Mac이 없는 관계로... Safari에서는 테스트를 해보지 못했지만, 같은 문제가 발생되더라도
 동일한 방법으로 충분히 해결 될 거라고 생각한다. </p>
-<p>사실 이게 해결(?)이라기 보다는 trick에 가깝다고 봐야 할 것 같고, 아마도 특정 상황에서는 
+<p>사실 이게 해결(?)이라기 보다는 trick에 가깝다고 봐야 할 것 같고, 아마도 특정 상황에서는
 사용하지 못하는 방법일 수도 있다. (왜 그런지는 코드를 보면 알 거다)</p>
-<p>키는 <code class="language-css">::before</code>, 
+<p>키는 <code class="language-css">::before</code>,
 <code class="language-css">::after</code> 가상 선택자에 있다.<br>단지 아래와 같은 코드를 바꾸어주었을 뿐이다. </p>
 <pre class="line-numbers language-scss" ><code class="language-scss"><span class="token selector">.frm </span><span class="token punctuation">{</span>
   <span class="token property">box-sizing</span><span class="token punctuation">:</span> border-box<span class="token punctuation">;</span>
@@ -115,10 +115,10 @@ ga("send", "pageview");
 <span class="token punctuation">}</span></code></pre>
 <p>padding-top/bottom 에 해당하는 값을 가상선택자의 flex로 이동시켜주는 방식으로 요소 상/하
 단에 그 만큼의 여백에 해당하는 빈 요소를 집어 넣은... </p>
-<p>참고로 <code class="langauge-css">width: 100%</code>를 넣은 건, width값이 0이면 
+<p>참고로 <code class="langauge-css">width: 100%</code>를 넣은 건, width값이 0이면
 렌더링 되지 않아서다;; <s>나한테 왜이래 Firefox...</s></p>
-<p><code class="language-css">::before</code>, 
-<code class="language-css">::after</code>를 사용했기 때문에, 이미 이를 다른 스타일링을 
+<p><code class="language-css">::before</code>,
+<code class="language-css">::after</code>를 사용했기 때문에, 이미 이를 다른 스타일링을
 위해 사용하고 있다면 다소 이 방법을 사용하기는 어렵겠다. </p>
 <p>그저 Firefox와 Safari가 이 버그를 수정해주길 기다릴 뿐...</p>
 </div><div class="article__tags"><div class="article__tags__title">tags:</div><a class="article__tag__item" href="/tags/flex/"><span class="fas fa-tag" aria-hidden="true"></span>flex</a><a class="article__tag__item" href="/tags/flexbox/"><span class="fas fa-tag" aria-hidden="true"></span>flexbox</a><a class="article__tag__item" href="/tags/padding-bottom/"><span class="fas fa-tag" aria-hidden="true"></span>padding-bottom</a><a class="article__tag__item" href="/tags/firefox/"><span class="fas fa-tag" aria-hidden="true"></span>firefox</a><a class="article__tag__item" href="/tags/overflow/"><span class="fas fa-tag" aria-hidden="true"></span>overflow</a></div></article><div class="comment__container" role="region" aria-label="comments"><div id="lv-container" data-id="city" data-uid="MTAyMC8zMDYzOC83MTkz"></div></div></div><footer class="footer"><p class="copyright">&copy; 2012 ~ 2019 mulder21c <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" target="_blank" rel="license">(CCL-BY-NC-ND)</a></p><p class="credit">Powered by  <a href="https://hexo.io/" rel="external noreferrer" target="_blank">Hexo</a>. Theme by  <a href="https://github.com/mulder21c" rel="external noreferrer" target="_blank">mulder21c</a></p></footer><div class="nav" aria-hidden="true"><nav class="nav--container" id="navigation" aria-labelledby="nav__heading"><h2 class="nav__heading" id="nav__heading">Navigation</h2><hr class="nav__seperator"><ul class="menu-list">
@@ -145,15 +145,15 @@ ga("send", "pageview");
       <li>
         <a href="https://mulder21c.github.io/aria-practices" target="_blank" class="link-item">WAI-ARIA Authoring Practice 1.2 (진행중)</a>
       </li>
-    
+
       <li>
         <a href="https://mulder21c.github.io/jest/docs/en/next/getting-started.html" target="_blank" class="link-item">Jest 공식 문서 개인 번역 (진행중)</a>
       </li>
-    
+
       <li>
         <a href="https://mulder21c.github.io/seminar" target="_blank" class="link-item">세미나 발표 자료</a>
       </li>
-    
+
       <li>
         <a href="https://mulder21c.github.io/html" target="_blank" class="link-item">HTML 5.1 명세 개인 번역 (중단)</a>
       </li>

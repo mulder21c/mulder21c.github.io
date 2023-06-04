@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Codility Lesson 3 — tapeEquilibrium - The Tracks of mulder21c</title><!-- Links--><link rel="canonical" href="https://mulder21c.github.io/2019/09/19/codility-lesson-3-tape-equilibrium"><!-- preload--><link rel="preload" as="image" href="/images/favicon.png" crossorigin="anonymous"><link rel="preload" as="image" href="/upload/2019/codility-tape-equilibrium.png" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/iropke/IropkeBatangM.woff" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/spoqahansans/SpoqaHanSansRegular.woff2" crossorigin="anonymous"><!-- Icons--><link rel="shortcut icon" sizes="196x196" href="/images/favicon.png"><!-- open graph--><meta name="description" content="Codility 알고리즘 연습  Lesson 3 tapeEquilibrium">
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Codility Lesson 3 — tapeEquilibrium - The Tracks of mulder21c</title><!-- Links--><link rel="canonical" href="https://mulder21c.io/codility-lesson-3-tape-equilibrium"><!-- preload--><link rel="preload" as="image" href="/images/favicon.png" crossorigin="anonymous"><link rel="preload" as="image" href="/upload/2019/codility-tape-equilibrium.png" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/iropke/IropkeBatangM.woff" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/spoqahansans/SpoqaHanSansRegular.woff2" crossorigin="anonymous"><!-- Icons--><link rel="shortcut icon" sizes="196x196" href="/images/favicon.png"><!-- open graph--><meta name="description" content="Codility 알고리즘 연습  Lesson 3 tapeEquilibrium">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Codility Lesson 3 — tapeEquilibrium">
 <meta property="og:url" content="https://mulder21c.github.io/2019/09/19/codility-lesson-3-tape-equilibrium/">
@@ -69,7 +69,7 @@ ga("send", "pageview");
 </ul>
 <h3 id="Solved-Code"><a href="#Solved-Code" class="headerlink" title="Solved Code"></a>Solved Code</h3><pre class="line-numbers language-javascript" ><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">solution</span><span class="token punctuation">(</span>A<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">const</span> sumOfTotal <span class="token operator">=</span> A<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span> <span class="token punctuation">(</span>acc<span class="token punctuation">,</span> entry<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> acc <span class="token operator">+</span> entry<span class="token punctuation">,</span> <span class="token number">0</span> <span class="token punctuation">)</span>
-  <span class="token keyword">let</span>  diff <span class="token operator">=</span> Number<span class="token punctuation">.</span>MAX_SAFE_INTEGER 
+  <span class="token keyword">let</span>  diff <span class="token operator">=</span> Number<span class="token punctuation">.</span>MAX_SAFE_INTEGER
 
   <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> P <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> sumOfFirstPart <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> sumOfSecondPart <span class="token operator">=</span> sumOfTotal<span class="token punctuation">;</span> <span class="token operator">++</span>P <span class="token operator">&lt;</span> A<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span> <span class="token punctuation">;</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
     sumOfFirstPart <span class="token operator">+</span><span class="token operator">=</span> A<span class="token punctuation">[</span>P<span class="token punctuation">]</span>
@@ -82,10 +82,10 @@ ga("send", "pageview");
 <h2 id="Retrospective"><a href="#Retrospective" class="headerlink" title="Retrospective"></a>Retrospective</h2><ul>
 <li><p>두 번만에 풀었다.</p>
 </li>
-<li><p>첫 번째 풀 때에는 P를 증가시키면서 배열을 slice해서 각 배열의 합의 차이를 구하는 방식으로 
+<li><p>첫 번째 풀 때에는 P를 증가시키면서 배열을 slice해서 각 배열의 합의 차이를 구하는 방식으로
 했더니 시간 복잡도 때문에 timeout 되더라 하하...</p>
 </li>
-<li><p>codility가 코드를 제출해야만 평가를 해주기 때문에 불편한 감이 많다. 테스트 데이터를 
+<li><p>codility가 코드를 제출해야만 평가를 해주기 때문에 불편한 감이 많다. 테스트 데이터를
 미리 제공해주면 그래도 좀 제출 전에 검증을 해 볼 수 있을 텐데 말이다.</p>
 </li>
 </ul>
@@ -113,15 +113,15 @@ ga("send", "pageview");
       <li>
         <a href="https://mulder21c.github.io/aria-practices" target="_blank" class="link-item">WAI-ARIA Authoring Practice 1.2 (진행중)</a>
       </li>
-    
+
       <li>
         <a href="https://mulder21c.github.io/jest/docs/en/next/getting-started.html" target="_blank" class="link-item">Jest 공식 문서 개인 번역 (진행중)</a>
       </li>
-    
+
       <li>
         <a href="https://mulder21c.github.io/seminar" target="_blank" class="link-item">세미나 발표 자료</a>
       </li>
-    
+
       <li>
         <a href="https://mulder21c.github.io/html" target="_blank" class="link-item">HTML 5.1 명세 개인 번역 (중단)</a>
       </li>

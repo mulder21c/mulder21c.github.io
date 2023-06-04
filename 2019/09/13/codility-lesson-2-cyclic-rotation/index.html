@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Codility Lesson 2 — CyclicRotation - The Tracks of mulder21c</title><!-- Links--><link rel="canonical" href="https://mulder21c.github.io/2019/09/13/codility-lesson-2-cyclic-rotation"><!-- preload--><link rel="preload" as="image" href="/images/favicon.png" crossorigin="anonymous"><link rel="preload" as="image" href="/upload/2019/cyclic-rotation.png" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/iropke/IropkeBatangM.woff" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/spoqahansans/SpoqaHanSansRegular.woff2" crossorigin="anonymous"><!-- Icons--><link rel="shortcut icon" sizes="196x196" href="/images/favicon.png"><!-- open graph--><meta name="description" content="Codility 알고리즘 연습  Lesson 2 CyclicRotation">
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Codility Lesson 2 — CyclicRotation - The Tracks of mulder21c</title><!-- Links--><link rel="canonical" href="https://mulder21c.io/codility-lesson-2-cyclic-rotation"><!-- preload--><link rel="preload" as="image" href="/images/favicon.png" crossorigin="anonymous"><link rel="preload" as="image" href="/upload/2019/cyclic-rotation.png" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/iropke/IropkeBatangM.woff" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/spoqahansans/SpoqaHanSansRegular.woff2" crossorigin="anonymous"><!-- Icons--><link rel="shortcut icon" sizes="196x196" href="/images/favicon.png"><!-- open graph--><meta name="description" content="Codility 알고리즘 연습  Lesson 2 CyclicRotation">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Codility Lesson 2 — CyclicRotation">
 <meta property="og:url" content="https://mulder21c.github.io/2019/09/13/codility-lesson-2-cyclic-rotation/">
@@ -59,14 +59,14 @@ ga("send", "pageview");
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><script defer src="/js/prism.js"></script></head><body class="post"><header class="header hero hero--has-image"><div class="hero-wrapper"><div class="gnb"><a href="/">The Tracks of mulder21c</a><button class="nav-toggle" type="button" aria-haspopup="true" aria-controls="navigation"><span></span><span></span><span></span>menu</button></div><h1 class="header__title">Codility Lesson 2 — CyclicRotation</h1><div class="hero__image" style="background-image: url(/upload/2019/cyclic-rotation.png);"></div></div></header><div class="contents--container" role="main"><article class="article"><div class="article__meta"><div class="gravatar"><img src="/images/favicon.png" alt="authored by 멀더끙"></div><time class="article__meta__time" datetime="2019-09-12T15:35:12.000Z"><span aria-label="posted"><span class="fas fa-calendar-day" aria-hidden="true"></span></span>2019-09-13 00:35:12</time><div class="article__meta__category"><span aria-label="category"><span class="fas fa-archive" aria-hidden="true"></span></span><a class="article__meta__category__item" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/">개발노트</a><a class="article__meta__category__item" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/javascript/">JavaScript</a></div></div><div class="article__content"><h2 id="Task-description"><a href="#Task-description" class="headerlink" title="Task description"></a>Task description</h2><p>주어진 수만큼 배열을 오른쪽으로 이동</p>
 <h2 id="How-I-did-solve"><a href="#How-I-did-solve" class="headerlink" title="How I did solve"></a>How I did solve</h2><ul>
 <li><p>주어진 값이 <code>A = [3, 8, 9, 7, 6]</code>, <code>K = 3</code> 일 경우 결과는 <code>[9, 7, 6, 3, 8]</code></p>
-<p>즉, 3만큼 오른쪽으로 이동시킬 경우 뒤에서 3개 요소를 앞으로, 나머지를 그 뒤에 나열시키는 
+<p>즉, 3만큼 오른쪽으로 이동시킬 경우 뒤에서 3개 요소를 앞으로, 나머지를 그 뒤에 나열시키는
 새로운 배열 반환.</p>
 </li>
 <li><p>이를 위해서는 <code>array.length - 3</code>부터 마지막 요소까지를 slice ,나머지를 slice</p>
 </li>
 <li><p>slice된 배열을 접합</p>
 </li>
-<li><p>K가 배열 길이를 넘어설 경우 n회의 cycle을 돌아 제자리가 되므로 K를 배열 길이로 나눈 몫으로 
+<li><p>K가 배열 길이를 넘어설 경우 n회의 cycle을 돌아 제자리가 되므로 K를 배열 길이로 나눈 몫으로
 사용.</p>
 </li>
 </ul>
@@ -76,12 +76,12 @@ ga("send", "pageview");
 <span class="token punctuation">}</span></code></pre>
 <h2 id="Retrospective"><a href="#Retrospective" class="headerlink" title="Retrospective"></a>Retrospective</h2><ul>
 <li><p>이 문제는 밀려나간다는 생각에서 해결 방법이 바로 도출되어 단시간에 해결 되었다.
-다만 <code class="language-javascript">Array.prototype.slice</code>의 두 번째 
+다만 <code class="language-javascript">Array.prototype.slice</code>의 두 번째
 인자의 인덱스가 포함되는지 아닌지에 대한 확신이 없어서 로그를 찍어보고 검증을 거친 뒤에야
 제출이 이루어졌다.</p>
 </li>
-<li><p>내가 얼마만큼 레퍼런스에 의존하고 있었는지가 여실히 드러나는 순간이었다. 정확하게 기억나지 
-않으면 문서를 찾아보고 사용하다보니 지적 재산으로 쌓기 보다는 의존하는 방향으로 뇌가 익숙해진 
+<li><p>내가 얼마만큼 레퍼런스에 의존하고 있었는지가 여실히 드러나는 순간이었다. 정확하게 기억나지
+않으면 문서를 찾아보고 사용하다보니 지적 재산으로 쌓기 보다는 의존하는 방향으로 뇌가 익숙해진
 느낌이다. 의존도를 낮추는 훈련이 필요할 듯 하다.</p>
 </li>
 </ul>
@@ -109,15 +109,15 @@ ga("send", "pageview");
       <li>
         <a href="https://mulder21c.github.io/aria-practices" target="_blank" class="link-item">WAI-ARIA Authoring Practice 1.2 (진행중)</a>
       </li>
-    
+
       <li>
         <a href="https://mulder21c.github.io/jest/docs/en/next/getting-started.html" target="_blank" class="link-item">Jest 공식 문서 개인 번역 (진행중)</a>
       </li>
-    
+
       <li>
         <a href="https://mulder21c.github.io/seminar" target="_blank" class="link-item">세미나 발표 자료</a>
       </li>
-    
+
       <li>
         <a href="https://mulder21c.github.io/html" target="_blank" class="link-item">HTML 5.1 명세 개인 번역 (중단)</a>
       </li>

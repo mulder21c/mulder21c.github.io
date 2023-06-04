@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>접근 가능한 숨김 텍스트 - The Tracks of mulder21c</title><!-- Links--><link rel="canonical" href="https://mulder21c.github.io/2019/03/22/screen-hide-text"><!-- preload--><link rel="preload" as="image" href="/images/favicon.png" crossorigin="anonymous"><link rel="preload" as="image" href="/upload/2019/reading-glass.jpg" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/iropke/IropkeBatangM.woff" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/spoqahansans/SpoqaHanSansRegular.woff2" crossorigin="anonymous"><!-- Icons--><link rel="shortcut icon" sizes="196x196" href="/images/favicon.png"><!-- open graph--><meta name="description" content="퍼블리싱 작업을 진행하다보면 종종 숨김 텍스트를 사용해야 하는 상황에 맞닥뜨릴 때가 많다. 이미 여러 가지 방법들이 인터넷에 공개되어 있고 널려있지만, 아쉽게도 여전히 실제로 작업을 담당하는 이들이 숨김 텍스트를 어떻게 적용하느냐에 따른 사이드 이펙트는 전혀 고려하지 않거나 모르는 경우가 많은 듯 하다.">
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>접근 가능한 숨김 텍스트 - The Tracks of mulder21c</title><!-- Links--><link rel="canonical" href="https://mulder21c.io/screen-hide-text"><!-- preload--><link rel="preload" as="image" href="/images/favicon.png" crossorigin="anonymous"><link rel="preload" as="image" href="/upload/2019/reading-glass.jpg" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/iropke/IropkeBatangM.woff" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/spoqahansans/SpoqaHanSansRegular.woff2" crossorigin="anonymous"><!-- Icons--><link rel="shortcut icon" sizes="196x196" href="/images/favicon.png"><!-- open graph--><meta name="description" content="퍼블리싱 작업을 진행하다보면 종종 숨김 텍스트를 사용해야 하는 상황에 맞닥뜨릴 때가 많다. 이미 여러 가지 방법들이 인터넷에 공개되어 있고 널려있지만, 아쉽게도 여전히 실제로 작업을 담당하는 이들이 숨김 텍스트를 어떻게 적용하느냐에 따른 사이드 이펙트는 전혀 고려하지 않거나 모르는 경우가 많은 듯 하다.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="접근 가능한 숨김 텍스트">
 <meta property="og:url" content="https://mulder21c.github.io/2019/03/22/screen-hide-text/">
@@ -210,7 +210,7 @@ screen out 기법으로 인한 black hat을 피하기 위해 고안된 방법으
 <p>만일 한 문단 안에서 inline formatting context(이하 IFC)로 전달되어야 하는 정보에 이 스타일을
 적용하게 되면 BFC로 변경되어 분리가 일어나게 된다. <sup id="fnref:8"><a href="#fn:8" rel="footnote">8</a></sup><br>따라서 한 번에 전달되어야 하는 문맥이 끊어지는 일이 발생되어 스크린리더로 읽게 되면 마치
 <var>div</var> 요소로 묶어놓은 것 마냥 끊어읽게 되는 일이 발생된다.</p>
-<h2 id="접근-가능한-숨김-방법"><a href="#접근-가능한-숨김-방법" class="headerlink" title="접근 가능한 숨김 방법"></a>접근 가능한 숨김 방법</h2><p>결국 문맥까지 고려해본다면 H5BP 방식에서 <code class="language-css">position: absolute;</code>을 
+<h2 id="접근-가능한-숨김-방법"><a href="#접근-가능한-숨김-방법" class="headerlink" title="접근 가능한 숨김 방법"></a>접근 가능한 숨김 방법</h2><p>결국 문맥까지 고려해본다면 H5BP 방식에서 <code class="language-css">position: absolute;</code>을
 들어내야하고, clip의 최신 표준을 사용해야 한다.</p>
 <pre class="line-numbers language-css" ><code class="language-css"><span class="token selector"><span class="token class">.hidden</span> </span><span class="token punctuation">{</span>
   <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
@@ -220,10 +220,10 @@ screen out 기법으로 인한 black hat을 피하기 위해 고안된 방법으
   <span class="token property">clip</span><span class="token punctuation">:</span> <span class="token function">rect</span><span class="token punctuation">(</span><span class="token number">1</span>px, <span class="token number">1</span>px, <span class="token number">1</span>px, <span class="token number">1</span>px<span class="token punctuation">)</span><span class="token punctuation">;</span> // for legacy browsers
   <span class="token property">clip-path</span><span class="token punctuation">:</span> <span class="token function">inset</span><span class="token punctuation">(</span><span class="token number">50%</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
-<p>그런데 이렇게 할 경우, phrasing contents는 IFC를 가지기 때문에 <var>width</var>, 
-<var>height</var>를 가질 수 없고 더구나 이를 가진다 하더라도 1px 만큼의 자리를 차지하게 
+<p>그런데 이렇게 할 경우, phrasing contents는 IFC를 가지기 때문에 <var>width</var>,
+<var>height</var>를 가질 수 없고 더구나 이를 가진다 하더라도 1px 만큼의 자리를 차지하게
 되는 문제가 또 발생된다.</p>
-<p>우선, IFC에서의 문제는 <code class="language-css">display: inline-block</code>을 
+<p>우선, IFC에서의 문제는 <code class="language-css">display: inline-block</code>을
 통해서 해결 할 수 있을 것이다.</p>
 <pre class="line-numbers language-css" ><code class="language-css"><span class="token selector"><span class="token class">.hidden</span> </span><span class="token punctuation">{</span>
   <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
@@ -234,11 +234,11 @@ screen out 기법으로 인한 black hat을 피하기 위해 고안된 방법으
   <span class="token property">clip</span><span class="token punctuation">:</span> <span class="token function">rect</span><span class="token punctuation">(</span><span class="token number">1</span>px, <span class="token number">1</span>px, <span class="token number">1</span>px, <span class="token number">1</span>px<span class="token punctuation">)</span><span class="token punctuation">;</span> // for legacy browsers
   <span class="token property">clip-path</span><span class="token punctuation">:</span> <span class="token function">inset</span><span class="token punctuation">(</span><span class="token number">50%</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
-<p>1px 만큼의 자리를 차지하는 것을 해결 하는 방법은 position 값을 
-<var>relative/absolute</var>로 주고 <var>top/left/z-index</var>를 조작 하는 방법과 
-<var>margin</var> 값을 음수로 조작하는 방법이 있겠으나, 음수 margin은 VoiceOver에서 
+<p>1px 만큼의 자리를 차지하는 것을 해결 하는 방법은 position 값을
+<var>relative/absolute</var>로 주고 <var>top/left/z-index</var>를 조작 하는 방법과
+<var>margin</var> 값을 음수로 조작하는 방법이 있겠으나, 음수 margin은 VoiceOver에서
 읽기 순서에 변형이 일어나는 이슈가 보고 되었다고 하니 margin을 이용한 방법은 제외 되어야 한다. <sup id="fnref:9"><a href="#fn:9" rel="footnote">9</a></sup></p>
-<p>그렇다면 남은 방법은 positioning을 통한 <var>top/left/z-index</var>를 조작하는 방법인데, 
+<p>그렇다면 남은 방법은 positioning을 통한 <var>top/left/z-index</var>를 조작하는 방법인데,
 <var>top/left</var>는 결국 주변 엘리먼트에 영향을 주게 되는 문제가 다시 발생할 소지가 남게 된다.<br>따라서 나는 아무도 선택하지 않은 z-index를 사용하기로 했다.</p>
 <p>즉, BFC라면</p>
 <pre class="line-numbers language-css" ><code class="language-css"><span class="token selector"><span class="token class">.hidden</span> </span><span class="token punctuation">{</span>
@@ -305,15 +305,15 @@ screen out 기법으로 인한 black hat을 피하기 위해 고안된 방법으
       <li>
         <a href="https://mulder21c.github.io/aria-practices" target="_blank" class="link-item">WAI-ARIA Authoring Practice 1.2 (진행중)</a>
       </li>
-    
+
       <li>
         <a href="https://mulder21c.github.io/jest/docs/en/next/getting-started.html" target="_blank" class="link-item">Jest 공식 문서 개인 번역 (진행중)</a>
       </li>
-    
+
       <li>
         <a href="https://mulder21c.github.io/seminar" target="_blank" class="link-item">세미나 발표 자료</a>
       </li>
-    
+
       <li>
         <a href="https://mulder21c.github.io/html" target="_blank" class="link-item">HTML 5.1 명세 개인 번역 (중단)</a>
       </li>

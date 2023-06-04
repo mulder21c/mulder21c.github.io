@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Codility Lesson 5 — PassingCars - The Tracks of mulder21c</title><!-- Links--><link rel="canonical" href="https://mulder21c.github.io/2019/12/22/codility-lesson-5-passing-cars"><!-- preload--><link rel="preload" as="image" href="/images/favicon.png" crossorigin="anonymous"><link rel="preload" as="image" href="/upload/2019/codility-passing-cars.png" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/iropke/IropkeBatangM.woff" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/spoqahansans/SpoqaHanSansRegular.woff2" crossorigin="anonymous"><!-- Icons--><link rel="shortcut icon" sizes="196x196" href="/images/favicon.png"><!-- open graph--><meta name="description" content="Codility 알고리즘 연습  Lesson 5 PassingCars">
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Codility Lesson 5 — PassingCars - The Tracks of mulder21c</title><!-- Links--><link rel="canonical" href="https://mulder21c.io/codility-lesson-5-passing-cars"><!-- preload--><link rel="preload" as="image" href="/images/favicon.png" crossorigin="anonymous"><link rel="preload" as="image" href="/upload/2019/codility-passing-cars.png" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/iropke/IropkeBatangM.woff" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/spoqahansans/SpoqaHanSansRegular.woff2" crossorigin="anonymous"><!-- Icons--><link rel="shortcut icon" sizes="196x196" href="/images/favicon.png"><!-- open graph--><meta name="description" content="Codility 알고리즘 연습  Lesson 5 PassingCars">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Codility Lesson 5 — PassingCars">
 <meta property="og:url" content="https://mulder21c.github.io/2019/12/22/codility-lesson-5-passing-cars/">
@@ -62,7 +62,7 @@ ga("send", "pageview");
 </ul>
 <h2 id="How-I-did-solve"><a href="#How-I-did-solve" class="headerlink" title="How I did solve"></a>How I did solve</h2><p>글로 풀어서 작성이 안될거 같아서 그림으로 대체 ...</p>
 <p><img src="/upload/2019/codility-passingcar-solving.gif" alt="풀이 과정"></p>
-<p>결국 반대 방향으로 가는 차량이 나타났을 때, 동일한 방향으로 가는 차량의 수만큼과 교차하므로 
+<p>결국 반대 방향으로 가는 차량이 나타났을 때, 동일한 방향으로 가는 차량의 수만큼과 교차하므로
 각 차량을 순회하면서<br>교차한 수 = 교차한 수 + 같은 방향으로 가는 차량 수<br>를 누산하면 된다.</p>
 <p>단, 1,000,000,000을 넘어서면 -1 반환.</p>
 <h3 id="Solved-Code"><a href="#Solved-Code" class="headerlink" title="Solved Code"></a>Solved Code</h3><pre class="line-numbers language-javascript" ><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">solution</span><span class="token punctuation">(</span>A<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -86,10 +86,10 @@ ga("send", "pageview");
 </code></pre>
 <h2 id="Retrospective"><a href="#Retrospective" class="headerlink" title="Retrospective"></a>Retrospective</h2><ul>
 <li>역시 문제를 이해하는게 문제였다...</li>
-<li>대체 왜 각 car는 0s 나 1s를 가진다고 문제를 내놓은 건지부터가 허들이었다.<br>0초나 1초인데 0초는 동쪽을 향해 가고 1초는 서쪽을 향해 간다는게 대체 무슨 말인지 
+<li>대체 왜 각 car는 0s 나 1s를 가진다고 문제를 내놓은 건지부터가 허들이었다.<br>0초나 1초인데 0초는 동쪽을 향해 가고 1초는 서쪽을 향해 간다는게 대체 무슨 말인지
 지금도 이해가 안되는건 매한가지다. (문제 풀이에서 초단위는 그냥 무시해버렸는데 되어라;;)</li>
-<li>passing cars라는 의미를 해석하는데도 애를 먹었다. &quot;지나가는 차&quot;로 해석을 하니 &quot;교차한 
-차&quot;일거라고는 생각도 안했던 터라 초단위와 무슨 관계가 있는 줄 알고 (나를 앞서 질러간 차도 
+<li>passing cars라는 의미를 해석하는데도 애를 먹었다. &quot;지나가는 차&quot;로 해석을 하니 &quot;교차한
+차&quot;일거라고는 생각도 안했던 터라 초단위와 무슨 관계가 있는 줄 알고 (나를 앞서 질러간 차도
 passing car라고 생각...) 처음에 초단위에 매여있는 바람에...</li>
 <li>결론은 영어부터 잘하자... 하아...</li>
 </ul>
@@ -117,15 +117,15 @@ passing car라고 생각...) 처음에 초단위에 매여있는 바람에...</l
       <li>
         <a href="https://mulder21c.github.io/aria-practices" target="_blank" class="link-item">WAI-ARIA Authoring Practice 1.2 (진행중)</a>
       </li>
-    
+
       <li>
         <a href="https://mulder21c.github.io/jest/docs/en/next/getting-started.html" target="_blank" class="link-item">Jest 공식 문서 개인 번역 (진행중)</a>
       </li>
-    
+
       <li>
         <a href="https://mulder21c.github.io/seminar" target="_blank" class="link-item">세미나 발표 자료</a>
       </li>
-    
+
       <li>
         <a href="https://mulder21c.github.io/html" target="_blank" class="link-item">HTML 5.1 명세 개인 번역 (중단)</a>
       </li>

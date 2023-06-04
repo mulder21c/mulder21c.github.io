@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Codility Lesson 4 — MaxCounters - The Tracks of mulder21c</title><!-- Links--><link rel="canonical" href="https://mulder21c.github.io/2019/12/08/codility-lesson-4-max-counter"><!-- preload--><link rel="preload" as="image" href="/images/favicon.png" crossorigin="anonymous"><link rel="preload" as="image" href="/upload/2019/codility-max-counter.png" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/iropke/IropkeBatangM.woff" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/spoqahansans/SpoqaHanSansRegular.woff2" crossorigin="anonymous"><!-- Icons--><link rel="shortcut icon" sizes="196x196" href="/images/favicon.png"><!-- open graph--><meta name="description" content="Codility 알고리즘 연습  Lesson 4 MaxCounters">
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Codility Lesson 4 — MaxCounters - The Tracks of mulder21c</title><!-- Links--><link rel="canonical" href="https://mulder21c.io/codility-lesson-4-max-counter"><!-- preload--><link rel="preload" as="image" href="/images/favicon.png" crossorigin="anonymous"><link rel="preload" as="image" href="/upload/2019/codility-max-counter.png" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/iropke/IropkeBatangM.woff" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/spoqahansans/SpoqaHanSansRegular.woff2" crossorigin="anonymous"><!-- Icons--><link rel="shortcut icon" sizes="196x196" href="/images/favicon.png"><!-- open graph--><meta name="description" content="Codility 알고리즘 연습  Lesson 4 MaxCounters">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Codility Lesson 4 — MaxCounters">
 <meta property="og:url" content="https://mulder21c.github.io/2019/12/08/codility-lesson-4-max-counter/">
@@ -70,18 +70,18 @@ A<span class="token punctuation">[</span><span class="token number">3</span><spa
 A<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span>
 A<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">4</span>
 A<span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">4</span></code></pre>
-<p>이러한 N과 A 배열이 주어졌다면, 
-A[2]까지 순회 했을 때 3은 1번, 4는 2번 카운트 되었으므로 
-<code class="language-javascript">(0, 0, 1, 2, 0)</code>이 반환되어야 하고, 
-이후 A[3]까지 순회 했을 때는 6 = N + 1에 해당하므로 모든 값에 대한 가장 높은 카운트 
-수인 2로 일괄 변경하여 
+<p>이러한 N과 A 배열이 주어졌다면,
+A[2]까지 순회 했을 때 3은 1번, 4는 2번 카운트 되었으므로
+<code class="language-javascript">(0, 0, 1, 2, 0)</code>이 반환되어야 하고,
+이후 A[3]까지 순회 했을 때는 6 = N + 1에 해당하므로 모든 값에 대한 가장 높은 카운트
+수인 2로 일괄 변경하여
 <code class="language-javascript">(2, 2, 2, 2, 2)</code>가 반환되어야 함.</p>
 <p>이를 처리하는 가장 효율적인 알고리즘 작성</p>
 <h2 id="How-I-did-solve"><a href="#How-I-did-solve" class="headerlink" title="How I did solve"></a>How I did solve</h2><h3 id="1-차-77"><a href="#1-차-77" class="headerlink" title="1 차 (77%)"></a>1 차 (77%)</h3><ul>
-<li>1부터 N까지 A에 몇 번 나타나는가가 일단 기본값을 이루기 때문에 카운터 Deck(?)을 만들어 
+<li>1부터 N까지 A에 몇 번 나타나는가가 일단 기본값을 이루기 때문에 카운터 Deck(?)을 만들어
 두고 값 값이 나올때마다 Deck의 값을 1씩 증가.  </li>
 <li>N + 1의 값이 나오면 모든 Deck을 가장 큰 카운터 값으로 채움<ul>
-<li>가장 큰 카운터 값을 그 때 그 때 조회하는건 비효율적이므로 값을 조회할 때마다 가장 큰 
+<li>가장 큰 카운터 값을 그 때 그 때 조회하는건 비효율적이므로 값을 조회할 때마다 가장 큰
 카운터 값을 미리 담아 둠.</li>
 </ul>
 </li>
@@ -105,13 +105,13 @@ A[2]까지 순회 했을 때 3은 1번, 4는 2번 카운트 되었으므로
 
   <span class="token keyword">return</span> counter
 <span class="token punctuation">}</span></code></pre>
-<h3 id="2차"><a href="#2차" class="headerlink" title="2차"></a>2차</h3><p>어디서 문제일까 되짚어 봤을 때, 아무래도 
+<h3 id="2차"><a href="#2차" class="headerlink" title="2차"></a>2차</h3><p>어디서 문제일까 되짚어 봤을 때, 아무래도
 <code class="language-javascript">counter.fill(maxCounter)</code> 이 부분에서
 timeout을 일으킨듯 보여서 이 부분을 개선해보기로.</p>
 <ul>
 <li>N + 1이 나타날 때 마다 fill 하는 대신 max counter를 memorize해두고 마지막에 한 번에 적용</li>
-<li>단, 이 경우 중간에 max counter로 변경되어 거기서부터 다시 1씩 증가시키는 경우는 결과값이 
-달라지므로, 증가 시킬 때 max counter와 memorized counter를 분리하여 max counter가 
+<li>단, 이 경우 중간에 max counter로 변경되어 거기서부터 다시 1씩 증가시키는 경우는 결과값이
+달라지므로, 증가 시킬 때 max counter와 memorized counter를 분리하여 max counter가
 발생된 이후 반영된 적이 없으면 일반 변경시키고 증가 시키도록 구현</li>
 </ul>
 <p>그리고 이렇게 해서 100% 달성!</p>
@@ -166,15 +166,15 @@ timeout을 일으킨듯 보여서 이 부분을 개선해보기로.</p>
       <li>
         <a href="https://mulder21c.github.io/aria-practices" target="_blank" class="link-item">WAI-ARIA Authoring Practice 1.2 (진행중)</a>
       </li>
-    
+
       <li>
         <a href="https://mulder21c.github.io/jest/docs/en/next/getting-started.html" target="_blank" class="link-item">Jest 공식 문서 개인 번역 (진행중)</a>
       </li>
-    
+
       <li>
         <a href="https://mulder21c.github.io/seminar" target="_blank" class="link-item">세미나 발표 자료</a>
       </li>
-    
+
       <li>
         <a href="https://mulder21c.github.io/html" target="_blank" class="link-item">HTML 5.1 명세 개인 번역 (중단)</a>
       </li>

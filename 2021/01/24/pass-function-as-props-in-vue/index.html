@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>pass function as props in vue - The Tracks of mulder21c</title><!-- Links--><link rel="canonical" href="https://mulder21c.github.io/2021/01/24/pass-function-as-props-in-vue"><!-- preload--><link rel="preload" as="image" href="/images/favicon.png" crossorigin="anonymous"><link rel="preload" as="image" href="/upload/2021/props-function-vue.jpg" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/iropke/IropkeBatangM.woff" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/spoqahansans/SpoqaHanSansRegular.woff2" crossorigin="anonymous"><!-- Icons--><link rel="shortcut icon" sizes="196x196" href="/images/favicon.png"><!-- open graph--><meta name="description" content="props로 이벤트 핸들러를 내려주고, 가장 기저에 있는 atom에 해당하는 컴포넌트가 이  핸들러를 실행시키기만 하면 어떨까 하는 생각에 prop로 함수를 내려주는 방식을 생각해보게 됐다.">
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>pass function as props in vue - The Tracks of mulder21c</title><!-- Links--><link rel="canonical" href="https://mulder21c.io/pass-function-as-props-in-vue"><!-- preload--><link rel="preload" as="image" href="/images/favicon.png" crossorigin="anonymous"><link rel="preload" as="image" href="/upload/2021/props-function-vue.jpg" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/iropke/IropkeBatangM.woff" crossorigin="anonymous"><link rel="preload" as="font" href="/fonts/spoqahansans/SpoqaHanSansRegular.woff2" crossorigin="anonymous"><!-- Icons--><link rel="shortcut icon" sizes="196x196" href="/images/favicon.png"><!-- open graph--><meta name="description" content="props로 이벤트 핸들러를 내려주고, 가장 기저에 있는 atom에 해당하는 컴포넌트가 이  핸들러를 실행시키기만 하면 어떨까 하는 생각에 prop로 함수를 내려주는 방식을 생각해보게 됐다.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="pass function as props in vue">
 <meta property="og:url" content="https://mulder21c.github.io/2021/01/24/pass-function-as-props-in-vue/">
@@ -57,37 +57,37 @@ ga("create", "UA-55718543-7", "auto");
 ga("send", "pageview");
 </script><meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/rss.xml" title="The Tracks of mulder21c" type="application/rss+xml">
 <link rel="stylesheet" href="/css/prism-xonokai.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><script defer src="/js/prism.js"></script></head><body class="post"><header class="header hero hero--has-image"><div class="hero-wrapper"><div class="gnb"><a href="/">The Tracks of mulder21c</a><button class="nav-toggle" type="button" aria-haspopup="true" aria-controls="navigation"><span></span><span></span><span></span>menu</button></div><h1 class="header__title">pass function as props in vue</h1><div class="hero__image" style="background-image: url(/upload/2021/props-function-vue.jpg);background-position: center 20%;"></div></div></header><div class="contents--container" role="main"><article class="article"><div class="article__meta"><div class="gravatar"><img src="/images/favicon.png" alt="authored by 멀더끙"></div><time class="article__meta__time" datetime="2021-01-24T02:16:03.000Z"><span aria-label="posted"><span class="fas fa-calendar-day" aria-hidden="true"></span></span>2021-01-24 11:16:03</time><div class="article__meta__category"><span aria-label="category"><span class="fas fa-archive" aria-hidden="true"></span></span><a class="article__meta__category__item" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/">개발노트</a><a class="article__meta__category__item" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/front-end/">Front-End</a></div></div><div class="article__content"><h2 id="Event-handling-and-Atomic-Design-System"><a href="#Event-handling-and-Atomic-Design-System" class="headerlink" title="Event handling and Atomic Design System"></a>Event handling and Atomic Design System</h2><p>Atomic Design System을 컴포넌트 설계 방법론으로 가져가면서, 각 컴포넌트에 독립적으로 
-고립(?)된 데이터 구조를 만들게 되면서 (이게 맞는 방식인지는 잘 모르겠지만) 불편함이 점점 
-발생되었던 것 중 하나가 유저 인터랙션에 의해 발생되는 데이터 변경을 위해 쌓여진 컴포넌트 
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><script defer src="/js/prism.js"></script></head><body class="post"><header class="header hero hero--has-image"><div class="hero-wrapper"><div class="gnb"><a href="/">The Tracks of mulder21c</a><button class="nav-toggle" type="button" aria-haspopup="true" aria-controls="navigation"><span></span><span></span><span></span>menu</button></div><h1 class="header__title">pass function as props in vue</h1><div class="hero__image" style="background-image: url(/upload/2021/props-function-vue.jpg);background-position: center 20%;"></div></div></header><div class="contents--container" role="main"><article class="article"><div class="article__meta"><div class="gravatar"><img src="/images/favicon.png" alt="authored by 멀더끙"></div><time class="article__meta__time" datetime="2021-01-24T02:16:03.000Z"><span aria-label="posted"><span class="fas fa-calendar-day" aria-hidden="true"></span></span>2021-01-24 11:16:03</time><div class="article__meta__category"><span aria-label="category"><span class="fas fa-archive" aria-hidden="true"></span></span><a class="article__meta__category__item" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/">개발노트</a><a class="article__meta__category__item" href="/categories/%EA%B0%9C%EB%B0%9C%EB%85%B8%ED%8A%B8/front-end/">Front-End</a></div></div><div class="article__content"><h2 id="Event-handling-and-Atomic-Design-System"><a href="#Event-handling-and-Atomic-Design-System" class="headerlink" title="Event handling and Atomic Design System"></a>Event handling and Atomic Design System</h2><p>Atomic Design System을 컴포넌트 설계 방법론으로 가져가면서, 각 컴포넌트에 독립적으로
+고립(?)된 데이터 구조를 만들게 되면서 (이게 맞는 방식인지는 잘 모르겠지만) 불편함이 점점
+발생되었던 것 중 하나가 유저 인터랙션에 의해 발생되는 데이터 변경을 위해 쌓여진 컴포넌트
 구조를 따라 계속 이벤트를 전달하고 이벤트 리스너를 통해 처리하는 방식이었다.</p>
 <p>예를 들자면</p>
 <p><img src="/upload/2021/event-flow-from-atom-to-page.svg" alt="유저 인터랙션으로 하위 컴포넌트로부터 상위 컴포넌트로의 이벤트 발생 과정"></p>
 <p>이런 흐름 말이다.</p>
-<p>Vue 공식 문서도 그렇고, 지금까지 보아온 대다수의 강의에서도 유저 인터랙션에 대한 데이터를 
-처리할 때 해당 데이터가 상위 컴포넌트에 존재할 경우, <code>$emit</code>을 이용하여 payload와 함께 
-하위 컴포넌트로부터 상위 컴포넌트로 차례로 올리고, 상위 컴포넌트에서 <code>v-on</code>으로 처리하는 
+<p>Vue 공식 문서도 그렇고, 지금까지 보아온 대다수의 강의에서도 유저 인터랙션에 대한 데이터를
+처리할 때 해당 데이터가 상위 컴포넌트에 존재할 경우, <code>$emit</code>을 이용하여 payload와 함께
+하위 컴포넌트로부터 상위 컴포넌트로 차례로 올리고, 상위 컴포넌트에서 <code>v-on</code>으로 처리하는
 방식을 사용하도록 안내하는 듯 하다.</p>
-<p>Atomic Design Sytem을 적용하기 전에는 이러한 고민이 없었는데, 적용 이후로는 atom으로부터 
-실제 데이터가 바인딩 되는 page까지 5개 단계(?)를 거치게 되니 하위 컴포넌트에서 발생한 
-이벤트와 데이터를 다시 상위 컴포넌트로 by-pass 하기 위한 이벤트 처리가 뭐랄까... 조금 
-거슬린다고 할까?<br>심지어 Vue 개발자 도구로 데이터 흐름을 확인하려고 하면 한 번의 인터랙션에 여러 개의 emit이 
+<p>Atomic Design Sytem을 적용하기 전에는 이러한 고민이 없었는데, 적용 이후로는 atom으로부터
+실제 데이터가 바인딩 되는 page까지 5개 단계(?)를 거치게 되니 하위 컴포넌트에서 발생한
+이벤트와 데이터를 다시 상위 컴포넌트로 by-pass 하기 위한 이벤트 처리가 뭐랄까... 조금
+거슬린다고 할까?<br>심지어 Vue 개발자 도구로 데이터 흐름을 확인하려고 하면 한 번의 인터랙션에 여러 개의 emit이
 로그로 출력되니 정신이 사납기까지 한 느낌이다 = _=a</p>
-<p>그래서 <code>props</code>로 이벤트 핸들러를 내려주고, 가장 기저에 있는 atom에 해당하는 컴포넌트가 이 
+<p>그래서 <code>props</code>로 이벤트 핸들러를 내려주고, 가장 기저에 있는 atom에 해당하는 컴포넌트가 이
 핸들러를 실행시키기만 하면 어떨까 하는 생각에 <code>prop</code>로 함수를 내려주는 방식을 생각해보게 됐다.</p>
-<h2 id="Is-it-an-anti-pattern"><a href="#Is-it-an-anti-pattern" class="headerlink" title="Is it an anti-pattern?"></a>Is it an anti-pattern?</h2><p>일단 생각을 해 봤으니 이게 가한 것은 맞는지 확인 해 볼 필요가 있었다. (처음 생각해 본 
+<h2 id="Is-it-an-anti-pattern"><a href="#Is-it-an-anti-pattern" class="headerlink" title="Is it an anti-pattern?"></a>Is it an anti-pattern?</h2><p>일단 생각을 해 봤으니 이게 가한 것은 맞는지 확인 해 볼 필요가 있었다. (처음 생각해 본
 방법이고 Vue 관련 문서나 강의에서도 한 번도 이런 케이스를 본 적이 없으니까..)</p>
-<p>구글링 결과 공교롭게도(?) 가장 먼저 눈에 띈 내용은 이 방식이 안티 패턴이라는 내용이었다.<br>(혹 관련 내용이 궁금하다면 <a href="[https://michaelnthiessen.com/pass-function-as-prop/](https://michaelnthiessen.com/pass-function-as-prop/)">How to Pass a Function as a Prop in Vue</a>를 
-읽어보시길... 아, 중간에 구독하라고 전체 팝업창이 뜨기는 하는데 개발자라면 뭐... 다 쉽게 
+<p>구글링 결과 공교롭게도(?) 가장 먼저 눈에 띈 내용은 이 방식이 안티 패턴이라는 내용이었다.<br>(혹 관련 내용이 궁금하다면 <a href="[https://michaelnthiessen.com/pass-function-as-prop/](https://michaelnthiessen.com/pass-function-as-prop/)">How to Pass a Function as a Prop in Vue</a>를
+읽어보시길... 아, 중간에 구독하라고 전체 팝업창이 뜨기는 하는데 개발자라면 뭐... 다 쉽게
 걷어내... 쿨럭... )</p>
-<p>하지만 왜 인지 모르겠으나... 해당 글에서는 안티 패턴임을 설명하는데 하위 컴포넌트의 mounted 
-훅에서 props로 받은 함수를 실행하는 코드를 보여주고 있었다.<br>무튼 그러면서 잘못된 것은 아니지만, Vue의 컨셉에 맞게 이벤트를 활용하거나 슬롯을 사용하라는 
+<p>하지만 왜 인지 모르겠으나... 해당 글에서는 안티 패턴임을 설명하는데 하위 컴포넌트의 mounted
+훅에서 props로 받은 함수를 실행하는 코드를 보여주고 있었다.<br>무튼 그러면서 잘못된 것은 아니지만, Vue의 컨셉에 맞게 이벤트를 활용하거나 슬롯을 사용하라는
 결론을 내주는게 영...</p>
-<p>또 다른 아티클 들에서는 단순하게 props로 함수를 내리는게 가능하다 라는 짤막한 소개 정도가 
+<p>또 다른 아티클 들에서는 단순하게 props로 함수를 내리는게 가능하다 라는 짤막한 소개 정도가
 있었다. </p>
-<p>하여 안티 패턴이라 소개하는 글을 잠시 무시하기로 하고(?) props로 함수를 내리는 방식을 
-사용해봤다.<br>아, 안티 패턴이라 소개하는 글을 무시하기로 한 것은 안티 패턴을 굳이 사용하겠다는 것이 아니라, 
-안티 패턴인 이유에 대한 명확한 근거를 찾을 수 없어서다. 차후에라도 이것이 안티 패턴이라는 
+<p>하여 안티 패턴이라 소개하는 글을 잠시 무시하기로 하고(?) props로 함수를 내리는 방식을
+사용해봤다.<br>아, 안티 패턴이라 소개하는 글을 무시하기로 한 것은 안티 패턴을 굳이 사용하겠다는 것이 아니라,
+안티 패턴인 이유에 대한 명확한 근거를 찾을 수 없어서다. 차후에라도 이것이 안티 패턴이라는
 명확한 근거를 찾게 된다면 당연히 과감히 버릴거다.</p>
 <h2 id="Try-it"><a href="#Try-it" class="headerlink" title="Try it"></a>Try it</h2><pre class="line-numbers language-jsx" ><code class="language-jsx"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>SignUpTemplate</span> <span class="token attr-name">:handle-sign-up</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>signUp<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
@@ -159,10 +159,10 @@ ga("send", "pageview");
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre>
 <p>유저 인터랙션이 발생하는 하위 컴포넌트에서 해당 함수를 전달받아 실행하게 했다.<br>적용 결과는 당연히(?) 원하는 동작을 올바르게 수행해주었다.</p>
-<p>이것보다는 modal  창을 포함하는 organism 컴포넌트에서 modal 창에 대한 제어와 modal 내부에 
-slot으로 끼워진 컴포넌트에 적용되는 부분이 이 방식을 더 잘 설명할 수 있을 것 같지만 너무 
+<p>이것보다는 modal  창을 포함하는 organism 컴포넌트에서 modal 창에 대한 제어와 modal 내부에
+slot으로 끼워진 컴포넌트에 적용되는 부분이 이 방식을 더 잘 설명할 수 있을 것 같지만 너무
 많은 코드가 삽입 되어야 해서 포스팅에는 간단한 위 코드로 적었다.</p>
-<p>사실 event emit 방식으로도 충분히 대체도 가능하고 그것이 난이도나 복잡도가 더 높지는 않은 
+<p>사실 event emit 방식으로도 충분히 대체도 가능하고 그것이 난이도나 복잡도가 더 높지는 않은
 것 같기는 하다. 하지만, 뭐랄까 이 방식이 좀 더 dry한 느낌이 든달까? (기분탓이려나?)</p>
 <p>무엇보다 개발자 도구에 여러 번에 걸친 이벤트 발생 로그를 보지 않아도 되니 한결 눈이 가벼워졌다.</p>
 </div><div class="article__tags"><div class="article__tags__title">tags:</div><a class="article__tag__item" href="/tags/vue/"><span class="fas fa-tag" aria-hidden="true"></span>vue</a><a class="article__tag__item" href="/tags/props/"><span class="fas fa-tag" aria-hidden="true"></span>props</a><a class="article__tag__item" href="/tags/pass-function/"><span class="fas fa-tag" aria-hidden="true"></span>pass function</a></div></article><div class="comment__container" role="region" aria-label="comments"><div id="lv-container" data-id="city" data-uid="MTAyMC8zMDYzOC83MTkz"></div></div></div><footer class="footer"><p class="copyright">&copy; 2012 ~ 2019 mulder21c <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" target="_blank" rel="license">(CCL-BY-NC-ND)</a></p><p class="credit">Powered by  <a href="https://hexo.io/" rel="external noreferrer" target="_blank">Hexo</a>. Theme by  <a href="https://github.com/mulder21c" rel="external noreferrer" target="_blank">mulder21c</a></p></footer><div class="nav" aria-hidden="true"><nav class="nav--container" id="navigation" aria-labelledby="nav__heading"><h2 class="nav__heading" id="nav__heading">Navigation</h2><hr class="nav__seperator"><ul class="menu-list">
@@ -189,15 +189,15 @@ slot으로 끼워진 컴포넌트에 적용되는 부분이 이 방식을 더 �
       <li>
         <a href="https://mulder21c.github.io/aria-practices" target="_blank" class="link-item">WAI-ARIA Authoring Practice 1.2 (진행중)</a>
       </li>
-    
+
       <li>
         <a href="https://mulder21c.github.io/jest/docs/en/next/getting-started.html" target="_blank" class="link-item">Jest 공식 문서 개인 번역 (진행중)</a>
       </li>
-    
+
       <li>
         <a href="https://mulder21c.github.io/seminar" target="_blank" class="link-item">세미나 발표 자료</a>
       </li>
-    
+
       <li>
         <a href="https://mulder21c.github.io/html" target="_blank" class="link-item">HTML 5.1 명세 개인 번역 (중단)</a>
       </li>
